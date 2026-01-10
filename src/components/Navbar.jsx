@@ -66,7 +66,7 @@ const Navbar = () => {
 
         {/* Center Logo */}
         <a href="/#hero" className="logo-center">
-          <img src="/images/logo.png" alt="Color Me Crazy" />
+          <img src="/images/logo-transparent.webp" alt="Color Me Crazy" />
         </a>
 
         {/* Right Menu Items */}

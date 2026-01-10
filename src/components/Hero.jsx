@@ -10,7 +10,7 @@ const Hero = () => {
     <section className="hero" id="hero">
       <div className="hero-content">
         <div className="hero-logo">
-          <img src="/images/logo.png" alt="Color Me Crazy" />
+          <img src="/images/logo-transparent.webp" alt="Color Me Crazy" />
         </div>
         <p className="hero-subtitle">Fodrászat & Kozmetika</p>
         <p className="hero-description">Női - Férfi - Gyermek - Raszta</p>

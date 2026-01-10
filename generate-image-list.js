@@ -17,7 +17,7 @@ members.forEach(member => {
 
   if (fs.existsSync(memberDir)) {
     const files = fs.readdirSync(memberDir)
-      .filter(file => /\.(jpg|jpeg|png|JPG|JPEG|PNG)$/i.test(file))
+      .filter(file => /\.webp$/i.test(file))
       .map(file => `/images/portfolios/${member}/${file}`);
 
     result[member] = files;
