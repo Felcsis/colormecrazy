@@ -6,8 +6,14 @@ import {
   faWandMagicSparkles,
   faSun,
   faGem,
-  faCut
+  faCut,
+  faPhone,
+  faEnvelope
 } from '@fortawesome/free-solid-svg-icons';
+import {
+  faInstagram,
+  faFacebook
+} from '@fortawesome/free-brands-svg-icons';
 import './TeamMemberDetail.css';
 
 const teamData = {
@@ -27,7 +33,14 @@ const teamData = {
     image: '/images/Gitta.jpg',
     portfolio: 'gitta',
     mysticIcon: faSun,
-    arcana: 'The Sun'
+    arcana: 'The Sun',
+    contact: {
+      phone: '+36 30 991 7641',
+      instagram: 'haircraftbygitta',
+      instagramUrl: 'https://www.instagram.com/haircraftbygitta/',
+      facebook: 'Gitta HairCraft by Color Me Crazy',
+      facebookUrl: 'https://www.facebook.com/profile.php?id=61577343102077'
+    }
   },
   lili: {
     name: 'Lili',
@@ -36,7 +49,14 @@ const teamData = {
     image: '/images/Lili.jpg',
     portfolio: 'lili',
     mysticIcon: faWandMagicSparkles,
-    arcana: 'The Star'
+    arcana: 'The Star',
+    contact: {
+      phone: '+36 20 594 2014',
+      instagram: 'lilofablehair_by_colormecrazy',
+      instagramUrl: 'https://www.instagram.com/lilofablehair_by_colormecrazy/',
+      facebook: 'lilo fablehair by color me crazy',
+      facebookUrl: 'https://www.facebook.com/profile.php?id=61577565787905'
+    }
   },
   anti: {
     name: 'Anti',
@@ -45,12 +65,19 @@ const teamData = {
     image: '/images/Anti.jpg',
     portfolio: 'anti',
     mysticIcon: faCut,
-    arcana: 'The Hermit'
+    arcana: 'The Hermit',
+    contact: {
+      phone: '+36 20 923 7975',
+      instagram: 'cmc.anti',
+      instagramUrl: 'https://www.instagram.com/cmc.anti',
+      facebook: 'AnTi // Color Me Crazy',
+      facebookUrl: 'https://www.facebook.com/share/1Yqa2MrzD4/'
+    }
   },
   bogi: {
     name: 'Bogi',
     role: 'Kozmetikus',
-    description: 'Szép Boglárka vagyok, 2024 óta kozmetikus. A kozmetika világa mindig is érdekelt, ma már pontosan tudom, mennyire fontos a szakértői segítség és a tudatos, személyre szabott bőrápolás. Számomra ez nem csupán munka, hanem hivatás, amelyben nap mint nap segíthetek vendégeimnek abban, hogy jól érezzék magukat a bőrükben. GIGI professzionális kozmetikai termékekkel dolgozom. Hiszem, hogy minden bőr megérdemli a figyelmet, a törődést és azt a nyugodt, feltöltő élményt, amelyet egy professzionális kozmetikai kezelés nyújtani tud.',
+    description: 'Szép Boglárka vagyok, 2024 óta kozmetikus. Ez az út csak később, tudatos döntések és tapasztalatok során rajzolódott ki előttem. A kozmetika világa mindig is érdekelt, mégis sokáig csupán az otthoni bőrápolás volt része az életemnek. Ma már pontosan tudom, mennyire fontos a szakértői segítség, valamint a tudatos, személyre szabott bőrápolás. Mióta kozmetikusként dolgozom, el sem tudom képzelni a napjaimat a szakmai rutin, a kezelések és a bőrápolási folyamatok nélkül. Számomra ez nem csupán munka, hanem hivatás, amelyben nap mint nap segíthetek vendégeimnek abban, hogy jól érezzék magukat a bőrükben. Kezeléseim során GIGI professzionális kozmetikai termékekkel dolgozom, mert hiszek a magas minőségű hatóanyagok erejében, valamint a bőr egyedi igényeihez igazított, személyre szabott megoldásokban. Célom, hogy példát mutassak, és átadjam azt a szemléletet, miszerint a bőrápolás valóban fontos – nőknek és férfiaknak egyaránt, kortól függetlenül. 💆‍♀️ Hiszem, hogy minden bőr megérdemli a figyelmet, a törődést és azt a nyugodt, feltöltő élményt, amelyet egy professzionális kozmetikai kezelés nyújtani tud. Szeretettel várlak, ha szeretnéd bőrödet szakértő, figyelmes kezekben tudni, és együtt kialakítani azt a tudatos ápolási rutint, amely hosszú távon is támogatja bőröd egészségét és természetes ragyogását.',
     image: '/images/Bogi.JPG',
     portfolio: 'bogi',
     mysticIcon: faGem,
@@ -65,6 +92,11 @@ const TeamMemberDetail = () => {
   const [loading, setLoading] = useState(true);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Scroll to top when component mounts or member changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [memberId]);
 
   useEffect(() => {
     if (member) {
@@ -148,18 +180,44 @@ const TeamMemberDetail = () => {
 
       <div className="team-detail-hero">
         <div className="team-detail-profile-card">
-          <div className="mystic-icon-large">
-            <FontAwesomeIcon icon={member.mysticIcon} />
-          </div>
-          <div className="profile-image-wrapper">
-            <img src={member.image} alt={member.name} className="team-detail-image" />
-          </div>
-          <div className="team-detail-info">
-            <h1>{member.name}</h1>
+          <div className="profile-left">
+            <div className="mystic-icon-large">
+              <FontAwesomeIcon icon={member.mysticIcon} />
+            </div>
+            <div className="profile-image-wrapper">
+              <img src={member.image} alt={member.name} className="team-detail-image" />
+            </div>
+            <h1 className="member-name">{member.name}</h1>
             <span className="team-detail-role">{member.role}</span>
             <div className="arcana-title">{member.arcana}</div>
+
+            {member.contact && (
+              <div className="social-media-links">
+                {member.contact.phone && (
+                  <a href={`tel:${member.contact.phone}`} className="social-icon phone" title="Telefon">
+                    <FontAwesomeIcon icon={faPhone} />
+                  </a>
+                )}
+                {member.contact.instagramUrl && (
+                  <a href={member.contact.instagramUrl} target="_blank" rel="noopener noreferrer" className="social-icon instagram" title="Instagram">
+                    <FontAwesomeIcon icon={faInstagram} />
+                  </a>
+                )}
+                {member.contact.facebookUrl && (
+                  <a href={member.contact.facebookUrl} target="_blank" rel="noopener noreferrer" className="social-icon facebook" title="Facebook">
+                    <FontAwesomeIcon icon={faFacebook} />
+                  </a>
+                )}
+              </div>
+            )}
+          </div>
+          <div className="profile-right">
             <div className="decorative-line"></div>
-            <p className="team-detail-description">{member.description}</p>
+            <div className="team-detail-description">
+              {member.description.split('. ').filter(sentence => sentence.trim()).map((sentence, index) => (
+                <p key={index}>{sentence.trim()}{sentence.endsWith('.') ? '' : '.'}</p>
+              ))}
+            </div>
           </div>
         </div>
       </div>

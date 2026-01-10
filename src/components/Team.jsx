@@ -30,7 +30,14 @@ const teamMembers = [
     description: 'Kreatív fodrász, aki mindig naprakész a legújabb trendekkel. Különösen szeret esküvői frizurákat készíteni.',
     image: '/images/Gitta.jpg',
     mysticIcon: faSun,
-    arcana: 'The Sun'
+    arcana: 'The Sun',
+    contact: {
+      phone: '+36 30 991 7641',
+      instagram: 'haircraftbygitta',
+      instagramUrl: 'https://www.instagram.com/haircraftbygitta/',
+      facebook: 'Gitta HairCraft by Color Me Crazy',
+      facebookUrl: 'https://www.facebook.com/profile.php?id=61577343102077'
+    }
   },
   {
     id: 'lili',
@@ -39,7 +46,14 @@ const teamMembers = [
     description: 'Sziasztok! Lili vagyok, a Color Me Crazy szalon egyik fodrásza. 2025 júniusában kezdtem el dolgozni ebben a szakmában, amelyet azért választottam, mert mindig is közel álltak hozzám a hajak, különösen a festés. Már korábban is rengeteg barátnőm haját készítettem el, és hamar éreztem, hogy ezt akár életem végéig is szívesen csinálnám. Azért szeretem a fodrászatot, mert folyamatos fejlődési lehetőséget nyújt, mindig van mit tanulni, így egyáltalán nem válik unalmassá. Hozzám legközelebb a hajfestés áll, ezen belül is a balayage technikák és a szőkítések, hiszen ezekkel igazán gyönyörű eredményeket lehet elérni, legyen szó természetes vagy akár színes árnyalatokról. A jövőben szeretnék minél többet fejlődni, számos képzésen részt venni, és folyamatosan bővíteni a szolgáltatásaimat. Ezek a célok nap mint nap motiválnak arra, hogy egyre jobb legyek a szakmámban. Amikor éppen nem a szalonban dolgozom, szívesen töltöm a szabadidőmet a természetben, szeretek kirándulni, valamint barátokkal kikapcsolódni.',
     image: '/images/Lili.jpg',
     mysticIcon: faWandMagicSparkles,
-    arcana: 'The Star'
+    arcana: 'The Star',
+    contact: {
+      phone: '+36 20 594 2014',
+      instagram: 'lilofablehair_by_colormecrazy',
+      instagramUrl: 'https://www.instagram.com/lilofablehair_by_colormecrazy/',
+      facebook: 'lilo fablehair by color me crazy',
+      facebookUrl: 'https://www.facebook.com/profile.php?id=61577565787905'
+    }
   },
   {
     id: 'anti',
@@ -48,13 +62,20 @@ const teamMembers = [
     description: 'Én vagyok AnTi. Egész frissen, 2025 tavaszán vizsgáztam, de már 6 évvel ezt megelőzően - amióta szakállt hordok - kezdett érdekelni a szakma. Biztosan állítható, a kedvenc részem a hajvágások A-tól Z-ig. Legyen szó klasszikus, alap, vagy divat hajvágásról. Minden egyes munka újabb lehetőség a további fejlődésre. NINCS ÁTLAGOS NAP. Viszont néha nem árt a pihenés! Ilyenkor jól tud esni egy kis horror, legyen szó, film/sorozat vagy írott formában.',
     image: '/images/Anti.jpg',
     mysticIcon: faCut,
-    arcana: 'The Hermit'
+    arcana: 'The Hermit',
+    contact: {
+      phone: '+36 20 923 7975',
+      instagram: 'cmc.anti',
+      instagramUrl: 'https://www.instagram.com/cmc.anti',
+      facebook: 'AnTi // Color Me Crazy',
+      facebookUrl: 'https://www.facebook.com/share/1Yqa2MrzD4/'
+    }
   },
   {
     id: 'bogi',
     name: 'Bogi',
     role: 'Kozmetikus',
-    description: 'Szép Boglárka vagyok, 2024 óta kozmetikus. A kozmetika világa mindig is érdekelt, ma már pontosan tudom, mennyire fontos a szakértői segítség és a tudatos, személyre szabott bőrápolás. Számomra ez nem csupán munka, hanem hivatás, amelyben nap mint nap segíthetek vendégeimnek abban, hogy jól érezzék magukat a bőrükben. GIGI professzionális kozmetikai termékekkel dolgozom. Hiszem, hogy minden bőr megérdemli a figyelmet, a törődést és azt a nyugodt, feltöltő élményt, amelyet egy professzionális kozmetikai kezelés nyújtani tud.',
+    description: 'Szép Boglárka vagyok, 2024 óta kozmetikus. Ez az út csak később, tudatos döntések és tapasztalatok során rajzolódott ki előttem. A kozmetika világa mindig is érdekelt, mégis sokáig csupán az otthoni bőrápolás volt része az életemnek. Ma már pontosan tudom, mennyire fontos a szakértői segítség, valamint a tudatos, személyre szabott bőrápolás. Mióta kozmetikusként dolgozom, el sem tudom képzelni a napjaimat a szakmai rutin, a kezelések és a bőrápolási folyamatok nélkül. Számomra ez nem csupán munka, hanem hivatás, amelyben nap mint nap segíthetek vendégeimnek abban, hogy jól érezzék magukat a bőrükben. Kezeléseim során GIGI professzionális kozmetikai termékekkel dolgozom, mert hiszek a magas minőségű hatóanyagok erejében, valamint a bőr egyedi igényeihez igazított, személyre szabott megoldásokban. Célom, hogy példát mutassak, és átadjam azt a szemléletet, miszerint a bőrápolás valóban fontos – nőknek és férfiaknak egyaránt, kortól függetlenül. 💆‍♀️ Hiszem, hogy minden bőr megérdemli a figyelmet, a törődést és azt a nyugodt, feltöltő élményt, amelyet egy professzionális kozmetikai kezelés nyújtani tud. Szeretettel várlak, ha szeretnéd bőrödet szakértő, figyelmes kezekben tudni, és együtt kialakítani azt a tudatos ápolási rutint, amely hosszú távon is támogatja bőröd egészségét és természetes ragyogását.',
     image: '/images/Bogi.JPG',
     isKozmetikus: true,
     mysticIcon: faGem,
@@ -68,8 +89,7 @@ const Team = () => {
       <div className="container">
         <h2 className="section-title">Csapatunk</h2>
         <p className="section-subtitle">
-          A Color Me Crazy 2018-ban nyílt azok előtt, akik nem érik be az átlagossal.
-          Négy tapasztalt fodrász és egy kozmetikus dolgozik szalonunkban.
+          Felicia mesterfodrász vezeti csapatunkat, mellette Gitta, Lili és Anti női, férfi és gyermek fodrászként dolgoznak, kozmetikusunk pedig gondoskodik róla, hogy ne csak a haj, hanem a bőr is felfrissüljön.
         </p>
         <div className="team-grid">
           {teamMembers.map((member, index) => (

@@ -8,7 +8,8 @@ import {
   faSpa,
   faChild,
   faCalendarCheck,
-  faCheck
+  faCheck,
+  faGem
 } from '@fortawesome/free-solid-svg-icons';
 
 const priceListData = {
@@ -156,6 +157,44 @@ const priceListData = {
         { name: 'Alkalmi kontyok, frizurák', price: '10 000 Ft-tól' }
       ]
     }
+  ],
+  kozmetika: [
+    {
+      category: 'Szempilla & Szemöldök',
+      icon: faGem,
+      services: [
+        { name: 'Szempilla festés', price: '2 500 Ft' },
+        { name: 'Szemöldök festés + igazítás', price: '3 500 Ft' },
+        { name: 'Szempilla lifting', price: '9 500 Ft' },
+        { name: 'Hennás szemöldök styling', price: '6 500 Ft' }
+      ]
+    },
+    {
+      category: 'Gyantázás',
+      icon: faGem,
+      note: 'Cukorpasztával is (+700 Ft)',
+      services: [
+        { name: 'Bajusz', price: '1 800 Ft' },
+        { name: 'Szemöldök', price: '1 800 Ft' },
+        { name: 'Hónalj', price: '2 600 Ft' },
+        { name: 'Teljeskar', price: '3 500 Ft' },
+        { name: 'Bikini vonal', price: '3 000 Ft' },
+        { name: 'Láb térdig', price: '3 000 Ft' },
+        { name: 'Teljes láb', price: '5 000 Ft' },
+        { name: 'Hát', price: '3 000 Ft' },
+        { name: 'Mellkas', price: '3 000 Ft' },
+        { name: 'Teljes fazon', price: '6 500 Ft' }
+      ]
+    },
+    {
+      category: 'Smink & Egyéb',
+      icon: faGem,
+      services: [
+        { name: 'Alkalmi smink', price: '11 000 Ft' },
+        { name: 'Menyasszonyi smink', price: '16 000 Ft' },
+        { name: 'STUDEX fülbelövés', price: '15 000 Ft' }
+      ]
+    }
   ]
 };
 
@@ -182,6 +221,12 @@ const Services = () => {
             onClick={() => setPriceList('master')}
           >
             Mester Fodrász <span className="master-badge">(Felicia)</span>
+          </button>
+          <button
+            className={`toggle-btn ${priceList === 'kozmetika' ? 'active' : ''}`}
+            onClick={() => setPriceList('kozmetika')}
+          >
+            Kozmetika <span className="master-badge">(Bogi)</span>
           </button>
         </div>
 
