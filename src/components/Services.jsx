@@ -6,7 +6,9 @@ import {
   faPaintBrush,
   faStar,
   faSpa,
-  faChild
+  faChild,
+  faCalendarCheck,
+  faCheck
 } from '@fortawesome/free-solid-svg-icons';
 
 const priceListData = {
@@ -71,6 +73,7 @@ const priceListData = {
         { name: 'Fejmasszázs', price: '1 500 Ft' },
         { name: 'Steampod szolgáltatás', price: '4 500 Ft + mosás' },
         { name: 'Hajgöndörítés/Vasalás', price: '3 000 Ft' },
+        { name: 'Joico hajkezelés', price: '14 000 Ft' },
         { name: 'Alkalmi kontyok, frizurák', price: '8 000 Ft-tól' }
       ]
     }
@@ -149,6 +152,7 @@ const priceListData = {
         { name: 'Hajtetoválás', price: '3 000 Ft/minta' },
         { name: 'Steampod szolgáltatás', price: '4 500 Ft + mosás' },
         { name: 'Hajgöndörítés/Vasalás', price: '3 000 Ft' },
+        { name: 'Joico hajkezelés', price: '14 000 Ft' },
         { name: 'Alkalmi kontyok, frizurák', price: '10 000 Ft-tól' }
       ]
     }
@@ -157,18 +161,14 @@ const priceListData = {
 
 const Services = () => {
   const [priceList, setPriceList] = useState('standard');
-  const [expandedCategory, setExpandedCategory] = useState(null);
-
-  const toggleCategory = (index) => {
-    setExpandedCategory(expandedCategory === index ? null : index);
-  };
-
   const currentPriceList = priceListData[priceList];
 
   return (
     <section className="section szolgaltatasok" id="szolgaltatasok">
       <div className="container">
-        <h2 className="section-title">Szolgáltatások & Árlista</h2>
+        <div className="price-list-header">
+          <h2 className="arlista-title">ÁRLISTA</h2>
+        </div>
 
         <div className="price-list-toggle">
           <button
@@ -185,33 +185,25 @@ const Services = () => {
           </button>
         </div>
 
-        <div className="services-list">
-          {currentPriceList.map((category, index) => (
-            <div key={index} className="service-category">
-              <div
-                className="service-category-header"
-                onClick={() => toggleCategory(index)}
-              >
-                <div className="service-category-title">
-                  <FontAwesomeIcon icon={category.icon} className="service-icon" />
-                  <h3>{category.category}</h3>
-                  {category.note && <span className="service-note">{category.note}</span>}
+        <div className="price-list-content">
+          <div className="price-list-columns">
+            {currentPriceList.map((category, catIndex) => (
+              <div key={catIndex} className="price-column-section">
+                <h3 className="category-title">
+                  {category.category}
+                  {category.note && <span className="category-subtitle">{category.note}</span>}
+                </h3>
+                <div className="service-list">
+                  {category.services.map((service, serviceIndex) => (
+                    <div key={serviceIndex} className="service-row">
+                      <span className="service-name-simple">{service.name}</span>
+                      <span className="service-price-simple">{service.price}</span>
+                    </div>
+                  ))}
                 </div>
-                <span className={`service-toggle ${expandedCategory === index ? 'expanded' : ''}`}>
-                  {expandedCategory === index ? '−' : '+'}
-                </span>
               </div>
-              <div className={`service-items ${expandedCategory === index ? 'expanded' : ''}`}>
-                {category.services.map((service, serviceIndex) => (
-                  <div key={serviceIndex} className="service-item">
-                    <span className="service-name">{service.name}</span>
-                    <span className="service-dots"></span>
-                    <span className="service-price">{service.price}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

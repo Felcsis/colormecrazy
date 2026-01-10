@@ -254,87 +254,633 @@ body {
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
+/* Tarot Card Design */
 .team-card {
     background: var(--bg-card);
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
     text-align: center;
-    padding: 40px 24px;
-    transition: all 0.3s ease;
+    padding: 24px 24px 32px;
+    transition: all 0.4s ease;
     text-decoration: none;
-    display: block;
+    display: flex;
+    flex-direction: column;
     cursor: pointer;
+    position: relative;
+    aspect-ratio: 2/3;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+
+/* Mystical pulse animation */
+@keyframes mysticPulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+/* Continuous background glow animation */
+@keyframes cardGlow {
+    0%, 100% {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4),
+                    inset 0 0 40px rgba(139, 126, 184, 0.1);
+    }
+    50% {
+        box-shadow: 0 8px 32px rgba(139, 126, 184, 0.2),
+                    inset 0 0 60px rgba(139, 126, 184, 0.15);
+    }
+}
+
+/* Individual member glow animations */
+@keyframes glowFelicia {
+    0%, 100% {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4),
+                    inset 0 0 40px rgba(107, 94, 152, 0.15);
+    }
+    50% {
+        box-shadow: 0 8px 32px rgba(107, 94, 152, 0.3),
+                    inset 0 0 60px rgba(107, 94, 152, 0.2);
+    }
+}
+
+@keyframes glowGitta {
+    0%, 100% {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4),
+                    inset 0 0 40px rgba(192, 152, 232, 0.15);
+    }
+    50% {
+        box-shadow: 0 8px 32px rgba(192, 152, 232, 0.3),
+                    inset 0 0 60px rgba(192, 152, 232, 0.2);
+    }
+}
+
+@keyframes glowLili {
+    0%, 100% {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4),
+                    inset 0 0 40px rgba(244, 184, 216, 0.15);
+    }
+    50% {
+        box-shadow: 0 8px 32px rgba(244, 184, 216, 0.3),
+                    inset 0 0 60px rgba(244, 184, 216, 0.2);
+    }
+}
+
+@keyframes glowAnti {
+    0%, 100% {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4),
+                    inset 0 0 40px rgba(120, 196, 168, 0.15);
+    }
+    50% {
+        box-shadow: 0 8px 32px rgba(120, 196, 168, 0.3),
+                    inset 0 0 60px rgba(120, 196, 168, 0.2);
+    }
+}
+
+@keyframes glowBogi {
+    0%, 100% {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4),
+                    inset 0 0 40px rgba(168, 200, 232, 0.15);
+    }
+    50% {
+        box-shadow: 0 8px 32px rgba(168, 200, 232, 0.3),
+                    inset 0 0 60px rgba(168, 200, 232, 0.2);
+    }
+}
+
+/* Magical shimmer effect on hover */
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+/* Mystic Icon at top */
+.arcana-number {
+    font-size: 1.5rem;
+    color: var(--border);
+    margin-bottom: 16px;
+    opacity: 0.6;
+    transition: all 0.4s ease;
+}
+
+.team-card:hover .arcana-number {
+    color: var(--primary);
+    opacity: 1;
+    transform: scale(1.1);
+    animation: mysticPulse 2s ease-in-out infinite;
+}
+
+/* Individual member mystic icon colors */
+.team-card[data-member="felicia"]:hover .arcana-number {
+    color: #6B5E98;
+}
+
+.team-card[data-member="gitta"]:hover .arcana-number {
+    color: #C098E8;
+}
+
+.team-card[data-member="lili"]:hover .arcana-number {
+    color: #F4B8D8;
+}
+
+.team-card[data-member="anti"]:hover .arcana-number {
+    color: #78C4A8;
+}
+
+.team-card[data-member="bogi"]:hover .arcana-number {
+    color: #A8C8E8;
+}
+
+.team-card.kozmetikus:hover .arcana-number {
+    color: var(--secondary);
+}
+
+/* Ornamental corners with stars */
+.team-card::before,
+.team-card::after {
+    position: absolute;
+    transition: all 0.4s ease;
+    opacity: 0.4;
+    z-index: 2;
+}
+
+.team-card::before {
+    content: '✦';
+    top: 16px;
+    left: 16px;
+    font-size: 0.8rem;
+    color: var(--border);
+}
+
+.team-card::after {
+    content: '✦';
+    bottom: 16px;
+    right: 16px;
+    font-size: 0.8rem;
+    color: var(--border);
 }
 
 .team-card:hover {
-    background: var(--bg-card-hover);
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(139, 126, 184, 0.3),
+                inset 0 0 80px rgba(139, 126, 184, 0.2);
     border-color: var(--primary);
+    filter: brightness(1.1);
+    background: linear-gradient(135deg,
+                var(--bg-card) 0%,
+                rgba(139, 126, 184, 0.05) 50%,
+                var(--bg-card) 100%);
+}
+
+/* Individual member hover colors */
+.team-card[data-member="felicia"]:hover {
+    box-shadow: 0 16px 48px rgba(107, 94, 152, 0.5),
+                inset 0 0 80px rgba(107, 94, 152, 0.25);
+    border-color: #6B5E98;
+    background: linear-gradient(135deg,
+                var(--bg-card) 0%,
+                rgba(107, 94, 152, 0.12) 50%,
+                var(--bg-card) 100%);
+}
+
+.team-card[data-member="gitta"]:hover {
+    box-shadow: 0 16px 48px rgba(192, 152, 232, 0.5),
+                inset 0 0 80px rgba(192, 152, 232, 0.25);
+    border-color: #C098E8;
+    background: linear-gradient(135deg,
+                var(--bg-card) 0%,
+                rgba(192, 152, 232, 0.12) 50%,
+                var(--bg-card) 100%);
+}
+
+.team-card[data-member="lili"]:hover {
+    box-shadow: 0 16px 48px rgba(244, 184, 216, 0.5),
+                inset 0 0 80px rgba(244, 184, 216, 0.25);
+    border-color: #F4B8D8;
+    background: linear-gradient(135deg,
+                var(--bg-card) 0%,
+                rgba(244, 184, 216, 0.12) 50%,
+                var(--bg-card) 100%);
+}
+
+.team-card[data-member="anti"]:hover {
+    box-shadow: 0 16px 48px rgba(120, 196, 168, 0.5),
+                inset 0 0 80px rgba(120, 196, 168, 0.25);
+    border-color: #78C4A8;
+    background: linear-gradient(135deg,
+                var(--bg-card) 0%,
+                rgba(120, 196, 168, 0.12) 50%,
+                var(--bg-card) 100%);
+}
+
+.team-card[data-member="bogi"]:hover {
+    box-shadow: 0 16px 48px rgba(168, 200, 232, 0.5),
+                inset 0 0 80px rgba(168, 200, 232, 0.25);
+    border-color: #A8C8E8;
+    background: linear-gradient(135deg,
+                var(--bg-card) 0%,
+                rgba(168, 200, 232, 0.12) 50%,
+                var(--bg-card) 100%);
+}
+
+.team-card:hover::before,
+.team-card:hover::after {
+    color: var(--primary);
+    opacity: 1;
+    font-size: 1rem;
+}
+
+/* Individual member star colors */
+.team-card[data-member="felicia"]:hover::before,
+.team-card[data-member="felicia"]:hover::after {
+    color: #6B5E98;
+}
+
+.team-card[data-member="gitta"]:hover::before,
+.team-card[data-member="gitta"]:hover::after {
+    color: #C098E8;
+}
+
+.team-card[data-member="lili"]:hover::before,
+.team-card[data-member="lili"]:hover::after {
+    color: #F4B8D8;
+}
+
+.team-card[data-member="anti"]:hover::before,
+.team-card[data-member="anti"]:hover::after {
+    color: #78C4A8;
+}
+
+.team-card[data-member="bogi"]:hover::before,
+.team-card[data-member="bogi"]:hover::after {
+    color: #A8C8E8;
+}
+
+/* Individual member base glow animations */
+.team-card[data-member="felicia"] {
+    animation: glowFelicia 4s ease-in-out infinite;
+    border-color: #6B5E98;
+}
+
+.team-card[data-member="gitta"] {
+    animation: glowGitta 4s ease-in-out infinite;
+    border-color: #C098E8;
+}
+
+.team-card[data-member="lili"] {
+    animation: glowLili 4s ease-in-out infinite;
+    border-color: #F4B8D8;
+}
+
+.team-card[data-member="anti"] {
+    animation: glowAnti 4s ease-in-out infinite;
+    border-color: #78C4A8;
+}
+
+.team-card[data-member="bogi"] {
+    animation: glowBogi 4s ease-in-out infinite;
+    border-color: #A8C8E8;
 }
 
 .team-card.featured {
     border-color: var(--primary);
+    box-shadow: 0 8px 32px rgba(139, 126, 184, 0.2);
+}
+
+.team-card.featured::before,
+.team-card.featured::after {
+    color: var(--primary);
+    opacity: 0.6;
 }
 
 .team-card.kozmetikus {
     border-color: var(--secondary);
 }
 
-.team-image {
-    margin-bottom: 24px;
+.team-card.kozmetikus::before,
+.team-card.kozmetikus::after {
+    color: var(--secondary);
+    opacity: 0.6;
 }
 
+.team-card.kozmetikus:hover {
+    box-shadow: 0 16px 48px rgba(123, 163, 196, 0.3);
+}
+
+.team-card.kozmetikus:hover::before,
+.team-card.kozmetikus:hover::after {
+    color: var(--secondary);
+    opacity: 1;
+}
+
+/* Mystical glow effect */
+.team-card .team-image {
+    position: relative;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-card .team-image::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 0 auto 20px;
+    transition: all 0.4s ease;
+}
+
+.team-card:hover .team-image::before {
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    box-shadow: 0 0 8px var(--primary);
+}
+
+/* Individual member decorative line colors */
+.team-card[data-member="felicia"]:hover .team-image::before {
+    background: linear-gradient(90deg, transparent, #6B5E98, transparent);
+    box-shadow: 0 0 8px #6B5E98;
+}
+
+.team-card[data-member="gitta"]:hover .team-image::before {
+    background: linear-gradient(90deg, transparent, #C098E8, transparent);
+    box-shadow: 0 0 8px #C098E8;
+}
+
+.team-card[data-member="lili"]:hover .team-image::before {
+    background: linear-gradient(90deg, transparent, #F4B8D8, transparent);
+    box-shadow: 0 0 8px #F4B8D8;
+}
+
+.team-card[data-member="anti"]:hover .team-image::before {
+    background: linear-gradient(90deg, transparent, #78C4A8, transparent);
+    box-shadow: 0 0 8px #78C4A8;
+}
+
+.team-card[data-member="bogi"]:hover .team-image::before {
+    background: linear-gradient(90deg, transparent, #A8C8E8, transparent);
+    box-shadow: 0 0 8px #A8C8E8;
+}
+
+.team-card.kozmetikus:hover .team-image::before {
+    background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+    box-shadow: 0 0 8px var(--secondary);
+}
+
+
 .team-image img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
     object-fit: cover;
-    filter: grayscale(20%);
-    transition: filter 0.3s ease;
+    filter: grayscale(30%) brightness(0.9);
+    transition: all 0.4s ease;
+    border: 2px solid var(--border);
 }
 
 .team-card:hover .team-image img {
-    filter: grayscale(0%);
+    filter: grayscale(0%) brightness(1);
+    transform: scale(1.05);
+    border-color: var(--primary);
+}
+
+/* Individual member image border colors */
+.team-card[data-member="felicia"]:hover .team-image img {
+    border-color: #6B5E98;
+}
+
+.team-card[data-member="gitta"]:hover .team-image img {
+    border-color: #C098E8;
+}
+
+.team-card[data-member="lili"]:hover .team-image img {
+    border-color: #F4B8D8;
+}
+
+.team-card[data-member="anti"]:hover .team-image img {
+    border-color: #78C4A8;
+}
+
+.team-card[data-member="bogi"]:hover .team-image img {
+    border-color: #A8C8E8;
+}
+
+.team-card.kozmetikus:hover .team-image img {
+    border-color: var(--secondary);
+}
+
+/* Decorative bottom line after image */
+.team-image::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 20px auto 0;
+    transition: all 0.4s ease;
+}
+
+.team-card:hover .team-image::after {
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    box-shadow: 0 0 8px var(--primary);
+}
+
+/* Individual member bottom decorative line colors */
+.team-card[data-member="felicia"]:hover .team-image::after {
+    background: linear-gradient(90deg, transparent, #6B5E98, transparent);
+    box-shadow: 0 0 8px #6B5E98;
+}
+
+.team-card[data-member="gitta"]:hover .team-image::after {
+    background: linear-gradient(90deg, transparent, #C098E8, transparent);
+    box-shadow: 0 0 8px #C098E8;
+}
+
+.team-card[data-member="lili"]:hover .team-image::after {
+    background: linear-gradient(90deg, transparent, #F4B8D8, transparent);
+    box-shadow: 0 0 8px #F4B8D8;
+}
+
+.team-card[data-member="anti"]:hover .team-image::after {
+    background: linear-gradient(90deg, transparent, #78C4A8, transparent);
+    box-shadow: 0 0 8px #78C4A8;
+}
+
+.team-card[data-member="bogi"]:hover .team-image::after {
+    background: linear-gradient(90deg, transparent, #A8C8E8, transparent);
+    box-shadow: 0 0 8px #A8C8E8;
+}
+
+.team-card.kozmetikus:hover .team-image::after {
+    background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+    box-shadow: 0 0 8px var(--secondary);
+}
+
+.team-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .team-info h3 {
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin-bottom: 4px;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 8px;
     color: var(--text);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
 }
 
 .team-role {
-    font-size: 0.75rem;
-    letter-spacing: 2px;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--primary);
-    display: block;
-    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 8px 0;
+    position: relative;
+}
+
+/* Decorative lines around role */
+.team-role::before,
+.team-role::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary) 50%, transparent);
+    max-width: 30px;
 }
 
 .team-card.kozmetikus .team-role {
     color: var(--secondary);
 }
 
-.team-info p {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    line-height: 1.7;
+.team-card.kozmetikus .team-role::before,
+.team-card.kozmetikus .team-role::after {
+    background: linear-gradient(90deg, transparent, var(--secondary) 50%, transparent);
 }
 
-/* Szolgáltatások */
+.team-info p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    display: none;
+}
+
+/* Arcana name at bottom */
+.arcana-name {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 16px;
+    opacity: 0.5;
+    font-style: italic;
+    transition: all 0.4s ease;
+}
+
+.team-card:hover .arcana-name {
+    opacity: 1;
+    color: var(--primary);
+}
+
+/* Individual member arcana name colors */
+.team-card[data-member="felicia"]:hover .arcana-name {
+    color: #6B5E98;
+}
+
+.team-card[data-member="gitta"]:hover .arcana-name {
+    color: #C098E8;
+}
+
+.team-card[data-member="lili"]:hover .arcana-name {
+    color: #F4B8D8;
+}
+
+.team-card[data-member="anti"]:hover .arcana-name {
+    color: #78C4A8;
+}
+
+.team-card[data-member="bogi"]:hover .arcana-name {
+    color: #A8C8E8;
+}
+
+.team-card.kozmetikus:hover .arcana-name {
+    color: var(--secondary);
+}
+
+/* Szolgáltatások - Original Design Style */
 .szolgaltatasok {
-    background: var(--bg-card);
+    background: #0a0a0a;
+    background-image: none;
+}
+
+/* ÁRLISTA Header with stars */
+.price-list-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.arlista-title {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #8B7EB8 0%, #7BA3C4 50%, #9CA3AF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+}
+
+.arlista-title::before,
+.arlista-title::after {
+    content: '✦';
+    position: absolute;
+    font-size: 2rem;
+    color: var(--primary);
+    animation: starFloat 3s ease-in-out infinite;
+}
+
+.arlista-title::before {
+    left: -60px;
+    top: 0;
+}
+
+.arlista-title::after {
+    right: -60px;
+    top: 0;
+    animation-delay: 1.5s;
+}
+
+@keyframes starFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(180deg); }
 }
 
 .price-list-toggle {
     display: flex;
     justify-content: center;
     gap: 16px;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
 }
 
 .toggle-btn {
@@ -368,115 +914,74 @@ body {
     font-weight: 300;
 }
 
-.services-list {
-    max-width: 900px;
+/* Two Column Price List */
+.price-list-content {
+    max-width: 1100px;
     margin: 0 auto;
+    padding: 0 40px;
 }
 
-.service-category {
-    background: var(--bg-dark);
-    border: 1px solid var(--border);
-    margin-bottom: 16px;
-    transition: all 0.3s ease;
+.price-list-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px 80px;
 }
 
-.service-category:hover {
-    border-color: var(--primary);
+.price-column-section {
+    margin-bottom: 40px;
 }
 
-.service-category-header {
+.category-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.category-subtitle {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    text-transform: none;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+.service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.service-row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 24px 32px;
-    cursor: pointer;
-    user-select: none;
+    align-items: baseline;
+    gap: 20px;
 }
 
-.service-category-title {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-
-.service-icon {
-    font-size: 1.5rem;
-    opacity: 0.8;
-}
-
-.service-category-title h3 {
-    font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: 1px;
+.service-name-simple {
+    font-size: 0.95rem;
+    color: #8B7EB8;
+    font-weight: 400;
     text-transform: uppercase;
-    color: var(--text);
-    margin: 0;
-}
-
-.service-note {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    font-style: italic;
-}
-
-.service-toggle {
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: var(--text-muted);
-    transition: transform 0.3s ease, color 0.3s ease;
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.service-toggle.expanded {
-    color: var(--primary);
-}
-
-.service-items {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-}
-
-.service-items.expanded {
-    max-height: 2000px;
-    border-top: 1px solid var(--border);
-}
-
-.service-item {
-    display: flex;
-    align-items: center;
-    padding: 16px 32px;
-    gap: 12px;
-    border-bottom: 1px solid var(--border);
-}
-
-.service-item:last-child {
-    border-bottom: none;
-}
-
-.service-name {
-    font-size: 0.9rem;
-    color: var(--text);
-    white-space: nowrap;
-}
-
-.service-dots {
+    letter-spacing: 1px;
     flex: 1;
-    border-bottom: 1px dotted var(--border);
-    min-width: 20px;
 }
 
-.service-price {
-    font-size: 0.9rem;
-    color: var(--primary);
+.service-price-simple {
+    font-size: 0.95rem;
+    color: #7BA3C4;
     font-weight: 500;
     white-space: nowrap;
+    text-align: right;
 }
+
 
 /* Galéria */
 .galeria {
@@ -691,13 +1196,59 @@ body {
     }
 
     .team-grid {
-        grid-template-columns: 1fr;
-        max-width: 320px;
-        margin: 0 auto;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 24px;
     }
 
-    .services-grid {
+    .team-card {
+        aspect-ratio: 2/3;
+        padding: 20px 16px 28px;
+    }
+
+    .arcana-number {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+
+    .team-image img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .team-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .arcana-name {
+        font-size: 0.6rem;
+        margin-top: 12px;
+    }
+
+    .arlista-title {
+        font-size: 3rem;
+        letter-spacing: 6px;
+    }
+
+    .arlista-title::before,
+    .arlista-title::after {
+        font-size: 1.5rem;
+    }
+
+    .arlista-title::before {
+        left: -45px;
+    }
+
+    .arlista-title::after {
+        right: -45px;
+    }
+
+    .price-list-columns {
         grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .price-list-content {
+        padding: 0 20px;
     }
 
     .gallery-grid {
@@ -716,5 +1267,94 @@ body {
 
     .section-title {
         font-size: 0.75rem;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .team-card {
+        padding: 18px 14px 24px;
+    }
+
+    .team-card::before {
+        top: 12px;
+        left: 12px;
+        font-size: 0.7rem;
+    }
+
+    .team-card::after {
+        bottom: 12px;
+        right: 12px;
+        font-size: 0.7rem;
+    }
+
+    .arcana-number {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .team-image img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .team-info h3 {
+        font-size: 1rem;
+    }
+
+    .team-role {
+        font-size: 0.65rem;
+    }
+
+    .arcana-name {
+        font-size: 0.55rem;
+        margin-top: 10px;
+    }
+
+    .arlista-title {
+        font-size: 2.5rem;
+        letter-spacing: 4px;
+    }
+
+    .arlista-title::before,
+    .arlista-title::after {
+        display: none;
+    }
+
+    .price-list-header {
+        margin-bottom: 40px;
+    }
+
+    .price-list-toggle {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 60px;
+    }
+
+    .toggle-btn {
+        width: 100%;
+        padding: 12px 24px;
+        font-size: 0.85rem;
+    }
+
+    .price-list-columns {
+        gap: 32px;
+    }
+
+    .category-title {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .service-row {
+        gap: 12px;
+    }
+
+    .service-name-simple,
+    .service-price-simple {
+        font-size: 0.85rem;
     }
 }
