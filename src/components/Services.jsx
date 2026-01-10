@@ -17,6 +17,7 @@ const priceListData = {
     {
       category: 'Női Hajvágás',
       icon: faCut,
+      image: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80',
       services: [
         { name: 'Rövid', price: '6 500 Ft' },
         { name: 'Félhosszú', price: '8 000 Ft' },
@@ -28,6 +29,7 @@ const priceListData = {
     {
       category: 'Férfi Hajvágás',
       icon: faUserTie,
+      image: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&q=80',
       services: [
         { name: 'Rövid hajvágás', price: '4 200 Ft' },
         { name: 'Közép hosszú', price: '5 000 Ft' },
@@ -40,6 +42,7 @@ const priceListData = {
     {
       category: 'Festés / Színezés',
       icon: faPaintBrush,
+      image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80',
       note: '+ felhasznált anyag',
       services: [
         { name: 'Rövid', price: '6 500 Ft' },
@@ -51,6 +54,7 @@ const priceListData = {
     {
       category: 'Szőkítés',
       icon: faStar,
+      image: 'https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=800&q=80',
       note: '+ felhasznált anyag',
       services: [
         { name: 'Tő szőkítés', price: '9 000 Ft' },
@@ -70,6 +74,7 @@ const priceListData = {
     {
       category: 'Egyéb Szolgáltatások',
       icon: faSpa,
+      image: 'https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=800&q=80',
       services: [
         { name: 'Fejmasszázs', price: '1 500 Ft' },
         { name: 'Steampod szolgáltatás', price: '4 500 Ft + mosás' },
@@ -83,6 +88,7 @@ const priceListData = {
     {
       category: 'Női Hajvágás',
       icon: faCut,
+      image: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80',
       services: [
         { name: 'Rövid', price: '9 500 Ft' },
         { name: 'Félhosszú', price: '11 000 Ft' },
@@ -94,6 +100,7 @@ const priceListData = {
     {
       category: 'Férfi Hajvágás',
       icon: faUserTie,
+      image: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&q=80',
       services: [
         { name: 'Rövid hajvágás', price: '5 200 Ft' },
         { name: 'Közép hosszú', price: '6 000 Ft' },
@@ -106,6 +113,7 @@ const priceListData = {
     {
       category: 'Gyermek Hajvágás',
       icon: faChild,
+      image: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&q=80',
       note: '0-14 éves korig',
       services: [
         { name: 'Kis fiú hajvágás', price: '4 500 Ft' },
@@ -116,6 +124,7 @@ const priceListData = {
     {
       category: 'Festés / Színezés',
       icon: faPaintBrush,
+      image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80',
       note: '+ felhasznált anyag',
       services: [
         { name: 'Rövid', price: '9 500 Ft' },
@@ -127,6 +136,7 @@ const priceListData = {
     {
       category: 'Szőkítés',
       icon: faStar,
+      image: 'https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=800&q=80',
       note: '+ felhasznált anyag',
       services: [
         { name: 'Tő szőkítés', price: '13 000 Ft' },
@@ -146,6 +156,7 @@ const priceListData = {
     {
       category: 'Speciális Szolgáltatások',
       icon: faSpa,
+      image: 'https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=800&q=80',
       services: [
         { name: 'Fejmasszázs', price: '1 500 Ft' },
         { name: 'Raszta készítés és javítás', price: '6 000 Ft/óra' },
@@ -162,6 +173,7 @@ const priceListData = {
     {
       category: 'Szempilla & Szemöldök',
       icon: faGem,
+      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
       services: [
         { name: 'Szempilla festés', price: '2 500 Ft' },
         { name: 'Szemöldök festés + igazítás', price: '3 500 Ft' },
@@ -172,6 +184,7 @@ const priceListData = {
     {
       category: 'Gyantázás',
       icon: faGem,
+      image: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&q=80',
       note: 'Cukorpasztával is (+700 Ft)',
       services: [
         { name: 'Bajusz', price: '1 800 Ft' },
@@ -189,6 +202,7 @@ const priceListData = {
     {
       category: 'Smink & Egyéb',
       icon: faGem,
+      image: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800&q=80',
       services: [
         { name: 'Alkalmi smink', price: '11 000 Ft' },
         { name: 'Menyasszonyi smink', price: '16 000 Ft' },
@@ -207,6 +221,7 @@ const Services = () => {
       <div className="container">
         <div className="price-list-header">
           <h2 className="arlista-title">ÁRLISTA</h2>
+          <p className="arlista-subtitle">Válogass szolgáltatásaink közül</p>
         </div>
 
         <div className="price-list-toggle">
@@ -230,25 +245,30 @@ const Services = () => {
           </button>
         </div>
 
-        <div className="price-list-content">
-          <div className="price-list-columns">
-            {currentPriceList.map((category, catIndex) => (
-              <div key={catIndex} className="price-column-section">
-                <h3 className="category-title">
-                  {category.category}
-                  {category.note && <span className="category-subtitle">{category.note}</span>}
-                </h3>
-                <div className="service-list">
+        <div className="services-cards-grid">
+          {currentPriceList.map((category, catIndex) => (
+            <div key={catIndex} className="service-card">
+              <div className="service-card-image">
+                <img src={category.image} alt={category.category} />
+                <div className="service-card-overlay">
+                  <FontAwesomeIcon icon={category.icon} className="service-card-icon" />
+                </div>
+              </div>
+              <div className="service-card-content">
+                <h3 className="service-card-title">{category.category}</h3>
+                {category.note && <p className="service-card-note">{category.note}</p>}
+                <div className="service-items">
                   {category.services.map((service, serviceIndex) => (
-                    <div key={serviceIndex} className="service-row">
-                      <span className="service-name-simple">{service.name}</span>
-                      <span className="service-price-simple">{service.price}</span>
+                    <div key={serviceIndex} className="service-item">
+                      <span className="service-item-name">{service.name}</span>
+                      <span className="service-item-dots"></span>
+                      <span className="service-item-price">{service.price}</span>
                     </div>
                   ))}
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
