@@ -57,8 +57,17 @@ const Navbar = () => {
         <ul className={`nav-menu nav-menu-left ${isMenuOpen ? 'active' : ''}`}>
           {menuItems[language].slice(0, 3).map((item, index) => (
             <li key={index}>
-              <a href={item.href} onClick={closeMenu}>
-                {item.label}
+              <a
+                href={item.href}
+                onClick={closeMenu}
+                className={item.icon === faStar ? 'icon-only-link' : ''}
+                title={item.icon === faStar ? item.label : ''}
+              >
+                {item.icon === faStar ? (
+                  <FontAwesomeIcon icon={item.icon} />
+                ) : (
+                  item.label
+                )}
               </a>
             </li>
           ))}
