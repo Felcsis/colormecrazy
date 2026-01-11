@@ -31,8 +31,6 @@ const Navbar = () => {
 
   const menuItems = {
     hu: [
-      { href: '/#hero', label: 'Kezdőlap', icon: faHome },
-      { href: '/#ertekeles', label: 'Értékelés', icon: faStar },
       { href: '/#csapat', label: 'Munkatársak', icon: faUsers },
       { href: '/#bemutatkozas', label: 'Bemutatkozás', icon: faInfoCircle },
       { href: '/oktatas', label: 'Oktatás', icon: faGraduationCap },
@@ -40,8 +38,6 @@ const Navbar = () => {
       { href: '/#kapcsolat', label: 'Kapcsolat', icon: faEnvelope }
     ],
     en: [
-      { href: '/#hero', label: 'Home', icon: faHome },
-      { href: '/#ertekeles', label: 'Reviews', icon: faStar },
       { href: '/#csapat', label: 'Team', icon: faUsers },
       { href: '/#bemutatkozas', label: 'About', icon: faInfoCircle },
       { href: '/oktatas', label: 'Education', icon: faGraduationCap },
@@ -55,32 +51,27 @@ const Navbar = () => {
       <div className="nav-container-new">
         {/* Left Menu Items */}
         <ul className={`nav-menu nav-menu-left ${isMenuOpen ? 'active' : ''}`}>
-          {menuItems[language].slice(0, 3).map((item, index) => (
+          {menuItems[language].slice(0, 2).map((item, index) => (
             <li key={index}>
-              <a
-                href={item.href}
-                onClick={closeMenu}
-                className={item.icon === faStar ? 'icon-only-link' : ''}
-                title={item.icon === faStar ? item.label : ''}
-              >
-                {item.icon === faStar ? (
-                  <FontAwesomeIcon icon={item.icon} />
-                ) : (
-                  item.label
-                )}
+              <a href={item.href} onClick={closeMenu}>
+                {item.label}
               </a>
             </li>
           ))}
         </ul>
 
         {/* Center Logo */}
-        <a href="/#hero" className="logo-center">
+        <a
+          href="/#hero"
+          className="logo-center"
+          title={language === 'hu' ? 'Kezdőlap' : 'Home'}
+        >
           <img src="/images/logo-transparent.webp" alt="Color Me Crazy" />
         </a>
 
         {/* Right Menu Items */}
         <ul className={`nav-menu nav-menu-right ${isMenuOpen ? 'active' : ''}`}>
-          {menuItems[language].slice(3).map((item, index) => (
+          {menuItems[language].slice(2).map((item, index) => (
             <li key={index}>
               <a href={item.href} onClick={closeMenu}>
                 {item.label}
@@ -91,6 +82,14 @@ const Navbar = () => {
 
         {/* Icon Actions */}
         <div className="nav-icons">
+          <a
+            href="/#ertekeles"
+            className="nav-icon-btn"
+            aria-label={language === 'hu' ? 'Értékelés' : 'Reviews'}
+            title={language === 'hu' ? 'Értékelés' : 'Reviews'}
+          >
+            <FontAwesomeIcon icon={faStar} />
+          </a>
           <button className="nav-icon-btn" aria-label="Keresés">
             <FontAwesomeIcon icon={faSearch} />
           </button>

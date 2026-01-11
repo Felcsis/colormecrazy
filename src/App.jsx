@@ -1,17 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Reviews from './components/Reviews';
-import Team from './components/Team';
-import Services from './components/Services';
-import Gallery from './components/Gallery';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import TeamMemberDetail from './pages/TeamMemberDetail';
-import Education from './pages/Education';
-import Blog from './pages/Blog';
+import Navbar from './components/Navbar/Navbar';
+import Hero from './components/Hero/Hero';
+import About from './components/About/About';
+import Reviews from './components/Reviews/Reviews';
+import Team from './components/Team/Team';
+import Services from './components/Services/Services';
+import Gallery from './components/Gallery/Gallery';
+import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
+import TeamMemberDetail from './pages/TeamMemberDetail/TeamMemberDetail';
+import Education from './pages/Education/Education';
+import Blog from './pages/Blog/Blog';
 
 function HomePage() {
   return (
