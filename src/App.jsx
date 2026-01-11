@@ -9,6 +9,7 @@ import Services from './components/Services/Services';
 import Gallery from './components/Gallery/Gallery';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
+import MagicServiceCards from './components/MagicServiceCards/MagicServiceCards';
 import TeamMemberDetail from './pages/TeamMemberDetail/TeamMemberDetail';
 import Education from './pages/Education/Education';
 import Blog from './pages/Blog/Blog';
@@ -17,11 +18,12 @@ function HomePage() {
   return (
     <>
       <Hero />
-      <Reviews />
-      <Team />
       <About />
+      <Team />
+      <MagicServiceCards />
       <Services />
       <Gallery />
+      <Reviews />
       <Contact />
     </>
   );

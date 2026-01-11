@@ -10,7 +10,8 @@ import {
   faBlog,
   faEnvelope,
   faSearch,
-  faGlobe
+  faGlobe,
+  faScissors
 } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
@@ -33,15 +34,15 @@ const Navbar = () => {
     hu: [
       { href: '/#csapat', label: 'Munkatársak', icon: faUsers },
       { href: '/#bemutatkozas', label: 'Bemutatkozás', icon: faInfoCircle },
+      { href: '/#magic-services', label: 'Szolgáltatások', icon: faScissors },
       { href: '/oktatas', label: 'Oktatás', icon: faGraduationCap },
-      { href: '/blog', label: 'Blog', icon: faBlog },
       { href: '/#kapcsolat', label: 'Kapcsolat', icon: faEnvelope }
     ],
     en: [
       { href: '/#csapat', label: 'Team', icon: faUsers },
       { href: '/#bemutatkozas', label: 'About', icon: faInfoCircle },
+      { href: '/#magic-services', label: 'Services', icon: faScissors },
       { href: '/oktatas', label: 'Education', icon: faGraduationCap },
-      { href: '/blog', label: 'Blog', icon: faBlog },
       { href: '/#kapcsolat', label: 'Contact', icon: faEnvelope }
     ]
   };
