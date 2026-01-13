@@ -1,126 +1,272 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './Navbar.css';
 import {
+  faBars,
+  faTimes,
   faHome,
-  faStar,
-  faUsers,
   faInfoCircle,
-  faGraduationCap,
-  faBlog,
+  faUsers,
   faEnvelope,
-  faSearch,
-  faGlobe,
   faScissors,
   faImages,
-  faMoneyBill
+  faGraduationCap,
+  faStar,
+  faMoneyBill,
+  faSearch,
+  faGlobe,
+  faChevronDown,
+  faChevronRight
 } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [language, setLanguage] = useState('hu');
+  const [expandedSections, setExpandedSections] = useState({
+    home: false,
+    services: false
+  });
+  const navigate = useNavigate();
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
   };
 
-  const closeMenu = () => {
-    setIsMenuOpen(false);
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
   };
 
   const toggleLanguage = () => {
     setLanguage(language === 'hu' ? 'en' : 'hu');
   };
 
-  const menuItems = {
-    hu: [
-      { href: '/#bemutatkozas', label: 'Bemutatkozás', icon: faInfoCircle },
-      { href: '/#csapat', label: 'Munkatársak', icon: faUsers },
-      { href: '/szolgaltatasok', label: 'Szolgáltatások', icon: faScissors },
-      { href: '/#szolgaltatasok', label: 'Árlista', icon: faMoneyBill },
-      { href: '/galeria', label: 'Galéria', icon: faImages },
-      { href: '/oktatas', label: 'Oktatás', icon: faGraduationCap },
-      { href: '/#kapcsolat', label: 'Kapcsolat', icon: faEnvelope }
-    ],
-    en: [
-      { href: '/#bemutatkozas', label: 'About', icon: faInfoCircle },
-      { href: '/#csapat', label: 'Team', icon: faUsers },
-      { href: '/szolgaltatasok', label: 'Services', icon: faScissors },
-      { href: '/#szolgaltatasok', label: 'Price List', icon: faMoneyBill },
-      { href: '/galeria', label: 'Gallery', icon: faImages },
-      { href: '/oktatas', label: 'Education', icon: faGraduationCap },
-      { href: '/#kapcsolat', label: 'Contact', icon: faEnvelope }
-    ]
+  const toggleSection = (section) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [section]: !prev[section]
+    }));
   };
 
+  const handleNavigation = (path) => {
+    closeSidebar();
+    if (path.startsWith('/#')) {
+      // Anchor link on homepage
+      const element = document.getElementById(path.substring(2));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        navigate('/');
+        setTimeout(() => {
+          const el = document.getElementById(path.substring(2));
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    } else {
+      navigate(path);
+    }
+  };
+
+  const content = {
+    hu: {
+      home: 'Kezdőlap',
+      about: 'Bemutatkozás',
+      team: 'Munkatársak',
+      contact: 'Kapcsolat',
+      services: 'Szolgáltatások',
+      magicCards: 'Varázslatos kártyák',
+      priceList: 'Árlista',
+      education: 'Oktatás',
+      gallery: 'Galéria',
+      reviews: 'Értékelések'
+    },
+    en: {
+      home: 'Home',
+      about: 'About',
+      team: 'Team',
+      contact: 'Contact',
+      services: 'Services',
+      magicCards: 'Magic Cards',
+      priceList: 'Price List',
+      education: 'Education',
+      gallery: 'Gallery',
+      reviews: 'Reviews'
+    }
+  };
+
+  const t = content[language];
+
   return (
-    <nav className="navbar">
-      <div className="nav-container-new">
-        {/* Left Menu Items */}
-        <ul className={`nav-menu nav-menu-left ${isMenuOpen ? 'active' : ''}`}>
-          {menuItems[language].slice(0, 4).map((item, index) => (
-            <li key={index}>
-              <a href={item.href} onClick={closeMenu}>
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-
-        {/* Center Logo */}
-        <a
-          href="/#hero"
-          className="logo-center"
-          title={language === 'hu' ? 'Kezdőlap' : 'Home'}
-        >
-          <img src="/images/logo-transparent.webp" alt="Color Me Crazy" />
-        </a>
-
-        {/* Right Menu Items */}
-        <ul className={`nav-menu nav-menu-right ${isMenuOpen ? 'active' : ''}`}>
-          {menuItems[language].slice(4).map((item, index) => (
-            <li key={index}>
-              <a href={item.href} onClick={closeMenu}>
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-
-        {/* Icon Actions */}
-        <div className="nav-icons">
-          <a
-            href="/#ertekeles"
-            className="nav-icon-btn"
-            aria-label={language === 'hu' ? 'Értékelés' : 'Reviews'}
-            title={language === 'hu' ? 'Értékelés' : 'Reviews'}
-          >
-            <FontAwesomeIcon icon={faStar} />
-          </a>
-          <button className="nav-icon-btn" aria-label="Keresés">
-            <FontAwesomeIcon icon={faSearch} />
-          </button>
+    <>
+      {/* Top Navbar */}
+      <nav className="navbar-sidebar">
+        <div className="navbar-sidebar-container">
+          {/* Hamburger Menu Button */}
           <button
-            className="nav-icon-btn language-toggle"
-            onClick={toggleLanguage}
-            aria-label="Nyelv váltás"
+            className="sidebar-hamburger"
+            onClick={toggleSidebar}
+            aria-label="Menu"
           >
-            <FontAwesomeIcon icon={faGlobe} />
-            <span className="lang-text">{language.toUpperCase()}</span>
+            <FontAwesomeIcon icon={faBars} />
           </button>
+
+          {/* Center Logo */}
+          <Link to="/" className="navbar-sidebar-logo">
+            <img src="/images/logo-transparent.webp" alt="Color Me Crazy" />
+          </Link>
+
+          {/* Right Actions */}
+          <div className="navbar-sidebar-actions">
+            <button className="navbar-action-btn" aria-label="Search">
+              <FontAwesomeIcon icon={faSearch} />
+            </button>
+            <button
+              className="navbar-action-btn language-btn"
+              onClick={toggleLanguage}
+              aria-label="Language"
+            >
+              <FontAwesomeIcon icon={faGlobe} />
+              <span className="lang-label">{language.toUpperCase()}</span>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Overlay */}
+      {isSidebarOpen && (
+        <div className="sidebar-overlay" onClick={closeSidebar}></div>
+      )}
+
+      {/* Sidebar */}
+      <aside className={`sidebar ${isSidebarOpen ? 'sidebar-open' : ''}`}>
+        <div className="sidebar-header">
+          <button className="sidebar-close" onClick={closeSidebar}>
+            <FontAwesomeIcon icon={faTimes} />
+          </button>
+          <div className="sidebar-logo">
+            <img src="/images/logo-transparent.webp" alt="Color Me Crazy" />
+          </div>
         </div>
 
-        {/* Mobile Hamburger */}
-        <div
-          className={`hamburger ${isMenuOpen ? 'active' : ''}`}
-          onClick={toggleMenu}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-    </nav>
+        <nav className="sidebar-nav">
+          {/* Kezdőlap Section */}
+          <div className="sidebar-section">
+            <button
+              className="sidebar-section-header"
+              onClick={() => toggleSection('home')}
+            >
+              <FontAwesomeIcon
+                icon={expandedSections.home ? faChevronDown : faChevronRight}
+                className="sidebar-chevron"
+              />
+              <FontAwesomeIcon icon={faHome} className="sidebar-icon" />
+              <span>{t.home}</span>
+            </button>
+            {expandedSections.home && (
+              <div className="sidebar-submenu">
+                <button
+                  className="sidebar-link sidebar-sublink"
+                  onClick={() => handleNavigation('/#hero')}
+                >
+                  <span className="sidebar-bullet">•</span>
+                  Hero
+                </button>
+                <button
+                  className="sidebar-link sidebar-sublink"
+                  onClick={() => handleNavigation('/#bemutatkozas')}
+                >
+                  <span className="sidebar-bullet">•</span>
+                  {t.about}
+                </button>
+                <button
+                  className="sidebar-link sidebar-sublink"
+                  onClick={() => handleNavigation('/#kapcsolat')}
+                >
+                  <span className="sidebar-bullet">•</span>
+                  {t.contact}
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* Szolgáltatások Section */}
+          <div className="sidebar-section">
+            <button
+              className="sidebar-section-header"
+              onClick={() => toggleSection('services')}
+            >
+              <FontAwesomeIcon
+                icon={expandedSections.services ? faChevronDown : faChevronRight}
+                className="sidebar-chevron"
+              />
+              <FontAwesomeIcon icon={faScissors} className="sidebar-icon" />
+              <span>{t.services}</span>
+            </button>
+            {expandedSections.services && (
+              <div className="sidebar-submenu">
+                <button
+                  className="sidebar-link sidebar-sublink"
+                  onClick={() => handleNavigation('/szolgaltatasok')}
+                >
+                  <span className="sidebar-bullet">•</span>
+                  {t.magicCards}
+                </button>
+                <button
+                  className="sidebar-link sidebar-sublink"
+                  onClick={() => handleNavigation('/#szolgaltatasok')}
+                >
+                  <span className="sidebar-bullet">•</span>
+                  {t.priceList}
+                </button>
+                <button
+                  className="sidebar-link sidebar-sublink"
+                  onClick={() => handleNavigation('/oktatas')}
+                >
+                  <span className="sidebar-bullet">•</span>
+                  {t.education}
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* Munkatársak */}
+          <div className="sidebar-section">
+            <button
+              className="sidebar-link"
+              onClick={() => handleNavigation('/#csapat')}
+            >
+              <FontAwesomeIcon icon={faChevronRight} className="sidebar-chevron-simple" />
+              <FontAwesomeIcon icon={faUsers} className="sidebar-icon" />
+              <span>{t.team}</span>
+            </button>
+          </div>
+
+          {/* Galéria */}
+          <div className="sidebar-section">
+            <button
+              className="sidebar-link"
+              onClick={() => handleNavigation('/galeria')}
+            >
+              <FontAwesomeIcon icon={faChevronRight} className="sidebar-chevron-simple" />
+              <FontAwesomeIcon icon={faImages} className="sidebar-icon" />
+              <span>{t.gallery}</span>
+            </button>
+          </div>
+
+          {/* Értékelések */}
+          <div className="sidebar-section">
+            <button
+              className="sidebar-link"
+              onClick={() => handleNavigation('/#ertekeles')}
+            >
+              <FontAwesomeIcon icon={faChevronRight} className="sidebar-chevron-simple" />
+              <FontAwesomeIcon icon={faStar} className="sidebar-icon" />
+              <span>{t.reviews}</span>
+            </button>
+          </div>
+        </nav>
+      </aside>
+    </>
   );
 };
 
