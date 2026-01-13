@@ -8,91 +8,79 @@ const galleryImages = [
   {
     id: 1,
     src: '/images/gallery/att.QjFUqsWq6i1tB1PD3s8VpnL6nJf14GotMpDtyDKQsBM.webp',
-    alt: 'att.QjFUqsWq6i1tB1PD3s8VpnL6nJf14GotMpDtyDKQsBM',
+    alt: 'Galéria kép 1',
     category: 'hair'
   },
   {
     id: 2,
     src: '/images/gallery/DSC_7547.webp',
-    alt: 'DSC 7547',
+    alt: 'Galéria kép 2',
     category: 'hair'
   },
   {
     id: 3,
     src: '/images/gallery/Felcsi.webp',
-    alt: 'Felcsi',
+    alt: 'Galéria kép 3',
     category: 'hair'
   },
   {
     id: 4,
     src: '/images/gallery/49395788_2045422469089798_6455487131816034304_n.webp',
-    alt: '49395788 2045422469089798 6455487131816034304 n',
+    alt: 'Galéria kép 4',
     category: 'hair'
   },
   {
     id: 5,
     src: '/images/gallery/DSC_7527.webp',
-    alt: 'DSC 7527',
+    alt: 'Galéria kép 5',
     category: 'hair'
   },
   {
     id: 6,
     src: '/images/gallery/Anti1.webp',
-    alt: 'Anti1',
+    alt: 'Galéria kép 6',
     category: 'hair'
   },
   {
     id: 7,
     src: '/images/gallery/Anti3.webp',
-    alt: 'Anti3',
+    alt: 'Galéria kép 7',
     category: 'hair'
   },
   {
     id: 8,
     src: '/images/gallery/DSC_7469-Enhanced-NR.webp',
-    alt: 'DSC 7469 Enhanced NR',
+    alt: 'Galéria kép 8',
     category: 'hair'
   },
   {
     id: 9,
     src: '/images/gallery/Bogi.webp',
-    alt: 'Bogi',
+    alt: 'Galéria kép 9',
     category: 'hair'
   },
   {
     id: 10,
     src: '/images/gallery/Anti.webp',
-    alt: 'Anti',
+    alt: 'Galéria kép 10',
     category: 'hair'
   },
   {
     id: 11,
-    src: '/images/gallery/Gitta.webp',
-    alt: 'Gitta',
+    src: '/images/gallery/Bogi3.webp',
+    alt: 'Galéria kép 11',
     category: 'hair'
   },
   {
     id: 12,
-    src: '/images/gallery/Bogi3.webp',
-    alt: 'Bogi3',
+    src: '/images/gallery/DSC_7519.webp',
+    alt: 'Galéria kép 12',
     category: 'hair'
   },
   {
     id: 13,
-    src: '/images/gallery/Lili.webp',
-    alt: 'Lili',
-    category: 'hair'
-  },
-  {
-    id: 14,
-    src: '/images/gallery/DSC_7519.webp',
-    alt: 'DSC 7519',
-    category: 'hair'
-  },
-  {
-    id: 15,
     src: '/images/gallery/DSC_7523.webp',
-    alt: 'DSC 7523',
+    alt: 'Galéria kép 13',
     category: 'hair'
   }
 ];
@@ -134,7 +122,7 @@ const Gallery = () => {
         ) : (
           // Valódi képek megjelenítése
           <div className="gallery-grid">
-            {galleryImages.map((image) => (
+            {galleryImages.map((image, index) => (
               <div
                 key={image.id}
                 className="gallery-item gallery-item-image"
@@ -156,9 +144,9 @@ const Gallery = () => {
                   className={imageLoaded[image.id] ? 'loaded' : ''}
                 />
 
-                {/* Hover overlay */}
+                {/* Számozás overlay-en */}
                 <div className="gallery-overlay">
-                  <span>Megtekintés</span>
+                  <span className="gallery-number">#{index + 1}</span>
                 </div>
               </div>
             ))}
@@ -174,9 +162,7 @@ const Gallery = () => {
           </button>
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
             <img src={selectedImage.src} alt={selectedImage.alt} />
-            {selectedImage.alt && (
-              <p className="lightbox-caption">{selectedImage.alt}</p>
-            )}
+            <p className="lightbox-caption">#{selectedImage.id}</p>
           </div>
         </div>
       )}
