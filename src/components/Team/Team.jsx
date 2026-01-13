@@ -89,7 +89,7 @@ const Team = () => {
       <div className="container">
         <h2 className="section-title">Csapatunk</h2>
         <p className="section-subtitle">
-          Felicia mesterfodrász vezeti csapatunkat, mellette Gitta, Lili és Anti női, férfi és gyermek fodrászként dolgoznak, kozmetikusunk pedig gondoskodik róla, hogy ne csak a haj, hanem a bőr is felfrissüljön.
+          Felicia mesterfodrász vezeti csapatunkat, mellette Gitta, Lili és Anti női, férfi és gyermek fodrászként dolgoznak, kozmetikusunk Bogi pedig gondoskodik róla, hogy ne csak a haj, hanem a bőr is felfrissüljön.
         </p>
         <div className="team-grid">
           {teamMembers.map((member, index) => (

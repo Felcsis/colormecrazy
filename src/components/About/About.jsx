@@ -38,15 +38,6 @@ const About = () => {
             </p>
           </div>
         </div>
-
-        {/* Team Intro */}
-        <div className="team-intro">
-          <p>
-            <strong>Felicia mesterfodrász</strong> vezeti csapatunkat, mellette <strong>Gitta</strong>,
-            <strong> Lili</strong> és <strong>Anti</strong> női, férfi és gyermek fodrászként dolgoznak,
-            kozmetikusunk <strong>Bogi</strong> pedig gondoskodik róla, hogy ne csak a haj, hanem a bőr is felfrissüljön.
-          </p>
-        </div>
       </div>
     </section>
   );
