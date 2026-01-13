@@ -11,7 +11,9 @@ import {
   faEnvelope,
   faSearch,
   faGlobe,
-  faScissors
+  faScissors,
+  faImages,
+  faMoneyBill
 } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
@@ -32,16 +34,20 @@ const Navbar = () => {
 
   const menuItems = {
     hu: [
-      { href: '/#csapat', label: 'Munkatársak', icon: faUsers },
       { href: '/#bemutatkozas', label: 'Bemutatkozás', icon: faInfoCircle },
-      { href: '/#szolgaltatasok', label: 'Szolgáltatások', icon: faScissors },
+      { href: '/#csapat', label: 'Munkatársak', icon: faUsers },
+      { href: '/szolgaltatasok', label: 'Szolgáltatások', icon: faScissors },
+      { href: '/#szolgaltatasok', label: 'Árlista', icon: faMoneyBill },
+      { href: '/galeria', label: 'Galéria', icon: faImages },
       { href: '/oktatas', label: 'Oktatás', icon: faGraduationCap },
       { href: '/#kapcsolat', label: 'Kapcsolat', icon: faEnvelope }
     ],
     en: [
-      { href: '/#csapat', label: 'Team', icon: faUsers },
       { href: '/#bemutatkozas', label: 'About', icon: faInfoCircle },
-      { href: '/#szolgaltatasok', label: 'Services', icon: faScissors },
+      { href: '/#csapat', label: 'Team', icon: faUsers },
+      { href: '/szolgaltatasok', label: 'Services', icon: faScissors },
+      { href: '/#szolgaltatasok', label: 'Price List', icon: faMoneyBill },
+      { href: '/galeria', label: 'Gallery', icon: faImages },
       { href: '/oktatas', label: 'Education', icon: faGraduationCap },
       { href: '/#kapcsolat', label: 'Contact', icon: faEnvelope }
     ]
@@ -52,7 +58,7 @@ const Navbar = () => {
       <div className="nav-container-new">
         {/* Left Menu Items */}
         <ul className={`nav-menu nav-menu-left ${isMenuOpen ? 'active' : ''}`}>
-          {menuItems[language].slice(0, 2).map((item, index) => (
+          {menuItems[language].slice(0, 4).map((item, index) => (
             <li key={index}>
               <a href={item.href} onClick={closeMenu}>
                 {item.label}
@@ -72,7 +78,7 @@ const Navbar = () => {
 
         {/* Right Menu Items */}
         <ul className={`nav-menu nav-menu-right ${isMenuOpen ? 'active' : ''}`}>
-          {menuItems[language].slice(2).map((item, index) => (
+          {menuItems[language].slice(4).map((item, index) => (
             <li key={index}>
               <a href={item.href} onClick={closeMenu}>
                 {item.label}

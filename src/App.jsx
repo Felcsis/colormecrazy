@@ -37,6 +37,8 @@ function App() {
           <Route path="/csapat/:memberId" element={<TeamMemberDetail />} />
           <Route path="/oktatas" element={<Education />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/szolgaltatasok" element={<MagicServiceCards />} />
+          <Route path="/galeria" element={<Gallery />} />
         </Routes>
         <Footer />
       </div>
