@@ -20,9 +20,7 @@ function HomePage() {
       <Hero />
       <About />
       <Team />
-      <MagicServiceCards />
       <Services />
-      <Gallery />
       <Reviews />
       <Contact />
     </>
