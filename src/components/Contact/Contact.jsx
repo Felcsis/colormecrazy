@@ -54,14 +54,14 @@ const Contact = () => {
           </div>
           <div className="map-container">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2758.8471234567!2d20.1479!3d46.2533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4744870f0cc0a0a1%3A0x0!2sNemes%20Tak%C3%A1cs%20utca%208%2C%20Szeged%2C%206720!5e0!3m2!1shu!2shu!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11247.558491859236!2d20.139954565892626!3d46.25332138396734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4744896d96eb15a5%3A0xd6ebfe828844cd8!2sColor%20Me%20Crazy%20Extr%C3%A9m%20Fodr%C3%A1sz!5e1!3m2!1shu!2shu!4v1768680179561!5m2!1shu!2shu"
               width="100%"
-              height="400"
+              height="350"
               style={{ border: 0 }}
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Color Me Crazy helye - Nemes Takács utca 8, Szeged"
+              title="Color Me Crazy Extrém Fodrász - Nemes Takács utca 8, Szeged"
             ></iframe>
           </div>
         </div>
