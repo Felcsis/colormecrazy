@@ -2,8 +2,11 @@ import React, { useEffect } from 'react';
 
 const MessengerChat = () => {
   useEffect(() => {
+    console.log('MessengerChat component mounted');
+
     // Facebook SDK betöltése
     window.fbAsyncInit = function() {
+      console.log('Facebook SDK initialized');
       window.FB.init({
         xfbml: true,
         version: 'v18.0'
