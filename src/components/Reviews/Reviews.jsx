@@ -26,7 +26,7 @@ const Reviews = () => {
                 <FontAwesomeIcon icon={faStar} />
                 <FontAwesomeIcon icon={faStar} />
               </div>
-              <div className="review-count">100+ Google értékelés</div>
+              <div className="review-count">20 Google értékelés</div>
             </div>
           </div>
 
