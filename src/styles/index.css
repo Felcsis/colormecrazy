@@ -1507,6 +1507,16 @@ body {
     font-size: 0.9rem;
 }
 
+.contact-item a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--primary);
+}
+
 .contact-icon {
     font-size: 1.2rem;
     opacity: 0.7;

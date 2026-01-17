@@ -19,9 +19,11 @@ import {
   faChevronDown,
   faChevronRight
 } from '@fortawesome/free-solid-svg-icons';
+import SearchModal from '../SearchModal/SearchModal';
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [language, setLanguage] = useState('hu');
   const [expandedSections, setExpandedSections] = useState({
     home: false,
@@ -74,6 +76,14 @@ const Navbar = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const openSearch = () => {
+    setIsSearchOpen(true);
+  };
+
+  const closeSearch = () => {
+    setIsSearchOpen(false);
+  };
+
   const content = {
     hu: {
       home: 'Kezdőlap',
@@ -124,7 +134,7 @@ const Navbar = () => {
 
           {/* Right Actions */}
           <div className="navbar-sidebar-actions">
-            <button className="navbar-action-btn" aria-label="Search">
+            <button className="navbar-action-btn" onClick={openSearch} aria-label="Search">
               <FontAwesomeIcon icon={faSearch} />
             </button>
             <button
@@ -273,6 +283,9 @@ const Navbar = () => {
           </div>
         </nav>
       </aside>
+
+      {/* Search Modal */}
+      <SearchModal isOpen={isSearchOpen} onClose={closeSearch} />
     </>
   );
 };

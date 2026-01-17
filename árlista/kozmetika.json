@@ -1,0 +1,54 @@
+
+[
+  {
+    "category": "Arckezelések",
+    "items": [
+      {
+        "name": "Tisztító kezelés",
+        "price": "12 000 Ft"
+      },
+      {
+        "name": "Hidratáló kezelés",
+        "price": "10 000 Ft"
+      },
+      {
+        "name": "Anti-aging kezelés",
+        "price": "15 000 Ft"
+      }
+    ]
+  },
+  {
+    "category": "Szempilla és szemöldök",
+    "items": [
+      {
+        "name": "Szempilla lifting",
+        "price": "8 000 Ft"
+      },
+      {
+        "name": "Szemöldök formázás",
+        "price": "2 000 Ft"
+      },
+      {
+        "name": "Szemöldök festés",
+        "price": "2 000 Ft"
+      }
+    ]
+  },
+  {
+    "category": "Gyantázás",
+    "items": [
+      {
+        "name": "Lábgyanta",
+        "price": "5 000 Ft"
+      },
+      {
+        "name": "Kargyanta",
+        "price": "4 000 Ft"
+      },
+      {
+        "name": "Intimgyanta",
+        "price": "6 000 Ft"
+      }
+    ]
+  }
+]

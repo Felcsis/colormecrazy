@@ -1,0 +1,50 @@
+
+[
+  {
+    "category": "Női hajvágás",
+    "items": [
+      {
+        "name": "Rövid haj",
+        "price": "5 000 Ft"
+      },
+      {
+        "name": "Félhosszú haj",
+        "price": "6 000 Ft"
+      },
+      {
+        "name": "Hosszú haj",
+        "price": "7 000 Ft"
+      }
+    ]
+  },
+  {
+    "category": "Férfi hajvágás",
+    "items": [
+      {
+        "name": "Gépi vágás",
+        "price": "3 000 Ft"
+      },
+      {
+        "name": "Hajvágás",
+        "price": "4 000 Ft"
+      }
+    ]
+  },
+  {
+    "category": "Hajfestés",
+    "items": [
+      {
+        "name": "Tőfestés",
+        "price": "8 000 Ft-tól"
+      },
+      {
+        "name": "Teljes festés",
+        "price": "10 000 Ft-tól"
+      },
+      {
+        "name": "Melír",
+        "price": "12 000 Ft-tól"
+      }
+    ]
+  }
+]

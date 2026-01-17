@@ -49,22 +49,22 @@ const Contact = () => {
             <div className="contact-details">
               <div className="contact-item">
                 <FontAwesomeIcon icon={faEnvelope} className="contact-icon" />
-                <span>email@example.com</span>
+                <a href="mailto:pinterfelicia8@gmail.com">pinterfelicia8@gmail.com</a>
               </div>
               <div className="contact-item">
                 <FontAwesomeIcon icon={faPhone} className="contact-icon" />
-                <span>+36 30 123 4567</span>
+                <a href="tel:+36300894587">+36 30 089 4587</a>
               </div>
               <div className="contact-item">
                 <FontAwesomeIcon icon={faLocationDot} className="contact-icon" />
-                <span>Budapest, Magyarország</span>
+                <span>Nemes Takács utca 8, Szeged</span>
               </div>
             </div>
             <div className="social-links">
-              <a href="#" className="social-link">
+              <a href="https://www.facebook.com/colormecrazy" target="_blank" rel="noopener noreferrer" className="social-link">
                 <FontAwesomeIcon icon={faFacebook} /> Facebook
               </a>
-              <a href="#" className="social-link">
+              <a href="https://www.instagram.com/colorme_c_hair/" target="_blank" rel="noopener noreferrer" className="social-link">
                 <FontAwesomeIcon icon={faInstagram} /> Instagram
               </a>
             </div>
