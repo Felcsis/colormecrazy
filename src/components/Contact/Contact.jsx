@@ -44,7 +44,7 @@ const Contact = () => {
               </div>
             </div>
             <div className="social-links">
-              <a href="https://www.facebook.com/colormecrazy" target="_blank" rel="noopener noreferrer" className="social-link">
+              <a href="https://www.facebook.com/colormecrzy" target="_blank" rel="noopener noreferrer" className="social-link">
                 <FontAwesomeIcon icon={faFacebook} /> Facebook
               </a>
               <a href="https://www.instagram.com/colorme_c_hair/" target="_blank" rel="noopener noreferrer" className="social-link">
