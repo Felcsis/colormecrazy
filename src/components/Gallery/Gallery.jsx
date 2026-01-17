@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera, faTimes } from '@fortawesome/free-solid-svg-icons';
 import './Gallery.css';
@@ -87,14 +87,51 @@ const galleryImages = [
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
   const [imageLoaded, setImageLoaded] = useState({});
 
-  const openLightbox = (image) => {
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (!lightboxOpen) return;
+
+      if (e.key === 'Escape') {
+        closeLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        handlePrevious();
+      } else if (e.key === 'ArrowRight') {
+        handleNext();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [lightboxOpen, currentImageIndex]);
+
+  const openLightbox = (image, index) => {
     setSelectedImage(image);
+    setCurrentImageIndex(index);
+    setLightboxOpen(true);
+    document.body.style.overflow = 'hidden';
   };
 
   const closeLightbox = () => {
     setSelectedImage(null);
+    setLightboxOpen(false);
+    document.body.style.overflow = 'auto';
+  };
+
+  const handleNext = () => {
+    const newIndex = currentImageIndex === galleryImages.length - 1 ? 0 : currentImageIndex + 1;
+    setCurrentImageIndex(newIndex);
+    setSelectedImage(galleryImages[newIndex]);
+  };
+
+  const handlePrevious = () => {
+    const newIndex = currentImageIndex === 0 ? galleryImages.length - 1 : currentImageIndex - 1;
+    setCurrentImageIndex(newIndex);
+    setSelectedImage(galleryImages[newIndex]);
   };
 
   const handleImageLoad = (id) => {
@@ -126,7 +163,7 @@ const Gallery = () => {
               <div
                 key={image.id}
                 className="gallery-item gallery-item-image"
-                onClick={() => openLightbox(image)}
+                onClick={() => openLightbox(image, index)}
               >
                 {/* Lazy loading placeholder */}
                 {!imageLoaded[image.id] && (
@@ -154,15 +191,35 @@ const Gallery = () => {
         )}
       </div>
 
-      {/* Lightbox modal */}
-      {selectedImage && (
-        <div className="gallery-lightbox" onClick={closeLightbox}>
+      {/* Magical Lightbox */}
+      {lightboxOpen && selectedImage && (
+        <div className="lightbox-overlay" onClick={closeLightbox}>
           <button className="lightbox-close" onClick={closeLightbox}>
-            <FontAwesomeIcon icon={faTimes} />
+            ✕
+          </button>
+          <button className="lightbox-nav lightbox-prev" onClick={(e) => { e.stopPropagation(); handlePrevious(); }}>
+            ‹
+          </button>
+          <button className="lightbox-nav lightbox-next" onClick={(e) => { e.stopPropagation(); handleNext(); }}>
+            ›
           </button>
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <img src={selectedImage.src} alt={selectedImage.alt} />
-            <p className="lightbox-caption">#{selectedImage.id}</p>
+            <div className="lightbox-card">
+              <div className="lightbox-stars">
+                <span className="star star-1">✦</span>
+                <span className="star star-2">✦</span>
+                <span className="star star-3">✦</span>
+                <span className="star star-4">✦</span>
+              </div>
+              <img
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                className="lightbox-image"
+              />
+              <div className="lightbox-counter">
+                {currentImageIndex + 1} / {galleryImages.length}
+              </div>
+            </div>
           </div>
         </div>
       )}

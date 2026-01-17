@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHatWizard,
@@ -87,11 +87,24 @@ const teamData = {
 
 const TeamMemberDetail = () => {
   const { memberId } = useParams();
+  const navigate = useNavigate();
   const member = teamData[memberId];
   const [portfolioImages, setPortfolioImages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Handle back to team section
+  const handleBackClick = (e) => {
+    e.preventDefault();
+    navigate('/');
+    setTimeout(() => {
+      const teamSection = document.getElementById('csapat');
+      if (teamSection) {
+        teamSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  };
 
   // Scroll to top when component mounts or member changes
   useEffect(() => {
@@ -176,7 +189,7 @@ const TeamMemberDetail = () => {
 
   return (
     <div className="team-detail">
-      <Link to="/#csapat" className="back-button">✦ Vissza a csapathoz</Link>
+      <Link to="/" onClick={handleBackClick} className="back-button">✦ Vissza a csapathoz</Link>
 
       <div className="team-detail-hero">
         <div className="team-detail-profile-card">
