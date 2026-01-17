@@ -13,6 +13,7 @@ import MagicServiceCards from './components/MagicServiceCards/MagicServiceCards'
 import TeamMemberDetail from './pages/TeamMemberDetail/TeamMemberDetail';
 import Education from './pages/Education/Education';
 import Blog from './pages/Blog/Blog';
+import MessengerChat from './components/MessengerChat/MessengerChat';
 
 function HomePage() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <Route path="/galeria" element={<Gallery />} />
         </Routes>
         <Footer />
+        <MessengerChat />
       </div>
     </Router>
   );
