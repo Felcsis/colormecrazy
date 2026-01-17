@@ -1,0 +1,60 @@
+[
+  {
+    "category": "Női Hajvágás",
+    "services": [
+      { "name": "Rövid", "price": "6500 Ft" },
+      { "name": "Félhosszú", "price": "8000 Ft" },
+      { "name": "Hosszú", "price": "9000 Ft" },
+      { "name": "Extra hosszú", "price": "10 000 Ft" },
+      { "name": "Száraz hajvágás", "price": "4000 Ft" }
+    ]
+  },
+  {
+    "category": "Férfi Hajvágás",
+    "services": [
+      { "name": "Rövid hajvágás", "price": "4200 Ft" },
+      { "name": "Középhosszú", "price": "5000 Ft" },
+      { "name": "Férfi hosszú", "price": "5500 Ft" },
+      { "name": "Csak géppel", "price": "3500 Ft" },
+      { "name": "Szakáll igazítás", "price": "2800 Ft" },
+      { "name": "Mosás", "price": "1500 Ft" }
+    ]
+  },
+  {
+    "category": "Festés / Színezés",
+    "note": "+ felhasznált anyag",
+    "services": [
+      { "name": "Rövid", "price": "6500 Ft" },
+      { "name": "Félhosszú", "price": "8000 Ft" },
+      { "name": "Hosszú", "price": "9000 Ft" },
+      { "name": "Extra hosszú", "price": "10 000 Ft" }
+    ]
+  },
+  {
+    "category": "Szőkítés",
+    "note": "Felhasznált anyag",
+    "services": [
+      { "name": "Tő szőkítés", "price": "7 500 Ft" },
+      { "name": "Teljes szőkítés", "price": "10 000 Ft" },
+      { "name": "Balayage", "price": "12 000 Ft" },
+      { "name": "Melír", "price": "4000 Ft/óra" },
+      { "name": "Korrekció", "price": "3000 Ft/óra" },
+      { "name": "Tartós festék", "price": "90 Ft/g" },
+      { "name": "Féltartós színező", "price": "90 Ft/g" },
+      { "name": "Fizikai színező", "price": "90 Ft/g" },
+      { "name": "Toner", "price": "110 Ft/g" },
+      { "name": "Szőkítő", "price": "80 Ft/g" },
+      { "name": "Kötés erősítő szőkítő", "price": "10 Ft/g" },
+      { "name": "Pigment eltávolító", "price": "5000 Ft/csomag" }
+    ]
+  },
+  {
+    "category": "Egyéb Szolgáltatások",
+    "services": [
+      { "name": "Fejmasszázs", "price": "1500 Ft" },
+      { "name": "Steampod szolgáltatás", "price": "4500 Ft + mosás" },
+      { "name": "Hajgöndörítés/Vasalás", "price": "3000 Ft" },
+      { "name": "Alkalmi kontyok, frizurák", "price": "8000 Ft-tól" }
+    ]
+  }
+]

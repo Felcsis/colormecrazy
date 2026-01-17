@@ -1,0 +1,72 @@
+[
+  {
+    "category": "Női Hajvágás",
+    "services": [
+      { "name": "Rövid", "price": "9500 Ft" },
+      { "name": "Félhosszú", "price": "11 000 Ft" },
+      { "name": "Hosszú", "price": "13 000 Ft" },
+      { "name": "Extra hosszú", "price": "14 500 Ft" },
+      { "name": "Száraz hajvágás", "price": "5000 Ft" }
+    ]
+  },
+  {
+    "category": "Férfi Hajvágás",
+    "services": [
+      { "name": "Rövid hajvágás", "price": "5200 Ft" },
+      { "name": "Középhosszú", "price": "6000 Ft" },
+      { "name": "Férfi hosszú", "price": "7500 Ft" },
+      { "name": "Csak géppel", "price": "4200 Ft" },
+      { "name": "Szakáll igazítás", "price": "2800 Ft" },
+      { "name": "Mosás", "price": "1500 Ft" }
+    ]
+  },
+  {
+    "category": "Gyerek Hajvágás",
+    "note": "0-14 éves korig",
+    "services": [
+      { "name": "Kis fiú hajvágás", "price": "4500 Ft" },
+      { "name": "Kis lány hajvágás", "price": "5000 Ft" },
+      { "name": "Mosás", "price": "1500 Ft" }
+    ]
+  },
+  {
+    "category": "Festés / Színezés",
+    "note": "+ felhasznált anyag",
+    "services": [
+      { "name": "Rövid", "price": "9500 Ft" },
+      { "name": "Félhosszú", "price": "10 000 Ft" },
+      { "name": "Hosszú", "price": "11 500 Ft" },
+      { "name": "Extra hosszú", "price": "12 500 Ft" }
+    ]
+  },
+  {
+    "category": "Szőkítés",
+    "note": "Felhasznált anyag",
+    "services": [
+      { "name": "Tő szőkítés", "price": "13 000 Ft" },
+      { "name": "Teljes szőkítés", "price": "15 000 Ft" },
+      { "name": "Balayage", "price": "18 000 Ft" },
+      { "name": "Melír", "price": "6000 Ft/óra" },
+      { "name": "Korrekció", "price": "7000 Ft/óra" },
+      { "name": "Tartós festék", "price": "90 Ft/g" },
+      { "name": "Féltartós színező", "price": "90 Ft/g" },
+      { "name": "Fizikai színező", "price": "90 Ft/g" },
+      { "name": "Toner", "price": "110 Ft/g" },
+      { "name": "Szőkítő", "price": "80 Ft/g" },
+      { "name": "Kötés erősítő szőkítő", "price": "10 Ft/g" },
+      { "name": "Pigment eltávolító", "price": "5000 Ft/csomag" }
+    ]
+  },
+  {
+    "category": "Speciális Szolgáltatások",
+    "services": [
+      { "name": "Fejmasszázs", "price": "1500 Ft" },
+      { "name": "Raszta készítés és javítás", "price": "6000 Ft/óra" },
+      { "name": "Műraszta felfonás", "price": "6000 Ft/óra" },
+      { "name": "Hajtetoválás", "price": "3000 Ft/minta" },
+      { "name": "Steampod szolgáltatás", "price": "4500 Ft + mosás" },
+      { "name": "Hajgöndörítés/Vasalás", "price": "3000 Ft" },
+      { "name": "Alkalmi kontyok, frizurák", "price": "10 000 Ft-tól" }
+    ]
+  }
+]
