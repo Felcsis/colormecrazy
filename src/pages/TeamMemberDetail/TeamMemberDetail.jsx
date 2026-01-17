@@ -20,7 +20,7 @@ const teamData = {
   felicia: {
     name: 'Felicia',
     role: 'Mester Fodrász',
-    description: 'Több mint 15 év tapasztalattal rendelkező mester fodrász. Specialitása a precíz vágástechnikák és a modern színezési eljárások.',
+    description: 'Sziasztok, Felicia vagyok, fodrász mester és a Color Me Crazy alapítója. Hiszek abban, hogy egy jó frizura nem követ trendeket hanem személyiséget mesél el. 2012-ben döntöttem el, hogy fodrász szeretnék lenni, és 2016-ban sikeresen el is végeztem a képzést. 2017-ben már széket béreltem egy fodrászszalonban, ahol munka közben megszületett bennem egy álmom: egy olyan vállalkozás létrehozása, ahol barátságos, összetartó csapattal dolgozhatok együtt. 2018-ban megnyitottam a belvárosban a kis fodrászüzletemet. Sok gondolkodás és tapasztalatszerzés után eldöntöttem, hogy tanítani szeretnék, és átadni azt a tudást, amit folyamatosan fejlesztek és bővítek. 2022-ben sikeresen megszereztem a fodrász mester címet, majd a kis, szűkös szalonban kitanítottam a mostani csapatomat. 2025 decemberében megnyitottuk új üzletünket a Nemes Takács utca 8. szám alatt, ahol már kényelmes, modern környezetben tudjuk fogadni a szépülni vágyó vendégeinket legyenek visszatérők vagy újonnan érkezők. Amit még érdemes rólam tudni: különösen közel állnak hozzám az extrém, egyedi és különleges hajak, de valójában bármilyen frizurát szívesen elkészítek. A legfontosabb számomra mindig az, hogy a vendégeim boldogan és elégedetten távozzanak.',
     image: '/images/Felcsi.webp',
     portfolio: 'felcsi',
     mysticIcon: faHatWizard,
@@ -29,7 +29,7 @@ const teamData = {
   gitta: {
     name: 'Gitta',
     role: 'Fodrász',
-    description: 'Kreatív fodrász, aki mindig naprakész a legújabb trendekkel. Különösen szeret esküvői frizurákat készíteni.',
+    description: '2025 óta tevékenykedek fodrászként a Color Me Crazy szalonban. Mindig is fontosnak tartottam az önkifejezést, a színek harmóniáját, az egyéniség megjelenítését és hogy szeressük azt, amit a tükörben látunk. Amikor anno évekkel ezelőtt beültem Felicia székébe, rögtön tudtam, hogy számára is legalább ennyire lényeges dolgok ezek, mint nekem, így hát eldöntöttem, én is ehhez a csapathoz szeretnék tartozni. Egy-egy frizura elkészítése számomra egyet jelent a kreativitásom kamatoztatásával, ami miatt ez a szakma nem a munkám, hanem a hivatásom. Kifejezetten szeretek emberek között lenni, beszélgetni, témázgatni, a legtöbb emberrel megtalálom a közös hangot. Fontos, hogy megteremtsem a barátságos légkört magam körül, hiszen többek közül én is ez alapján (is) választok szolgáltatót. Maximalista vagyok, ezért nem engedem ki a vendégeim a kezeim közül úgy, hogy én magam nem vagyok elégedett az eredménnyel, hiszen nem kisebb dolgot tűztem ki célul, mint hogy mindenki fülig érő mosollyal, feltöltődve és persze elégedetten távozzon tőlem. Ez nekem legalább annyira fontos, mint neked! Az egyik fő ,,hitvallásom" a megfelelő kommunikáció. Szeretem, ha a vendég tisztában van azzal, milyen folyamatokon át jutunk el a kívánt célig. Mindig örömmel veszem a kérdéseket, hiszen minél többet beszélünk a dolgokról, annál pontosabb képet kapunk a végeredményről. Minden átalakulást imádok: legyen szó egy finom melírról, balayage-ról, vibráló színekről, finom vattacukros árnyalatokról, hercegnős mesefrizurákról, az aktuális trendeknek megfelelő hajvágásokról, vagy csak egy tőfestésről, amitől új fényeket kap egy haj.',
     image: '/images/Gitta.webp',
     portfolio: 'gitta',
     mysticIcon: faSun,
