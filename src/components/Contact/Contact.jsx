@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faEnvelope,
   faPhone,
   faLocationDot,
-  faPaperPlane
+  faClock
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faFacebook,
@@ -12,31 +12,6 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.id]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Köszönjük az üzenetet! Hamarosan jelentkezünk.');
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
-  };
 
   return (
     <section className="section kapcsolat" id="kapcsolat">
@@ -45,7 +20,7 @@ const Contact = () => {
         <div className="contact-content">
           <div className="contact-info">
             <h3>Lépj kapcsolatba velünk!</h3>
-            <p>Foglalj időpontot vagy írj nekünk, ha kérdésed van!</p>
+            <p>Foglalj időpontot telefonon vagy Messengeren!</p>
             <div className="contact-details">
               <div className="contact-item">
                 <FontAwesomeIcon icon={faEnvelope} className="contact-icon" />
@@ -59,6 +34,14 @@ const Contact = () => {
                 <FontAwesomeIcon icon={faLocationDot} className="contact-icon" />
                 <span>Nemes Takács utca 8, Szeged</span>
               </div>
+              <div className="contact-item">
+                <FontAwesomeIcon icon={faClock} className="contact-icon" />
+                <div className="opening-hours">
+                  <div className="opening-hours-title">Nyitvatartás:</div>
+                  <div>Hétfő - Péntek: 9:00 - 18:00</div>
+                  <div>Szombat - Vasárnap: Zárva</div>
+                </div>
+              </div>
             </div>
             <div className="social-links">
               <a href="https://www.facebook.com/colormecrazy" target="_blank" rel="noopener noreferrer" className="social-link">
@@ -69,50 +52,18 @@ const Contact = () => {
               </a>
             </div>
           </div>
-          <form className="contact-form" id="contactForm" onSubmit={handleSubmit}>
-            <div className="form-group">
-              <input
-                type="text"
-                id="name"
-                placeholder="Neved"
-                required
-                value={formData.name}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="email"
-                id="email"
-                placeholder="Email címed"
-                required
-                value={formData.email}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="text"
-                id="subject"
-                placeholder="Tárgy"
-                value={formData.subject}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="form-group">
-              <textarea
-                id="message"
-                placeholder="Üzeneted"
-                rows="5"
-                required
-                value={formData.message}
-                onChange={handleChange}
-              />
-            </div>
-            <button type="submit" className="btn btn-primary">
-              <FontAwesomeIcon icon={faPaperPlane} /> Küldés
-            </button>
-          </form>
+          <div className="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2758.8471234567!2d20.1479!3d46.2533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4744870f0cc0a0a1%3A0x0!2sNemes%20Tak%C3%A1cs%20utca%208%2C%20Szeged%2C%206720!5e0!3m2!1shu!2shu!4v1234567890"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Color Me Crazy helye - Nemes Takács utca 8, Szeged"
+            ></iframe>
+          </div>
         </div>
       </div>
     </section>
