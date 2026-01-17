@@ -183,6 +183,9 @@
 .sidebar-logo {
   flex: 1;
   text-align: center;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .sidebar-logo img {

@@ -67,6 +67,13 @@ const Navbar = () => {
     }
   };
 
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    closeSidebar();
+    navigate('/');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const content = {
     hu: {
       home: 'Kezdőlap',
@@ -111,7 +118,7 @@ const Navbar = () => {
           </button>
 
           {/* Center Logo */}
-          <Link to="/" className="navbar-sidebar-logo">
+          <Link to="/" className="navbar-sidebar-logo" onClick={handleLogoClick}>
             <img src="/images/logo-transparent.webp" alt="Color Me Crazy" />
           </Link>
 
@@ -143,9 +150,9 @@ const Navbar = () => {
           <button className="sidebar-close" onClick={closeSidebar}>
             <FontAwesomeIcon icon={faTimes} />
           </button>
-          <div className="sidebar-logo">
+          <Link to="/" className="sidebar-logo" onClick={handleLogoClick}>
             <img src="/images/logo-transparent.webp" alt="Color Me Crazy" />
-          </div>
+          </Link>
         </div>
 
         <nav className="sidebar-nav">
