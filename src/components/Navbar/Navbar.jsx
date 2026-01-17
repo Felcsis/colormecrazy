@@ -20,16 +20,17 @@ import {
   faChevronRight
 } from '@fortawesome/free-solid-svg-icons';
 import SearchModal from '../SearchModal/SearchModal';
+import { useTranslation } from '../../hooks/useTranslation';
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [language, setLanguage] = useState('hu');
   const [expandedSections, setExpandedSections] = useState({
     home: false,
     services: false
   });
   const navigate = useNavigate();
+  const { t, language, setLanguage } = useTranslation();
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -83,35 +84,6 @@ const Navbar = () => {
   const closeSearch = () => {
     setIsSearchOpen(false);
   };
-
-  const content = {
-    hu: {
-      home: 'Kezdőlap',
-      about: 'Bemutatkozás',
-      team: 'Munkatársak',
-      contact: 'Kapcsolat',
-      services: 'Szolgáltatások',
-      magicCards: 'Varázslatos kártyák',
-      priceList: 'Árlista',
-      education: 'Oktatás',
-      gallery: 'Galéria',
-      reviews: 'Értékelések'
-    },
-    en: {
-      home: 'Home',
-      about: 'About',
-      team: 'Team',
-      contact: 'Contact',
-      services: 'Services',
-      magicCards: 'Magic Cards',
-      priceList: 'Price List',
-      education: 'Education',
-      gallery: 'Gallery',
-      reviews: 'Reviews'
-    }
-  };
-
-  const t = content[language];
 
   return (
     <>
@@ -177,7 +149,7 @@ const Navbar = () => {
                 className="sidebar-chevron"
               />
               <FontAwesomeIcon icon={faHome} className="sidebar-icon" />
-              <span>{t.home}</span>
+              <span>{t('navbar.home')}</span>
             </button>
             {expandedSections.home && (
               <div className="sidebar-submenu">
@@ -193,14 +165,14 @@ const Navbar = () => {
                   onClick={() => handleNavigation('/#bemutatkozas')}
                 >
                   <span className="sidebar-bullet">•</span>
-                  {t.about}
+                  {t('navbar.about')}
                 </button>
                 <button
                   className="sidebar-link sidebar-sublink"
                   onClick={() => handleNavigation('/#kapcsolat')}
                 >
                   <span className="sidebar-bullet">•</span>
-                  {t.contact}
+                  {t('navbar.contact')}
                 </button>
               </div>
             )}
@@ -217,7 +189,7 @@ const Navbar = () => {
                 className="sidebar-chevron"
               />
               <FontAwesomeIcon icon={faScissors} className="sidebar-icon" />
-              <span>{t.services}</span>
+              <span>{t('navbar.services')}</span>
             </button>
             {expandedSections.services && (
               <div className="sidebar-submenu">
@@ -226,21 +198,21 @@ const Navbar = () => {
                   onClick={() => handleNavigation('/szolgaltatasok')}
                 >
                   <span className="sidebar-bullet">•</span>
-                  {t.magicCards}
+                  {t('navbar.magicCards')}
                 </button>
                 <button
                   className="sidebar-link sidebar-sublink"
                   onClick={() => handleNavigation('/#szolgaltatasok')}
                 >
                   <span className="sidebar-bullet">•</span>
-                  {t.priceList}
+                  {t('navbar.priceList')}
                 </button>
                 <button
                   className="sidebar-link sidebar-sublink"
                   onClick={() => handleNavigation('/oktatas')}
                 >
                   <span className="sidebar-bullet">•</span>
-                  {t.education}
+                  {t('navbar.education')}
                 </button>
               </div>
             )}
@@ -254,7 +226,7 @@ const Navbar = () => {
             >
               <FontAwesomeIcon icon={faChevronRight} className="sidebar-chevron-simple" />
               <FontAwesomeIcon icon={faUsers} className="sidebar-icon" />
-              <span>{t.team}</span>
+              <span>{t('navbar.team')}</span>
             </button>
           </div>
 
@@ -266,7 +238,7 @@ const Navbar = () => {
             >
               <FontAwesomeIcon icon={faChevronRight} className="sidebar-chevron-simple" />
               <FontAwesomeIcon icon={faImages} className="sidebar-icon" />
-              <span>{t.gallery}</span>
+              <span>{t('navbar.gallery')}</span>
             </button>
           </div>
 
@@ -278,7 +250,7 @@ const Navbar = () => {
             >
               <FontAwesomeIcon icon={faChevronRight} className="sidebar-chevron-simple" />
               <FontAwesomeIcon icon={faStar} className="sidebar-icon" />
-              <span>{t.reviews}</span>
+              <span>{t('navbar.reviews')}</span>
             </button>
           </div>
         </nav>

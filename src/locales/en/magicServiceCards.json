@@ -1,0 +1,15 @@
+{
+  "title": "Our Magical Services",
+  "subtitle": "Draw a deck to reveal the magic",
+  "homeIcon": "🏠",
+  "homeName": "Home",
+  "backButton": "Back",
+  "homeButton": "Home",
+  "deckInfo": "deck",
+  "cardInfo": "card",
+  "actionDraw": "DRAW IT",
+  "actionOpen": "OPEN",
+  "actionExpand": "EXPAND",
+  "stepsTitle": "Steps:",
+  "priceListButton": "View Price List"
+}

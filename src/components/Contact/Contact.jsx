@@ -10,45 +10,47 @@ import {
   faFacebook,
   faInstagram
 } from '@fortawesome/free-brands-svg-icons';
+import { useTranslation } from '../../hooks/useTranslation';
 
 const Contact = () => {
+  const { t } = useTranslation();
 
   return (
     <section className="section kapcsolat" id="kapcsolat">
       <div className="container">
-        <h2 className="section-title">Kapcsolat</h2>
+        <h2 className="section-title">{t('contact.title')}</h2>
         <div className="contact-content">
           <div className="contact-info">
-            <h3>Lépj kapcsolatba velünk!</h3>
-            <p>Foglalj időpontot telefonon vagy Messengeren!</p>
+            <h3>{t('contact.subtitle')}</h3>
+            <p>{t('contact.bookingText')}</p>
             <div className="contact-details">
               <div className="contact-item">
                 <FontAwesomeIcon icon={faEnvelope} className="contact-icon" />
-                <a href="mailto:pinterfelicia8@gmail.com">pinterfelicia8@gmail.com</a>
+                <a href={`mailto:${t('contact.email')}`}>{t('contact.email')}</a>
               </div>
               <div className="contact-item">
                 <FontAwesomeIcon icon={faPhone} className="contact-icon" />
-                <a href="tel:+36300894587">+36 30 089 4587</a>
+                <a href={`tel:${t('contact.phone').replace(/\s/g, '')}`}>{t('contact.phone')}</a>
               </div>
               <div className="contact-item">
                 <FontAwesomeIcon icon={faLocationDot} className="contact-icon" />
-                <span>Nemes Takács utca 8, Szeged</span>
+                <span>{t('contact.address')}</span>
               </div>
               <div className="contact-item">
                 <FontAwesomeIcon icon={faClock} className="contact-icon" />
                 <div className="opening-hours">
-                  <div className="opening-hours-title">Nyitvatartás:</div>
-                  <div>Hétfő - Péntek: 9:00 - 18:00</div>
-                  <div>Szombat - Vasárnap: Zárva</div>
+                  <div className="opening-hours-title">{t('contact.openingHoursTitle')}</div>
+                  <div>{t('contact.openingWeekdays')}</div>
+                  <div>{t('contact.openingWeekend')}</div>
                 </div>
               </div>
             </div>
             <div className="social-links">
               <a href="https://www.facebook.com/colormecrzy" target="_blank" rel="noopener noreferrer" className="social-link">
-                <FontAwesomeIcon icon={faFacebook} /> Facebook
+                <FontAwesomeIcon icon={faFacebook} /> {t('contact.facebook')}
               </a>
               <a href="https://www.instagram.com/colorme_c_hair/" target="_blank" rel="noopener noreferrer" className="social-link">
-                <FontAwesomeIcon icon={faInstagram} /> Instagram
+                <FontAwesomeIcon icon={faInstagram} /> {t('contact.instagram')}
               </a>
             </div>
           </div>

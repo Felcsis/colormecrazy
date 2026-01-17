@@ -1,35 +1,39 @@
 [
   {
     "category": "Szempilla & Szemöldök",
+    "category_en": "Eyelash & Eyebrow",
     "services": [
-      { "name": "Szempilla festés", "price": "2 500 Ft" },
-      { "name": "Szemöldök festés + igazítás", "price": "3 500 Ft" },
-      { "name": "Szempilla lifting", "price": "9 500 Ft" },
-      { "name": "Hennás szemöldök styling", "price": "6 500 Ft" }
+      { "name": "Szempilla festés", "name_en": "Eyelash Tinting", "price": "2 500 Ft" },
+      { "name": "Szemöldök festés + igazítás", "name_en": "Eyebrow Tinting + Shaping", "price": "3 500 Ft" },
+      { "name": "Szempilla lifting", "name_en": "Eyelash Lifting", "price": "9 500 Ft" },
+      { "name": "Hennás szemöldök styling", "name_en": "Henna Eyebrow Styling", "price": "6 500 Ft" }
     ]
   },
   {
     "category": "Gyantázás",
+    "category_en": "Waxing",
     "note": "Cukorpasztával is (+700 Ft)",
+    "note_en": "Sugar paste also available (+700 Ft)",
     "services": [
-      { "name": "Bajusz", "price": "1 800 Ft" },
-      { "name": "Szemöldök", "price": "1 800 Ft" },
-      { "name": "Hónalj", "price": "2 600 Ft" },
-      { "name": "Teljeskar", "price": "3 500 Ft" },
-      { "name": "Bikini vonal", "price": "3 000 Ft" },
-      { "name": "Láb térdig", "price": "3 000 Ft" },
-      { "name": "Teljes láb", "price": "5 000 Ft" },
-      { "name": "Hát", "price": "3 000 Ft" },
-      { "name": "Mellkas", "price": "3 000 Ft" },
-      { "name": "Teljes fazon", "price": "6 500 Ft" }
+      { "name": "Bajusz", "name_en": "Upper Lip", "price": "1 800 Ft" },
+      { "name": "Szemöldök", "name_en": "Eyebrows", "price": "1 800 Ft" },
+      { "name": "Hónalj", "name_en": "Underarms", "price": "2 600 Ft" },
+      { "name": "Teljeskar", "name_en": "Full Arms", "price": "3 500 Ft" },
+      { "name": "Bikini vonal", "name_en": "Bikini Line", "price": "3 000 Ft" },
+      { "name": "Láb térdig", "name_en": "Legs to Knee", "price": "3 000 Ft" },
+      { "name": "Teljes láb", "name_en": "Full Legs", "price": "5 000 Ft" },
+      { "name": "Hát", "name_en": "Back", "price": "3 000 Ft" },
+      { "name": "Mellkas", "name_en": "Chest", "price": "3 000 Ft" },
+      { "name": "Teljes fazon", "name_en": "Full Brazilian", "price": "6 500 Ft" }
     ]
   },
   {
     "category": "Smink & Egyéb",
+    "category_en": "Makeup & Other",
     "services": [
-      { "name": "Alkalmi smink", "price": "11 000 Ft" },
-      { "name": "Menyasszonyi smink", "price": "16 000 Ft" },
-      { "name": "STUDEX fülbelövés", "price": "15 000 Ft" }
+      { "name": "Alkalmi smink", "name_en": "Special Occasion Makeup", "price": "11 000 Ft" },
+      { "name": "Menyasszonyi smink", "name_en": "Bridal Makeup", "price": "16 000 Ft" },
+      { "name": "STUDEX fülbelövés", "name_en": "STUDEX Ear Piercing", "price": "15 000 Ft" }
     ]
   }
 ]

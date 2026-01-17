@@ -13,12 +13,12 @@ export const servicesData = {
       icon: '🎨',
       arcana: 'PAKLI',
       type: 'main-deck',
-      deckCount: 4,
-      totalCards: '130+',
+      deckCount: 5,
+      totalCards: '114',
 
       subDecks: [
         // ─────────────────────────────────────────────────────────
-        // I. FESTÉS TECHNIKÁK (Direct cards - 9 kártya)
+        // I. FESTÉS TECHNIKÁK (Direct cards - 8 kártya)
         // ─────────────────────────────────────────────────────────
         {
           id: 'festes-technikak',
@@ -28,18 +28,21 @@ export const servicesData = {
           arcana: 'I',
           type: 'sub-deck',
           directCards: true,
-          cardCount: 9,
+          cardCount: 8,
 
           cards: [
             {
               id: 'allover',
               arcana: 'I',
               title: 'Egyszínű festés',
+              title_en: 'All Over Color',
               subtitle: 'All Over Color',
+              subtitle_en: 'Single Color Application',
               icon: '🎨',
-              image: null, // Később feltöltésre
+              image: null,
               duration: '2 óra',
               description: 'Egyenletes, egyszínű hajfestés a teljes hajra.',
+              description_en: 'Even, single-color hair coloring for the entire hair.',
               steps: [
                 'Konzultáció a kívánt színről',
                 'Haj előkészítése és védelem',
@@ -53,11 +56,14 @@ export const servicesData = {
               id: 'balayage',
               arcana: 'II',
               title: 'Balayage',
+              title_en: 'Balayage',
               subtitle: 'Kézzel festett melírozás',
+              subtitle_en: 'Hand-Painted Highlights',
               icon: '🎨',
               image: null,
               duration: '4 óra',
               description: 'Kézzel festett, természetes átmenetű melírozás.',
+              description_en: 'Hand-painted highlights with natural-looking transitions.',
               steps: [
                 'Hajszín elemzése',
                 'Egyedi technika megtervezése',
@@ -71,11 +77,14 @@ export const servicesData = {
               id: 'bleaching',
               arcana: 'III',
               title: 'Szőkítés és árnyalás',
+              title_en: 'Bleaching & Toning',
               subtitle: 'Bleaching & Toning',
+              subtitle_en: 'Professional Lightening',
               icon: '🎨',
               image: null,
               duration: '3 óra',
               description: 'Professzionális szőkítés és színárnyalás.',
+              description_en: 'Professional bleaching and color toning service.',
               steps: [
                 'Hajállapot felmérése',
                 'Szőkítő felvitele',
@@ -89,11 +98,14 @@ export const servicesData = {
               id: 'correction',
               arcana: 'IV',
               title: 'Színkorrekció',
+              title_en: 'Color Correction',
               subtitle: 'Color Correction',
+              subtitle_en: 'Fix & Correct',
               icon: '🎨',
               image: null,
               duration: '5 óra',
               description: 'Sikertelen festés javítása és színkorrekció.',
+              description_en: 'Fixing unsuccessful coloring and comprehensive color correction.',
               steps: [
                 'Részletes hajszín-analízis',
                 'Korrekciós terv készítése',
@@ -104,33 +116,17 @@ export const servicesData = {
               ]
             },
             {
-              id: 'consultation',
-              arcana: 'V',
-              title: 'Konzultáció',
-              subtitle: 'Consultation',
-              icon: '💬',
-              image: null,
-              duration: '30 perc',
-              price: 'Ingyenes',
-              description: 'Személyes konzultáció hajfestési lehetőségekről.',
-              steps: [
-                'Hajtípus meghatározása',
-                'Hajállapot felmérése',
-                'Kívánt végeredmény megbeszélése',
-                'Technika kiválasztása',
-                'Időbeosztás tervezése',
-                'Árajánlat készítése'
-              ]
-            },
-            {
               id: 'vivid',
               arcana: 'VI',
               title: 'Dupla folyamat',
+              title_en: 'Double Process',
               subtitle: 'Vivid Color Process',
+              subtitle_en: 'Bleach + Vivid Color',
               icon: '🌈',
               image: null,
               duration: '5 óra 30 perc',
               description: 'Szőkítés + élénk színek (pink, kék, lila, stb.).',
+              description_en: 'Bleaching + vivid colors (pink, blue, purple, etc.).',
               steps: [
                 'Haj előkészítése',
                 'Teljes szőkítés világosszőke alapra',
@@ -144,11 +140,14 @@ export const servicesData = {
               id: 'fullfoil',
               arcana: 'VII',
               title: 'Teljes melír fóliával',
+              title_en: 'Full Foil Highlights',
               subtitle: 'Full Foil Highlights',
+              subtitle_en: 'Complete Foil Highlights',
               icon: '📋',
               image: null,
               duration: '4 óra',
               description: 'Teljes fej melírozása fóliás technikával.',
+              description_en: 'Full head highlighting using foil technique.',
               steps: [
                 'Hajfelosztás szekciókra',
                 'Fóliázási technika alkalmazása',
@@ -162,11 +161,14 @@ export const servicesData = {
               id: 'partialfoil',
               arcana: 'VIII',
               title: 'Részleges melír',
+              title_en: 'Partial Highlights',
               subtitle: 'Partial Foil',
+              subtitle_en: 'Partial Foil Highlights',
               icon: '📋',
               image: null,
               duration: '3 óra 30 perc',
               description: 'Fej felső részének melírozása.',
+              description_en: 'Highlighting the upper part of the head.',
               steps: [
                 'Stratégiai zónák kijelölése',
                 'Fejtető és oldalsó részek melírozása',
@@ -180,11 +182,14 @@ export const servicesData = {
               id: 'roottouch',
               arcana: 'IX',
               title: 'Tőfestés',
+              title_en: 'Root Touch Up',
               subtitle: 'Root Touch Up',
+              subtitle_en: 'Root Color Refresh',
               icon: '🎨',
               image: null,
               duration: '1,5 óra',
               description: 'Kinőtt hajszín frissítése tőből.',
+              description_en: 'Refreshing grown-out hair color from the roots.',
               steps: [
                 'Lenövés felmérése',
                 'Színegyeztetés',
@@ -209,11 +214,11 @@ export const servicesData = {
           type: 'sub-deck',
           directCards: false,
           deckCount: 4,
-          totalCards: 111,
+          totalCards: 96,
 
           subSubDecks: [
             // ┌─────────────────────────────────────────────────┐
-            // │ II.A - ALAP TECHNIKÁK (Direct cards - 12)       │
+            // │ II.A - ALAP TECHNIKÁK (Direct cards - 4)        │
             // └─────────────────────────────────────────────────┘
             {
               id: 'alap-technikak',
@@ -223,27 +228,93 @@ export const servicesData = {
               arcana: 'I',
               type: 'sub-sub-deck',
               directCards: true,
-              cardCount: 12,
+              cardCount: 4,
               description: 'Alapvető vágási technikák, minden fazon ebből épül fel',
 
               cards: [
-                { id: 'tompa-vagas', arcana: '1', title: 'Tompa vágás', subtitle: 'Blunt cut', icon: '✂️', duration: '~45 perc', description: 'Egyenes, tompa vágás minden hajhosszban.' },
-                { id: 'retegezett-vagas', arcana: '2', title: 'Rétegezett vágás', subtitle: 'Layered cut', icon: '✂️', duration: '~50 perc', description: 'Több rétegben vágott haj, térfogat és mozgás.' },
-                { id: 'fokozatos-vagas', arcana: '3', title: 'Fokozatos vágás', subtitle: 'Graduation', icon: '✂️', duration: '~50 perc', description: 'Fokozatosan rövidülő hajhosszúságok.' },
-                { id: 'lepcsozes', arcana: '4', title: 'Lépcsőzetes vágás', subtitle: 'Step cut', icon: '✂️', duration: '~50 perc', description: 'Látható lépcsők a hajban, dinamikus megjelenés.' },
-                { id: 'egyhossz', arcana: '5', title: 'Egyhossz', subtitle: 'One length', icon: '✂️', duration: '~40 perc', description: 'Egyenletes hosszúságú haj, egyszerű klasszikus vágás.' },
-                { id: 'belso-reteg', arcana: '6', title: 'Belső rétegezés', subtitle: 'Internal layering', icon: '✂️', duration: '~45 perc', description: 'Belül rövidebb rétegek, térfogat nélküli könnyedség.' },
-                { id: 'texturalt', arcana: '7', title: 'Texturált vágás', subtitle: 'Textured cut', icon: '✂️', duration: '~50 perc', description: 'Textúrát adó technikák, természetes megjelenés.' },
-                { id: 'ritkitas', arcana: '8', title: 'Ritkítás', subtitle: 'Thinning / Slicing', icon: '✂️', duration: '~30 perc', description: 'Haj ritkulása, térfogat csökkentés.' },
-                { id: 'point-cut', arcana: '9', title: 'Point cut', subtitle: 'Pointed cutting', icon: '✂️', duration: '~45 perc', description: 'Fésű nélküli, finom texturálás olló hegyével.' },
-                { id: 'slide-cut', arcana: '10', title: 'Slide cut', subtitle: 'Sliding technique', icon: '✂️', duration: '~50 perc', description: 'Csúsztatott vágás lágy átmenetekhez.' },
-                { id: 'razor-cut', arcana: '11', title: 'Razor cut', subtitle: 'Borotvás vágás', icon: '🪒', duration: '~55 perc', description: 'Borotvával végzett vágás, puha textúra.' },
-                { id: 'freehand', arcana: '12', title: 'Freehand vágás', subtitle: 'Freehand cutting', icon: '✂️', duration: '~60 perc', description: 'Szabad kézzel végzett művészi vágás.' }
+                {
+                  id: 'kompakt',
+                  arcana: '1',
+                  title: 'Kompakt',
+                  title_en: 'Solid Form',
+                  subtitle: 'Egy hosszú',
+                  subtitle_en: 'One Length',
+                  icon: '✂️',
+                  duration: '30–45 perc',
+                  description: 'Zárt, tömör hajforma. A haj egy hosszra van vágva, súlyos, telt hatású frizura. Klasszikus bobok, egyenes vonalak alapja.',
+                  description_en: 'Closed, solid hair form. Hair cut to one length, creating a heavy, full effect. Foundation for classic bobs and straight lines.',
+                  steps: [
+                    'Natúr esésben fésült haj',
+                    'Fix vezetőhossz meghatározása',
+                    'Vágás nulla vagy minimális elevációval (0–10°)',
+                    'Vízszintes szekcionálás',
+                    'Kontúr precíz kialakítása',
+                    'Szárítás után ellenőrzés, finomítás'
+                  ]
+                },
+                {
+                  id: 'lepcsozes',
+                  arcana: '2',
+                  title: 'Lépcsőzetes',
+                  title_en: 'Layered',
+                  subtitle: 'Layered',
+                  subtitle_en: 'Graduated Layers',
+                  icon: '✂️',
+                  duration: '45–60 perc',
+                  description: 'Mozgásdús, levegős forma. A haj különböző hosszúságú rétegekből áll, könnyebb esést és volument ad.',
+                  description_en: 'Dynamic, airy form. Hair consists of layers of varying lengths, creating lighter fall and volume.',
+                  steps: [
+                    'Haj szekcionálása (ált. fejformához igazítva)',
+                    'Vezető tincs kijelölése',
+                    'Emeléssel történő vágás (45–90°)',
+                    'Rétegek fokozatos kialakítása',
+                    'Texturálás (ritkítás, sliccelés igény szerint)',
+                    'Szárítás + formára igazítás'
+                  ]
+                },
+                {
+                  id: 'lefele-hosszabbodo',
+                  arcana: '3',
+                  title: 'Lefelé hosszabbodó',
+                  title_en: 'Graduated',
+                  subtitle: 'Graduated',
+                  subtitle_en: 'Forward Graduation',
+                  icon: '✂️',
+                  duration: '40–55 perc',
+                  description: 'Elöl hosszabb, hátul rövidebb hajforma. Dinamikus, karakteres, jól keretezi az arcot (pl. A-vonal, long bob).',
+                  description_en: 'Longer in front, shorter in back. Dynamic, distinctive shape that beautifully frames the face (e.g., A-line, long bob).',
+                  steps: [
+                    'Hátsó rész rövidebb alapjának kialakítása',
+                    'Előre haladva fokozatos hosszabbítás',
+                    'Diagonál vagy vertikál vágási irány',
+                    'Folyamatos ellenőrzés szimmetriára',
+                    'Kontúrozás, átmenetek puhítása'
+                  ]
+                },
+                {
+                  id: 'uniform',
+                  arcana: '4',
+                  title: 'Uniform',
+                  title_en: 'Uniform Layer',
+                  subtitle: 'Mindenhol egyforma hosszú',
+                  subtitle_en: 'Equal Length Throughout',
+                  icon: '✂️',
+                  duration: '35–50 perc',
+                  description: 'Kiegyensúlyozott, gömbszerű forma. A haj minden ponton azonos hosszú, természetes volumen keletkezik.',
+                  description_en: 'Balanced, spherical form. Hair is the same length at every point, creating natural volume.',
+                  steps: [
+                    'Fej közepéből kiinduló vezető tincs',
+                    '90°-os eleváció minden irányba',
+                    'Körkörös szekcionálás',
+                    'Azonos hossz tartása végig',
+                    'Finom texturálás a túlzott tömeg csökkentésére'
+                  ]
+                }
               ]
             },
 
             // ┌─────────────────────────────────────────────────┐
-            // │ II.B - NŐI HAJVÁGÁSOK (Has sub-sub-sub-decks)  │
+            // │ II.B - NŐI HAJVÁGÁSOK (3 direct pakli - 44)    │
             // └─────────────────────────────────────────────────┘
             {
               id: 'noi-hajvagasok',
@@ -253,78 +324,272 @@ export const servicesData = {
               arcana: 'II',
               type: 'sub-sub-deck',
               directCards: false,
-              deckCount: 5,
-              totalCards: 43,
+              deckCount: 3,
+              totalCards: 44,
 
               subSubSubDecks: [
-                // Klasszikus női (7 kártya)
+                // 1. Divat frizurák (17 kártya: 10 divat + 7 klasszikus)
                 {
-                  id: 'klasszikus-noi',
-                  name: 'Klasszikus Női',
-                  englishName: 'Classic Women\'s',
-                  icon: '💇',
+                  id: 'divat-frizurak',
+                  name: 'Divat Frizurák',
+                  englishName: 'Trendy Hairstyles',
+                  icon: '🦋',
                   arcana: 'A',
-                  cardCount: 7,
+                  type: 'sub-sub-sub-deck',
+                  directCards: true,
+                  cardCount: 17,
                   cards: [
-                    { id: 'egyenes-hosszu', arcana: '1', title: 'Egyenes hosszú haj', subtitle: 'Long straight hair', icon: '💇', duration: '~45 perc' },
-                    { id: 'felhosszu', arcana: '2', title: 'Félhosszú haj', subtitle: 'Medium length', icon: '💇', duration: '~40 perc' },
-                    { id: 'rovid-noi', arcana: '3', title: 'Rövid női haj', subtitle: 'Short women\'s hair', icon: '💇', duration: '~35 perc' },
-                    { id: 'a-vonalu', arcana: '4', title: 'A-vonalú vágás', subtitle: 'A-line cut', icon: '💇', duration: '~45 perc' },
-                    { id: 'v-vonalu', arcana: '5', title: 'V-vonalú vágás', subtitle: 'V-line cut', icon: '💇', duration: '~45 perc' },
-                    { id: 'u-vonalu', arcana: '6', title: 'U-vonalú vágás', subtitle: 'U-line cut', icon: '💇', duration: '~45 perc' },
-                    { id: 'egyenes-frufru', arcana: '7', title: 'Klasszikus frufruval', subtitle: 'With classic bangs', icon: '💇', duration: '~50 perc' }
+                    {
+                      id: 'butterfly-cut',
+                      arcana: '1',
+                      title: 'Butterfly haircut',
+                      title_en: 'Butterfly Haircut',
+                      subtitle: 'Pillangó vágás',
+                      subtitle_en: 'Butterfly Cut',
+                      icon: '🦋',
+                      duration: '~60 perc',
+                      description: 'Hosszú marad a haj, de elöl rövid rétegek. Dupla érzet: rövid + hosszú egyszerre. 90°–180° eleváció, erős face framing.',
+                      description_en: 'Hair stays long but with short layers in front. Dual feel: short + long simultaneously. 90°–180° elevation, strong face framing.'
+                    },
+                    {
+                      id: 'wolf-cut',
+                      arcana: '2',
+                      title: 'Wolf cut',
+                      title_en: 'Wolf Cut',
+                      subtitle: 'Farkas vágás',
+                      subtitle_en: 'Wolf Cut',
+                      icon: '🐺',
+                      duration: '~70 perc',
+                      description: 'Vadabb, rockosabb verzió. Erősen lépcsőzött, rövid korona. Texturált, szaggatott végek. Butterfly „rosszcsont testvére".',
+                      description_en: 'Wilder, rockier version. Heavily layered, short crown. Textured, choppy ends. Butterfly\'s "edgy sibling".'
+                    },
+                    {
+                      id: 'modern-shag',
+                      arcana: '3',
+                      title: 'Shag haircut',
+                      title_en: 'Shag Haircut',
+                      subtitle: 'Modern shag',
+                      subtitle_en: 'Modern Shag',
+                      icon: '🌊',
+                      duration: '~65 perc',
+                      description: 'Lágyabb, hordhatóbb wolf. Sok réteg, de kevesebb kontraszt. Frufruval nagyon üt. Butterfly + vintage vibe.',
+                      description_en: 'Softer, more wearable wolf. Lots of layers but less contrast. Looks amazing with bangs. Butterfly + vintage vibe.'
+                    },
+                    {
+                      id: 'octopus-cut',
+                      arcana: '4',
+                      title: 'Octopus cut',
+                      title_en: 'Octopus Cut',
+                      subtitle: 'Polip vágás',
+                      subtitle_en: 'Octopus Cut',
+                      icon: '🐙',
+                      duration: '~70 perc',
+                      description: 'Erős súly a koronán. Hosszú, vékony „csápok" lent. Fashion forward, editorial. Extrémebb butterfly-rokon.',
+                      description_en: 'Heavy weight at the crown. Long, thin "tentacles" at bottom. Fashion forward, editorial. More extreme butterfly relative.'
+                    },
+                    {
+                      id: 'long-layered',
+                      arcana: '5',
+                      title: 'Long layered cut',
+                      title_en: 'Long Layered Cut',
+                      subtitle: 'Hosszú rétegezett',
+                      subtitle_en: 'Long Layers',
+                      icon: '🌊',
+                      duration: '~60 perc',
+                      description: 'Klasszikus, biztonságos. Finom lépcsők, természetes mozgás. Kevesebb dráma, több elegancia. Butterfly light verzió.',
+                      description_en: 'Classic, safe choice. Subtle layers, natural movement. Less drama, more elegance. Butterfly light version.'
+                    },
+                    {
+                      id: 'face-framing',
+                      arcana: '6',
+                      title: 'Face-framing layered cut',
+                      title_en: 'Face-Framing Layers',
+                      subtitle: 'Arc keretező rétegek',
+                      subtitle_en: 'Face-Framing Cut',
+                      icon: '✨',
+                      duration: '~55 perc',
+                      description: 'Arc körüli hangsúly. Elöl rövidebb, hátul hosszabb. Frufru opcionális. Butterfly fókusz az arcon.',
+                      description_en: 'Focus around the face. Shorter in front, longer in back. Bangs optional. Butterfly focus on the face.'
+                    },
+                    {
+                      id: 'curtain-bangs-layers',
+                      arcana: '7',
+                      title: 'Curtain bangs + layers',
+                      title_en: 'Curtain Bangs + Layers',
+                      subtitle: 'Függöny frufru rétegekkel',
+                      subtitle_en: 'Curtain Bangs with Layers',
+                      icon: '💁',
+                      duration: '~60 perc',
+                      description: 'Középen nyíló frufru. Rétegezett hossz. Nőies, időtálló. Butterfly „frufrus kiadása".',
+                      description_en: 'Center-parted bangs. Layered length. Feminine, timeless. Butterfly "bangs edition".'
+                    },
+                    {
+                      id: 'hush-cut',
+                      arcana: '8',
+                      title: 'Hush cut',
+                      title_en: 'Hush Cut',
+                      subtitle: 'Koreai trend',
+                      subtitle_en: 'Korean Trend',
+                      icon: '🇰🇷',
+                      duration: '~55 perc',
+                      description: 'Lágy, leomló rétegek. Természetes, nem túlvágott. Könnyű formázás. Minimalista butterfly.',
+                      description_en: 'Soft, cascading layers. Natural, not over-cut. Easy styling. Minimalist butterfly.'
+                    },
+                    {
+                      id: 'soft-mullet-noi',
+                      arcana: '9',
+                      title: 'Soft mullet',
+                      title_en: 'Soft Mullet',
+                      subtitle: 'Női mullet',
+                      subtitle_en: 'Women\'s Mullet',
+                      icon: '🌟',
+                      duration: '~65 perc',
+                      description: 'Rövidebb felső rész. Hosszabb tarkó. Modern, nem retro. Butterfly + mullet finomítva.',
+                      description_en: 'Shorter top section. Longer nape. Modern, not retro. Butterfly + mullet refined.'
+                    },
+                    {
+                      id: 'v-cut-layers',
+                      arcana: '10',
+                      title: 'V-cut layers',
+                      title_en: 'V-Cut Layers',
+                      subtitle: 'V-alakú rétegek',
+                      subtitle_en: 'V-Shaped Layers',
+                      icon: '✂️',
+                      duration: '~60 perc',
+                      description: 'Hátul V-alakban hosszabb. Elöl réteges. Karcsúsítja a hátképet. Butterfly geometrikus változat.',
+                      description_en: 'Longer in a V-shape at back. Layered in front. Slims the back view. Butterfly geometric variant.'
+                    },
+                    // Klasszikus női (7 kártya)
+                    {
+                      id: 'egyenes-hosszu',
+                      arcana: '11',
+                      title: 'Egyenes hosszú haj',
+                      title_en: 'Long Straight Hair',
+                      subtitle: 'Long straight hair',
+                      subtitle_en: 'Classic Long',
+                      icon: '💇',
+                      duration: '~45 perc',
+                      description: 'Klasszikus egyenes hosszú haj vágás.',
+                      description_en: 'Classic straight long hair cut.'
+                    },
+                    {
+                      id: 'felhosszu',
+                      arcana: '12',
+                      title: 'Félhosszú haj',
+                      title_en: 'Medium Length Hair',
+                      subtitle: 'Medium length',
+                      subtitle_en: 'Shoulder Length',
+                      icon: '💇',
+                      duration: '~40 perc',
+                      description: 'Vállhosszú vagy kicsit rövidebb női haj.',
+                      description_en: 'Shoulder-length or slightly shorter women\'s hair.'
+                    },
+                    {
+                      id: 'rovid-noi',
+                      arcana: '13',
+                      title: 'Rövid női haj',
+                      title_en: 'Short Women\'s Hair',
+                      subtitle: 'Short women\'s hair',
+                      subtitle_en: 'Classic Short',
+                      icon: '💇',
+                      duration: '~35 perc',
+                      description: 'Klasszikus rövid női hajvágás.',
+                      description_en: 'Classic short women\'s haircut.'
+                    },
+                    {
+                      id: 'a-vonalu',
+                      arcana: '14',
+                      title: 'A-vonalú vágás',
+                      title_en: 'A-Line Cut',
+                      subtitle: 'A-line cut',
+                      subtitle_en: 'A-Line Shape',
+                      icon: '💇',
+                      duration: '~45 perc',
+                      description: 'Hátul rövidebb, elöl hosszabb A-alakú forma.',
+                      description_en: 'Shorter at back, longer at front in A-shape.'
+                    },
+                    {
+                      id: 'v-vonalu',
+                      arcana: '15',
+                      title: 'V-vonalú vágás',
+                      title_en: 'V-Line Cut',
+                      subtitle: 'V-line cut',
+                      subtitle_en: 'V-Shaped Back',
+                      icon: '💇',
+                      duration: '~45 perc',
+                      description: 'V-alakban vágott haj hátul.',
+                      description_en: 'V-shaped cut at the back.'
+                    },
+                    {
+                      id: 'u-vonalu',
+                      arcana: '16',
+                      title: 'U-vonalú vágás',
+                      title_en: 'U-Line Cut',
+                      subtitle: 'U-line cut',
+                      subtitle_en: 'Rounded U-Shape',
+                      icon: '💇',
+                      duration: '~45 perc',
+                      description: 'U-alakban kerekített hajvágás.',
+                      description_en: 'Rounded haircut in U-shape.'
+                    },
+                    {
+                      id: 'egyenes-frufru',
+                      arcana: '17',
+                      title: 'Klasszikus frufruval',
+                      title_en: 'Classic with Bangs',
+                      subtitle: 'With classic bangs',
+                      subtitle_en: 'Straight with Bangs',
+                      icon: '💇',
+                      duration: '~50 perc',
+                      description: 'Klasszikus egyenes vágás frufruval.',
+                      description_en: 'Classic straight cut with bangs.'
+                    }
                   ]
                 },
 
-                // Bubi variánsok (9 kártya)
+                // 2. Rövid frizurák (18 kártya: 9 rövid + 9 bubi)
                 {
-                  id: 'bubi-variansok',
-                  name: 'Bubi Variánsok',
-                  englishName: 'Bob Variations',
-                  icon: '🎀',
+                  id: 'rovid-frizurak',
+                  name: 'Rövid Frizurák',
+                  englishName: 'Short Hairstyles',
+                  icon: '⚡',
                   arcana: 'B',
-                  cardCount: 9,
+                  type: 'sub-sub-sub-deck',
+                  directCards: true,
+                  cardCount: 18,
                   cards: [
-                    { id: 'bubi-bob', arcana: '1', title: 'Bubi', subtitle: 'Classic Bob', icon: '🎀', duration: '~45 perc', description: 'Klasszikus bubi vágás állhosszban.' },
-                    { id: 'hosszu-bubi-lob', arcana: '2', title: 'Hosszú bubi', subtitle: 'Long Bob (Lob)', icon: '🎀', duration: '~50 perc', description: 'Vállhosszú bubi, modern és nőies.' },
-                    { id: 'gradualt-bubi', arcana: '3', title: 'Graduált bubi', subtitle: 'Graduated Bob', icon: '🎀', duration: '~50 perc', description: 'Hátul rövidebb, elöl hosszabb dinamikus vágás.' },
-                    { id: 'egyenes-bubi', arcana: '4', title: 'Egyenes bubi', subtitle: 'Straight Bob', icon: '🎀', duration: '~45 perc', description: 'Tökéletesen egyenes, tompa vágás.' },
-                    { id: 'aszimmetrikus-bubi', arcana: '5', title: 'Aszimmetrikus bubi', subtitle: 'Asymmetric Bob', icon: '🎀', duration: '~55 perc', description: 'Két oldal különböző hosszúságú.' },
-                    { id: 'olasz-bubi', arcana: '6', title: 'Olasz bubi', subtitle: 'Italian Bob', icon: '🎀', duration: '~50 perc', description: 'Rétegezett, könnyű, mediterrán stílus.' },
-                    { id: 'francia-bubi', arcana: '7', title: 'Francia bubi', subtitle: 'French Bob', icon: '🎀', duration: '~50 perc', description: 'Rövid, fülig érő elegáns vágás.' },
-                    { id: 'pageboy', arcana: '8', title: 'Pageboy', subtitle: 'Pageboy cut', icon: '🎀', duration: '~45 perc', description: 'Kerek, befelé hajló klasszikus forma.' },
-                    { id: 'curly-bob', arcana: '9', title: 'Curly Bob', subtitle: 'Göndör bubi', icon: '🎀', duration: '~60 perc', description: 'Bubi göndör hajra optimalizálva.' }
+                    // Rövid női vágások (9 kártya)
+                    { id: 'pixie', arcana: '1', title: 'Pixie', subtitle: 'Pixie cut', icon: '⚡', duration: '~40 perc', description: 'Klasszikus rövid tündér vágás.' },
+                    { id: 'pixie-bob', arcana: '2', title: 'Pixie bob', subtitle: 'Hosszabb pixie', icon: '⚡', duration: '~45 perc', description: 'Pixie és bob keveréke.' },
+                    { id: 'short-shag', arcana: '3', title: 'Short shag', subtitle: 'Rövid shag', icon: '⚡', duration: '~50 perc', description: 'Texturált rövid haj, retro feeling.' },
+                    { id: 'garcon', arcana: '4', title: 'Garçon', subtitle: 'Fiús vágás', icon: '⚡', duration: '~35 perc', description: 'Nagyon rövid, androgén stílus.' },
+                    { id: 'boyish-cut', arcana: '5', title: 'Boyish cut', subtitle: 'Tomboy vágás', icon: '⚡', duration: '~35 perc', description: 'Fiús hatású női vágás.' },
+                    { id: 'undercut-noi', arcana: '6', title: 'Undercut női', subtitle: 'Women\'s undercut', icon: '⚡', duration: '~50 perc', description: 'Oldalra/ alul borotvált design.' },
+                    { id: 'aszimmetrikus-rovid', arcana: '7', title: 'Aszimmetrikus rövid', subtitle: 'Asymmetric short', icon: '⚡', duration: '~50 perc', description: 'Aszimmetrikus rövid forma.' },
+                    { id: 'alternativ-rovid', arcana: '8', title: 'Alternatív rövid', subtitle: 'Alternative short', icon: '⚡', duration: '~55 perc', description: 'Kreatív, egyedi rövid frizura.' },
+                    { id: 'buzz-cut-noi', arcana: '9', title: 'Buzz cut női', subtitle: 'Women\'s buzz', icon: '⚡', duration: '~25 perc', description: 'Géppel vágott nagyon rövid.' },
+                    // Bubi variánsok (9 kártya)
+                    { id: 'bubi-bob', arcana: '10', title: 'Bubi', subtitle: 'Classic Bob', icon: '🎀', duration: '~45 perc', description: 'Klasszikus bubi vágás állhosszban.' },
+                    { id: 'hosszu-bubi-lob', arcana: '11', title: 'Hosszú bubi', subtitle: 'Long Bob (Lob)', icon: '🎀', duration: '~50 perc', description: 'Vállhosszú bubi, modern és nőies.' },
+                    { id: 'gradualt-bubi', arcana: '12', title: 'Graduált bubi', subtitle: 'Graduated Bob', icon: '🎀', duration: '~50 perc', description: 'Hátul rövidebb, elöl hosszabb dinamikus vágás.' },
+                    { id: 'egyenes-bubi', arcana: '13', title: 'Egyenes bubi', subtitle: 'Straight Bob', icon: '🎀', duration: '~45 perc', description: 'Tökéletesen egyenes, tompa vágás.' },
+                    { id: 'aszimmetrikus-bubi', arcana: '14', title: 'Aszimmetrikus bubi', subtitle: 'Asymmetric Bob', icon: '🎀', duration: '~55 perc', description: 'Két oldal különböző hosszúságú.' },
+                    { id: 'olasz-bubi', arcana: '15', title: 'Olasz bubi', subtitle: 'Italian Bob', icon: '🎀', duration: '~50 perc', description: 'Rétegezett, könnyű, mediterrán stílus.' },
+                    { id: 'francia-bubi', arcana: '16', title: 'Francia bubi', subtitle: 'French Bob', icon: '🎀', duration: '~50 perc', description: 'Rövid, fülig érő elegáns vágás.' },
+                    { id: 'pageboy', arcana: '17', title: 'Pageboy', subtitle: 'Pageboy cut', icon: '🎀', duration: '~45 perc', description: 'Kerek, befelé hajló klasszikus forma.' },
+                    { id: 'curly-bob', arcana: '18', title: 'Curly Bob', subtitle: 'Göndör bubi', icon: '🎀', duration: '~60 perc', description: 'Bubi göndör hajra optimalizálva.' }
                   ]
                 },
 
-                // Rétegezett hajak (9 kártya)
-                {
-                  id: 'retegezett-hajak',
-                  name: 'Rétegezett Hajak',
-                  englishName: 'Layered Hair',
-                  icon: '🌊',
-                  arcana: 'C',
-                  cardCount: 9,
-                  cards: [
-                    { id: 'lepcsozes-hosszu', arcana: '1', title: 'Lépcsőzetes hosszú', subtitle: 'Step layers long', icon: '🌊', duration: '~60 perc', description: 'Hosszú haj lépcsőzetes rétegekkel.' },
-                    { id: 'soft-layered', arcana: '2', title: 'Soft layered cut', subtitle: 'Lágy rétegek', icon: '🌊', duration: '~55 perc', description: 'Finom, lágy átmenetek.' },
-                    { id: 'butterfly-cut', arcana: '3', title: 'Butterfly cut', subtitle: 'Pillangó vágás', icon: '🌊', duration: '~60 perc', description: 'Rövid rétegek felül, hosszú lent, pillangó forma.' },
-                    { id: 'shag', arcana: '4', title: 'Shag', subtitle: 'Shaggy cut', icon: '🌊', duration: '~65 perc', description: 'Kusza, texturált, 70-es évek retro.' },
-                    { id: 'modern-shag', arcana: '5', title: 'Modern shag', subtitle: 'Modernized shag', icon: '🌊', duration: '~65 perc', description: 'Shag mai interpretációja.' },
-                    { id: 'wolf-cut', arcana: '6', title: 'Wolf cut', subtitle: 'Farkas vágás', icon: '🌊', duration: '~70 perc', description: 'Mullet + shag keverék, vadító megjelenés.' },
-                    { id: 'octopus-cut', arcana: '7', title: 'Octopus cut', subtitle: 'Polip vágás', icon: '🌊', duration: '~70 perc', description: 'Extrém rétegezett, sok mozgás.' },
-                    { id: 'vagott-reteg', arcana: '8', title: 'Vágott réteges', subtitle: 'Choppy layers', icon: '🌊', duration: '~60 perc', description: 'Darabos, texturált rétegek.' },
-                    { id: 'texturalt-felhosszu', arcana: '9', title: 'Texturált félhosszú', subtitle: 'Textured medium', icon: '🌊', duration: '~55 perc', description: 'Félhosszú haj textúrával.' }
-                  ]
-                },
-
-                // Frufru típusok (9 kártya)
+                // 3. Frufru típusok (9 kártya)
                 {
                   id: 'frufru-tipusok',
                   name: 'Frufru Típusok',
                   englishName: 'Bangs Types',
                   icon: '💁',
-                  arcana: 'D',
+                  arcana: 'C',
+                  type: 'sub-sub-sub-deck',
+                  directCards: true,
                   cardCount: 9,
                   cards: [
                     { id: 'egyenes-frufru', arcana: '1', title: 'Egyenes frufru', subtitle: 'Straight bangs', icon: '💁', duration: '~20 perc', description: 'Klasszikus egyenes frufru.' },
@@ -336,27 +601,6 @@ export const servicesData = {
                     { id: 'aszimmetrikus-frufru', arcana: '7', title: 'Aszimmetrikus frufru', subtitle: 'Asymmetric bangs', icon: '💁', duration: '~25 perc', description: 'Egyenetlen, különböző hosszúságú.' },
                     { id: 'mikrofrufru', arcana: '8', title: 'Mikrofrufru', subtitle: 'Micro bangs', icon: '💁', duration: '~15 perc', description: 'Extrém rövid, statement frufru.' },
                     { id: 'korean-see-through', arcana: '9', title: 'Korean see-through', subtitle: 'Áttetsző frufru', icon: '💁', duration: '~20 perc', description: 'Könnyű, áttetsző koreai stílus.' }
-                  ]
-                },
-
-                // Rövid női (9 kártya)
-                {
-                  id: 'rovid-noi',
-                  name: 'Rövid Női',
-                  englishName: 'Short Women\'s',
-                  icon: '⚡',
-                  arcana: 'E',
-                  cardCount: 9,
-                  cards: [
-                    { id: 'pixie', arcana: '1', title: 'Pixie', subtitle: 'Pixie cut', icon: '⚡', duration: '~40 perc', description: 'Klasszikus rövid tündér vágás.' },
-                    { id: 'pixie-bob', arcana: '2', title: 'Pixie bob', subtitle: 'Hosszabb pixie', icon: '⚡', duration: '~45 perc', description: 'Pixie és bob keveréke.' },
-                    { id: 'short-shag', arcana: '3', title: 'Short shag', subtitle: 'Rövid shag', icon: '⚡', duration: '~50 perc', description: 'Texturált rövid haj, retro feeling.' },
-                    { id: 'garcon', arcana: '4', title: 'Garçon', subtitle: 'Fiús vágás', icon: '⚡', duration: '~35 perc', description: 'Nagyon rövid, androgén stílus.' },
-                    { id: 'boyish-cut', arcana: '5', title: 'Boyish cut', subtitle: 'Tomboy vágás', icon: '⚡', duration: '~35 perc', description: 'Fiús hatású női vágás.' },
-                    { id: 'undercut-noi', arcana: '6', title: 'Undercut női', subtitle: 'Women\'s undercut', icon: '⚡', duration: '~50 perc', description: 'Oldalra/ alul borotvált design.' },
-                    { id: 'aszimmetrikus-rovid', arcana: '7', title: 'Aszimmetrikus rövid', subtitle: 'Asymmetric short', icon: '⚡', duration: '~50 perc', description: 'Aszimmetrikus rövid forma.' },
-                    { id: 'alternativ-rovid', arcana: '8', title: 'Alternatív rövid', subtitle: 'Alternative short', icon: '⚡', duration: '~55 perc', description: 'Kreatív, egyedi rövid frizura.' },
-                    { id: 'buzz-cut-noi', arcana: '9', title: 'Buzz cut női', subtitle: 'Women\'s buzz', icon: '⚡', duration: '~25 perc', description: 'Géppel vágott nagyon rövid.' }
                   ]
                 }
               ]
@@ -540,6 +784,46 @@ export const servicesData = {
             { id: 'dreadlock-keszites', arcana: '2', title: 'Dreadlock készítés', subtitle: 'Dread making', icon: '🔗', duration: '~6-10 óra', description: 'Dreadlock tincsek kialakítása.' },
             { id: 'raszta-karbantartas', arcana: '3', title: 'Raszta karbantartás', subtitle: 'Braid maintenance', icon: '🔗', duration: '~2-3 óra', description: 'Meglévő raszta frissítése, ápolása.' },
             { id: 'dreadlock-karbantartas', arcana: '4', title: 'Dreadlock karbantartás', subtitle: 'Dread maintenance', icon: '🔗', duration: '~2-4 óra', description: 'Dreadlock tincsek karbantartása.' }
+          ]
+        },
+
+        // ─────────────────────────────────────────────────────────
+        // V. KONZULTÁCIÓ (Egyedi kártya - azonnal megnyílik)
+        // ─────────────────────────────────────────────────────────
+        {
+          id: 'konzultacio',
+          name: 'Konzultáció',
+          englishName: 'Consultation',
+          icon: '💬',
+          arcana: 'V',
+          type: 'sub-deck',
+          directCards: true,
+          isSingleCard: true, // Speciális jelző: azonnal megnyitja a kártyát
+          cardCount: 1,
+
+          cards: [
+            {
+              id: 'consultation',
+              arcana: 'I',
+              title: 'Konzultáció',
+              title_en: 'Consultation',
+              subtitle: 'Consultation',
+              subtitle_en: 'Color Consultation',
+              icon: '💬',
+              image: null,
+              duration: '30 perc',
+              price: 'Ingyenes',
+              description: 'Személyes konzultáció hajfestési lehetőségekről.',
+              description_en: 'Personal consultation about hair coloring options and possibilities.',
+              steps: [
+                'Hajtípus meghatározása',
+                'Hajállapot felmérése',
+                'Kívánt végeredmény megbeszélése',
+                'Technika kiválasztása',
+                'Időbeosztás tervezése',
+                'Árajánlat készítése'
+              ]
+            }
           ]
         }
       ]

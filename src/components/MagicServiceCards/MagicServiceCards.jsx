@@ -8,11 +8,26 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { servicesData, findDeckById } from '../../data/servicesData';
 import './MagicServiceCards.css';
+import { useTranslation } from '../../hooks/useTranslation';
 
 const MagicServiceCards = () => {
   const [navigationPath, setNavigationPath] = useState([]);
   const [selectedCard, setSelectedCard] = useState(null);
   const [particles, setParticles] = useState([]);
+  const { t, language } = useTranslation();
+
+  // Helper function to get localized text
+  const getLocalizedText = (item, field) => {
+    if (language === 'en' && item[`${field}_en`]) {
+      return item[`${field}_en`];
+    }
+    return item[field] || '';
+  };
+
+  // Helper function to get localized deck name
+  const getDeckName = (deck) => {
+    return language === 'en' && deck.englishName ? deck.englishName : deck.name;
+  };
 
   // Jelenlegi megjelenítendő tartalom
   const getCurrentContent = () => {
@@ -103,7 +118,7 @@ const MagicServiceCards = () => {
       if (deck) {
         crumbs.push({
           id: deck.id,
-          name: deck.name,
+          name: getDeckName(deck),
           icon: deck.icon
         });
       }
@@ -117,10 +132,25 @@ const MagicServiceCards = () => {
 
   return (
     <section className="magic-services-section" id="magic-services">
+      {/* Backdrop - kattintásra bezár */}
+      {selectedCard && (
+        <div
+          className="card-backdrop"
+          onClick={closeCard}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            background: 'rgba(0, 0, 0, 0.3)',
+            zIndex: 900,
+            cursor: 'pointer'
+          }}
+        />
+      )}
+
       <div className="container">
         {/* Header + Breadcrumb */}
         <div className="magic-services-header">
-          <h2 className="magic-title">Varázslatos Szolgáltatásaink</h2>
+          <h2 className="magic-title">{'Varázslatos Szolgáltatásaink'}</h2>
 
           {navigationPath.length > 0 ? (
             <div className="breadcrumb-navigation">
@@ -143,18 +173,18 @@ const MagicServiceCards = () => {
               ))}
             </div>
           ) : (
-            <p className="magic-subtitle">Húzz egy paklit a varázsláshoz</p>
+            <p className="magic-subtitle">{'Húzz egy paklit a varázsláshoz'}</p>
           )}
 
           {/* Vissza gombok */}
           {navigationPath.length > 0 && (
             <div className="navigation-buttons">
               <button className="nav-btn back-btn" onClick={goBack}>
-                <FontAwesomeIcon icon={faChevronLeft} /> Vissza
+                <FontAwesomeIcon icon={faChevronLeft} /> {'Vissza'}
               </button>
               {navigationPath.length > 1 && (
                 <button className="nav-btn home-btn" onClick={goHome}>
-                  <FontAwesomeIcon icon={faHome} /> Főoldal
+                  <FontAwesomeIcon icon={faHome} /> {'Főoldal'}
                 </button>
               )}
             </div>
@@ -187,14 +217,14 @@ const MagicServiceCards = () => {
                   <div className="card-divider"></div>
 
                   <div className="card-content">
-                    <h3 className="card-title">{mainDeck.name}</h3>
-                    <p className="card-subtitle">{mainDeck.englishName}</p>
-                    <p className="deck-info">{mainDeck.deckCount} pakli</p>
-                    <p className="deck-info">{mainDeck.totalCards} kártya</p>
+                    <h3 className="card-title">{getDeckName(mainDeck)}</h3>
+                    <p className="card-subtitle">{language === 'en' ? mainDeck.name : mainDeck.englishName}</p>
+                    <p className="deck-info">{mainDeck.deckCount} {'pakli'}</p>
+                    <p className="deck-info">{mainDeck.totalCards} {'kártya'}</p>
                   </div>
 
                   <div className="deck-action">
-                    <span className="deck-action-text">HÚZD KI</span>
+                    <span className="deck-action-text">{'HÚZD KI'}</span>
                   </div>
                 </div>
               </div>
@@ -209,7 +239,14 @@ const MagicServiceCards = () => {
             <div
               key={deck.id}
               className="magic-deck sub-deck"
-              onClick={() => openDeck(deck.id)}
+              onClick={() => {
+                // Ha egyedi kártya (isSingleCard), azonnal megnyitjuk
+                if (deck.isSingleCard && deck.cards && deck.cards.length > 0) {
+                  openCard(deck.cards[0]);
+                } else {
+                  openDeck(deck.id);
+                }
+              }}
             >
               <div className="deck-stack">
                 <div className="deck-card deck-back"></div>
@@ -227,17 +264,17 @@ const MagicServiceCards = () => {
                   <div className="card-divider"></div>
 
                   <div className="card-content">
-                    <h3 className="card-title">{deck.name}</h3>
-                    <p className="card-subtitle">{deck.englishName}</p>
+                    <h3 className="card-title">{getDeckName(deck)}</h3>
+                    <p className="card-subtitle">{language === 'en' ? deck.name : deck.englishName}</p>
                     {deck.description && (
-                      <p className="deck-description">{deck.description}</p>
+                      <p className="deck-description">{getLocalizedText(deck, 'description')}</p>
                     )}
                     {deck.directCards ? (
-                      <p className="deck-info">{deck.cardCount} kártya</p>
+                      <p className="deck-info">{deck.cardCount} {'kártya'}</p>
                     ) : (
                       <>
-                        <p className="deck-info">{deck.deckCount || deck.totalCards} pakli</p>
-                        {deck.totalCards && <p className="deck-info">{deck.totalCards} kártya</p>}
+                        <p className="deck-info">{deck.deckCount || deck.totalCards} {'pakli'}</p>
+                        {deck.totalCards && <p className="deck-info">{deck.totalCards} {'kártya'}</p>}
                       </>
                     )}
                   </div>
@@ -256,70 +293,67 @@ const MagicServiceCards = () => {
           {currentContent.type === 'cards' && currentContent.data.map((card) => (
             <div
               key={card.id}
-              className={`magic-card ${selectedCard?.id === card.id ? 'active' : ''} ${
+              className={`magic-card ${selectedCard?.id === card.id ? 'flipped' : ''} ${
                 selectedCard && selectedCard.id !== card.id ? 'background' : ''
               }`}
               onClick={() => !selectedCard && openCard(card)}
             >
               <div className="magic-card-inner">
-                <div className="card-arcana">{card.arcana}</div>
-                <div className="card-corner top-left">✦</div>
-                <div className="card-corner top-right">✦</div>
-                <div className="card-corner bottom-left">✦</div>
-                <div className="card-corner bottom-right">✦</div>
+                {/* ELEJE - Front side */}
+                <div className="card-front">
+                  <div className="card-arcana">{card.arcana}</div>
+                  <div className="card-corner top-left">✦</div>
+                  <div className="card-corner top-right">✦</div>
+                  <div className="card-corner bottom-left">✦</div>
+                  <div className="card-corner bottom-right">✦</div>
 
-                {card.image ? (
-                  <div className="card-image-container">
-                    <img src={card.image} alt={card.title} className="card-image" />
+                  {card.image ? (
+                    <div className="card-image-container">
+                      <img src={card.image} alt={card.title} className="card-image" />
+                    </div>
+                  ) : (
+                    <div className="card-icon-container">
+                      <span className="card-icon-large">{card.icon}</span>
+                    </div>
+                  )}
+
+                  <div className="card-divider"></div>
+
+                  <div className="card-content">
+                    <h3 className="card-title">{getLocalizedText(card, 'title')}</h3>
+                    <p className="card-subtitle">{getLocalizedText(card, 'subtitle')}</p>
+                    <p className="card-duration">⏱ {card.duration}</p>
+                    {card.price && <p className="card-price">💰 {card.price}</p>}
                   </div>
-                ) : (
-                  <div className="card-icon-container">
-                    <span className="card-icon-large">{card.icon}</span>
-                  </div>
-                )}
-
-                <div className="card-divider"></div>
-
-                <div className="card-content">
-                  <h3 className="card-title">{card.title}</h3>
-                  <p className="card-subtitle">{card.subtitle}</p>
-                  <p className="card-duration">⏱ {card.duration}</p>
-                  {card.price && <p className="card-price">💰 {card.price}</p>}
                 </div>
 
-                {/* Kártya részletek amikor ki van nyitva */}
-                {selectedCard?.id === card.id && (
-                  <div className="card-details">
-                    <button className="close-btn" onClick={(e) => {
-                      e.stopPropagation();
-                      closeCard();
-                    }}>
-                      <FontAwesomeIcon icon={faTimes} />
-                    </button>
+                {/* HÁTOLDAL - Back side */}
+                <div className="card-back">
+                  <div className="card-arcana">{card.arcana}</div>
+                  <div className="card-corner top-left">✦</div>
+                  <div className="card-corner top-right">✦</div>
+                  <div className="card-corner bottom-left">✦</div>
+                  <div className="card-corner bottom-right">✦</div>
+
+                  {/* Bezárás gomb - jobb felül */}
+                  <button className="close-btn" onClick={(e) => {
+                    e.stopPropagation();
+                    closeCard();
+                  }}>
+                    <FontAwesomeIcon icon={faTimes} />
+                  </button>
+
+                  <div className="card-back-content">
+                    <h3 className="card-title">{getLocalizedText(card, 'title')}</h3>
+                    <p className="card-subtitle">{getLocalizedText(card, 'subtitle')}</p>
 
                     {card.description && (
-                      <p className="card-description">{card.description}</p>
+                      <div className="card-description-wrapper">
+                        <p className="card-description">{getLocalizedText(card, 'description')}</p>
+                      </div>
                     )}
-
-                    {card.steps && card.steps.length > 0 && (
-                      <>
-                        <h4 className="details-title">Lépések:</h4>
-                        <ol className="steps-list">
-                          {card.steps.map((step, index) => (
-                            <li key={index}>{step}</li>
-                          ))}
-                        </ol>
-                      </>
-                    )}
-
-                    <button className="price-btn" onClick={(e) => {
-                      e.stopPropagation();
-                      scrollToPriceList();
-                    }}>
-                      <FontAwesomeIcon icon={faCoins} /> Árlista megtekintése
-                    </button>
                   </div>
-                )}
+                </div>
               </div>
             </div>
           ))}

@@ -2,18 +2,21 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { useTranslation } from '../../hooks/useTranslation';
 
 const Reviews = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="section reviews" id="ertekeles">
       <div className="container">
-        <h2 className="section-title">Értékelések</h2>
+        <h2 className="section-title">{t('reviews.title')}</h2>
 
         {/* Google Reviews Section */}
         <div className="google-reviews-section">
           <div className="reviews-header">
             <FontAwesomeIcon icon={faGoogle} className="google-icon" />
-            <h3 className="reviews-title">Vendégeink Véleménye</h3>
+            <h3 className="reviews-title">{t('reviews.subtitle')}</h3>
           </div>
 
           <div className="reviews-stats">
@@ -26,7 +29,7 @@ const Reviews = () => {
                 <FontAwesomeIcon icon={faStar} />
                 <FontAwesomeIcon icon={faStar} />
               </div>
-              <div className="review-count">20 Google értékelés</div>
+              <div className="review-count">20 {t('reviews.reviewCount')}</div>
             </div>
           </div>
 
@@ -39,8 +42,8 @@ const Reviews = () => {
                 <FontAwesomeIcon icon={faStar} />
                 <FontAwesomeIcon icon={faStar} />
               </div>
-              <p className="review-text">"Fantasztikus hely! Felicia csodát művelt a hajammal. Profi, kedves kiszolgálás."</p>
-              <p className="review-author">— Anna M.</p>
+              <p className="review-text">"{t('reviews.review1')}"</p>
+              <p className="review-author">{t('reviews.author1')}</p>
             </div>
 
             <div className="review-card">
@@ -51,8 +54,8 @@ const Reviews = () => {
                 <FontAwesomeIcon icon={faStar} />
                 <FontAwesomeIcon icon={faStar} />
               </div>
-              <p className="review-text">"Kreatív csapat, egyedi atmoszféra. Mindig elégedetten távozom!"</p>
-              <p className="review-author">— Petra K.</p>
+              <p className="review-text">"{t('reviews.review2')}"</p>
+              <p className="review-author">{t('reviews.author2')}</p>
             </div>
 
             <div className="review-card">
@@ -63,8 +66,8 @@ const Reviews = () => {
                 <FontAwesomeIcon icon={faStar} />
                 <FontAwesomeIcon icon={faStar} />
               </div>
-              <p className="review-text">"Legjobb fodrászat a környéken! Minden alkalommal kiváló munka és jó hangulat."</p>
-              <p className="review-author">— Zsolt B.</p>
+              <p className="review-text">"{t('reviews.review3')}"</p>
+              <p className="review-author">{t('reviews.author3')}</p>
             </div>
           </div>
 
@@ -74,7 +77,7 @@ const Reviews = () => {
             rel="noopener noreferrer"
             className="view-all-reviews"
           >
-            <FontAwesomeIcon icon={faGoogle} /> Összes értékelés megtekintése
+            <FontAwesomeIcon icon={faGoogle} /> {t('reviews.viewAllButton')}
           </a>
         </div>
       </div>

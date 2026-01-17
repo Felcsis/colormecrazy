@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import About from './components/About/About';
@@ -14,6 +15,7 @@ import TeamMemberDetail from './pages/TeamMemberDetail/TeamMemberDetail';
 import Education from './pages/Education/Education';
 import Blog from './pages/Blog/Blog';
 import MessengerButton from './components/MessengerButton/MessengerButton';
+import DebugTranslations from './components/DebugTranslations';
 
 function HomePage() {
   return (
@@ -30,21 +32,24 @@ function HomePage() {
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/csapat/:memberId" element={<TeamMemberDetail />} />
-          <Route path="/oktatas" element={<Education />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/szolgaltatasok" element={<MagicServiceCards />} />
-          <Route path="/galeria" element={<Gallery />} />
-        </Routes>
-        <Footer />
-        <MessengerButton />
-      </div>
-    </Router>
+    <LanguageProvider>
+      <Router>
+        <div className="App">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/csapat/:memberId" element={<TeamMemberDetail />} />
+            <Route path="/oktatas" element={<Education />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/szolgaltatasok" element={<MagicServiceCards />} />
+            <Route path="/galeria" element={<Gallery />} />
+          </Routes>
+          <Footer />
+          <MessengerButton />
+          <DebugTranslations />
+        </div>
+      </Router>
+    </LanguageProvider>
   );
 }
 

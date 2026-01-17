@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera, faTimes } from '@fortawesome/free-solid-svg-icons';
 import './Gallery.css';
+import { useTranslation } from '../../hooks/useTranslation';
 
 // Galéria képek listája
 const galleryImages = [
@@ -90,6 +91,7 @@ const Gallery = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [imageLoaded, setImageLoaded] = useState({});
+  const { t } = useTranslation();
 
   // Keyboard navigation
   useEffect(() => {
@@ -141,8 +143,8 @@ const Gallery = () => {
   return (
     <section className="section galeria" id="galeria">
       <div className="container">
-        <h2 className="section-title">Galéria</h2>
-        <p className="section-subtitle">Munkáinkból</p>
+        <h2 className="section-title">{t('gallery.title')}</h2>
+        <p className="section-subtitle">{t('gallery.subtitle')}</p>
 
         {galleryImages.length === 0 ? (
           // Placeholder ha még nincsenek képek
@@ -151,7 +153,7 @@ const Gallery = () => {
               <div key={item} className="gallery-item">
                 <div className="gallery-placeholder">
                   <FontAwesomeIcon icon={faCamera} />
-                  <span>Kép {item}</span>
+                  <span>{t('gallery.placeholderText')} {item}</span>
                 </div>
               </div>
             ))}

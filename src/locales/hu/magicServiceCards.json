@@ -1,0 +1,15 @@
+{
+  "title": "Varázslatos Szolgáltatásaink",
+  "subtitle": "Húzz egy paklit a varázsláshoz",
+  "homeIcon": "🏠",
+  "homeName": "Főoldal",
+  "backButton": "Vissza",
+  "homeButton": "Főoldal",
+  "deckInfo": "pakli",
+  "cardInfo": "kártya",
+  "actionDraw": "HÚZD KI",
+  "actionOpen": "MEGNYIT",
+  "actionExpand": "KINYIT",
+  "stepsTitle": "Lépések:",
+  "priceListButton": "Árlista megtekintése"
+}

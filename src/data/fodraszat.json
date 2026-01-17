@@ -1,60 +1,67 @@
 [
   {
     "category": "Női Hajvágás",
+    "category_en": "Women's Haircut",
     "services": [
-      { "name": "Rövid", "price": "6500 Ft" },
-      { "name": "Félhosszú", "price": "8000 Ft" },
-      { "name": "Hosszú", "price": "9000 Ft" },
-      { "name": "Extra hosszú", "price": "10 000 Ft" },
-      { "name": "Száraz hajvágás", "price": "4000 Ft" }
+      { "name": "Rövid", "name_en": "Short", "price": "6500 Ft" },
+      { "name": "Félhosszú", "name_en": "Medium Length", "price": "8000 Ft" },
+      { "name": "Hosszú", "name_en": "Long", "price": "9000 Ft" },
+      { "name": "Extra hosszú", "name_en": "Extra Long", "price": "10 000 Ft" },
+      { "name": "Száraz hajvágás", "name_en": "Dry Haircut", "price": "4000 Ft" }
     ]
   },
   {
     "category": "Férfi Hajvágás",
+    "category_en": "Men's Haircut",
     "services": [
-      { "name": "Rövid hajvágás", "price": "4200 Ft" },
-      { "name": "Középhosszú", "price": "5000 Ft" },
-      { "name": "Férfi hosszú", "price": "5500 Ft" },
-      { "name": "Csak géppel", "price": "3500 Ft" },
-      { "name": "Szakáll igazítás", "price": "2800 Ft" },
-      { "name": "Mosás", "price": "1500 Ft" }
+      { "name": "Rövid hajvágás", "name_en": "Short Haircut", "price": "4200 Ft" },
+      { "name": "Középhosszú", "name_en": "Medium Length", "price": "5000 Ft" },
+      { "name": "Férfi hosszú", "name_en": "Men's Long", "price": "5500 Ft" },
+      { "name": "Csak géppel", "name_en": "Clipper Only", "price": "3500 Ft" },
+      { "name": "Szakáll igazítás", "name_en": "Beard Trim", "price": "2800 Ft" },
+      { "name": "Mosás", "name_en": "Wash", "price": "1500 Ft" }
     ]
   },
   {
     "category": "Festés / Színezés",
+    "category_en": "Dyeing / Coloring",
     "note": "+ felhasznált anyag",
+    "note_en": "+ materials used",
     "services": [
-      { "name": "Rövid", "price": "6500 Ft" },
-      { "name": "Félhosszú", "price": "8000 Ft" },
-      { "name": "Hosszú", "price": "9000 Ft" },
-      { "name": "Extra hosszú", "price": "10 000 Ft" }
+      { "name": "Rövid", "name_en": "Short", "price": "6500 Ft" },
+      { "name": "Félhosszú", "name_en": "Medium Length", "price": "8000 Ft" },
+      { "name": "Hosszú", "name_en": "Long", "price": "9000 Ft" },
+      { "name": "Extra hosszú", "name_en": "Extra Long", "price": "10 000 Ft" }
     ]
   },
   {
     "category": "Szőkítés",
+    "category_en": "Bleaching",
     "note": "Felhasznált anyag",
+    "note_en": "Materials used",
     "services": [
-      { "name": "Tő szőkítés", "price": "7 500 Ft" },
-      { "name": "Teljes szőkítés", "price": "10 000 Ft" },
-      { "name": "Balayage", "price": "12 000 Ft" },
-      { "name": "Melír", "price": "4000 Ft/óra" },
-      { "name": "Korrekció", "price": "3000 Ft/óra" },
-      { "name": "Tartós festék", "price": "90 Ft/g" },
-      { "name": "Féltartós színező", "price": "90 Ft/g" },
-      { "name": "Fizikai színező", "price": "90 Ft/g" },
-      { "name": "Toner", "price": "110 Ft/g" },
-      { "name": "Szőkítő", "price": "80 Ft/g" },
-      { "name": "Kötés erősítő szőkítő", "price": "10 Ft/g" },
-      { "name": "Pigment eltávolító", "price": "5000 Ft/csomag" }
+      { "name": "Tő szőkítés", "name_en": "Root Bleaching", "price": "7 500 Ft" },
+      { "name": "Teljes szőkítés", "name_en": "Full Bleaching", "price": "10 000 Ft" },
+      { "name": "Balayage", "name_en": "Balayage", "price": "12 000 Ft" },
+      { "name": "Melír", "name_en": "Highlights", "price": "4000 Ft/óra" },
+      { "name": "Korrekció", "name_en": "Correction", "price": "3000 Ft/óra" },
+      { "name": "Tartós festék", "name_en": "Permanent Dye", "price": "90 Ft/g" },
+      { "name": "Féltartós színező", "name_en": "Semi-Permanent Color", "price": "90 Ft/g" },
+      { "name": "Fizikai színező", "name_en": "Physical Color", "price": "90 Ft/g" },
+      { "name": "Toner", "name_en": "Toner", "price": "110 Ft/g" },
+      { "name": "Szőkítő", "name_en": "Bleach", "price": "80 Ft/g" },
+      { "name": "Kötés erősítő szőkítő", "name_en": "Bond Strengthening Bleach", "price": "10 Ft/g" },
+      { "name": "Pigment eltávolító", "name_en": "Pigment Remover", "price": "5000 Ft/csomag" }
     ]
   },
   {
     "category": "Egyéb Szolgáltatások",
+    "category_en": "Other Services",
     "services": [
-      { "name": "Fejmasszázs", "price": "1500 Ft" },
-      { "name": "Steampod szolgáltatás", "price": "4500 Ft + mosás" },
-      { "name": "Hajgöndörítés/Vasalás", "price": "3000 Ft" },
-      { "name": "Alkalmi kontyok, frizurák", "price": "8000 Ft-tól" }
+      { "name": "Fejmasszázs", "name_en": "Head Massage", "price": "1500 Ft" },
+      { "name": "Steampod szolgáltatás", "name_en": "Steampod Service", "price": "4500 Ft + mosás" },
+      { "name": "Hajgöndörítés/Vasalás", "name_en": "Hair Curling/Straightening", "price": "3000 Ft" },
+      { "name": "Alkalmi kontyok, frizurák", "name_en": "Special Occasion Updos & Hairstyles", "price": "8000 Ft-tól" }
     ]
   }
 ]
