@@ -235,59 +235,127 @@ const MagicServiceCards = () => {
           {(currentContent.type === 'sub-decks' ||
             currentContent.type === 'sub-sub-decks' ||
             currentContent.type === 'sub-sub-sub-decks') &&
-            currentContent.data.map((deck) => (
-            <div
-              key={deck.id}
-              className="magic-deck sub-deck"
-              onClick={() => {
-                // Ha egyedi kártya (isSingleCard), azonnal megnyitjuk
-                if (deck.isSingleCard && deck.cards && deck.cards.length > 0) {
-                  openCard(deck.cards[0]);
-                } else {
-                  openDeck(deck.id);
-                }
-              }}
-            >
-              <div className="deck-stack">
-                <div className="deck-card deck-back"></div>
-                <div className="deck-card deck-front">
-                  <div className="card-arcana">{deck.arcana}</div>
-                  <div className="card-corner top-left">✦</div>
-                  <div className="card-corner top-right">✦</div>
-                  <div className="card-corner bottom-left">✦</div>
-                  <div className="card-corner bottom-right">✦</div>
+            currentContent.data.map((deck) => {
+              // Ha ez egy egyedi kártya (isSingleCard), akkor kártyaként rendereljük
+              if (deck.isSingleCard && deck.cards && deck.cards.length > 0) {
+                const card = deck.cards[0];
+                return (
+                  <div
+                    key={deck.id}
+                    className={`magic-card ${selectedCard?.id === card.id ? 'flipped' : ''} ${
+                      selectedCard && selectedCard.id !== card.id ? 'background' : ''
+                    }`}
+                    onClick={() => !selectedCard && openCard(card)}
+                  >
+                    <div className="magic-card-inner">
+                      {/* ELEJE - Front side */}
+                      <div className="card-front">
+                        <div className="card-arcana">{card.arcana}</div>
+                        <div className="card-corner top-left">✦</div>
+                        <div className="card-corner top-right">✦</div>
+                        <div className="card-corner bottom-left">✦</div>
+                        <div className="card-corner bottom-right">✦</div>
 
-                  <div className="deck-icon-container">
-                    <span className="deck-icon">{deck.icon}</span>
+                        {card.image ? (
+                          <div className="card-image-container">
+                            <img src={card.image} alt={getLocalizedText(card, 'title')} className="card-image" />
+                          </div>
+                        ) : (
+                          <div className="card-icon-container">
+                            <span className="card-icon-large">{card.icon}</span>
+                          </div>
+                        )}
+
+                        <div className="card-divider"></div>
+
+                        <div className="card-content">
+                          <h3 className="card-title">{getLocalizedText(card, 'title')}</h3>
+                          <p className="card-subtitle">{getLocalizedText(card, 'subtitle')}</p>
+                          <p className="card-duration">⏱ {card.duration}</p>
+                          {card.price && <p className="card-price">💰 {card.price}</p>}
+                        </div>
+                      </div>
+
+                      {/* HÁTOLDAL - Back side */}
+                      <div className="card-back">
+                        <div className="card-arcana">{card.arcana}</div>
+                        <div className="card-corner top-left">✦</div>
+                        <div className="card-corner top-right">✦</div>
+                        <div className="card-corner bottom-left">✦</div>
+                        <div className="card-corner bottom-right">✦</div>
+
+                        {/* Bezárás gomb - jobb felül */}
+                        <button className="close-btn" onClick={(e) => {
+                          e.stopPropagation();
+                          closeCard();
+                        }}>
+                          <FontAwesomeIcon icon={faTimes} />
+                        </button>
+
+                        <div className="card-back-content">
+                          <h3 className="card-title">{getLocalizedText(card, 'title')}</h3>
+                          <p className="card-subtitle">{getLocalizedText(card, 'subtitle')}</p>
+
+                          {card.description && (
+                            <div className="card-description-wrapper">
+                              <p className="card-description">{getLocalizedText(card, 'description')}</p>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                );
+              }
 
-                  <div className="card-divider"></div>
+              // Egyébként normál paklként rendereljük
+              return (
+                <div
+                  key={deck.id}
+                  className="magic-deck sub-deck"
+                  onClick={() => openDeck(deck.id)}
+                >
+                  <div className="deck-stack">
+                    <div className="deck-card deck-back"></div>
+                    <div className="deck-card deck-front">
+                      <div className="card-arcana">{deck.arcana}</div>
+                      <div className="card-corner top-left">✦</div>
+                      <div className="card-corner top-right">✦</div>
+                      <div className="card-corner bottom-left">✦</div>
+                      <div className="card-corner bottom-right">✦</div>
 
-                  <div className="card-content">
-                    <h3 className="card-title">{getDeckName(deck)}</h3>
-                    <p className="card-subtitle">{language === 'en' ? deck.name : deck.englishName}</p>
-                    {deck.description && (
-                      <p className="deck-description">{getLocalizedText(deck, 'description')}</p>
-                    )}
-                    {deck.directCards ? (
-                      <p className="deck-info">{deck.cardCount} {'kártya'}</p>
-                    ) : (
-                      <>
-                        <p className="deck-info">{deck.deckCount || deck.totalCards} {'pakli'}</p>
-                        {deck.totalCards && <p className="deck-info">{deck.totalCards} {'kártya'}</p>}
-                      </>
-                    )}
-                  </div>
+                      <div className="deck-icon-container">
+                        <span className="deck-icon">{deck.icon}</span>
+                      </div>
 
-                  <div className="deck-action">
-                    <span className="deck-action-text">
-                      {deck.directCards ? 'MEGNYIT' : 'KINYIT'}
-                    </span>
+                      <div className="card-divider"></div>
+
+                      <div className="card-content">
+                        <h3 className="card-title">{getDeckName(deck)}</h3>
+                        <p className="card-subtitle">{language === 'en' ? deck.name : deck.englishName}</p>
+                        {deck.description && (
+                          <p className="deck-description">{getLocalizedText(deck, 'description')}</p>
+                        )}
+                        {deck.directCards ? (
+                          <p className="deck-info">{deck.cardCount} {'kártya'}</p>
+                        ) : (
+                          <>
+                            <p className="deck-info">{deck.deckCount || deck.totalCards} {'pakli'}</p>
+                            {deck.totalCards && <p className="deck-info">{deck.totalCards} {'kártya'}</p>}
+                          </>
+                        )}
+                      </div>
+
+                      <div className="deck-action">
+                        <span className="deck-action-text">
+                          {deck.directCards ? 'MEGNYIT' : 'KINYIT'}
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              );
+            })}
 
           {/* VÉGSŐ KÁRTYÁK */}
           {currentContent.type === 'cards' && currentContent.data.map((card) => (
