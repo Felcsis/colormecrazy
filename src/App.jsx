@@ -15,7 +15,6 @@ import TeamMemberDetail from './pages/TeamMemberDetail/TeamMemberDetail';
 import Education from './pages/Education/Education';
 import Blog from './pages/Blog/Blog';
 import MessengerButton from './components/MessengerButton/MessengerButton';
-import DebugTranslations from './components/DebugTranslations';
 
 function HomePage() {
   return (
@@ -46,7 +45,6 @@ function App() {
           </Routes>
           <Footer />
           <MessengerButton />
-          <DebugTranslations />
         </div>
       </Router>
     </LanguageProvider>
