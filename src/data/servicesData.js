@@ -796,11 +796,11 @@ export const servicesData = {
           cardCount: 5,
 
           cards: [
-            { id: 'raszta-haj-keszitese', arcana: '1', title: 'Raszta haj készítése', subtitle: 'Rasta braiding', icon: 'faLink', duration: '~4-6 óra', description: 'Fonott raszta frizura készítése természetes hajból.' },
-            { id: 'raszta-haj-karbantartasa', arcana: '2', title: 'Raszta haj karbantartása', subtitle: 'Rasta maintenance', icon: 'faLink', duration: '~2-3 óra', description: 'Meglévő raszta frissítése, újrafonása, ápolása.' },
-            { id: 'muraszta-haj-felfonas', arcana: '3', title: 'Műraszta haj felfonás', subtitle: 'Synthetic rasta braiding', icon: 'faLink', duration: '~3-5 óra', description: 'Műszálas raszta haj befonása.' },
-            { id: 'raszta-hajfestes-szokites', arcana: '4', title: 'Raszta hajfestés/szőkítés', subtitle: 'Rasta coloring/bleaching', icon: 'faLink', duration: '~2-4 óra', description: 'Raszta haj színezése vagy szőkítése.' },
-            { id: 'raszta-hajkibontas', arcana: '5', title: 'Raszta hajkibontás', subtitle: 'Rasta removal', icon: 'faLink', duration: '~2-4 óra', description: 'Raszta haj szakszerű kibontása és ápolása.' }
+            { id: 'raszta-haj-keszitese', arcana: '1', title: 'Raszta haj készítése', subtitle: 'Rasta braiding', icon: 'faLink', duration: '4-8 óra', description: 'Fonott raszta frizura készítése természetes hajból.' },
+            { id: 'raszta-haj-karbantartasa', arcana: '2', title: 'Raszta haj karbantartása', subtitle: 'Rasta maintenance', icon: 'faLink', duration: '1,5-3 óra', description: 'Meglévő raszta frissítése, újrafonása, ápolása.' },
+            { id: 'muraszta-haj-felfonas', arcana: '3', title: 'Műraszta haj felfonás', subtitle: 'Synthetic rasta braiding', icon: 'faLink', duration: '1,5-4 óra', description: 'Műszálas raszta haj befonása.' },
+            { id: 'raszta-hajfestes-szokites', arcana: '4', title: 'Raszta hajfestés/szőkítés', subtitle: 'Rasta coloring/bleaching', icon: 'faLink', duration: '4-8 óra', description: 'Raszta haj színezése vagy szőkítése.' },
+            { id: 'raszta-hajkibontas', arcana: '5', title: 'Raszta hajkibontás', subtitle: 'Rasta removal', icon: 'faLink', duration: '6-12 óra', description: 'Raszta haj szakszerű kibontása és ápolása.' }
           ]
         },
 
