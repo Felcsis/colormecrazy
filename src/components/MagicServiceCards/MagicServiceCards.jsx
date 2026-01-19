@@ -4,7 +4,32 @@ import {
   faTimes,
   faCoins,
   faHome,
-  faChevronLeft
+  faChevronLeft,
+  faPaintBrush,
+  faCut,
+  faWandMagicSparkles,
+  faPaw,
+  faWater,
+  faStar,
+  faUser,
+  faBolt,
+  faHeart,
+  faGlobe,
+  faScissors,
+  faFire,
+  faChild,
+  faLink,
+  faComment,
+  faGem,
+  faSpa,
+  faDroplet,
+  faVolumeHigh,
+  faPumpSoap,
+  faPlus,
+  faRuler,
+  faClipboard,
+  faRainbow,
+  faBriefcase
 } from '@fortawesome/free-solid-svg-icons';
 import { servicesData, findDeckById } from '../../data/servicesData';
 import './MagicServiceCards.css';
@@ -15,6 +40,71 @@ const MagicServiceCards = () => {
   const [selectedCard, setSelectedCard] = useState(null);
   const [particles, setParticles] = useState([]);
   const { t, language } = useTranslation();
+
+  // Icon mapping - converts icon names/emojis to FontAwesome icons
+  const iconMap = {
+    // FontAwesome icon names
+    'faPaintBrush': faPaintBrush,
+    'faCut': faCut,
+    'faScissors': faScissors,
+    'faWandMagicSparkles': faWandMagicSparkles,
+    'faPaw': faPaw,
+    'faWater': faWater,
+    'faStar': faStar,
+    'faUser': faUser,
+    'faBolt': faBolt,
+    'faHeart': faHeart,
+    'faGlobe': faGlobe,
+    'faFire': faFire,
+    'faChild': faChild,
+    'faLink': faLink,
+    'faComment': faComment,
+    'faGem': faGem,
+    'faSpa': faSpa,
+    'faDroplet': faDroplet,
+    'faVolumeHigh': faVolumeHigh,
+    'faPumpSoap': faPumpSoap,
+    'faPlus': faPlus,
+    'faRuler': faRuler,
+    'faClipboard': faClipboard,
+    'faRainbow': faRainbow,
+    'faBriefcase': faBriefcase,
+    // Emoji fallbacks (for backward compatibility)
+    '🎨': faPaintBrush,
+    '✂️': faCut,
+    '🦋': faWandMagicSparkles,
+    '🐺': faPaw,
+    '🌊': faWater,
+    '🐙': faStar,
+    '✨': faWandMagicSparkles,
+    '🌟': faStar,
+    '💁': faUser,
+    '💇': faCut,
+    '⚡': faBolt,
+    '🎀': faHeart,
+    '🇰🇷': faGlobe,
+    '🔥': faFire,
+    '👶': faChild,
+    '🔗': faLink,
+    '💬': faComment,
+    '💎': faGem,
+    '💆': faSpa,
+    '🫧': faDroplet,
+    '🔊': faVolumeHigh,
+    '🧴': faPumpSoap,
+    '➕': faPlus,
+    '📐': faRuler,
+    '📋': faClipboard,
+    '🌈': faRainbow,
+    '👔': faBriefcase,
+    '👩': faUser,
+    '👨': faUser
+  };
+
+  // Get FontAwesome icon from name or emoji
+  const getIcon = (iconNameOrEmoji) => {
+    return iconMap[iconNameOrEmoji] || null;
+  };
 
   // Helper function to get localized text
   const getLocalizedText = (item, field) => {
@@ -111,7 +201,7 @@ const MagicServiceCards = () => {
 
   // Breadcrumb generálás
   const getBreadcrumb = () => {
-    const crumbs = [{ id: 'home', name: 'Főoldal', icon: '🏠' }];
+    const crumbs = [{ id: 'home', name: 'Főoldal', icon: faHome }];
 
     navigationPath.forEach((deckId) => {
       const deck = findDeckById(deckId);
@@ -119,7 +209,7 @@ const MagicServiceCards = () => {
         crumbs.push({
           id: deck.id,
           name: getDeckName(deck),
-          icon: deck.icon
+          icon: getIcon(deck.icon)
         });
       }
     });
@@ -167,7 +257,7 @@ const MagicServiceCards = () => {
                       }
                     }}
                   >
-                    {crumb.icon} {crumb.name}
+                    {crumb.icon && <FontAwesomeIcon icon={crumb.icon} />} {crumb.name}
                   </button>
                 </React.Fragment>
               ))}
@@ -211,7 +301,11 @@ const MagicServiceCards = () => {
                   <div className="card-corner bottom-right">✦</div>
 
                   <div className="deck-icon-container">
-                    <span className="deck-icon">{mainDeck.icon}</span>
+                    {getIcon(mainDeck.icon) ? (
+                      <FontAwesomeIcon icon={getIcon(mainDeck.icon)} className="deck-icon" />
+                    ) : (
+                      <span className="deck-icon">{mainDeck.icon}</span>
+                    )}
                   </div>
 
                   <div className="card-divider"></div>
@@ -262,7 +356,11 @@ const MagicServiceCards = () => {
                           </div>
                         ) : (
                           <div className="card-icon-container">
-                            <span className="card-icon-large">{card.icon}</span>
+                            {getIcon(card.icon) ? (
+                              <FontAwesomeIcon icon={getIcon(card.icon)} className="card-icon-large" />
+                            ) : (
+                              <span className="card-icon-large">{card.icon}</span>
+                            )}
                           </div>
                         )}
 
@@ -325,7 +423,11 @@ const MagicServiceCards = () => {
                       <div className="card-corner bottom-right">✦</div>
 
                       <div className="deck-icon-container">
-                        <span className="deck-icon">{deck.icon}</span>
+                        {getIcon(deck.icon) ? (
+                          <FontAwesomeIcon icon={getIcon(deck.icon)} className="deck-icon" />
+                        ) : (
+                          <span className="deck-icon">{deck.icon}</span>
+                        )}
                       </div>
 
                       <div className="card-divider"></div>
@@ -381,7 +483,11 @@ const MagicServiceCards = () => {
                     </div>
                   ) : (
                     <div className="card-icon-container">
-                      <span className="card-icon-large">{card.icon}</span>
+                      {getIcon(card.icon) ? (
+                        <FontAwesomeIcon icon={getIcon(card.icon)} className="card-icon-large" />
+                      ) : (
+                        <span className="card-icon-large">{card.icon}</span>
+                      )}
                     </div>
                   )}
 
