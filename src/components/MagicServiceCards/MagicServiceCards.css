@@ -672,34 +672,35 @@
 }
 
 .card-back .card-title {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #ffffff;
   text-shadow: 0 0 10px rgba(200, 150, 255, 0.5), 0 2px 6px rgba(0, 0, 0, 0.4);
-  margin-bottom: 5px;
+  margin-bottom: 4px;
   font-weight: 700;
+  line-height: 1.3;
 }
 
 .card-back .card-subtitle {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: rgba(200, 150, 255, 0.9);
   text-shadow: 0 0 8px rgba(138, 43, 226, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   font-weight: 500;
 }
 
 .card-description-wrapper {
   display: block;
-  width: calc(100% - 25px);
-  height: 140px;
-  padding: 10px;
-  padding-right: 5px;
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  padding: 15px;
   margin: 0 auto;
   background: rgba(138, 43, 226, 0.15);
   border-radius: 10px;
   border: 2px solid rgba(138, 43, 226, 0.6);
   box-shadow: inset 0 0 30px rgba(138, 43, 226, 0.1);
-  overflow-y: scroll !important;
-  overflow-x: hidden !important;
+  overflow-y: auto;
+  overflow-x: hidden;
   position: relative;
 }
 
@@ -748,9 +749,9 @@
 }
 
 .card-description {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.95);
-  line-height: 1.6;
+  line-height: 1.5;
   margin: 0;
   text-align: left;
   font-weight: 400;
@@ -765,8 +766,8 @@
   left: 50% !important;
   transform: translate(-50%, -50%) scale(1.2) !important;
   z-index: 1000;
-  width: 280px;
-  height: 400px;
+  width: 320px;
+  height: 480px;
   filter: brightness(1.4) contrast(1.1);
   animation: cardJumpToCenter 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
