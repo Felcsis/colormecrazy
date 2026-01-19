@@ -800,7 +800,18 @@ export const servicesData = {
             },
             { id: 'keratin-kezeles', arcana: '3', title: 'Keratin kezelés', subtitle: 'Keratin treatment', icon: 'faWandMagicSparkles', duration: '~120 perc', description: 'Haj kiegyenesítés és ápolás keratinnal.' },
             { id: 'melytaplalo', arcana: '4', title: 'Mélyápoló pakolás', subtitle: 'Deep conditioning', icon: 'faWandMagicSparkles', duration: '~60 perc', description: 'Intenzív hidratáló hajpakolás.' },
-            { id: 'hajbotes', arcana: '5', title: 'Hajbőr kezelés', subtitle: 'Scalp treatment', icon: 'faWandMagicSparkles', duration: '~45 perc', description: 'Hajbőr ápolás és masszázs.' }
+            {
+              id: 'fejbor-kezeles',
+              arcana: '5',
+              title: 'Fejbőr kezelés',
+              title_en: 'Scalp Treatment',
+              subtitle: 'Fejbőr radírozás és ápolás',
+              subtitle_en: 'Scalp Exfoliation & Care',
+              icon: 'faWandMagicSparkles',
+              duration: '~45 perc',
+              description: 'A fejbőr radírozása (exfoliálása) egy hatékony hajápolási technika, ami segít eltávolítani az elhalt hámsejteket, a faggyút, a szennyeződéseket és a termékmaradványokat a fejbőrről, így normalizálja a faggyútermelést, csökkenti a viszketést és a hámlást, elősegíti az egészségesebb haj növekedését, frissíti a fejbőrt, és jobb felszívódást biztosít a további ápolóknak. Különösen ajánlott zsírosodó, viszkető, korpás vagy érzékeny fejbőrre, de fontos a megfelelő, gyengéd termék kiválasztása és a gyakoriság betartása.',
+              description_en: 'Scalp exfoliation is an effective hair care technique that helps remove dead skin cells, sebum, dirt, and product residue from the scalp, normalizing sebum production, reducing itchiness and flaking, promoting healthier hair growth, refreshing the scalp, and ensuring better absorption of subsequent treatments. Especially recommended for oily, itchy, flaky, or sensitive scalps, but proper selection of gentle products and adherence to frequency guidelines is important.',
+            }
           ]
         },
 
