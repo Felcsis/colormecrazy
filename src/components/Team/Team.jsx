@@ -46,18 +46,6 @@ const teamMembersConfig = [
     }
   },
   {
-    id: 'anti',
-    image: '/images/Anti.webp',
-    mysticIcon: faCut,
-    contact: {
-      phone: '+36 20 923 7975',
-      instagram: 'cmc.anti',
-      instagramUrl: 'https://www.instagram.com/cmc.anti',
-      facebook: 'AnTi // Color Me Crazy',
-      facebookUrl: 'https://www.facebook.com/share/1Yqa2MrzD4/'
-    }
-  },
-  {
     id: 'bogi',
     image: '/images/Bogi.webp',
     isKozmetikus: true,

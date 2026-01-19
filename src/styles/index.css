@@ -615,17 +615,6 @@ body {
     }
 }
 
-@keyframes glowAnti {
-    0%, 100% {
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4),
-                    inset 0 0 40px rgba(120, 196, 168, 0.15);
-    }
-    50% {
-        box-shadow: 0 8px 32px rgba(120, 196, 168, 0.3),
-                    inset 0 0 60px rgba(120, 196, 168, 0.2);
-    }
-}
-
 @keyframes glowBogi {
     0%, 100% {
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4),
@@ -674,10 +663,6 @@ body {
 
 .team-card[data-member="lili"]:hover .arcana-number {
     color: #F4B8D8;
-}
-
-.team-card[data-member="anti"]:hover .arcana-number {
-    color: #78C4A8;
 }
 
 .team-card[data-member="bogi"]:hover .arcana-number {
@@ -756,16 +741,6 @@ body {
                 var(--bg-card) 100%);
 }
 
-.team-card[data-member="anti"]:hover {
-    box-shadow: 0 16px 48px rgba(120, 196, 168, 0.5),
-                inset 0 0 80px rgba(120, 196, 168, 0.25);
-    border-color: #78C4A8;
-    background: linear-gradient(135deg,
-                var(--bg-card) 0%,
-                rgba(120, 196, 168, 0.12) 50%,
-                var(--bg-card) 100%);
-}
-
 .team-card[data-member="bogi"]:hover {
     box-shadow: 0 16px 48px rgba(168, 200, 232, 0.5),
                 inset 0 0 80px rgba(168, 200, 232, 0.25);
@@ -799,11 +774,6 @@ body {
     color: #F4B8D8;
 }
 
-.team-card[data-member="anti"]:hover::before,
-.team-card[data-member="anti"]:hover::after {
-    color: #78C4A8;
-}
-
 .team-card[data-member="bogi"]:hover::before,
 .team-card[data-member="bogi"]:hover::after {
     color: #A8C8E8;
@@ -823,11 +793,6 @@ body {
 .team-card[data-member="lili"] {
     animation: glowLili 4s ease-in-out infinite;
     border-color: #F4B8D8;
-}
-
-.team-card[data-member="anti"] {
-    animation: glowAnti 4s ease-in-out infinite;
-    border-color: #78C4A8;
 }
 
 .team-card[data-member="bogi"] {
@@ -906,11 +871,6 @@ body {
     box-shadow: 0 0 8px #F4B8D8;
 }
 
-.team-card[data-member="anti"]:hover .team-image::before {
-    background: linear-gradient(90deg, transparent, #78C4A8, transparent);
-    box-shadow: 0 0 8px #78C4A8;
-}
-
 .team-card[data-member="bogi"]:hover .team-image::before {
     background: linear-gradient(90deg, transparent, #A8C8E8, transparent);
     box-shadow: 0 0 8px #A8C8E8;
@@ -951,10 +911,6 @@ body {
     border-color: #F4B8D8;
 }
 
-.team-card[data-member="anti"]:hover .team-image img {
-    border-color: #78C4A8;
-}
-
 .team-card[data-member="bogi"]:hover .team-image img {
     border-color: #A8C8E8;
 }
@@ -993,11 +949,6 @@ body {
 .team-card[data-member="lili"]:hover .team-image::after {
     background: linear-gradient(90deg, transparent, #F4B8D8, transparent);
     box-shadow: 0 0 8px #F4B8D8;
-}
-
-.team-card[data-member="anti"]:hover .team-image::after {
-    background: linear-gradient(90deg, transparent, #78C4A8, transparent);
-    box-shadow: 0 0 8px #78C4A8;
 }
 
 .team-card[data-member="bogi"]:hover .team-image::after {
@@ -1095,10 +1046,6 @@ body {
 
 .team-card[data-member="lili"]:hover .arcana-name {
     color: #F4B8D8;
-}
-
-.team-card[data-member="anti"]:hover .arcana-name {
-    color: #78C4A8;
 }
 
 .team-card[data-member="bogi"]:hover .arcana-name {

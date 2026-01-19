@@ -48,18 +48,6 @@ const teamMembersConfig = {
       facebookUrl: 'https://www.facebook.com/profile.php?id=61577565787905'
     }
   },
-  anti: {
-    image: '/images/Anti.webp',
-    portfolio: 'anti',
-    mysticIcon: faCut,
-    contact: {
-      phone: '+36 20 923 7975',
-      instagram: 'cmc.anti',
-      instagramUrl: 'https://www.instagram.com/cmc.anti',
-      facebook: 'AnTi // Color Me Crazy',
-      facebookUrl: 'https://www.facebook.com/share/1Yqa2MrzD4/'
-    }
-  },
   bogi: {
     image: '/images/Bogi.webp',
     portfolio: 'bogi',

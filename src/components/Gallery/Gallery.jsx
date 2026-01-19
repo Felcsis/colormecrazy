@@ -38,50 +38,32 @@ const galleryImages = [
   },
   {
     id: 6,
-    src: '/images/gallery/Anti1.webp',
+    src: '/images/gallery/DSC_7469-Enhanced-NR.webp',
     alt: 'Galéria kép 6',
     category: 'hair'
   },
   {
     id: 7,
-    src: '/images/gallery/Anti3.webp',
+    src: '/images/gallery/Bogi.webp',
     alt: 'Galéria kép 7',
     category: 'hair'
   },
   {
     id: 8,
-    src: '/images/gallery/DSC_7469-Enhanced-NR.webp',
+    src: '/images/gallery/Bogi3.webp',
     alt: 'Galéria kép 8',
     category: 'hair'
   },
   {
     id: 9,
-    src: '/images/gallery/Bogi.webp',
+    src: '/images/gallery/DSC_7519.webp',
     alt: 'Galéria kép 9',
     category: 'hair'
   },
   {
     id: 10,
-    src: '/images/gallery/Anti.webp',
-    alt: 'Galéria kép 10',
-    category: 'hair'
-  },
-  {
-    id: 11,
-    src: '/images/gallery/Bogi3.webp',
-    alt: 'Galéria kép 11',
-    category: 'hair'
-  },
-  {
-    id: 12,
-    src: '/images/gallery/DSC_7519.webp',
-    alt: 'Galéria kép 12',
-    category: 'hair'
-  },
-  {
-    id: 13,
     src: '/images/gallery/DSC_7523.webp',
-    alt: 'Galéria kép 13',
+    alt: 'Galéria kép 10',
     category: 'hair'
   }
 ];

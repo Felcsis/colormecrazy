@@ -1,6 +1,6 @@
 {
   "title": "Csapatunk",
-  "subtitle": "Felicia mesterfodrász vezeti csapatunkat, mellette Gitta, Lili és Anti női, férfi és gyermek fodrászként dolgoznak, kozmetikusunk Bogi pedig gondoskodik róla, hogy ne csak a haj, hanem a bőr is felfrissüljön.",
+  "subtitle": "Felicia mesterfodrász vezeti csapatunkat, mellette Gitta és Lili női, férfi és gyermek fodrászként dolgoznak, kozmetikusunk Bogi pedig gondoskodik róla, hogy ne csak a haj, hanem a bőr is felfrissüljön.",
   "members": {
     "felicia": {
       "name": "Felicia",
@@ -19,12 +19,6 @@
       "role": "Fablehair Stylist",
       "arcana": "The Star",
       "description": "Sziasztok! Lili vagyok, a Color Me Crazy szalon egyik fodrásza. 2025 júniusában kezdtem el dolgozni ebben a szakmában, amelyet azért választottam, mert mindig is közel álltak hozzám a hajak, különösen a festés. Már korábban is rengeteg barátnőm haját készítettem el, és hamar éreztem, hogy ezt akár életem végéig is szívesen csinálnám. Azért szeretem a fodrászatot, mert folyamatos fejlődési lehetőséget nyújt, mindig van mit tanulni, így egyáltalán nem válik unalmassá. Hozzám legközelebb a hajfestés áll, ezen belül is a balayage technikák és a szőkítések, hiszen ezekkel igazán gyönyörű eredményeket lehet elérni, legyen szó természetes vagy akár színes árnyalatokról. A jövőben szeretnék minél többet fejlődni, számos képzésen részt venni, és folyamatosan bővíteni a szolgáltatásaimat. Ezek a célok nap mint nap motiválnak arra, hogy egyre jobb legyek a szakmámban. Amikor éppen nem a szalonban dolgozom, szívesen töltöm a szabadidőmet a természetben, szeretek kirándulni, valamint barátokkal kikapcsolódni."
-    },
-    "anti": {
-      "name": "Anti",
-      "role": "Fodrász",
-      "arcana": "The Hermit",
-      "description": "Én vagyok AnTi. Egész frissen, 2025 tavaszán vizsgáztam, de már 6 évvel ezt megelőzően - amióta szakállt hordok - kezdett érdekelni a szakma. Biztosan állítható, a kedvenc részem a hajvágások A-tól Z-ig. Legyen szó klasszikus, alap, vagy divat hajvágásról. Minden egyes munka újabb lehetőség a további fejlődésre. NINCS ÁTLAGOS NAP. Viszont néha nem árt a pihenés! Ilyenkor jól tud esni egy kis horror, legyen szó, film/sorozat vagy írott formában."
     },
     "bogi": {
       "name": "Bogi",

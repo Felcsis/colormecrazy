@@ -1,6 +1,6 @@
 {
   "title": "Our Team",
-  "subtitle": "Felicia, our master hairdresser, leads the team, alongside Gitta, Lili, and Anti who work as hairdressers for women, men, and children. Our beautician Bogi ensures that not only your hair but also your skin gets refreshed.",
+  "subtitle": "Felicia, our master hairdresser, leads the team, alongside Gitta and Lili who work as hairdressers for women, men, and children. Our beautician Bogi ensures that not only your hair but also your skin gets refreshed.",
   "members": {
     "felicia": {
       "name": "Felicia",
@@ -19,12 +19,6 @@
       "role": "Fablehair Stylist",
       "arcana": "The Star",
       "description": "Hi! I'm Lili, one of the hairdressers at Color Me Crazy salon. I started working in this profession in June 2025, which I chose because I've always been drawn to hair, especially coloring. I had already done many of my friends' hair before, and I quickly felt that I could happily do this for the rest of my life. I love hairdressing because it offers continuous development opportunities—there's always something to learn, so it never becomes boring. What I'm most drawn to is hair coloring, especially balayage techniques and bleaching, as these can achieve truly beautiful results, whether natural or colorful shades. In the future, I want to develop as much as possible, attend numerous training courses, and continuously expand my services. These goals motivate me every day to become better and better in my profession. When I'm not working at the salon, I like to spend my free time in nature, I love hiking, and relaxing with friends."
-    },
-    "anti": {
-      "name": "Anti",
-      "role": "Hairdresser",
-      "arcana": "The Hermit",
-      "description": "I'm AnTi. Very freshly, I took my exam in spring 2025, but the profession started to interest me 6 years before that—since I've been wearing a beard. It can be safely stated that my favorite part is haircuts from A to Z. Whether it's classic, basic, or trendy haircuts. Every single job is another opportunity for further development. THERE IS NO AVERAGE DAY. However, sometimes rest is necessary! At such times, a little horror can be nice, whether in film/series or written form."
     },
     "bogi": {
       "name": "Bogi",
