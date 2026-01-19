@@ -213,7 +213,7 @@ export const servicesData = {
           arcana: 'II',
           type: 'sub-deck',
           directCards: false,
-          deckCount: 4,
+          deckCount: 5,
           totalCards: 96,
 
           subSubDecks: [
@@ -705,40 +705,56 @@ export const servicesData = {
             },
 
             // ┌─────────────────────────────────────────────────┐
-            // │ II.D - GYERMEK + SPECIÁLIS (Direct - 15)       │
+            // │ II.D - GYERMEK HAJVÁGÁSOK (Direct - 4)         │
             // └─────────────────────────────────────────────────┘
             {
-              id: 'gyermek-specialis',
-              name: 'Gyermek + Speciális',
-              englishName: 'Kids + Special',
+              id: 'gyermek-hajvagasok',
+              name: 'Gyermek Hajvágások',
+              englishName: 'Kids Haircuts',
               icon: 'faChild',
               arcana: 'IV',
               type: 'sub-sub-deck',
               directCards: true,
-              cardCount: 15,
-              description: 'Gyermek hajvágások és speciális technikák',
+              cardCount: 4,
+              description: 'Gyermek hajvágások',
 
               cards: [
-                // Gyermek hajvágások (4)
                 { id: 'klasszikus-gyerek', arcana: '1', title: 'Klasszikus gyerek', subtitle: 'Classic kids', icon: 'faChild', duration: '~25 perc', description: 'Hagyományos gyermek hajvágás.' },
                 { id: 'rovid-gyerek', arcana: '2', title: 'Rövid gyerek', subtitle: 'Short kids', icon: 'faChild', duration: '~20 perc', description: 'Praktikus rövid gyerek haj.' },
                 { id: 'felhosszu-gyerek', arcana: '3', title: 'Félhosszú gyerek', subtitle: 'Medium kids', icon: 'faChild', duration: '~25 perc', description: 'Félhosszú gyermek vágás.' },
-                { id: 'unisex-gyerek', arcana: '4', title: 'Unisex gyerek', subtitle: 'Gender-neutral', icon: 'faChild', duration: '~25 perc', description: 'Nemtől független gyerek fazon.' },
+                { id: 'unisex-gyerek', arcana: '4', title: 'Unisex gyerek', subtitle: 'Gender-neutral', icon: 'faChild', duration: '~25 perc', description: 'Nemtől független gyerek fazon.' }
+              ]
+            },
 
+            // ┌─────────────────────────────────────────────────┐
+            // │ II.E - SPECIÁLIS HAJVÁGÁSOK (Direct - 11)      │
+            // └─────────────────────────────────────────────────┘
+            {
+              id: 'specialis-hajvagasok',
+              name: 'Speciális Hajvágások',
+              englishName: 'Special Haircuts',
+              icon: 'faStar',
+              arcana: 'V',
+              type: 'sub-sub-deck',
+              directCards: true,
+              cardCount: 11,
+              description: 'Unisex, alternatív és speciális vágási technikák',
+
+              cards: [
                 // Unisex/Alternatív (7)
-                { id: 'shag-unisex', arcana: '5', title: 'Shag unisex', subtitle: 'Universal shag', icon: 'faWandMagicSparkles', duration: '~60 perc', description: 'Shag bármely nemhez.' },
-                { id: 'wolf-cut-unisex', arcana: '6', title: 'Wolf cut unisex', subtitle: 'Universal wolf', icon: 'faWandMagicSparkles', duration: '~65 perc', description: 'Nemtől független wolf cut.' },
-                { id: 'mullet-unisex', arcana: '7', title: 'Mullet', subtitle: 'Classic mullet', icon: 'faWandMagicSparkles', duration: '~50 perc', description: 'Elöl-oldalt rövid, hátul hosszú.' },
-                { id: 'aszimmetrikus-unisex', arcana: '8', title: 'Aszimmetrikus', subtitle: 'Asymmetric', icon: 'faWandMagicSparkles', duration: '~55 perc', description: 'Aszimmetrikus kreatív vágás.' },
-                { id: 'undercut-unisex', arcana: '9', title: 'Undercut unisex', subtitle: 'Universal undercut', icon: 'faWandMagicSparkles', duration: '~50 perc', description: 'Nemtől független undercut.' },
-                { id: 'genderless-cut', arcana: '10', title: 'Genderless cut', subtitle: 'Nemtelen vágás', icon: 'faWandMagicSparkles', duration: '~50 perc', description: 'Teljesen nemtől független stílus.' },
-                { id: 'mohawk', arcana: '11', title: 'Mohawk', subtitle: 'Irokéz', icon: 'faWandMagicSparkles', duration: '~45 perc', description: 'Oldalt borotvált, középen állva.' },
+                { id: 'shag-unisex', arcana: '1', title: 'Shag unisex', subtitle: 'Universal shag', icon: 'faWandMagicSparkles', duration: '~60 perc', description: 'Shag bármely nemhez.' },
+                { id: 'wolf-cut-unisex', arcana: '2', title: 'Wolf cut unisex', subtitle: 'Universal wolf', icon: 'faWandMagicSparkles', duration: '~65 perc', description: 'Nemtől független wolf cut.' },
+                { id: 'mullet-unisex', arcana: '3', title: 'Mullet', subtitle: 'Classic mullet', icon: 'faWandMagicSparkles', duration: '~50 perc', description: 'Elöl-oldalt rövid, hátul hosszú.' },
+                { id: 'aszimmetrikus-unisex', arcana: '4', title: 'Aszimmetrikus', subtitle: 'Asymmetric', icon: 'faWandMagicSparkles', duration: '~55 perc', description: 'Aszimmetrikus kreatív vágás.' },
+                { id: 'undercut-unisex', arcana: '5', title: 'Undercut unisex', subtitle: 'Universal undercut', icon: 'faWandMagicSparkles', duration: '~50 perc', description: 'Nemtől független undercut.' },
+                { id: 'genderless-cut', arcana: '6', title: 'Genderless cut', subtitle: 'Nemtelen vágás', icon: 'faWandMagicSparkles', duration: '~50 perc', description: 'Teljesen nemtől független stílus.' },
+                { id: 'mohawk', arcana: '7', title: 'Mohawk', subtitle: 'Irokéz', icon: 'faWandMagicSparkles', duration: '~45 perc', description: 'Oldalt borotvált, középen állva.' },
 
                 // Speciális technikák (4)
-                { id: 'afro-vagas', arcana: '12', title: 'Afro hajvágás', subtitle: 'Afro cut', icon: 'faStar', duration: '~60 perc', description: 'Afro textúrájú haj vágása.' },
-                { id: 'gondor-curl-by-curl', arcana: '13', title: 'Göndör - curl by curl', subtitle: 'Deva cut', icon: 'faStar', duration: '~75 perc', description: 'Göndör szálankénti vágása.' },
-                { id: 'dry-cut', arcana: '14', title: 'Dry cut', subtitle: 'Szárazon vágás', icon: 'faStar', duration: '~50 perc', description: 'Száraz hajon vágás természetes formához.' },
-                { id: 'kreativ-editorial', arcana: '15', title: 'Kreatív / editorial', subtitle: 'Artistic cut', icon: 'faStar', duration: '~90 perc', description: 'Művészi, egyedi kreatív vágás.' }
+                { id: 'afro-vagas', arcana: '8', title: 'Afro hajvágás', subtitle: 'Afro cut', icon: 'faStar', duration: '~60 perc', description: 'Afro textúrájú haj vágása.' },
+                { id: 'gondor-curl-by-curl', arcana: '9', title: 'Göndör - curl by curl', subtitle: 'Deva cut', icon: 'faStar', duration: '~75 perc', description: 'Göndör szálankénti vágása.' },
+                { id: 'dry-cut', arcana: '10', title: 'Dry cut', subtitle: 'Szárazon vágás', icon: 'faStar', duration: '~50 perc', description: 'Száraz hajon vágás természetes formához.' },
+                { id: 'kreativ-editorial', arcana: '11', title: 'Kreatív / editorial', subtitle: 'Artistic cut', icon: 'faStar', duration: '~90 perc', description: 'Művészi, egyedi kreatív vágás.' }
               ]
             }
           ]
