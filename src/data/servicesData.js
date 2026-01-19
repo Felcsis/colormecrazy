@@ -711,7 +711,7 @@ export const servicesData = {
               id: 'gyermek-specialis',
               name: 'Gyermek + Speciális',
               englishName: 'Kids + Special',
-              icon: '👶✨',
+              icon: 'faChild',
               arcana: 'IV',
               type: 'sub-sub-deck',
               directCards: true,
