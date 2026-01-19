@@ -761,7 +761,7 @@ export const servicesData = {
         },
 
         // ─────────────────────────────────────────────────────────
-        // III. KEZELÉSEK (Direct cards - 6 kártya)
+        // III. KEZELÉSEK (Direct cards - 7 kártya)
         // ─────────────────────────────────────────────────────────
         {
           id: 'kezelesek',
@@ -771,7 +771,7 @@ export const servicesData = {
           arcana: 'III',
           type: 'sub-deck',
           directCards: true,
-          cardCount: 6,
+          cardCount: 7,
 
           cards: [
             {
@@ -786,11 +786,23 @@ export const servicesData = {
               description: 'Nem csak sérült, roncsolt hajra! Feltölti nedvességgel a porózus kutikulát (száraz haj). Megjavítja a haj sérült keratinláncát (sérült, károsodott haj). Erőt és tartást ad a hajnak (vékony, gyenge haj). Rugalmasságot ad a kinyúlt hullámoknak (göndör haj). Minden vegyszeres beavatkozást hatékonyabbá tesz, legyen az festés vagy tartós hullámosítás. Eredmény: A legerősebb, legegészségesebb, legszebb haj, amit csak el lehet képzelni! Már az első kezelés után ámulatba ejtő különbség érezhető.',
               description_en: 'Not just for damaged hair! Fills porous cuticles with moisture (dry hair). Repairs damaged keratin chains (damaged hair). Gives strength and hold (thin, weak hair). Adds elasticity to stretched waves (curly hair). Makes all chemical treatments more effective, whether coloring or perming. Result: The strongest, healthiest, most beautiful hair imaginable! Amazing difference felt after the first treatment.',
             },
-            { id: 'keratin-kezeles', arcana: '2', title: 'Keratin kezelés', subtitle: 'Keratin treatment', icon: 'faWandMagicSparkles', duration: '~120 perc', description: 'Haj kiegyenesítés és ápolás keratinnal.' },
-            { id: 'olaplex', arcana: '3', title: 'Olaplex kezelés', subtitle: 'Bond building', icon: 'faWandMagicSparkles', duration: '~45 perc', description: 'Hajszerkezet helyreállítás.' },
-            { id: 'melytaplalo', arcana: '4', title: 'Mélyápoló pakolás', subtitle: 'Deep conditioning', icon: 'faWandMagicSparkles', duration: '~60 perc', description: 'Intenzív hidratáló hajpakolás.' },
-            { id: 'hajbotes', arcana: '5', title: 'Hajbőr kezelés', subtitle: 'Scalp treatment', icon: 'faWandMagicSparkles', duration: '~45 perc', description: 'Hajbőr ápolás és masszázs.' },
-            { id: 'protein-kezeles', arcana: '6', title: 'Protein kezelés', subtitle: 'Protein treatment', icon: 'faWandMagicSparkles', duration: '~60 perc', description: 'Fehérje pótló regeneráló kezelés.' }
+            {
+              id: 'steampod',
+              arcana: '2',
+              title: 'Steampod kezelés',
+              title_en: 'Steampod Treatment',
+              subtitle: 'Gőzös hajvasalás + ápolás',
+              subtitle_en: 'Steam Hair Straightening + Care',
+              icon: 'faWandMagicSparkles',
+              duration: '~90 perc',
+              description: 'A Steampod gőzzel dolgozó hajvasalás + ápolás, ami nem csak kisimít, hanem közben kezel is. A gőz segít, hogy az ápoló anyag mélyebbre jusson a hajszálba, miközben kevesebb hőkárosodás éri a hajat. 2-4 hétig tart, nem nő le hanem kikopik az ápoló anyag.',
+              description_en: 'Steampod is a steam-powered hair straightening + care treatment that not only smooths but also treats. The steam helps the nourishing ingredients penetrate deeper into the hair shaft while causing less heat damage. Lasts 2-4 weeks, doesn\'t grow out but gradually fades as the treatment washes out.',
+            },
+            { id: 'keratin-kezeles', arcana: '3', title: 'Keratin kezelés', subtitle: 'Keratin treatment', icon: 'faWandMagicSparkles', duration: '~120 perc', description: 'Haj kiegyenesítés és ápolás keratinnal.' },
+            { id: 'olaplex', arcana: '4', title: 'Olaplex kezelés', subtitle: 'Bond building', icon: 'faWandMagicSparkles', duration: '~45 perc', description: 'Hajszerkezet helyreállítás.' },
+            { id: 'melytaplalo', arcana: '5', title: 'Mélyápoló pakolás', subtitle: 'Deep conditioning', icon: 'faWandMagicSparkles', duration: '~60 perc', description: 'Intenzív hidratáló hajpakolás.' },
+            { id: 'hajbotes', arcana: '6', title: 'Hajbőr kezelés', subtitle: 'Scalp treatment', icon: 'faWandMagicSparkles', duration: '~45 perc', description: 'Hajbőr ápolás és masszázs.' },
+            { id: 'protein-kezeles', arcana: '7', title: 'Protein kezelés', subtitle: 'Protein treatment', icon: 'faWandMagicSparkles', duration: '~60 perc', description: 'Fehérje pótló regeneráló kezelés.' }
           ]
         },
 
