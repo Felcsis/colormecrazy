@@ -14,6 +14,9 @@ import MagicServiceCards from './components/MagicServiceCards/MagicServiceCards'
 import TeamMemberDetail from './pages/TeamMemberDetail/TeamMemberDetail';
 import Education from './pages/Education/Education';
 import Blog from './pages/Blog/Blog';
+import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
+import CookiePolicy from './pages/CookiePolicy/CookiePolicy';
+import TermsAndConditions from './pages/TermsAndConditions/TermsAndConditions';
 import MessengerButton from './components/MessengerButton/MessengerButton';
 
 function HomePage() {
@@ -42,6 +45,9 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/szolgaltatasok" element={<MagicServiceCards />} />
             <Route path="/galeria" element={<Gallery />} />
+            <Route path="/adatkezelesi-tajekoztato" element={<PrivacyPolicy />} />
+            <Route path="/sutik-kezelese" element={<CookiePolicy />} />
+            <Route path="/aszf" element={<TermsAndConditions />} />
           </Routes>
           <Footer />
           <MessengerButton />

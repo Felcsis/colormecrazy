@@ -1,0 +1,111 @@
+{
+  "title": "Adatkezelési Tájékoztató",
+  "lastUpdated": "Utolsó frissítés: 2026. január 19.",
+  "intro": {
+    "title": "Bevezetés",
+    "text1": "A Color Me Crazy Fodrászat és Kozmetika Kft. (a továbbiakban: Szolgáltató) elkötelezett az Ön személyes adatainak védelme iránt. Jelen adatkezelési tájékoztató részletesen ismerteti, hogyan gyűjtjük, használjuk, tároljuk és védjük az Ön személyes adatait.",
+    "text2": "Az adatkezelés az Európai Unió Általános Adatvédelmi Rendelete (GDPR - 2016/679 rendelet) és a magyar információs önrendelkezési jogról és az információszabadságról szóló 2011. évi CXII. törvény (Infotv.) előírásainak megfelelően történik."
+  },
+  "dataController": {
+    "title": "Adatkezelő adatai",
+    "name": "Név:",
+    "address": "Székhely:",
+    "email": "E-mail:",
+    "phone": "Telefon:"
+  },
+  "dataProcessed": {
+    "title": "Kezelt személyes adatok köre",
+    "intro": "A Szolgáltató az alábbi személyes adatokat kezelheti:",
+    "name": "Név (vezetéknév, keresztnév)",
+    "email": "E-mail cím",
+    "phone": "Telefonszám",
+    "appointment": "Időpontfoglalással kapcsolatos adatok (szolgáltatás típusa, időpont, speciális igények)",
+    "technical": "Technikai adatok (IP-cím, böngésző típusa, operációs rendszer, süti azonosítók)"
+  },
+  "purposes": {
+    "title": "Adatkezelés célja",
+    "item1": "Időpontfoglalás kezelése és a szolgáltatások nyújtása",
+    "item2": "Kapcsolattartás az ügyfelekkel, kérdések megválaszolása",
+    "item3": "Hírlevelek és marketing anyagok küldése (hozzájárulás esetén)",
+    "item4": "Honlap működtetése és fejlesztése",
+    "item5": "Jogszabályi kötelezettségek teljesítése (pl. számviteli előírások)"
+  },
+  "legalBasis": {
+    "title": "Adatkezelés jogalapja",
+    "text1": "Az adatkezelés jogalapja az alábbiak szerint alakul:",
+    "consent": "Hozzájárulás: Marketing célú megkeresések esetén (GDPR 6. cikk (1) bekezdés a) pont)",
+    "contract": "Szerződés teljesítése: Időpontfoglalás és szolgáltatásnyújtás (GDPR 6. cikk (1) bekezdés b) pont)",
+    "legitimate": "Jogos érdek: Honlap működtetése, elemzések készítése (GDPR 6. cikk (1) bekezdés f) pont)",
+    "legal": "Jogi kötelezettség: Számviteli és adózási előírások betartása (GDPR 6. cikk (1) bekezdés c) pont)"
+  },
+  "retention": {
+    "title": "Adatmegőrzési időtartam",
+    "text1": "A személyes adatokat csak a szükséges ideig őrizzük meg:",
+    "appointments": "Időpontfoglalási adatok: A szolgáltatás teljesítésétől számított 5 év",
+    "marketing": "Marketing célú hozzájárulás: A hozzájárulás visszavonásáig vagy 3 év inaktivitást követően",
+    "accounting": "Számviteli bizonylatok: Jogszabály által előírt 8 év",
+    "technical": "Technikai adatok (log fájlok): 30 nap"
+  },
+  "rights": {
+    "title": "Az érintettek jogai",
+    "intro": "Önt az alábbi jogok illetik meg személyes adatai tekintetében:",
+    "access": {
+      "title": "Hozzáférési jog:",
+      "text": "Tájékoztatást kérhet arról, hogy személyes adatait kezeljük-e, és ha igen, milyen adatokat kezelünk."
+    },
+    "rectification": {
+      "title": "Helyesbítési jog:",
+      "text": "Kérheti a pontatlan személyes adatok helyesbítését vagy kiegészítését."
+    },
+    "erasure": {
+      "title": "Törléshez való jog:",
+      "text": "Bizonyos esetekben kérheti adatai törlését ('elfeledtetéshez való jog')."
+    },
+    "restriction": {
+      "title": "Korlátozáshoz való jog:",
+      "text": "Kérheti az adatkezelés korlátozását."
+    },
+    "portability": {
+      "title": "Adathordozhatósághoz való jog:",
+      "text": "Kérheti, hogy adatait strukturált, géppel olvasható formátumban kapja meg."
+    },
+    "objection": {
+      "title": "Tiltakozáshoz való jog:",
+      "text": "Tiltakozhat az adatkezelés ellen, különösen közvetlen üzletszerzés esetén."
+    },
+    "withdraw": {
+      "title": "Hozzájárulás visszavonása:",
+      "text": "Bármikor visszavonhatja a hozzájárulását, ez azonban nem érinti a visszavonás előtt végzett adatkezelés jogszerűségét."
+    },
+    "contact": "Jogainak gyakorlásához kérjük, vegye fel velünk a kapcsolatot az alábbi elérhetőségeken keresztül.",
+    "complaint": "Amennyiben úgy érzi, hogy adatkezelésünk sérti a jogszabályokat, panaszt nyújthat be a Nemzeti Adatvédelmi és Információszabadság Hatóságnál (NAIH) az alábbi elérhetőségeken: www.naih.hu, info@naih.hu, 1055 Budapest, Falk Miksa utca 9-11."
+  },
+  "security": {
+    "title": "Adatbiztonság",
+    "text1": "Elkötelezettek vagyunk személyes adatai biztonságának megőrzése iránt. Megfelelő technikai és szervezési intézkedéseket alkalmazunk az adatok jogosulatlan hozzáférés, megváltoztatás, nyilvánosságra hozatal vagy megsemmisítés elleni védelme érdekében.",
+    "text2": "Biztonsági intézkedéseink közé tartozik a titkosított adatátvitel (SSL), hozzáférés-szabályozás, rendszeres biztonsági mentések és munkatársaink folyamatos képzése az adatvédelmi szabályok betartására."
+  },
+  "recipients": {
+    "title": "Adattovábbítás, adatfeldolgozók",
+    "text1": "Személyes adatait csak szükség esetén továbbítjuk harmadik félnek, az alábbi kategóriákban:",
+    "hosting": "Tárhelyszolgáltató (szerverüzemeltetés)",
+    "email": "E-mail szolgáltató (kapcsolattartás)",
+    "accounting": "Könyvelő iroda (számviteli kötelezettségek teljesítése)",
+    "authorities": "Hatóságok (jogszabályi kötelezettség esetén)",
+    "text2": "Adatfeldolgozóinkkal írásban rögzített szerződést kötöttünk, amely biztosítja a GDPR előírásainak betartását. Az adatfeldolgozók az adatokat kizárólag utasításainknak megfelelően kezelhetik."
+  },
+  "cookies": {
+    "title": "Sütik (cookie-k) használata",
+    "text": "Weboldalunk sütiket használ a felhasználói élmény javítása és az oldal működésének biztosítása érdekében. A sütikről részletes tájékoztatást a Sütikezelési Tájékoztatónkban találhat."
+  },
+  "changes": {
+    "title": "Tájékoztató módosítása",
+    "text": "Fenntartjuk a jogot, hogy jelen tájékoztatót időről időre módosítsuk. A módosításokról a weboldalunkon tájékoztatjuk Önt. Kérjük, hogy rendszeresen ellenőrizze a tájékoztatót, hogy naprakész információkkal rendelkezzen adatkezelési gyakorlatunkról."
+  },
+  "contact": {
+    "title": "Kapcsolat",
+    "text": "Amennyiben kérdése van az adatkezeléssel kapcsolatban, vagy szeretné gyakorolni jogait, kérjük, vegye fel velünk a kapcsolatot:",
+    "email": "E-mail:",
+    "phone": "Telefon:"
+  }
+}

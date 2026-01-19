@@ -1,0 +1,138 @@
+{
+  "title": "Általános Szerződési Feltételek (ÁSZF)",
+  "lastUpdated": "Hatálybalépés dátuma: 2026. január 19.",
+  "general": {
+    "title": "1. Általános rendelkezések",
+    "text1": "Jelen Általános Szerződési Feltételek (a továbbiakban: ÁSZF) tartalmazzák a Color Me Crazy Fodrászat és Kozmetika Kft. (a továbbiakban: Szolgáltató) által nyújtott szolgáltatások igénybevételének feltételeit.",
+    "name": "Szolgáltató neve:",
+    "address": "Székhely:",
+    "email": "E-mail:",
+    "phone": "Telefon:",
+    "taxNumber": "Adószám:",
+    "text2": "A szolgáltatások igénybevételével az ügyfél (a továbbiakban: Megrendelő) elfogadja a jelen ÁSZF-ben foglalt feltételeket."
+  },
+  "services": {
+    "title": "2. Szolgáltatások köre",
+    "text1": "A Szolgáltató az alábbi szolgáltatásokat nyújtja:",
+    "item1": "Fodrászati szolgáltatások (hajvágás, hajfestés, hajápolás, alkalmi frizurák stb.)",
+    "item2": "Kozmetikai szolgáltatások (arckezelések, sminkek, szempilla és szemöldök formázás stb.)",
+    "item3": "Speciális hajkezelések (keratin kezelés, botox kezelés, JOICO kezelés stb.)",
+    "item4": "Raszta hajkészítés és karbantartás",
+    "item5": "Mesterfodrász képzés és oktatás",
+    "item6": "Egyéb szépségápolási szolgáltatások",
+    "text2": "A konkrét szolgáltatások részletes leírása és árai megtalálhatók a weboldalunkon és szalonunkban."
+  },
+  "booking": {
+    "title": "3. Időpontfoglalás",
+    "text1": "Szolgáltatásaink igénybevételéhez előzetes időpontfoglalást ajánlunk.",
+    "text2": "Időpontfoglalás az alábbi módokon lehetséges:",
+    "text3": "",
+    "phone": {
+      "title": "Telefonon:",
+      "text": "+36 76 801 135"
+    },
+    "email": {
+      "title": "E-mailben:",
+      "text": "info@colormecrazykft.hu"
+    },
+    "website": {
+      "title": "Weboldalon:",
+      "text": "Online foglalási rendszerünkön keresztül"
+    },
+    "person": {
+      "title": "Személyesen:",
+      "text": "Szalonunkban (6000 Kecskemét, Fecske u. 35.)"
+    },
+    "text4": "Az időpontfoglalás a Szolgáltató visszaigazolását követően válik érvényessé."
+  },
+  "cancellation": {
+    "title": "4. Lemondási feltételek",
+    "text1": "Amennyiben a Megrendelő lemondja vagy módosítja a foglalását, kérjük, hogy legalább 24 órával az időpont előtt értesítse Szolgáltatót.",
+    "text2": "24 órán belüli lemondás vagy meg nem jelenés esetén a Szolgáltató fenntartja a jogot, hogy a szolgáltatás árának 50%-át lemondási díjként felszámítsa.",
+    "text3": "Indokolt esetben (pl. betegség, vis maior) a Szolgáltató egyedi mérlegelés alapján eltekinthet a lemondási díj felszámításától.",
+    "text4": "A Szolgáltató szintén fenntartja a jogot az időpont módosítására vagy lemondására váratlan körülmények esetén, amelyről a Megrendelőt a lehető leghamarabb értesíti és alternatív időpontot ajánl."
+  },
+  "prices": {
+    "title": "5. Árak és fizetési feltételek",
+    "text1": "Az aktuális szolgáltatási díjak megtalálhatók a weboldalunkon és szalonunkban kifüggesztve.",
+    "text2": "Az árak forintban (HUF) értendők és tartalmazzák az ÁFA-t.",
+    "text3": "A Szolgáltató fenntartja a jogot az árak módosítására, amelyről a weboldalon keresztül tájékoztatja a Megrendelőket.",
+    "text4": "Speciális vagy hosszabb időtartamú szolgáltatások esetén a végleges ár a Megrendelő egyéni igényei alapján kerül meghatározásra."
+  },
+  "payment": {
+    "title": "6. Fizetés módja",
+    "text1": "Fizetés az alábbi módokon lehetséges:",
+    "cash": "Készpénzzel a szolgáltatás helyszínén",
+    "card": "Bankkártyával (POS terminál)",
+    "transfer": "Banki átutalással (előre egyeztetett időpontok esetén)",
+    "text2": "A fizetés a szolgáltatás befejezését követően azonnal esedékes, kivéve, ha a felek írásban másképp állapodnak meg.",
+    "text3": "Szolgáltatónak jogában áll az esetlegesen fennálló tartozás kiegyenlítéséig a további szolgáltatásokat megtagadni."
+  },
+  "serviceExecution": {
+    "title": "7. Szolgáltatás teljesítése",
+    "text1": "A Szolgáltató a szolgáltatásokat szakszerűen, kellő gondossággal, a Megrendelő igényeinek megfelelően végzi.",
+    "text2": "A szolgáltatás időtartama a szolgáltatás típusától és a Megrendelő egyéni adottságaitól függően változhat.",
+    "text3": "A Szolgáltató fenntartja a jogot, hogy visszautasítsa a szolgáltatás elvégzését, ha az egészségügyi vagy biztonsági kockázatot jelent, vagy a Megrendelő állapota nem teszi lehetővé a szolgáltatás biztonságos elvégzését.",
+    "text4": "Megrendelő köteles tájékoztatni a Szolgáltatót bármely allergiáról, betegségről vagy gyógyszerszedésről, amely a szolgáltatás elvégzését befolyásolhatja."
+  },
+  "clientObligations": {
+    "title": "8. Megrendelő kötelezettségei",
+    "item1": "A Megrendelő köteles pontosan megjelenni a lefoglalt időpontban.",
+    "item2": "A Megrendelő köteles előzetesen tájékoztatni a Szolgáltatót minden, a szolgáltatás elvégzését befolyásoló tényről (allergia, betegség, korábbi kezelések stb.).",
+    "item3": "A Megrendelő köteles betartani a Szolgáltató által adott utóápolási utasításokat.",
+    "item4": "A Megrendelő felelős a Szolgáltató tulajdonában lévő eszközök és berendezések megóvásáért.",
+    "item5": "A Megrendelő köteles tiszteletben tartani a szalon házirendjét és együttműködni a Szolgáltató munkatársaival.",
+    "item6": "Kiskorú személy csak szülői felügyelettel vagy írásbeli szülői/gondviselői hozzájárulással veheti igénybe a szolgáltatásokat."
+  },
+  "liability": {
+    "title": "9. Felelősség",
+    "text1": "A Szolgáltató nem vállal felelősséget a Megrendelő által el nem mondott, elhallgatott információkból (allergia, betegség, gyógyszerszedés) eredő károkért.",
+    "text2": "A Szolgáltató nem felelős a természetes hajszerkezeti adottságokból vagy a Megrendelő korábbi kezeléseiből adódó eredményekért.",
+    "text3": "A Szolgáltató nem vállal felelősséget a Megrendelő által el nem végzett vagy nem megfelelően végzett utóápolásból eredő károkért.",
+    "text4": "A Szolgáltató kizárja felelősségét a szalonban hátrahagyott értéktárgyakért."
+  },
+  "complaints": {
+    "title": "10. Reklamáció",
+    "text1": "Amennyiben a Megrendelő a szolgáltatással kapcsolatban reklamációval él, azt haladéktalanul, de legkésőbb a szolgáltatás elvégzését követő 3 napon belül jelezze a Szolgáltatónak.",
+    "text2": "Reklamáció személyesen, e-mailben vagy telefonon tehető.",
+    "text3": "A Szolgáltató a reklamációt 30 napon belül kivizsgálja és írásban válaszol. Amennyiben a reklamáció megalapozott, a Szolgáltató díjmentesen kijavítja a hibát vagy visszatéríti a szolgáltatás árát.",
+    "text4": "Fogyasztói jogvita esetén a Megrendelő fordulhat a lakóhelye szerint illetékes békéltető testülethez:",
+    "authority": "Illetékes békéltető testület:",
+    "address": "Cím:",
+    "email": "E-mail:"
+  },
+  "dataProtection": {
+    "title": "11. Adatvédelem",
+    "text1": "A Szolgáltató a személyes adatokat a hatályos adatvédelmi jogszabályoknak megfelelően kezeli.",
+    "text2": "Részletes tájékoztatás az adatkezelésről az Adatkezelési Tájékoztatóban található."
+  },
+  "intellectual": {
+    "title": "12. Szellemi tulajdon",
+    "text1": "A weboldalon található minden tartalom (szöveg, kép, logó, design) a Szolgáltató szellemi tulajdonát képezi.",
+    "text2": "Ezek másolása, terjesztése vagy kereskedelmi célú felhasználása a Szolgáltató írásos engedélye nélkül tilos."
+  },
+  "forceMajeure": {
+    "title": "13. Vis maior",
+    "text": "A Szolgáltató nem felel a szerződés teljesítésének elmaradásáért vagy késedelméért, ha az rajta kívül álló elháríthatatlan ok (vis maior - pl. természeti katasztrófa, háború, járvány) következménye."
+  },
+  "changes": {
+    "title": "14. ÁSZF módosítása",
+    "text1": "A Szolgáltató fenntartja a jogot jelen ÁSZF módosítására.",
+    "text2": "A módosított ÁSZF a weboldalon történő közzétételt követő 8. napon lép hatályba. A már lefoglalt időpontokra a foglaláskor hatályos ÁSZF az irányadó."
+  },
+  "jurisdiction": {
+    "title": "15. Irányadó jog és jogviták",
+    "text": "Jelen ÁSZF-re és az abból eredő jogviszonyokra a magyar jog az irányadó. A felek között esetlegesen felmerülő vitás kérdéseket elsősorban békés úton próbálják rendezni. Ennek eredménytelensége esetén a felek a Kecskeméti Törvényszék kizárólagos illetékességét kötik ki."
+  },
+  "contact": {
+    "title": "16. Kapcsolat",
+    "text": "Amennyiben kérdése van jelen ÁSZF-fel kapcsolatban, kérjük, vegye fel velünk a kapcsolatot:",
+    "email": "E-mail:",
+    "phone": "Telefon:",
+    "address": "Cím:"
+  },
+  "effective": {
+    "title": "17. Záró rendelkezések",
+    "text": "Jelen ÁSZF 2026. január 19. napján lép hatályba és határozatlan ideig érvényes."
+  }
+}
