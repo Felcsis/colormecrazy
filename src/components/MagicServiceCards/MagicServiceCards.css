@@ -689,58 +689,62 @@
 
 .card-description-wrapper {
   display: block;
-  width: calc(100% - 10px);
-  height: 150px;
-  padding: 12px;
-  padding-right: 20px;
+  width: calc(100% - 25px);
+  height: 140px;
+  padding: 10px;
+  padding-right: 5px;
+  margin: 0 auto;
   background: rgba(138, 43, 226, 0.15);
   border-radius: 10px;
   border: 2px solid rgba(138, 43, 226, 0.6);
   box-shadow: inset 0 0 30px rgba(138, 43, 226, 0.1);
   overflow-y: scroll !important;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   position: relative;
 }
 
-/* Custom Scrollbar - EXTRA LÁTHATÓ */
+/* FORCE scrollbar to always show */
 .card-description-wrapper::-webkit-scrollbar {
-  width: 14px;
-  background: rgba(20, 10, 40, 0.8);
+  -webkit-appearance: none;
+  width: 16px;
+  background-color: rgba(40, 20, 80, 0.8);
   border-radius: 8px;
+  border-left: 2px solid rgba(138, 43, 226, 0.6);
 }
 
 .card-description-wrapper::-webkit-scrollbar-track {
-  background: rgba(60, 30, 120, 0.5);
+  background-color: rgba(60, 30, 120, 0.6);
   border-radius: 8px;
-  border: 2px solid rgba(138, 43, 226, 0.5);
-  margin: 5px 0;
+  border: 2px solid rgba(138, 43, 226, 0.6);
+  margin: 4px 0;
 }
 
 .card-description-wrapper::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg,
-    rgb(138, 43, 226),
-    rgb(180, 140, 230));
+    #8A2BE2,
+    #B48CE6);
   border-radius: 8px;
-  border: 2px solid rgb(200, 150, 255);
+  border: 3px solid #C896FF;
   box-shadow:
-    0 0 10px rgba(138, 43, 226, 0.8),
-    inset 0 0 10px rgba(255, 255, 255, 0.3);
+    0 0 15px rgba(138, 43, 226, 1),
+    inset 0 0 15px rgba(255, 255, 255, 0.4);
+  min-height: 30px;
 }
 
 .card-description-wrapper::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg,
-    rgb(180, 100, 255),
-    rgb(220, 180, 255));
+    #B464FF,
+    #DCB4FF);
   box-shadow:
-    0 0 20px rgba(138, 43, 226, 1),
-    inset 0 0 10px rgba(255, 255, 255, 0.5);
-  border-color: rgb(255, 200, 255);
+    0 0 25px rgba(138, 43, 226, 1),
+    inset 0 0 20px rgba(255, 255, 255, 0.6);
+  border-color: #FFC8FF;
 }
 
 /* Firefox scrollbar */
 .card-description-wrapper {
   scrollbar-width: auto;
-  scrollbar-color: rgb(138, 43, 226) rgba(60, 30, 120, 0.5);
+  scrollbar-color: #8A2BE2 rgba(60, 30, 120, 0.6);
 }
 
 .card-description {
