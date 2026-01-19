@@ -782,7 +782,7 @@ export const servicesData = {
               subtitle: 'JOICO K-PAK Treatment',
               subtitle_en: 'Complete Hair Rebuilding',
               icon: 'faWandMagicSparkles',
-              duration: '~60 perc',
+              duration: '~1,5 óra',
               description: 'Nem csak sérült, roncsolt hajra! Feltölti nedvességgel a porózus kutikulát (száraz haj). Megjavítja a haj sérült keratinláncát (sérült, károsodott haj). Erőt és tartást ad a hajnak (vékony, gyenge haj). Rugalmasságot ad a kinyúlt hullámoknak (göndör haj). Minden vegyszeres beavatkozást hatékonyabbá tesz, legyen az festés vagy tartós hullámosítás. Eredmény: A legerősebb, legegészségesebb, legszebb haj, amit csak el lehet képzelni! Már az első kezelés után ámulatba ejtő különbség érezhető.',
               description_en: 'Not just for damaged hair! Fills porous cuticles with moisture (dry hair). Repairs damaged keratin chains (damaged hair). Gives strength and hold (thin, weak hair). Adds elasticity to stretched waves (curly hair). Makes all chemical treatments more effective, whether coloring or perming. Result: The strongest, healthiest, most beautiful hair imaginable! Amazing difference felt after the first treatment.',
             },
