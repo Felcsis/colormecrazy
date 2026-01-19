@@ -783,23 +783,24 @@ export const servicesData = {
         },
 
         // ─────────────────────────────────────────────────────────
-        // IV. RASZTA/DREADLOCK (Direct cards - 4 kártya)
+        // IV. RASZTA SZOLGÁLTATÁSOK (Direct cards - 5 kártya)
         // ─────────────────────────────────────────────────────────
         {
-          id: 'raszta-dreadlock',
-          name: 'Raszta/Dreadlock',
-          englishName: 'Rasta/Dreadlocks',
+          id: 'raszta-szolgaltatasok',
+          name: 'Raszta Szolgáltatások',
+          englishName: 'Rasta Services',
           icon: 'faLink',
           arcana: 'IV',
           type: 'sub-deck',
           directCards: true,
-          cardCount: 4,
+          cardCount: 5,
 
           cards: [
-            { id: 'raszta-keszites', arcana: '1', title: 'Raszta készítés', subtitle: 'Braiding', icon: 'faLink', duration: '~4-6 óra', description: 'Fonott raszta frizura készítése.' },
-            { id: 'dreadlock-keszites', arcana: '2', title: 'Dreadlock készítés', subtitle: 'Dread making', icon: 'faLink', duration: '~6-10 óra', description: 'Dreadlock tincsek kialakítása.' },
-            { id: 'raszta-karbantartas', arcana: '3', title: 'Raszta karbantartás', subtitle: 'Braid maintenance', icon: 'faLink', duration: '~2-3 óra', description: 'Meglévő raszta frissítése, ápolása.' },
-            { id: 'dreadlock-karbantartas', arcana: '4', title: 'Dreadlock karbantartás', subtitle: 'Dread maintenance', icon: 'faLink', duration: '~2-4 óra', description: 'Dreadlock tincsek karbantartása.' }
+            { id: 'raszta-haj-keszitese', arcana: '1', title: 'Raszta haj készítése', subtitle: 'Rasta braiding', icon: 'faLink', duration: '~4-6 óra', description: 'Fonott raszta frizura készítése természetes hajból.' },
+            { id: 'raszta-haj-karbantartasa', arcana: '2', title: 'Raszta haj karbantartása', subtitle: 'Rasta maintenance', icon: 'faLink', duration: '~2-3 óra', description: 'Meglévő raszta frissítése, újrafonása, ápolása.' },
+            { id: 'muraszta-haj-felfonas', arcana: '3', title: 'Műraszta haj felfonás', subtitle: 'Synthetic rasta braiding', icon: 'faLink', duration: '~3-5 óra', description: 'Műszálas raszta haj befonása.' },
+            { id: 'raszta-hajfestes-szokites', arcana: '4', title: 'Raszta hajfestés/szőkítés', subtitle: 'Rasta coloring/bleaching', icon: 'faLink', duration: '~2-4 óra', description: 'Raszta haj színezése vagy szőkítése.' },
+            { id: 'raszta-hajkibontas', arcana: '5', title: 'Raszta hajkibontás', subtitle: 'Rasta removal', icon: 'faLink', duration: '~2-4 óra', description: 'Raszta haj szakszerű kibontása és ápolása.' }
           ]
         },
 
