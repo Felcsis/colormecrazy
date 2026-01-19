@@ -761,7 +761,7 @@ export const servicesData = {
         },
 
         // ─────────────────────────────────────────────────────────
-        // III. KEZELÉSEK (Direct cards - 5 kártya)
+        // III. KEZELÉSEK (Direct cards - 6 kártya)
         // ─────────────────────────────────────────────────────────
         {
           id: 'kezelesek',
@@ -771,14 +771,26 @@ export const servicesData = {
           arcana: 'III',
           type: 'sub-deck',
           directCards: true,
-          cardCount: 5,
+          cardCount: 6,
 
           cards: [
-            { id: 'keratin-kezeles', arcana: '1', title: 'Keratin kezelés', subtitle: 'Keratin treatment', icon: 'faWandMagicSparkles', duration: '~120 perc', description: 'Haj kiegyenesítés és ápolás keratinnal.' },
-            { id: 'olaplex', arcana: '2', title: 'Olaplex kezelés', subtitle: 'Bond building', icon: 'faWandMagicSparkles', duration: '~45 perc', description: 'Hajszerkezet helyreállítás.' },
-            { id: 'melytaplalo', arcana: '3', title: 'Mélyápoló pakolás', subtitle: 'Deep conditioning', icon: 'faWandMagicSparkles', duration: '~60 perc', description: 'Intenzív hidratáló hajpakolás.' },
-            { id: 'hajbotes', arcana: '4', title: 'Hajbőr kezelés', subtitle: 'Scalp treatment', icon: 'faWandMagicSparkles', duration: '~45 perc', description: 'Hajbőr ápolás és masszázs.' },
-            { id: 'protein-kezeles', arcana: '5', title: 'Protein kezelés', subtitle: 'Protein treatment', icon: 'faWandMagicSparkles', duration: '~60 perc', description: 'Fehérje pótló regeneráló kezelés.' }
+            {
+              id: 'joico-4-lepeses',
+              arcana: '1',
+              title: 'JOICO 4 lépéses hajújraépítés',
+              title_en: 'JOICO 4-Step Hair Reconstruction',
+              subtitle: 'JOICO K-PAK Treatment',
+              subtitle_en: 'Complete Hair Rebuilding',
+              icon: 'faWandMagicSparkles',
+              duration: '~60 perc',
+              description: 'Nem csak sérült, roncsolt hajra! Feltölti nedvességgel a porózus kutikulát (száraz haj). Megjavítja a haj sérült keratinláncát (sérült, károsodott haj). Erőt és tartást ad a hajnak (vékony, gyenge haj). Rugalmasságot ad a kinyúlt hullámoknak (göndör haj). Minden vegyszeres beavatkozást hatékonyabbá tesz, legyen az festés vagy tartós hullámosítás. Eredmény: A legerősebb, legegészségesebb, legszebb haj, amit csak el lehet képzelni! Már az első kezelés után ámulatba ejtő különbség érezhető.',
+              description_en: 'Not just for damaged hair! Fills porous cuticles with moisture (dry hair). Repairs damaged keratin chains (damaged hair). Gives strength and hold (thin, weak hair). Adds elasticity to stretched waves (curly hair). Makes all chemical treatments more effective, whether coloring or perming. Result: The strongest, healthiest, most beautiful hair imaginable! Amazing difference felt after the first treatment.',
+            },
+            { id: 'keratin-kezeles', arcana: '2', title: 'Keratin kezelés', subtitle: 'Keratin treatment', icon: 'faWandMagicSparkles', duration: '~120 perc', description: 'Haj kiegyenesítés és ápolás keratinnal.' },
+            { id: 'olaplex', arcana: '3', title: 'Olaplex kezelés', subtitle: 'Bond building', icon: 'faWandMagicSparkles', duration: '~45 perc', description: 'Hajszerkezet helyreállítás.' },
+            { id: 'melytaplalo', arcana: '4', title: 'Mélyápoló pakolás', subtitle: 'Deep conditioning', icon: 'faWandMagicSparkles', duration: '~60 perc', description: 'Intenzív hidratáló hajpakolás.' },
+            { id: 'hajbotes', arcana: '5', title: 'Hajbőr kezelés', subtitle: 'Scalp treatment', icon: 'faWandMagicSparkles', duration: '~45 perc', description: 'Hajbőr ápolás és masszázs.' },
+            { id: 'protein-kezeles', arcana: '6', title: 'Protein kezelés', subtitle: 'Protein treatment', icon: 'faWandMagicSparkles', duration: '~60 perc', description: 'Fehérje pótló regeneráló kezelés.' }
           ]
         },
 
