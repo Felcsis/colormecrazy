@@ -761,7 +761,7 @@ export const servicesData = {
         },
 
         // ─────────────────────────────────────────────────────────
-        // III. KEZELÉSEK (Direct cards - 7 kártya)
+        // III. KEZELÉSEK (Direct cards - 5 kártya)
         // ─────────────────────────────────────────────────────────
         {
           id: 'kezelesek',
@@ -771,7 +771,7 @@ export const servicesData = {
           arcana: 'III',
           type: 'sub-deck',
           directCards: true,
-          cardCount: 7,
+          cardCount: 5,
 
           cards: [
             {
@@ -799,10 +799,8 @@ export const servicesData = {
               description_en: 'Steampod is a steam-powered hair straightening + care treatment that not only smooths but also treats. The steam helps the nourishing ingredients penetrate deeper into the hair shaft while causing less heat damage. Lasts 2-4 weeks, doesn\'t grow out but gradually fades as the treatment washes out.',
             },
             { id: 'keratin-kezeles', arcana: '3', title: 'Keratin kezelés', subtitle: 'Keratin treatment', icon: 'faWandMagicSparkles', duration: '~120 perc', description: 'Haj kiegyenesítés és ápolás keratinnal.' },
-            { id: 'olaplex', arcana: '4', title: 'Olaplex kezelés', subtitle: 'Bond building', icon: 'faWandMagicSparkles', duration: '~45 perc', description: 'Hajszerkezet helyreállítás.' },
-            { id: 'melytaplalo', arcana: '5', title: 'Mélyápoló pakolás', subtitle: 'Deep conditioning', icon: 'faWandMagicSparkles', duration: '~60 perc', description: 'Intenzív hidratáló hajpakolás.' },
-            { id: 'hajbotes', arcana: '6', title: 'Hajbőr kezelés', subtitle: 'Scalp treatment', icon: 'faWandMagicSparkles', duration: '~45 perc', description: 'Hajbőr ápolás és masszázs.' },
-            { id: 'protein-kezeles', arcana: '7', title: 'Protein kezelés', subtitle: 'Protein treatment', icon: 'faWandMagicSparkles', duration: '~60 perc', description: 'Fehérje pótló regeneráló kezelés.' }
+            { id: 'melytaplalo', arcana: '4', title: 'Mélyápoló pakolás', subtitle: 'Deep conditioning', icon: 'faWandMagicSparkles', duration: '~60 perc', description: 'Intenzív hidratáló hajpakolás.' },
+            { id: 'hajbotes', arcana: '5', title: 'Hajbőr kezelés', subtitle: 'Scalp treatment', icon: 'faWandMagicSparkles', duration: '~45 perc', description: 'Hajbőr ápolás és masszázs.' }
           ]
         },
 
