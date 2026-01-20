@@ -16,10 +16,6 @@ const Footer = () => {
             {t('footer.privacyPolicy')}
           </Link>
           <span className="footer-separator">|</span>
-          <Link to="/sutik-kezelese" className="footer-link">
-            {t('footer.cookiePolicy')}
-          </Link>
-          <span className="footer-separator">|</span>
           <Link to="/aszf" className="footer-link">
             {t('footer.termsAndConditions')}
           </Link>

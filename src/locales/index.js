@@ -15,7 +15,6 @@ import huTeamMemberDetail from './hu/teamMemberDetail.json';
 import huEducation from './hu/education.json';
 import huBlog from './hu/blog.json';
 import huPrivacy from './hu/privacy.json';
-import huCookie from './hu/cookie.json';
 import huTerms from './hu/terms.json';
 
 // English translations
@@ -35,7 +34,6 @@ import enTeamMemberDetail from './en/teamMemberDetail.json';
 import enEducation from './en/education.json';
 import enBlog from './en/blog.json';
 import enPrivacy from './en/privacy.json';
-import enCookie from './en/cookie.json';
 import enTerms from './en/terms.json';
 
 export const translations = {
@@ -56,7 +54,6 @@ export const translations = {
     education: huEducation,
     blog: huBlog,
     privacy: huPrivacy,
-    cookie: huCookie,
     terms: huTerms
   },
   en: {
@@ -76,7 +73,6 @@ export const translations = {
     education: enEducation,
     blog: enBlog,
     privacy: enPrivacy,
-    cookie: enCookie,
     terms: enTerms
   }
 };
