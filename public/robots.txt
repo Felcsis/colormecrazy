@@ -1,0 +1,10 @@
+# robots.txt for Color Me Crazy
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://colormecrazyszeged.hu/sitemap.xml
+
+# Disallow admin or private folders if any
+Disallow: /admin/
+Disallow: /private/

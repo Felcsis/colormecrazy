@@ -15,6 +15,7 @@ import TeamMemberDetail from './pages/TeamMemberDetail/TeamMemberDetail';
 import Education from './pages/Education/Education';
 import Blog from './pages/Blog/Blog';
 import MessengerButton from './components/MessengerButton/MessengerButton';
+import InstagramFeed from './components/InstagramFeed/InstagramFeed';
 
 function HomePage() {
   return (
@@ -24,6 +25,7 @@ function HomePage() {
       <Team />
       <Services />
       <Reviews />
+      <InstagramFeed />
       <Contact />
     </>
   );
