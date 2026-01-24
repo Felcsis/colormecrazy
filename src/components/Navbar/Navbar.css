@@ -283,19 +283,17 @@
 /* Submenu */
 .sidebar-submenu {
   background: rgba(0, 0, 0, 0.3);
-  transform-origin: top;
-  animation: slideDown 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform, opacity;
+  animation: slideDown 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: scaleY(0.8);
+    transform: translateY(-10px);
   }
   to {
     opacity: 1;
-    transform: scaleY(1);
+    transform: translateY(0);
   }
 }
 
@@ -307,11 +305,40 @@
   letter-spacing: 0.5px;
   color: var(--text-muted);
   transition: background-color 0.2s ease, color 0.2s ease;
+  animation: fadeInItem 0.3s ease forwards;
+  opacity: 0;
+}
+
+.sidebar-sublink:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.sidebar-sublink:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.sidebar-sublink:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.sidebar-sublink:nth-child(4) {
+  animation-delay: 0.2s;
 }
 
 .sidebar-sublink:hover {
   background: rgba(139, 126, 184, 0.12);
   color: var(--text);
+}
+
+@keyframes fadeInItem {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .sidebar-bullet {
