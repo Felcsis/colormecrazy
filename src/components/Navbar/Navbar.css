@@ -283,17 +283,15 @@
 /* Submenu */
 .sidebar-submenu {
   background: rgba(0, 0, 0, 0.3);
-  animation: slideDown 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation: fadeIn 0.15s ease;
 }
 
-@keyframes slideDown {
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-10px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -305,24 +303,24 @@
   letter-spacing: 0.5px;
   color: var(--text-muted);
   transition: background-color 0.2s ease, color 0.2s ease;
-  animation: fadeInItem 0.3s ease forwards;
+  animation: fadeInItem 0.2s ease forwards;
   opacity: 0;
 }
 
 .sidebar-sublink:nth-child(1) {
-  animation-delay: 0.05s;
+  animation-delay: 0.02s;
 }
 
 .sidebar-sublink:nth-child(2) {
-  animation-delay: 0.1s;
+  animation-delay: 0.04s;
 }
 
 .sidebar-sublink:nth-child(3) {
-  animation-delay: 0.15s;
+  animation-delay: 0.06s;
 }
 
 .sidebar-sublink:nth-child(4) {
-  animation-delay: 0.2s;
+  animation-delay: 0.08s;
 }
 
 .sidebar-sublink:hover {
@@ -333,11 +331,9 @@
 @keyframes fadeInItem {
   from {
     opacity: 0;
-    transform: translateX(-8px);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
   }
 }
 
