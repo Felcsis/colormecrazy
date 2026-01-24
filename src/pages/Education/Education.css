@@ -60,160 +60,154 @@
   font-weight: 500;
 }
 
-/* Programs Section */
+/* Benefits Section */
 .education-programs {
   padding: 100px 0;
   background: var(--bg-card);
 }
 
-.programs-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
-  margin-top: 64px;
+.benefits-list {
+  max-width: 900px;
+  margin: 64px auto 0;
 }
 
-.program-card {
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 32px;
+  margin-bottom: 24px;
   background: var(--bg-dark);
   border: 2px solid var(--border);
-  padding: 48px 32px;
-  border-radius: 8px;
-  transition: all 0.4s ease;
-  position: relative;
-}
-
-.program-card.featured {
-  border-color: var(--primary);
-  box-shadow: 0 8px 32px rgba(139, 126, 184, 0.2);
-}
-
-.featured-badge {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  background: var(--primary);
-  color: var(--bg-dark);
-  padding: 6px 16px;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.program-card:hover {
-  border-color: var(--primary);
-  transform: translateY(-8px);
-  box-shadow: 0 16px 48px rgba(139, 126, 184, 0.3);
-}
-
-.program-icon {
-  width: 70px;
-  height: 70px;
-  margin: 0 auto 28px;
-  border: 2px solid var(--border);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  color: var(--primary);
-  transition: all 0.3s ease;
-}
-
-.program-card:hover .program-icon {
-  border-color: var(--primary);
-  background: rgba(139, 126, 184, 0.1);
-  transform: scale(1.1);
-}
-
-.program-card h3 {
-  font-size: 1.4rem;
-  font-weight: 500;
-  letter-spacing: 1px;
-  color: var(--text);
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.program-card > p {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--text-muted);
-  margin-bottom: 28px;
-  text-align: center;
-}
-
-.program-features {
-  list-style: none;
-  padding: 0;
-}
-
-.program-features li {
-  padding: 12px 0 12px 32px;
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  border-bottom: 1px solid var(--border);
-  position: relative;
-}
-
-.program-features li:last-child {
-  border-bottom: none;
-}
-
-.program-features li::before {
-  content: '✦';
-  position: absolute;
-  left: 0;
-  color: var(--primary);
-  font-size: 1rem;
-}
-
-/* Info Section */
-.education-info {
-  padding: 100px 0;
-}
-
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 32px;
-  margin-top: 64px;
-}
-
-.info-card {
-  text-align: center;
-  padding: 40px 24px;
-  background: var(--bg-card);
-  border: 2px solid var(--border);
   border-radius: 8px;
   transition: all 0.3s ease;
 }
 
-.info-card:hover {
+.benefit-item:hover {
   border-color: var(--primary);
+  transform: translateX(8px);
   box-shadow: 0 8px 24px rgba(139, 126, 184, 0.2);
 }
 
-.info-icon {
-  font-size: 2.5rem;
-  color: var(--secondary);
-  margin-bottom: 20px;
+.benefit-icon {
+  font-size: 2rem;
+  color: var(--primary);
+  min-width: 40px;
+  margin-top: 4px;
 }
 
-.info-card h4 {
+.benefit-content h4 {
   font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 1px;
   color: var(--text);
-  margin-bottom: 16px;
-  text-transform: uppercase;
+  margin-bottom: 8px;
 }
 
-.info-card p {
-  font-size: 0.95rem;
+.benefit-content p {
+  font-size: 1rem;
   line-height: 1.8;
   color: var(--text-muted);
+  margin: 0;
+}
+
+/* Details Section */
+.education-info {
+  padding: 100px 0;
+}
+
+.details-card {
+  max-width: 900px;
+  margin: 48px auto 0;
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  padding: 48px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-icon {
+  font-size: 2rem;
+  color: var(--secondary);
+  min-width: 40px;
+  margin-top: 4px;
+}
+
+.detail-item h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.detail-item p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Application Section */
+.education-application {
+  padding: 100px 0;
+  background: var(--bg-card);
+}
+
+.application-card {
+  max-width: 800px;
+  margin: 48px auto 0;
+  background: var(--bg-dark);
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  padding: 48px;
+  text-align: center;
+}
+
+.application-card p {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.application-card strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.application-button {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 16px 48px;
+  background: var(--primary);
+  color: var(--bg-dark);
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  font-weight: 600;
+  border: 2px solid var(--primary);
+}
+
+.application-button:hover {
+  background: transparent;
+  color: var(--primary);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(139, 126, 184, 0.3);
 }
 
 /* CTA Section */
@@ -281,7 +275,7 @@
   }
 
   .education-hero-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .education-hero-subtitle {
@@ -291,19 +285,39 @@
   .education-intro,
   .education-programs,
   .education-info,
+  .education-application,
   .education-cta {
-    padding: 80px 0;
+    padding: 60px 0;
   }
 
-  .programs-grid {
-    grid-template-columns: 1fr;
+  .benefit-item {
+    flex-direction: column;
+    padding: 24px;
+    gap: 16px;
   }
 
-  .info-grid {
-    grid-template-columns: 1fr;
+  .benefit-item:hover {
+    transform: translateY(-4px);
+  }
+
+  .details-card {
+    padding: 32px 24px;
+  }
+
+  .detail-item {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .application-card {
+    padding: 32px 24px;
+  }
+
+  .application-card p {
+    font-size: 1rem;
   }
 
   .cta-content h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
