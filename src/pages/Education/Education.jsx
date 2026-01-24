@@ -53,7 +53,7 @@ const Education = () => {
             <div className="benefit-item">
               <FontAwesomeIcon icon={faGraduationCap} className="benefit-icon" />
               <div className="benefit-content">
-                <h4>Mesterfodrász oktatás</h4>
+                <h4>Mesterfodrász vezeti a képzést</h4>
                 <p>Felicia mesterfodrász személyesen tanít minden diákot</p>
               </div>
             </div>
