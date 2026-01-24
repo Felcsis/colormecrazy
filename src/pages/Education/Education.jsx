@@ -142,9 +142,9 @@ const Education = () => {
               Ha úgy érzed, hogy ez neked való, és készen állsz a komoly munkára,
               vedd fel velünk a kapcsolatot!
             </p>
-            <a href="/#kapcsolat" className="application-button">
+            <Link to="/#kapcsolat" className="application-button">
               Kapcsolatfelvétel
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -156,9 +156,9 @@ const Education = () => {
             <p>
               Jelentkezz most, és kezdd nálunk a karriered! Várunk szeretettel a Color Me Crazy csapatába.
             </p>
-            <a href="/#kapcsolat" className="cta-button">
+            <Link to="/#kapcsolat" className="cta-button">
               Jelentkezem az interjúra
-            </a>
+            </Link>
           </div>
         </div>
       </section>

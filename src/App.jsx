@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
@@ -16,6 +16,23 @@ import Education from './pages/Education/Education';
 import Blog from './pages/Blog/Blog';
 import MessengerButton from './components/MessengerButton/MessengerButton';
 import InstagramFeed from './components/InstagramFeed/InstagramFeed';
+
+function ScrollToHash() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location]);
+
+  return null;
+}
 
 function HomePage() {
   return (
@@ -36,6 +53,7 @@ function App() {
     <LanguageProvider>
       <Router>
         <div className="App">
+          <ScrollToHash />
           <Navbar />
           <Routes>
             <Route path="/" element={<HomePage />} />
