@@ -28,6 +28,9 @@ function ScrollToHash() {
           element.scrollIntoView({ behavior: 'smooth' });
         }, 100);
       }
+    } else {
+      // Ha nincs hash, az oldal tetejére scrollozunk
+      window.scrollTo(0, 0);
     }
   }, [location]);
 
