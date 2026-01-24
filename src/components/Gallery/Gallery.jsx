@@ -37,12 +37,6 @@ const galleryImages = [
     category: 'hair'
   },
   {
-    id: 6,
-    src: '/images/gallery/DSC_7469-Enhanced-NR.webp',
-    alt: 'Galéria kép 6',
-    category: 'hair'
-  },
-  {
     id: 7,
     src: '/images/gallery/Bogi.webp',
     alt: 'Galéria kép 7',
