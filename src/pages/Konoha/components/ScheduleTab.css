@@ -1,0 +1,178 @@
+.schedule-tab {
+  padding: 0;
+}
+
+.schedule-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding: 1rem;
+  background: #0a0a0a;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+}
+
+.week-nav-btn {
+  background: #0a0a0a;
+  color: #ffffff;
+  border: 1px solid #2a2a2a;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.week-nav-btn:hover {
+  background: #8B7EB8;
+  border-color: #8B7EB8;
+  color: #ffffff;
+}
+
+.current-week {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  min-width: 200px;
+  text-align: center;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: 100px repeat(5, 1fr);
+  gap: 1px;
+  background: #2a2a2a;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.schedule-cell {
+  background: #0a0a0a;
+  padding: 12px 8px;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.schedule-header {
+  background: #1a1a1a;
+  font-weight: 500;
+  color: #9CA3AF;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.schedule-time-label {
+  font-size: 0.8rem;
+  color: #9CA3AF;
+  font-style: italic;
+}
+
+.student-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.student-checkbox-label:hover {
+  background: #1a1a1a;
+}
+
+.student-checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #8B7EB8;
+}
+
+.student-checkbox:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.student-label {
+  font-size: 0.8rem;
+  color: #9CA3AF;
+  letter-spacing: 0.3px;
+  transition: all 0.2s ease;
+}
+
+.student-checkbox:checked + .student-label {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.scheduled-student {
+  padding: 8px 10px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+  width: 100%;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  text-align: center;
+}
+
+.scheduled-student:last-child {
+  margin-bottom: 0;
+}
+
+.student-label.fanni { color: #8B7EB8; }
+.student-label.jazmin { color: #C098E8; }
+.student-label.mira { color: #F4B8D8; }
+.student-label.dorina { color: #7BA3C4; }
+.student-label.bence { color: #A8C8E8; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .schedule-grid {
+    grid-template-columns: 80px repeat(5, 1fr);
+    font-size: 0.85rem;
+  }
+
+  .schedule-cell {
+    padding: 10px 6px;
+    min-height: 70px;
+  }
+
+  .student-label {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .schedule-grid {
+    grid-template-columns: 70px repeat(5, 1fr);
+    font-size: 0.75rem;
+  }
+
+  .schedule-cell {
+    padding: 8px 4px;
+    min-height: 60px;
+  }
+
+  .student-checkbox-label {
+    gap: 0.3rem;
+    padding: 0.2rem 0.3rem;
+  }
+
+  .student-label {
+    font-size: 0.7rem;
+  }
+}

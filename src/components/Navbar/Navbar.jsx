@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Navbar.css';
 import {
@@ -17,10 +17,12 @@ import {
   faSearch,
   faGlobe,
   faChevronDown,
-  faChevronRight
+  faChevronRight,
+  faSignOutAlt
 } from '@fortawesome/free-solid-svg-icons';
 import SearchModal from '../SearchModal/SearchModal';
 import { useTranslation } from '../../hooks/useTranslation';
+import { useAuth } from '../../context/AuthContext';
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -30,7 +32,14 @@ const Navbar = () => {
     services: false
   });
   const navigate = useNavigate();
+  const location = useLocation();
   const { t, language, setLanguage } = useTranslation();
+  const { currentUser, logout } = useAuth();
+
+  // Ne jelenjen meg navbar a Konoha oldalon
+  if (location.pathname.startsWith('/konoha')) {
+    return null;
+  }
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -85,6 +94,11 @@ const Navbar = () => {
     setIsSearchOpen(false);
   };
 
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  };
+
   return (
     <>
       {/* Top Navbar */}
@@ -117,6 +131,16 @@ const Navbar = () => {
               <FontAwesomeIcon icon={faGlobe} />
               <span className="lang-label">{language.toUpperCase()}</span>
             </button>
+            {currentUser && (
+              <button
+                className="navbar-action-btn logout-btn"
+                onClick={handleLogout}
+                aria-label="Logout"
+                title={`Kijelentkezés (${currentUser.name})`}
+              >
+                <FontAwesomeIcon icon={faSignOutAlt} />
+              </button>
+            )}
           </div>
         </div>
       </nav>

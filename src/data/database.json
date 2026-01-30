@@ -1,0 +1,139 @@
+{
+  "users": [
+    {
+      "id": "felcsi",
+      "name": "Felcsi",
+      "password": "felcsi123",
+      "type": "admin",
+      "color": "#667eea"
+    },
+    {
+      "id": "gitta",
+      "name": "Gitta",
+      "password": "gitta123",
+      "type": "admin",
+      "color": "#667eea"
+    },
+    {
+      "id": "lili",
+      "name": "Lili",
+      "password": "lili123",
+      "type": "admin",
+      "color": "#667eea"
+    },
+    {
+      "id": "fanni",
+      "name": "Fanni",
+      "password": "fanni123",
+      "type": "student",
+      "color": "#8B7EB8"
+    },
+    {
+      "id": "jazmin",
+      "name": "Jázmin",
+      "password": "jazmin123",
+      "type": "student",
+      "color": "#C098E8"
+    },
+    {
+      "id": "mira",
+      "name": "Mira",
+      "password": "mira123",
+      "type": "student",
+      "color": "#F4B8D8"
+    },
+    {
+      "id": "dorina",
+      "name": "Dorina",
+      "password": "dorina123",
+      "type": "student",
+      "color": "#7BA3C4"
+    },
+    {
+      "id": "bence",
+      "name": "Bence",
+      "password": "bence123",
+      "type": "student",
+      "color": "#A8C8E8"
+    }
+  ],
+  "schedules": {
+    "2026-02-03-Délelőtt": ["fanni", "jazmin"],
+    "2026-02-03-Délután": ["mira"],
+    "2026-02-04-Délelőtt": ["dorina", "bence"],
+    "2026-02-04-Délután": ["fanni"],
+    "2026-02-05-Délelőtt": ["jazmin", "mira"],
+    "2026-02-05-Délután": ["bence", "dorina"],
+    "2026-02-06-Délelőtt": ["fanni", "jazmin"],
+    "2026-02-06-Délután": ["mira"],
+    "2026-02-07-Délelőtt": ["dorina"],
+    "2026-02-07-Délután": ["bence", "fanni"]
+  },
+  "modelBookings": [
+    {
+      "id": 1738264532000,
+      "studentId": "fanni",
+      "studentName": "Fanni",
+      "modelName": "Kiss Anna",
+      "date": "2026-02-05",
+      "time": "14:00",
+      "endTime": "16:00",
+      "service": "hairstyle",
+      "notes": "Hosszú haj, balayage technika"
+    },
+    {
+      "id": 1738264532001,
+      "studentId": "jazmin",
+      "studentName": "Jázmin",
+      "modelName": "Nagy Petra",
+      "date": "2026-02-06",
+      "time": "10:00",
+      "endTime": "12:00",
+      "service": "makeup",
+      "notes": "Alkalmi smink, esküvő"
+    },
+    {
+      "id": 1738264532002,
+      "studentId": "mira",
+      "studentName": "Mira",
+      "modelName": "Kovács Emma",
+      "date": "2026-02-07",
+      "time": "15:30",
+      "endTime": "17:00",
+      "service": "nails",
+      "notes": "Műköröm feltöltés"
+    }
+  ],
+  "settings": {
+    "googleCalendarUrl": "",
+    "workStartHour": 6,
+    "workEndHour": 21,
+    "weekDays": ["Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek"]
+  },
+  "serviceTypes": {
+    "hairstyle": {
+      "label": "💇 Frizura",
+      "color": "#F4B8D8"
+    },
+    "makeup": {
+      "label": "💄 Smink",
+      "color": "#FFE082"
+    },
+    "nails": {
+      "label": "💅 Köröm",
+      "color": "#E1BEE7"
+    },
+    "coloring": {
+      "label": "🎨 Festés",
+      "color": "#FFCCBC"
+    },
+    "bleaching": {
+      "label": "✨ Szőkítés",
+      "color": "#FFF9C4"
+    },
+    "other": {
+      "label": "📌 Egyéb",
+      "color": "#B39DDB"
+    }
+  }
+}

@@ -1,0 +1,335 @@
+.models-tab {
+  padding: 0;
+}
+
+.add-model-form {
+  background: #0a0a0a;
+  border: 1px solid #2a2a2a;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+.add-model-form h3 {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 400;
+  color: #9CA3AF;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  background: #141414;
+  border: 1px solid #2a2a2a;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #8B7EB8;
+  background: #1a1a1a;
+}
+
+.btn-primary {
+  background: #ffffff;
+  color: #0a0a0a;
+  border: 1px solid #ffffff;
+  padding: 12px 28px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #9CA3AF;
+  border: 1px solid #2a2a2a;
+  padding: 12px 28px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 4px;
+}
+
+.btn-secondary:hover {
+  border-color: #8B7EB8;
+  color: #ffffff;
+}
+
+.models-list-section h3 {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: #0a0a0a;
+  color: #9CA3AF;
+  border: 1px solid #2a2a2a;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 4px;
+}
+
+.filter-btn:hover {
+  border-color: #8B7EB8;
+  color: #ffffff;
+}
+
+.filter-btn.active {
+  background: #8B7EB8;
+  color: #ffffff;
+  border-color: #8B7EB8;
+}
+
+.models-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.no-models {
+  text-align: center;
+  padding: 40px;
+  color: #9CA3AF;
+  font-style: italic;
+}
+
+.model-item {
+  background: #0a0a0a;
+  padding: 16px;
+  border: 1px solid #2a2a2a;
+  border-left: 3px solid #8B7EB8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.model-item:hover {
+  border-color: #8B7EB8;
+  background: #1a1a1a;
+}
+
+.model-info {
+  flex: 1;
+}
+
+.model-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.model-item.student-fanni { border-left-color: #8B7EB8; }
+.model-item.student-jazmin { border-left-color: #C098E8; }
+.model-item.student-mira { border-left-color: #F4B8D8; }
+.model-item.student-dorina { border-left-color: #7BA3C4; }
+.model-item.student-bence { border-left-color: #A8C8E8; }
+
+.model-header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.student-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.student-badge.fanni { background: rgba(139, 126, 184, 0.2); color: #8B7EB8; border: 1px solid #8B7EB8; }
+.student-badge.jazmin { background: rgba(192, 152, 232, 0.2); color: #C098E8; border: 1px solid #C098E8; }
+.student-badge.mira { background: rgba(244, 184, 216, 0.2); color: #F4B8D8; border: 1px solid #F4B8D8; }
+.student-badge.dorina { background: rgba(123, 163, 196, 0.2); color: #7BA3C4; border: 1px solid #7BA3C4; }
+.student-badge.bence { background: rgba(168, 200, 232, 0.2); color: #A8C8E8; border: 1px solid #A8C8E8; }
+
+.model-name {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.model-datetime {
+  color: #9CA3AF;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+}
+
+.model-notes {
+  color: #9CA3AF;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.btn-edit,
+.btn-delete {
+  background: transparent;
+  color: #9CA3AF;
+  border: 1px solid #2a2a2a;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 4px;
+}
+
+.btn-edit:hover {
+  background: #8B7EB8;
+  color: white;
+  border-color: #8B7EB8;
+}
+
+.btn-delete:hover {
+  background: #ee5a6f;
+  color: white;
+  border-color: #ee5a6f;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #141414;
+  border: 2px solid #2a2a2a;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  color: #9CA3AF;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+  color: #8B7EB8;
+}
+
+.modal-content h2 {
+  color: #8B7EB8;
+  margin-bottom: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.modal-actions .btn-primary,
+.modal-actions .btn-secondary {
+  flex: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .model-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .model-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}

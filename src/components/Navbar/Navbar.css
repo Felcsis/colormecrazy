@@ -104,6 +104,12 @@
   letter-spacing: 0.5px;
 }
 
+.logout-btn:hover {
+  border-color: #ee5a6f;
+  color: #ee5a6f;
+  background: rgba(238, 90, 111, 0.1);
+}
+
 /* Overlay */
 .sidebar-overlay {
   position: fixed;

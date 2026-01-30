@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0a0a0a;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+  padding: 8rem 2rem 2rem 2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.login-box {
+  background: #141414;
+  border: 2px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 3rem;
+  max-width: 450px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.login-box h1 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #9CA3AF;
+  font-weight: 400;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #2a2a2a;
+  background: #0a0a0a;
+  color: #ffffff;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #8B7EB8;
+  background: #141414;
+}
+
+.error-message {
+  background: rgba(238, 90, 111, 0.2);
+  color: #ee5a6f;
+  border: 1px solid #ee5a6f;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px 24px;
+  background: #ffffff;
+  color: #0a0a0a;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.login-btn:hover:not(:disabled) {
+  background: transparent;
+  color: #ffffff;
+}
+
+.login-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.login-hint {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #0a0a0a;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.login-hint p {
+  margin: 0.3rem 0;
+  color: #9CA3AF;
+  letter-spacing: 0.3px;
+}
+
+.login-hint strong {
+  color: #8B7EB8;
+  font-weight: 500;
+}
