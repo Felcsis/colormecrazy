@@ -20,6 +20,9 @@ import Blog from './pages/Blog/Blog';
 import Login from './pages/Login/Login';
 import Konoha from './pages/Konoha/Konoha';
 import StudentCalendar from './pages/Konoha/StudentCalendar';
+import InventoryBrands from './pages/Konoha/InventoryBrands';
+import MatrixProducts from './pages/Konoha/MatrixProducts';
+import ProductDetails from './pages/Konoha/ProductDetails';
 import MessengerButton from './components/MessengerButton/MessengerButton';
 import InstagramFeed from './components/InstagramFeed/InstagramFeed';
 
@@ -86,6 +89,30 @@ function AppContent() {
           element={
             <ProtectedRoute>
               <StudentCalendar />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/konoha/keszlet"
+          element={
+            <ProtectedRoute>
+              <InventoryBrands />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/konoha/keszlet/matrix"
+          element={
+            <ProtectedRoute>
+              <MatrixProducts />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/konoha/keszlet/termek/:productId"
+          element={
+            <ProtectedRoute>
+              <ProductDetails />
             </ProtectedRoute>
           }
         />

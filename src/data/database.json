@@ -58,16 +58,42 @@
     }
   ],
   "schedules": {
-    "2026-02-03-Délelőtt": ["fanni", "jazmin"],
-    "2026-02-03-Délután": ["mira"],
-    "2026-02-04-Délelőtt": ["dorina", "bence"],
-    "2026-02-04-Délután": ["fanni"],
-    "2026-02-05-Délelőtt": ["jazmin", "mira"],
-    "2026-02-05-Délután": ["bence", "dorina"],
-    "2026-02-06-Délelőtt": ["fanni", "jazmin"],
-    "2026-02-06-Délután": ["mira"],
-    "2026-02-07-Délelőtt": ["dorina"],
-    "2026-02-07-Délután": ["bence", "fanni"]
+    "2026-02-03-Délelőtt": [
+      "fanni",
+      "jazmin"
+    ],
+    "2026-02-03-Délután": [
+      "mira"
+    ],
+    "2026-02-04-Délelőtt": [
+      "dorina",
+      "bence"
+    ],
+    "2026-02-04-Délután": [
+      "fanni"
+    ],
+    "2026-02-05-Délelőtt": [
+      "jazmin",
+      "mira"
+    ],
+    "2026-02-05-Délután": [
+      "bence",
+      "dorina"
+    ],
+    "2026-02-06-Délelőtt": [
+      "fanni",
+      "jazmin"
+    ],
+    "2026-02-06-Délután": [
+      "mira"
+    ],
+    "2026-02-07-Délelőtt": [
+      "dorina"
+    ],
+    "2026-02-07-Délután": [
+      "bence",
+      "fanni"
+    ]
   },
   "modelBookings": [
     {
@@ -108,7 +134,13 @@
     "googleCalendarUrl": "",
     "workStartHour": 6,
     "workEndHour": 21,
-    "weekDays": ["Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek"]
+    "weekDays": [
+      "Hétfő",
+      "Kedd",
+      "Szerda",
+      "Csütörtök",
+      "Péntek"
+    ]
   },
   "serviceTypes": {
     "hairstyle": {
@@ -134,6 +166,1320 @@
     "other": {
       "label": "📌 Egyéb",
       "color": "#B39DDB"
+    }
+  },
+  "inventory": {
+    "products": [
+      {
+        "id": 1,
+        "name": "SoColor 90ml",
+        "brand": "Matrix",
+        "category": "hair",
+        "subcategory": "festék",
+        "quantity": 0,
+        "unit": "db",
+        "minStock": 30,
+        "pricePerUnit": 3460,
+        "supplier": "Matrix Magyarország",
+        "lastRestocked": "2026-01-28",
+        "hasShades": true,
+        "shades": [
+          {
+            "code": "1A",
+            "name": "Natural",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "2N",
+            "name": "Natural",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "3N",
+            "name": "Natural",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "4N",
+            "name": "Natural",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "5N",
+            "name": "Natural",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6N",
+            "name": "Natural",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "7N",
+            "name": "Natural",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "8N",
+            "name": "Natural",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "9N",
+            "name": "Natural",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "10N",
+            "name": "Natural",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "11N",
+            "name": "Natural",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "4NW",
+            "name": "Natural Warm",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6NW",
+            "name": "Natural Warm",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "8NW",
+            "name": "Natural Warm",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "10NW",
+            "name": "Natural Warm",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6NA",
+            "name": "Natural Ash",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "8NA",
+            "name": "Natural Ash",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6NV",
+            "name": "Natural Violet",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "5A",
+            "name": "Ash",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "7A",
+            "name": "Ash",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "9A",
+            "name": "Ash",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "11A",
+            "name": "Ash",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "4AA",
+            "name": "Ash Ash",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6AA",
+            "name": "Ash Ash",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "4VA",
+            "name": "Violet Ash",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6VA",
+            "name": "Violet Ash",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "7AV",
+            "name": "Ash Violet",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "8AV",
+            "name": "Ash Violet",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "10AV",
+            "name": "Ash Violet",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "5C",
+            "name": "Copper",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6C",
+            "name": "Copper",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "8C",
+            "name": "Copper",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "8CC",
+            "name": "Copper Copper",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6RC+",
+            "name": "Red Copper Plus",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "8RC",
+            "name": "Red Copper",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "5RR+",
+            "name": "Red Red Plus",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "7RR+",
+            "name": "Red Red Plus",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "4RV+",
+            "name": "Red Violet Plus",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "5RV+",
+            "name": "Red Violet Plus",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6RV+",
+            "name": "Red Violet Plus",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6VR",
+            "name": "Violet Red",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6G",
+            "name": "Gold",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "7G",
+            "name": "Gold",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "8G",
+            "name": "Gold",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "9G",
+            "name": "Gold",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "10G",
+            "name": "Gold",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6SP",
+            "name": "Silver Pearl",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "8SP",
+            "name": "Silver Pearl",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "10SP",
+            "name": "Silver Pearl",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6P",
+            "name": "Pearl",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "8P",
+            "name": "Pearl",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "10P",
+            "name": "Pearl",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "4BC",
+            "name": "Brown Copper",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6BC",
+            "name": "Brown Copper",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "7BC",
+            "name": "Brown Copper",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6BR",
+            "name": "Brown Red",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "4M",
+            "name": "Mocha",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "5M",
+            "name": "Mocha",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6M",
+            "name": "Mocha",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "7M",
+            "name": "Mocha",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "8M",
+            "name": "Mocha",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "9M",
+            "name": "Mocha",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6MM",
+            "name": "Mocha Mocha",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "8MM",
+            "name": "Mocha Mocha",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "10MM",
+            "name": "Mocha Mocha",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "5MG",
+            "name": "Mocha Gold",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "7MG",
+            "name": "Mocha Gold",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6MR",
+            "name": "Mocha Red",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "4MA",
+            "name": "Mocha Ash",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6MA",
+            "name": "Mocha Ash",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "8MA",
+            "name": "Mocha Ash",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "4MV",
+            "name": "Mocha Violet",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6MV",
+            "name": "Mocha Violet",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6MC",
+            "name": "Mocha Copper",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6AM",
+            "name": "Ash Mocha",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6VM",
+            "name": "Violet Mocha",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "8VM",
+            "name": "Violet Mocha",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "7W",
+            "name": "Warm",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "9W",
+            "name": "Warm",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "UL-A+",
+            "name": "Ultra Light Ash Plus",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "UL-AA",
+            "name": "Ultra Light Ash Ash",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "UL-V+",
+            "name": "Ultra Light Violet Plus",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "UL-VV",
+            "name": "Ultra Light Violet Violet",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "UL-N+",
+            "name": "Ultra Light Natural Plus",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "UL-NV+",
+            "name": "Ultra Light Natural Violet Plus",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "UL-M",
+            "name": "Ultra Light Mocha",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "UL-P",
+            "name": "Ultra Light Pearl",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "504N",
+            "name": "504N",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "505N",
+            "name": "505N",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "507N",
+            "name": "507N",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "508N",
+            "name": "508N",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "509N",
+            "name": "509N",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "510N",
+            "name": "510N",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "505NA",
+            "name": "505NA",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "506NA",
+            "name": "506NA",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "508NA",
+            "name": "508NA",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "509NA",
+            "name": "509NA",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "510NA",
+            "name": "510NA",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "506N",
+            "name": "506N",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "506NV",
+            "name": "506NV",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "506NW",
+            "name": "506NW",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "507NW",
+            "name": "507NW",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "508NW",
+            "name": "508NW",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "505G",
+            "name": "505G",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "507G",
+            "name": "507G",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "509G",
+            "name": "509G",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "510G",
+            "name": "510G",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "505M",
+            "name": "505M",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "506M",
+            "name": "506M",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "508M",
+            "name": "508M",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "506RB",
+            "name": "506RB",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "506BC",
+            "name": "506BC",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "508BC",
+            "name": "508BC",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "507AV",
+            "name": "507AV",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "509AV",
+            "name": "509AV",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "So.RED",
+            "name": "So.RED",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "SR - R",
+            "name": "SR - R",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "SR - RV",
+            "name": "SR - RV",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "SR - C",
+            "name": "SR - C",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "CLEAR",
+            "name": "CLEAR",
+            "quantity": 0,
+            "minStock": 1
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "SUPER Sync 90ml",
+        "brand": "Matrix",
+        "category": "hair",
+        "subcategory": "festék",
+        "quantity": 0,
+        "unit": "db",
+        "minStock": 30,
+        "pricePerUnit": 4510,
+        "supplier": "Matrix Magyarország",
+        "lastRestocked": "2026-01-28",
+        "hasShades": true,
+        "shades": [
+          {
+            "code": "1A",
+            "name": "Natural",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "2N",
+            "name": "Natural",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "3N",
+            "name": "Natural",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "4N",
+            "name": "Natural",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "5N",
+            "name": "Natural",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6N",
+            "name": "Natural",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "7N",
+            "name": "Natural",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "8N",
+            "name": "Natural",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "9N",
+            "name": "Natural",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "10N",
+            "name": "Natural",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "11N",
+            "name": "Natural",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "4NW",
+            "name": "Natural Warm",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6NW",
+            "name": "Natural Warm",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "8NW",
+            "name": "Natural Warm",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "10NW",
+            "name": "Natural Warm",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6NA",
+            "name": "Natural Ash",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "8NA",
+            "name": "Natural Ash",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6NV",
+            "name": "Natural Violet",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "5A",
+            "name": "Ash",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "7A",
+            "name": "Ash",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "9A",
+            "name": "Ash",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "11A",
+            "name": "Ash",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "4AA",
+            "name": "Ash Ash",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "6AA",
+            "name": "Ash Ash",
+            "quantity": 0,
+            "minStock": 1
+          },
+          {
+            "code": "CLEAR",
+            "name": "CLEAR",
+            "quantity": 0,
+            "minStock": 1
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Light Master Szőkítő",
+        "brand": "Matrix",
+        "category": "hair",
+        "subcategory": "szőkítő",
+        "quantity": 0,
+        "unit": "db",
+        "minStock": 20,
+        "pricePerUnit": 10100,
+        "supplier": "Matrix Magyarország",
+        "lastRestocked": "2026-01-25",
+        "hasShades": true,
+        "shades": [
+          {
+            "code": "LM-500",
+            "name": "LM szőkítőpor 500ml",
+            "quantity": 8,
+            "minStock": 5
+          },
+          {
+            "code": "LM-Bonder",
+            "name": "LM Bonder Inside 500ml",
+            "quantity": 6,
+            "minStock": 4
+          },
+          {
+            "code": "LM-Clay",
+            "name": "LM Open Air Pre-Bonded Clay 500g",
+            "quantity": 0,
+            "minStock": 3
+          },
+          {
+            "code": "LM-Riser",
+            "name": "LM High Riser 500ml",
+            "quantity": 0,
+            "minStock": 2
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Matrix Oxidáns 1000ml",
+        "brand": "Matrix",
+        "category": "hair",
+        "subcategory": "oxidáló",
+        "quantity": 0,
+        "unit": "db",
+        "minStock": 15,
+        "pricePerUnit": 3875,
+        "supplier": "Matrix Magyarország",
+        "lastRestocked": "2026-01-28",
+        "hasShades": true,
+        "shades": [
+          {
+            "code": "3%",
+            "name": "Oxidant 3% 1000ml",
+            "quantity": 0,
+            "minStock": 10
+          },
+          {
+            "code": "6%",
+            "name": "Oxidant 6% 1000ml",
+            "quantity": 18,
+            "minStock": 15
+          },
+          {
+            "code": "9%",
+            "name": "Oxidant 9% 1000ml",
+            "quantity": 12,
+            "minStock": 10
+          },
+          {
+            "code": "12%",
+            "name": "Oxidant 12% 1000ml",
+            "quantity": 0,
+            "minStock": 8
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Total Results Hajápolás",
+        "brand": "Matrix Total Results",
+        "category": "hair",
+        "subcategory": "hajápolás",
+        "quantity": 0,
+        "unit": "db",
+        "minStock": 80,
+        "pricePerUnit": 4000,
+        "supplier": "Matrix Magyarország",
+        "lastRestocked": "2026-01-26",
+        "hasShades": true,
+        "shades": [
+          {
+            "code": "HA-S",
+            "name": "High Amplify sampon 300ml",
+            "quantity": 0,
+            "minStock": 5
+          },
+          {
+            "code": "HA-K",
+            "name": "High Amplify kondicionáló 300ml",
+            "quantity": 0,
+            "minStock": 5
+          },
+          {
+            "code": "CO-S",
+            "name": "Color Obsessed sampon 300ml",
+            "quantity": 14,
+            "minStock": 10
+          },
+          {
+            "code": "CO-K",
+            "name": "Color Obsessed kondicionáló 300ml",
+            "quantity": 14,
+            "minStock": 10
+          },
+          {
+            "code": "SS-S",
+            "name": "So Silver sampon 300ml",
+            "quantity": 10,
+            "minStock": 8
+          },
+          {
+            "code": "SS-K",
+            "name": "So Silver kondicionáló 300ml",
+            "quantity": 0,
+            "minStock": 5
+          },
+          {
+            "code": "BO-S",
+            "name": "Brass Off sampon 300ml",
+            "quantity": 8,
+            "minStock": 8
+          },
+          {
+            "code": "BO-K",
+            "name": "Brass Off kondicionáló 300ml",
+            "quantity": 0,
+            "minStock": 5
+          },
+          {
+            "code": "SL-S",
+            "name": "Sleek sampon 300ml",
+            "quantity": 0,
+            "minStock": 5
+          },
+          {
+            "code": "SL-K",
+            "name": "Sleek kondicionáló 300ml",
+            "quantity": 0,
+            "minStock": 5
+          },
+          {
+            "code": "IR-S",
+            "name": "Instacure repair sampon 300ml",
+            "quantity": 12,
+            "minStock": 10
+          },
+          {
+            "code": "IR-K",
+            "name": "Instacure repair kondicionáló 300ml",
+            "quantity": 0,
+            "minStock": 5
+          },
+          {
+            "code": "FS-S",
+            "name": "Food for soft sampon 300ml",
+            "quantity": 0,
+            "minStock": 5
+          },
+          {
+            "code": "FS-K",
+            "name": "Food for soft kondicionáló 300ml",
+            "quantity": 0,
+            "minStock": 5
+          },
+          {
+            "code": "MC-P",
+            "name": "Miracle Creator pakolás 500ml",
+            "quantity": 6,
+            "minStock": 6
+          },
+          {
+            "code": "ACCD-S",
+            "name": "ACCD sampon 300ml",
+            "quantity": 0,
+            "minStock": 3
+          },
+          {
+            "code": "ACCD-P",
+            "name": "ACCD pakolás 250ml",
+            "quantity": 0,
+            "minStock": 3
+          },
+          {
+            "code": "AWCD-S",
+            "name": "AWCD sampon 300ml",
+            "quantity": 0,
+            "minStock": 3
+          },
+          {
+            "code": "AWCD-K",
+            "name": "AWCD kondicionáló 300ml",
+            "quantity": 0,
+            "minStock": 3
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Biolage Hajápolás",
+        "brand": "Matrix Biolage",
+        "category": "hair",
+        "subcategory": "hajápolás",
+        "quantity": 0,
+        "unit": "db",
+        "minStock": 30,
+        "pricePerUnit": 7320,
+        "supplier": "Matrix Magyarország",
+        "lastRestocked": "2026-01-24",
+        "hasShades": true,
+        "shades": [
+          {
+            "code": "CL-S",
+            "name": "Colorlast sampon 400ml",
+            "quantity": 10,
+            "minStock": 8
+          },
+          {
+            "code": "HS-S",
+            "name": "Hydrasource sampon 400ml",
+            "quantity": 8,
+            "minStock": 8
+          },
+          {
+            "code": "VB-S",
+            "name": "Volume Boost sampon 400ml",
+            "quantity": 0,
+            "minStock": 5
+          },
+          {
+            "code": "SP-S",
+            "name": "Smoothproof sampon 400ml",
+            "quantity": 0,
+            "minStock": 5
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Matrix Styling & Finish",
+        "brand": "Matrix",
+        "category": "hair",
+        "subcategory": "styling",
+        "quantity": 0,
+        "unit": "db",
+        "minStock": 30,
+        "pricePerUnit": 4800,
+        "supplier": "Matrix Magyarország",
+        "lastRestocked": "2026-01-23",
+        "hasShades": true,
+        "shades": [
+          {
+            "code": "VV-Hold",
+            "name": "Vavoom Freezing Spray Extra Hold 500ml",
+            "quantity": 8,
+            "minStock": 6
+          },
+          {
+            "code": "VV-Dry",
+            "name": "Vavoom Freezing Spray Extra Dry 500ml",
+            "quantity": 0,
+            "minStock": 4
+          },
+          {
+            "code": "VV-Full",
+            "name": "Vavoom Freezing Spray Extra Full 500ml",
+            "quantity": 0,
+            "minStock": 4
+          },
+          {
+            "code": "HR",
+            "name": "Height Riser 7g",
+            "quantity": 12,
+            "minStock": 10
+          },
+          {
+            "code": "BWS",
+            "name": "Builder Wax Spray 250ml",
+            "quantity": 0,
+            "minStock": 3
+          },
+          {
+            "code": "CG",
+            "name": "Controller Gel 200ml",
+            "quantity": 0,
+            "minStock": 3
+          },
+          {
+            "code": "FH",
+            "name": "Fixer Hajlakk 400ml",
+            "quantity": 0,
+            "minStock": 5
+          },
+          {
+            "code": "VM",
+            "name": "Volume Mousse 232g",
+            "quantity": 0,
+            "minStock": 3
+          },
+          {
+            "code": "OA",
+            "name": "Over Achiever 3-in-1 50ml",
+            "quantity": 0,
+            "minStock": 5
+          },
+          {
+            "code": "PIS",
+            "name": "Pro Instacure Spray 500ml",
+            "quantity": 5,
+            "minStock": 5
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Fodrász Olló Professional",
+        "brand": "Jaguar",
+        "category": "tools",
+        "subcategory": "olló",
+        "quantity": 4,
+        "unit": "db",
+        "minStock": 3,
+        "pricePerUnit": 25000,
+        "supplier": "Profi Eszköz Bt.",
+        "lastRestocked": "2025-12-10"
+      },
+      {
+        "id": 9,
+        "name": "Hajfésű Szett",
+        "brand": "Denman",
+        "category": "tools",
+        "subcategory": "fésű",
+        "quantity": 18,
+        "unit": "db",
+        "minStock": 10,
+        "pricePerUnit": 1200,
+        "supplier": "Profi Eszköz Bt.",
+        "lastRestocked": "2026-01-12"
+      },
+      {
+        "id": 10,
+        "name": "Festő Ecset Készlet",
+        "brand": "Generic",
+        "category": "tools",
+        "subcategory": "ecset",
+        "quantity": 22,
+        "unit": "db",
+        "minStock": 15,
+        "pricePerUnit": 800,
+        "supplier": "Profi Eszköz Bt.",
+        "lastRestocked": "2026-01-28"
+      },
+      {
+        "id": 11,
+        "name": "Kesztyű (100db/csomag)",
+        "brand": "Generic",
+        "category": "other",
+        "subcategory": "higiénia",
+        "quantity": 180,
+        "unit": "db",
+        "minStock": 100,
+        "pricePerUnit": 15,
+        "supplier": "Higiénia Trade",
+        "lastRestocked": "2026-01-29"
+      },
+      {
+        "id": 12,
+        "name": "Hajmosó Törölköző",
+        "brand": "Generic",
+        "category": "other",
+        "subcategory": "textil",
+        "quantity": 16,
+        "unit": "db",
+        "minStock": 20,
+        "pricePerUnit": 2500,
+        "supplier": "Textil Nagyker",
+        "lastRestocked": "2026-01-15"
+      }
+    ],
+    "categories": {
+      "hair": {
+        "name": "Haj",
+        "icon": "💇",
+        "color": "#8B7EB8"
+      },
+      "tools": {
+        "name": "Eszközök",
+        "icon": "✂️",
+        "color": "#C098E8"
+      },
+      "other": {
+        "name": "Egyéb",
+        "icon": "🧴",
+        "color": "#F4B8D8"
+      }
     }
   }
 }

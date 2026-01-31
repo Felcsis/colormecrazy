@@ -24,8 +24,7 @@ const adminModules = [
     id: 'inventory',
     path: '/konoha/keszlet',
     icon: faBoxes,
-    color: '#C098E8',
-    comingSoon: true
+    color: '#C098E8'
   },
   {
     id: 'finance',
