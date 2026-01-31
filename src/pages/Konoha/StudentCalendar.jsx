@@ -9,20 +9,13 @@ import './StudentCalendar.css';
 
 function StudentCalendar() {
   const { currentUser, logout, isAdmin } = useAuth();
-  const { modelBookings, students, exportData, importData } = useCalendar();
+  const { modelBookings, students } = useCalendar();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('overview');
 
   const handleLogout = () => {
     logout();
     navigate('/login');
-  };
-
-  const handleImport = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      importData(file);
-    }
   };
 
   // Közelgő modellek (legközelebbi 5)
@@ -59,14 +52,14 @@ function StudentCalendar() {
           <div className="user-details">
             <h3>{currentUser.name}</h3>
             <p className="user-type">
-              {currentUser.type === 'admin' && '👑 Adminisztrátor'}
-              {currentUser.type === 'student' && '📚 Tanuló'}
-              {currentUser.type === 'employee' && '💼 Alkalmazott'}
+              {currentUser.type === 'admin' && 'Adminisztrátor'}
+              {currentUser.type === 'student' && 'Tanuló'}
+              {currentUser.type === 'employee' && 'Alkalmazott'}
             </p>
             {isAdmin() ? (
-              <p className="admin-note">✅ Teljes szerkesztési jogosultság</p>
+              <p className="admin-note">Teljes szerkesztési jogosultság</p>
             ) : (
-              <p className="readonly-note">👁️ Csak olvasási jogosultság</p>
+              <p className="readonly-note">Csak olvasási jogosultság</p>
             )}
           </div>
         </div>
@@ -77,25 +70,25 @@ function StudentCalendar() {
             className={`tab-btn ${activeTab === 'overview' ? 'active' : ''}`}
             onClick={() => setActiveTab('overview')}
           >
-            📊 Áttekintés
+            Áttekintés
           </button>
           <button
             className={`tab-btn ${activeTab === 'schedule' ? 'active' : ''}`}
             onClick={() => setActiveTab('schedule')}
           >
-            📅 Beosztás
+            Beosztás
           </button>
           <button
             className={`tab-btn ${activeTab === 'models' ? 'active' : ''}`}
             onClick={() => setActiveTab('models')}
           >
-            👥 Modellek
+            Modellek
           </button>
           <button
             className={`tab-btn ${activeTab === 'calendar' ? 'active' : ''}`}
             onClick={() => setActiveTab('calendar')}
           >
-            🗓️ Naptár
+            Naptár
           </button>
         </div>
 
