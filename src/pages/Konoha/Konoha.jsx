@@ -30,8 +30,7 @@ const adminModules = [
     id: 'finance',
     path: '/konoha/penzugy',
     icon: faMoneyBillWave,
-    color: '#F4B8D8',
-    comingSoon: true
+    color: '#F4B8D8'
   },
   {
     id: 'employees',
@@ -83,7 +82,7 @@ function Konoha() {
         {/* Header */}
         <div className="dashboard-header">
           <div>
-            <h1>🔮 Admin Dashboard</h1>
+            <h1>Admin Dashboard</h1>
             <p className="welcome-text">Üdv, <strong>{currentUser.name}</strong>!</p>
           </div>
           <div className="header-actions">
@@ -101,8 +100,8 @@ function Konoha() {
           <div className="user-details">
             <h3>{currentUser.name}</h3>
             <p className="user-type">
-              {currentUser.type === 'admin' && '👑 Adminisztrátor'}
-              {currentUser.type === 'student' && '📚 Tanuló'}
+              {currentUser.type === 'admin' && 'Adminisztrátor'}
+              {currentUser.type === 'student' && 'Tanuló'}
             </p>
           </div>
         </div>

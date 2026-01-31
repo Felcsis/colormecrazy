@@ -367,7 +367,7 @@ function DraggableModelBlock({
       <div className="model-block-content">
         <div className="model-block-time">{timeDisplay}</div>
         <div className="model-block-student">{booking.studentName}</div>
-        <div className="model-block-model">📋 {booking.modelName}</div>
+        <div className="model-block-model">{booking.modelName}</div>
         <div className="model-block-service">
           {serviceTypes[booking.service]?.label || booking.service}
         </div>

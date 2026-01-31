@@ -37,7 +37,7 @@ function StudentCalendar() {
         {/* Konoha Header */}
         <div className="konoha-header">
           <div>
-            <h1>📚 Tanulói Naptár</h1>
+            <h1>Tanulói Naptár</h1>
             <p className="welcome-text">Üdv, <strong>{currentUser.name}</strong>!</p>
           </div>
           <div className="header-actions">

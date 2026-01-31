@@ -23,6 +23,7 @@ import StudentCalendar from './pages/Konoha/StudentCalendar';
 import InventoryBrands from './pages/Konoha/InventoryBrands';
 import MatrixProducts from './pages/Konoha/MatrixProducts';
 import ProductDetails from './pages/Konoha/ProductDetails';
+import Finance from './pages/Konoha/Finance';
 import MessengerButton from './components/MessengerButton/MessengerButton';
 import InstagramFeed from './components/InstagramFeed/InstagramFeed';
 
@@ -113,6 +114,14 @@ function AppContent() {
           element={
             <ProtectedRoute>
               <ProductDetails />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/konoha/penzugy"
+          element={
+            <ProtectedRoute>
+              <Finance />
             </ProtectedRoute>
           }
         />
