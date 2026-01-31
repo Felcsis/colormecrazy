@@ -7,7 +7,21 @@ function CalendarTab() {
   const { modelBookings, serviceTypes, settings, updateModelBooking } = useCalendar();
   const { isAdmin } = useAuth();
   const [weekOffset, setWeekOffset] = useState(0);
+  const [dayOffset, setDayOffset] = useState(0); // For mobile: 0=Mon-Wed, 1=Tue-Thu, 2=Wed-Fri
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const calendarRef = useRef(null);
+
+  // Detect mobile screen size
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+      if (window.innerWidth > 768) {
+        setDayOffset(0); // Reset day offset on desktop
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const weekDays = settings.weekDays;
   const workStartHour = settings.workStartHour;
@@ -77,7 +91,7 @@ function CalendarTab() {
   weekEnd.setDate(weekEnd.getDate() + 4);
 
   // Napok létrehozása a héthez
-  const weekDates = [0, 1, 2, 3, 4].map(dayIndex => {
+  const allWeekDates = [0, 1, 2, 3, 4].map(dayIndex => {
     const date = new Date(weekStart);
     date.setDate(date.getDate() + dayIndex);
     return {
@@ -87,22 +101,56 @@ function CalendarTab() {
     };
   });
 
+  // Mobilon csak 3 napot mutatunk a dayOffset alapján
+  const weekDates = isMobile ? allWeekDates.slice(dayOffset, dayOffset + 3) : allWeekDates;
+
+  const canGoPrevDay = dayOffset > 0;
+  const canGoNextDay = dayOffset < 2; // Max 2, mert 0=Mon-Wed, 1=Tue-Thu, 2=Wed-Fri
+
+  const handleWeekChange = (newOffset) => {
+    setWeekOffset(newOffset);
+    setDayOffset(0); // Reset day view to Monday-Wednesday when changing weeks
+  };
+
   return (
     <div className="calendar-tab">
       <div className="calendar-controls">
-        <button onClick={() => setWeekOffset(weekOffset - 1)} className="week-nav-btn">
-          ❮ Előző
+        <button onClick={() => handleWeekChange(weekOffset - 1)} className="week-nav-btn">
+          ❮ Előző hét
         </button>
         <span className="current-week">
           {formatDateDisplay(weekStart)} - {formatDateDisplay(weekEnd)}
         </span>
-        <button onClick={() => setWeekOffset(0)} className="week-nav-btn">
+        <button onClick={() => handleWeekChange(0)} className="week-nav-btn">
           Ma
         </button>
-        <button onClick={() => setWeekOffset(weekOffset + 1)} className="week-nav-btn">
-          Következő ❯
+        <button onClick={() => handleWeekChange(weekOffset + 1)} className="week-nav-btn">
+          Következő hét ❯
         </button>
       </div>
+
+      {/* Mobile day navigation */}
+      {isMobile && (
+        <div className="mobile-day-controls">
+          <button
+            onClick={() => setDayOffset(Math.max(0, dayOffset - 1))}
+            className="day-nav-btn"
+            disabled={!canGoPrevDay}
+          >
+            ❮ Előző napok
+          </button>
+          <span className="day-info">
+            {weekDays[dayOffset]} - {weekDays[Math.min(dayOffset + 2, 4)]}
+          </span>
+          <button
+            onClick={() => setDayOffset(Math.min(2, dayOffset + 1))}
+            className="day-nav-btn"
+            disabled={!canGoNextDay}
+          >
+            Következő napok ❯
+          </button>
+        </div>
+      )}
 
       <div className="week-calendar" ref={calendarRef}>
         {/* Time column */}
@@ -150,7 +198,7 @@ function CalendarTab() {
                     getTimeInMinutes={getTimeInMinutes}
                     isAdmin={isAdmin}
                     calendarRef={calendarRef}
-                    weekDates={weekDates}
+                    weekDates={allWeekDates}
                   />
                 ))}
               </div>
