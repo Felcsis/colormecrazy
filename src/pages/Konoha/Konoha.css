@@ -12,7 +12,7 @@
   --border: #2a2a2a;
 }
 
-.konoha-container {
+.konoha-dashboard {
   min-height: 100vh;
   background-color: var(--bg-dark);
   background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
@@ -21,12 +21,12 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.konoha-content {
-  max-width: 1800px;
+.dashboard-container {
+  max-width: 1400px;
   margin: 0 auto;
 }
 
-.konoha-header {
+.dashboard-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,7 +37,7 @@
   gap: 1rem;
 }
 
-.konoha-content h1 {
+.dashboard-header h1 {
   font-size: 2rem;
   font-weight: 400;
   letter-spacing: 2px;
@@ -97,7 +97,7 @@
   background: var(--bg-card);
   border: 2px solid var(--border);
   border-radius: 8px;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
@@ -128,211 +128,227 @@
 }
 
 .user-type {
-  margin: 0 0 0.5rem 0;
+  margin: 0;
   color: var(--text-muted);
   font-size: 1rem;
   letter-spacing: 0.5px;
 }
 
-.admin-note {
-  margin: 0;
-  color: var(--primary);
-  font-weight: 500;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
+/* Modules Grid - Tarot Card Style */
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  padding: 1rem 0;
 }
 
-.readonly-note {
-  margin: 0;
-  color: #ee5a6f;
-  font-weight: 500;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
-}
-
-/* Tabs */
-.tabs {
-  display: flex;
+.module-card {
   background: var(--bg-card);
   border: 2px solid var(--border);
-  border-radius: 8px 8px 0 0;
+  text-align: center;
+  padding: 32px 24px 36px;
+  border-radius: 8px;
+  position: relative;
   overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  display: block;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  aspect-ratio: 2/3;
 }
 
-.tab-btn {
-  flex: 1;
-  background: transparent;
-  color: var(--text-muted);
-  border: none;
-  padding: 18px 20px;
-  font-size: 0.9rem;
+.module-card::before,
+.module-card::after {
+  content: '✦';
+  position: absolute;
+  font-size: 0.8rem;
+  color: var(--border);
+  opacity: 0.4;
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+
+.module-card::before {
+  top: 16px;
+  left: 16px;
+}
+
+.module-card::after {
+  bottom: 16px;
+  right: 16px;
+}
+
+.module-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5),
+              inset 0 0 80px rgba(139, 126, 184, 0.15);
+  border-color: var(--module-color, var(--primary));
+}
+
+.module-card:hover::before,
+.module-card:hover::after {
+  color: var(--module-color, var(--primary));
+  opacity: 1;
+  font-size: 1rem;
+}
+
+/* Mystic Icon at top */
+.arcana-number {
+  font-size: 3rem;
+  color: var(--border);
+  margin-bottom: 24px;
+  opacity: 0.6;
+  transition: all 0.4s ease;
+}
+
+.module-card:hover .arcana-number {
+  color: var(--module-color, var(--primary));
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.module-info {
+  margin-top: auto;
+}
+
+.module-info h3 {
+  font-size: 1.3rem;
   font-weight: 500;
+  color: var(--text);
+  margin: 0 0 12px 0;
+  letter-spacing: 1px;
+  transition: all 0.4s ease;
+}
+
+.module-card:hover .module-info h3 {
+  color: var(--module-color, var(--primary));
+}
+
+.module-description {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  margin-top: 8px;
+  transition: all 0.4s ease;
+}
+
+.module-card:hover .module-description {
+  color: var(--text);
+}
+
+/* Coming Soon Cards */
+.module-card.coming-soon {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.module-card.coming-soon::before,
+.module-card.coming-soon::after {
+  opacity: 0.2;
+}
+
+.module-status {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 14px;
+  background: rgba(139, 126, 184, 0.2);
+  border: 1px solid var(--primary);
+  border-radius: 20px;
+  font-size: 0.7rem;
+  color: var(--primary);
   letter-spacing: 1px;
   text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: 'Poppins', sans-serif;
-  position: relative;
-}
-
-.tab-btn:hover {
-  color: var(--text);
-  background: var(--bg-card-hover);
-}
-
-.tab-btn.active {
-  color: var(--primary);
-  background: var(--bg-dark);
-}
-
-.tab-btn.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--primary);
-}
-
-/* Tab Content */
-.tab-content-area {
-  background: var(--bg-card);
-  border: 2px solid var(--border);
-  border-top: none;
-  border-radius: 0 0 8px 8px;
-  padding: 30px;
-  min-height: 600px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-}
-
-.overview-content h2 {
-  color: var(--primary);
-  font-size: 1.2rem;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin: 0 0 1.5rem 0;
-  text-align: center;
-}
-
-.models-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.model-card {
-  background: var(--bg-dark);
-  border-radius: 8px;
-  padding: 1rem;
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  border: 1px solid var(--border);
-  border-left: 4px solid var(--primary);
-  transition: all 0.3s ease;
-}
-
-.model-card:hover {
-  border-color: var(--primary);
-  background: var(--bg-card-hover);
-}
-
-.model-date {
-  font-weight: 600;
-  color: var(--primary);
-  min-width: 100px;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
-}
-
-.model-info strong {
-  display: block;
-  margin-bottom: 0.3rem;
-  font-size: 1rem;
-  color: var(--text);
   font-weight: 500;
 }
 
-.model-info p {
-  margin: 0.2rem 0;
-  color: var(--text-muted);
-  font-size: 0.85rem;
+/* Individual module colors */
+.module-card[data-module="student-calendar"] {
+  border-color: #8B7EB8;
 }
 
-.no-data {
-  text-align: center;
-  color: var(--text-muted);
-  padding: 3rem;
-  font-style: italic;
-  font-size: 1.1rem;
+.module-card[data-module="inventory"] {
+  border-color: #C098E8;
 }
 
-/* Students Grid */
-.students-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
+.module-card[data-module="finance"] {
+  border-color: #F4B8D8;
 }
 
-.student-card {
-  background: var(--bg-dark);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1.5rem 1rem;
-  text-align: center;
-  transition: all 0.3s ease;
+.module-card[data-module="employees"] {
+  border-color: #7BA3C4;
 }
 
-.student-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--primary);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+.module-card[data-module="analytics"] {
+  border-color: #A8C8E8;
 }
 
-.student-avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin: 0 auto 0.75rem auto;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
-  border: 2px solid var(--border);
+.module-card[data-module="settings"] {
+  border-color: #9CA3AF;
 }
 
-.student-name {
-  font-weight: 500;
-  color: var(--text);
-  font-size: 1rem;
-  letter-spacing: 0.5px;
+/* Glow animations for each module */
+@keyframes glowStudentCalendar {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3),
+                0 0 15px rgba(139, 126, 184, 0.1);
+  }
+  50% {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3),
+                0 0 25px rgba(139, 126, 184, 0.2);
+  }
 }
 
-/* Placeholder */
-.placeholder-content {
-  text-align: center;
-  padding: 4rem 2rem;
-  color: var(--text-muted);
-  font-size: 1.2rem;
-  font-style: italic;
+@keyframes glowInventory {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3),
+                0 0 15px rgba(192, 152, 232, 0.1);
+  }
+  50% {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3),
+                0 0 25px rgba(192, 152, 232, 0.2);
+  }
+}
+
+@keyframes glowFinance {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3),
+                0 0 15px rgba(244, 184, 216, 0.1);
+  }
+  50% {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3),
+                0 0 25px rgba(244, 184, 216, 0.2);
+  }
+}
+
+.module-card[data-module="student-calendar"]:not(.coming-soon) {
+  animation: glowStudentCalendar 4s ease-in-out infinite;
+}
+
+.module-card[data-module="inventory"]:not(.coming-soon) {
+  animation: glowInventory 4s ease-in-out infinite;
+}
+
+.module-card[data-module="finance"]:not(.coming-soon) {
+  animation: glowFinance 4s ease-in-out infinite;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .konoha-header {
+  .konoha-dashboard {
+    padding: 1rem;
+  }
+
+  .dashboard-header {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .konoha-content h1 {
-    font-size: 2rem;
+  .dashboard-header h1 {
+    font-size: 1.8rem;
   }
 
   .header-actions {
@@ -340,16 +356,22 @@
     justify-content: flex-end;
   }
 
-  .tabs {
-    flex-direction: column;
+  .modules-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 340px;
+    margin: 0 auto;
   }
 
-  .students-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  .module-card {
+    padding: 28px 20px 32px;
   }
 
-  .model-card {
-    flex-direction: column;
-    align-items: flex-start;
+  .arcana-number {
+    font-size: 2.5rem;
+  }
+
+  .module-info h3 {
+    font-size: 1.2rem;
   }
 }

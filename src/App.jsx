@@ -19,6 +19,7 @@ import Education from './pages/Education/Education';
 import Blog from './pages/Blog/Blog';
 import Login from './pages/Login/Login';
 import Konoha from './pages/Konoha/Konoha';
+import StudentCalendar from './pages/Konoha/StudentCalendar';
 import MessengerButton from './components/MessengerButton/MessengerButton';
 import InstagramFeed from './components/InstagramFeed/InstagramFeed';
 
@@ -77,6 +78,14 @@ function AppContent() {
           element={
             <ProtectedRoute>
               <Konoha />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/konoha/tanuloi-naptar"
+          element={
+            <ProtectedRoute>
+              <StudentCalendar />
             </ProtectedRoute>
           }
         />
