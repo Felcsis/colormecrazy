@@ -29,7 +29,11 @@ import {
   faRuler,
   faClipboard,
   faRainbow,
-  faBriefcase
+  faBriefcase,
+  faPalette,
+  faEarListen,
+  faEye,
+  faHandSparkles
 } from '@fortawesome/free-solid-svg-icons';
 import { servicesData, findDeckById } from '../../data/servicesData';
 import './MagicServiceCards.css';
@@ -69,6 +73,10 @@ const MagicServiceCards = () => {
     'faClipboard': faClipboard,
     'faRainbow': faRainbow,
     'faBriefcase': faBriefcase,
+    'faPalette': faPalette,
+    'faEarListen': faEarListen,
+    'faEye': faEye,
+    'faHandSparkles': faHandSparkles,
     // Emoji fallbacks (for backward compatibility)
     '🎨': faPaintBrush,
     '✂️': faCut,
@@ -399,6 +407,16 @@ const MagicServiceCards = () => {
                               <p className="card-description">{getLocalizedText(card, 'description')}</p>
                             </div>
                           )}
+
+                          {card.steps && (
+                            <div className="card-steps-grid">
+                              {card.steps.map((step, index) => (
+                                <div key={index} className="card-step-item">
+                                  {step}
+                                </div>
+                              ))}
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -524,6 +542,16 @@ const MagicServiceCards = () => {
                     {card.description && (
                       <div className="card-description-wrapper">
                         <p className="card-description">{getLocalizedText(card, 'description')}</p>
+                      </div>
+                    )}
+
+                    {card.steps && (
+                      <div className="card-steps-grid">
+                        {card.steps.map((step, index) => (
+                          <div key={index} className="card-step-item">
+                            {step}
+                          </div>
+                        ))}
                       </div>
                     )}
                   </div>

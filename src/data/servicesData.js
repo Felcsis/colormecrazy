@@ -890,7 +890,7 @@ export const servicesData = {
       arcana: 'PAKLI',
       type: 'main-deck',
       deckCount: 2,
-      totalCards: 12,
+      totalCards: 13,
 
       subDecks: [
         // ─────────────────────────────────────────────────────────
@@ -1080,7 +1080,7 @@ export const servicesData = {
         },
 
         // ─────────────────────────────────────────────────────────
-        // II. KIEGÉSZÍTŐ SZOLGÁLTATÁSOK (Direct - 3 kártya)
+        // II. KIEGÉSZÍTŐ SZOLGÁLTATÁSOK (Direct - 4 kártya)
         // ─────────────────────────────────────────────────────────
         {
           id: 'kiegeszito-szolgaltatasok',
@@ -1090,38 +1090,66 @@ export const servicesData = {
           arcana: 'II',
           type: 'sub-deck',
           directCards: true,
-          cardCount: 3,
+          cardCount: 4,
 
           cards: [
             {
-              id: 'ultrahang',
+              id: 'alkalmi-smink',
               arcana: '1',
-              title: 'Ultrahang',
-              subtitle: 'Ultrasonic treatment',
-              icon: 'faVolumeHigh',
-              price: '3.000 Ft',
-              duration: '+15 perc',
-              description: 'Ultrahangos kezelés mélytisztításra és anyagbevitelre.'
+              title: 'Alkalmi smink',
+              subtitle: 'Occasion makeup',
+              icon: 'faPalette',
+              price: '11.000 - 16.000 Ft',
+              description: 'Professzionális alkalmi smink szolgáltatások.',
+              steps: [
+                'Alkalmi smink: 11.000 Ft',
+                'Mennyasszonyi smink: 16.000 Ft'
+              ]
             },
             {
-              id: 'arany-maszk',
+              id: 'studex-fulbeloves',
               arcana: '2',
-              title: 'Arany maszk',
-              subtitle: 'Gold mask',
-              icon: 'faWandMagicSparkles',
-              price: '3.000 Ft',
-              duration: '+20 perc',
-              description: 'Luxus aranymaszk bőrmegújító hatással.'
+              title: 'Studex fülbelövés',
+              subtitle: 'Ear piercing',
+              icon: 'faEarListen',
+              price: '15.000 Ft',
+              description: 'Biztonságos, higiénikus fülbelövés Studex rendszerrel.'
             },
             {
-              id: 'krem-pakolas',
+              id: 'szempilla-szemoldok',
               arcana: '3',
-              title: 'Krém pakolás',
-              subtitle: 'Cream mask',
-              icon: 'faPumpSoap',
-              price: '2.500 Ft',
-              duration: '+15 perc',
-              description: 'Extra tápláló krémes arcpakolás.'
+              title: 'Szempilla és Szemöldök',
+              subtitle: 'Lash & Brow services',
+              icon: 'faEye',
+              price: '2.500 - 9.500 Ft',
+              description: 'Szempilla és szemöldök kezelések.',
+              steps: [
+                'Szempilla festés: 2.500 Ft',
+                'Szemöldök festés + igazítás: 3.500 Ft',
+                'Szempilla lifting: 9.500 Ft',
+                'Hennás szemöldök styling: 6.500 Ft'
+              ]
+            },
+            {
+              id: 'gyanta',
+              arcana: '4',
+              title: 'Gyanta',
+              subtitle: 'Waxing services',
+              icon: 'faHandSparkles',
+              price: '1.800 - 6.500 Ft',
+              description: 'Professzionális gyantázási szolgáltatások.',
+              steps: [
+                'Bajusz gyanta: 1.800 Ft',
+                'Szemöldök gyanta: 1.800 Ft',
+                'Hónalj gyanta: 2.600 Ft',
+                'Teljes kar: 3.500 Ft',
+                'Bikini vonal: 3.500 Ft',
+                'Láb térdig: 3.500 Ft',
+                'Teljes láb: 5.000 Ft',
+                'Hát: 3.000 Ft',
+                'Mellkas: 3.000 Ft',
+                'Teljes fazon: 6.500 Ft'
+              ]
             }
           ]
         }
