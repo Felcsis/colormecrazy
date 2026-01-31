@@ -41,9 +41,11 @@ function StudentCalendar() {
             <p className="welcome-text">Üdv, <strong>{currentUser.name}</strong>!</p>
           </div>
           <div className="header-actions">
-            <button onClick={() => navigate('/konoha')} className="back-btn">
-              ← Dashboard
-            </button>
+            {currentUser.type === 'admin' && (
+              <button onClick={() => navigate('/konoha')} className="back-btn">
+                ← Dashboard
+              </button>
+            )}
             <button onClick={handleLogout} className="logout-btn">
               Kijelentkezés
             </button>

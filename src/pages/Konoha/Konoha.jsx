@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -61,10 +61,22 @@ function Konoha() {
   const { currentUser, logout } = useAuth();
   const navigate = useNavigate();
 
+  // Tanulók közvetlenül a Tanulói Naptár modulba kerülnek
+  useEffect(() => {
+    if (currentUser && currentUser.type === 'student') {
+      navigate('/konoha/tanuloi-naptar', { replace: true });
+    }
+  }, [currentUser, navigate]);
+
   const handleLogout = () => {
     logout();
     navigate('/login');
   };
+
+  // Ne rendereljünk semmit, ha student (redirect-el)
+  if (currentUser && currentUser.type === 'student') {
+    return null;
+  }
 
   return (
     <div className="konoha-dashboard">
