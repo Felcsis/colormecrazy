@@ -12,22 +12,16 @@ import {
   faFilter
 } from '@fortawesome/free-solid-svg-icons';
 import { useAuth } from '../../context/AuthContext';
+import { api } from '../../services/api';
 import './Finance.css';
 
 function Finance() {
   const { currentUser, logout } = useAuth();
   const navigate = useNavigate();
 
-  // Load data from localStorage
-  const [incomes, setIncomes] = useState(() => {
-    const saved = localStorage.getItem('konoha-incomes');
-    return saved ? JSON.parse(saved) : [];
-  });
-
-  const [expenses, setExpenses] = useState(() => {
-    const saved = localStorage.getItem('konoha-expenses');
-    return saved ? JSON.parse(saved) : [];
-  });
+  const [incomes, setIncomes] = useState([]);
+  const [expenses, setExpenses] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const [showIncomeModal, setShowIncomeModal] = useState(false);
   const [showExpenseModal, setShowExpenseModal] = useState(false);
@@ -50,14 +44,25 @@ function Finance() {
     description: ''
   });
 
-  // Save to localStorage
+  // Load data from API
   useEffect(() => {
-    localStorage.setItem('konoha-incomes', JSON.stringify(incomes));
-  }, [incomes]);
+    async function loadFinanceData() {
+      try {
+        const [incomesData, expensesData] = await Promise.all([
+          api.getIncomes(filterPeriod),
+          api.getExpenses(filterPeriod)
+        ]);
+        setIncomes(incomesData.incomes);
+        setExpenses(expensesData.expenses);
+        setLoading(false);
+      } catch (error) {
+        console.error('Failed to load finance data:', error);
+        setLoading(false);
+      }
+    }
 
-  useEffect(() => {
-    localStorage.setItem('konoha-expenses', JSON.stringify(expenses));
-  }, [expenses]);
+    loadFinanceData();
+  }, [filterPeriod]);
 
   const handleLogout = () => {
     logout();
@@ -111,64 +116,85 @@ function Finance() {
   }, [filteredData]);
 
   // Add income
-  const handleAddIncome = (e) => {
+  const handleAddIncome = async (e) => {
     e.preventDefault();
     if (!newIncome.amount || parseFloat(newIncome.amount) <= 0) {
       alert('Kérlek adj meg érvényes összeget!');
       return;
     }
 
-    const income = {
-      id: Date.now(),
-      ...newIncome,
-      amount: parseFloat(newIncome.amount)
-    };
+    try {
+      const incomeData = {
+        date: newIncome.date,
+        amount: parseFloat(newIncome.amount),
+        type: newIncome.type,
+        paymentMethod: newIncome.paymentMethod
+      };
 
-    setIncomes([income, ...incomes]);
-    setNewIncome({
-      date: new Date().toISOString().split('T')[0],
-      amount: '',
-      type: 'service',
-      paymentMethod: 'cash',
-      description: ''
-    });
-    setShowIncomeModal(false);
+      const { income } = await api.createIncome(incomeData);
+      setIncomes([income, ...incomes]);
+      setNewIncome({
+        date: new Date().toISOString().split('T')[0],
+        amount: '',
+        type: 'service',
+        paymentMethod: 'cash',
+        description: ''
+      });
+      setShowIncomeModal(false);
+    } catch (error) {
+      alert('Hiba a bevétel mentésekor: ' + error.message);
+    }
   };
 
   // Add expense
-  const handleAddExpense = (e) => {
+  const handleAddExpense = async (e) => {
     e.preventDefault();
     if (!newExpense.amount || parseFloat(newExpense.amount) <= 0) {
       alert('Kérlek adj meg érvényes összeget!');
       return;
     }
 
-    const expense = {
-      id: Date.now(),
-      ...newExpense,
-      amount: parseFloat(newExpense.amount)
-    };
+    try {
+      const expenseData = {
+        date: newExpense.date,
+        amount: parseFloat(newExpense.amount),
+        category: newExpense.category
+      };
 
-    setExpenses([expense, ...expenses]);
-    setNewExpense({
-      date: new Date().toISOString().split('T')[0],
-      amount: '',
-      category: 'products',
-      description: ''
-    });
-    setShowExpenseModal(false);
-  };
-
-  // Delete income/expense
-  const deleteIncome = (id) => {
-    if (window.confirm('Biztosan törlöd ezt a bevételt?')) {
-      setIncomes(incomes.filter(i => i.id !== id));
+      const { expense } = await api.createExpense(expenseData);
+      setExpenses([expense, ...expenses]);
+      setNewExpense({
+        date: new Date().toISOString().split('T')[0],
+        amount: '',
+        category: 'products',
+        description: ''
+      });
+      setShowExpenseModal(false);
+    } catch (error) {
+      alert('Hiba a kiadás mentésekor: ' + error.message);
     }
   };
 
-  const deleteExpense = (id) => {
+  // Delete income/expense
+  const deleteIncome = async (id) => {
+    if (window.confirm('Biztosan törlöd ezt a bevételt?')) {
+      try {
+        await api.deleteIncome(id);
+        setIncomes(incomes.filter(i => i.id !== id));
+      } catch (error) {
+        alert('Hiba a törléskor: ' + error.message);
+      }
+    }
+  };
+
+  const deleteExpense = async (id) => {
     if (window.confirm('Biztosan törlöd ezt a kiadást?')) {
-      setExpenses(expenses.filter(e => e.id !== id));
+      try {
+        await api.deleteExpense(id);
+        setExpenses(expenses.filter(e => e.id !== id));
+      } catch (error) {
+        alert('Hiba a törléskor: ' + error.message);
+      }
     }
   };
 

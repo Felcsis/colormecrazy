@@ -10,9 +10,10 @@ import {
   faFilter
 } from '@fortawesome/free-solid-svg-icons';
 import { useAuth } from '../../context/AuthContext';
+import { api } from '../../services/api';
 import './Inventory.css';
 
-// Import database
+// Import database for categories
 import databaseData from '../../data/database.json';
 
 function MatrixProducts() {
@@ -23,11 +24,22 @@ function MatrixProducts() {
   const [categories] = useState(databaseData.inventory.categories);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Load only Matrix products
-    const matrixProducts = databaseData.inventory.products.filter(p => p.brand.includes('Matrix'));
-    setProducts(matrixProducts);
+    // Load Matrix products from API
+    async function loadProducts() {
+      try {
+        const { products: matrixProducts } = await api.getProducts('Matrix');
+        setProducts(matrixProducts);
+        setLoading(false);
+      } catch (error) {
+        console.error('Failed to load products:', error);
+        setLoading(false);
+      }
+    }
+
+    loadProducts();
   }, []);
 
   const handleLogout = () => {

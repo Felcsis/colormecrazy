@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
-import database from '../data/database.json';
+import { api } from '../services/api';
 
 const AuthContext = createContext();
 
@@ -11,43 +11,46 @@ export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Oldal betöltésekor ellenőrizzük, van-e mentett bejelentkezés
+  // Check if user is already logged in on mount
   useEffect(() => {
-    const savedUser = localStorage.getItem('currentUser');
-    if (savedUser) {
-      setCurrentUser(JSON.parse(savedUser));
+    async function checkAuth() {
+      try {
+        const { user } = await api.getCurrentUser();
+        setCurrentUser(user);
+      } catch (error) {
+        // Not logged in or session expired
+        setCurrentUser(null);
+      } finally {
+        setLoading(false);
+      }
     }
-    setLoading(false);
+
+    checkAuth();
   }, []);
 
-  // Bejelentkezés
-  function login(username, password) {
-    const user = database.users.find(
-      u => u.id === username && u.password === password
-    );
-
-    if (user) {
-      const userWithoutPassword = {
-        id: user.id,
-        name: user.name,
-        type: user.type,
-        color: user.color
-      };
-      setCurrentUser(userWithoutPassword);
-      localStorage.setItem('currentUser', JSON.stringify(userWithoutPassword));
-      return { success: true, user: userWithoutPassword };
+  // Login
+  async function login(username, password) {
+    try {
+      const { user } = await api.login(username, password);
+      setCurrentUser(user);
+      return { success: true, user };
+    } catch (error) {
+      return { success: false, error: error.message || 'Hibás felhasználónév vagy jelszó!' };
     }
-
-    return { success: false, error: 'Hibás felhasználónév vagy jelszó!' };
   }
 
-  // Kijelentkezés
-  function logout() {
-    setCurrentUser(null);
-    localStorage.removeItem('currentUser');
+  // Logout
+  async function logout() {
+    try {
+      await api.logout();
+    } catch (error) {
+      console.error('Logout error:', error);
+    } finally {
+      setCurrentUser(null);
+    }
   }
 
-  // Admin jogosultság ellenőrzése
+  // Check if admin
   function isAdmin() {
     return currentUser?.type === 'admin';
   }

@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
+import { api } from '../services/api';
 import database from '../data/database.json';
 
 const CalendarContext = createContext();
@@ -12,75 +13,105 @@ export function CalendarProvider({ children }) {
   const [modelBookings, setModelBookings] = useState([]);
   const [googleCalendarUrl, setGoogleCalendarUrl] = useState('');
   const [settings, setSettings] = useState(database.settings);
+  const [students, setStudents] = useState([]);
+  const [allUsers, setAllUsers] = useState([]);
+  const [serviceTypes, setServiceTypes] = useState(database.serviceTypes);
+  const [loading, setLoading] = useState(true);
 
-  // Inicializálás localStorage-ból vagy database.json-ból
+  // Load initial data from API
   useEffect(() => {
-    const savedSchedules = localStorage.getItem('schedules');
-    const savedModels = localStorage.getItem('modelBookings');
-    const savedGoogleUrl = localStorage.getItem('googleCalendarUrl');
+    async function loadData() {
+      try {
+        // Load schedules
+        const { schedules: schedulesData } = await api.getSchedules();
+        setSchedules(schedulesData);
 
-    if (savedSchedules) {
-      setSchedules(JSON.parse(savedSchedules));
-    } else {
-      setSchedules(database.schedules);
+        // Load bookings
+        const { bookings } = await api.getBookings();
+        setModelBookings(bookings);
+
+        setLoading(false);
+      } catch (error) {
+        console.error('Failed to load calendar data:', error);
+        // Fall back to empty state
+        setSchedules({});
+        setModelBookings([]);
+        setLoading(false);
+      }
     }
 
-    if (savedModels) {
-      setModelBookings(JSON.parse(savedModels));
-    } else {
-      setModelBookings(database.modelBookings);
-    }
-
-    if (savedGoogleUrl) {
-      setGoogleCalendarUrl(savedGoogleUrl);
-    }
+    loadData();
   }, []);
 
-  // Schedules mentése
-  function saveSchedule(date, shift, studentId, isChecked) {
-    const key = `${date}-${shift}`;
-    const newSchedules = { ...schedules };
+  // Save schedule
+  async function saveSchedule(date, shift, userId, isChecked) {
+    try {
+      const action = isChecked ? 'add' : 'remove';
+      await api.saveSchedule(date, shift, userId, action);
 
-    if (!newSchedules[key]) newSchedules[key] = [];
+      // Update local state
+      const key = `${date}-${shift}`;
+      const newSchedules = { ...schedules };
 
-    if (isChecked) {
-      if (!newSchedules[key].includes(studentId)) {
-        newSchedules[key].push(studentId);
+      if (!newSchedules[key]) newSchedules[key] = [];
+
+      if (isChecked) {
+        const user = allUsers.find(u => u.id === userId);
+        if (user && !newSchedules[key].find(u => u.userId === userId)) {
+          newSchedules[key].push({
+            userId: user.id,
+            userName: user.name,
+            userColor: user.color
+          });
+        }
+      } else {
+        newSchedules[key] = newSchedules[key].filter(u => u.userId !== userId);
       }
-    } else {
-      newSchedules[key] = newSchedules[key].filter(id => id !== studentId);
+
+      setSchedules(newSchedules);
+    } catch (error) {
+      console.error('Failed to save schedule:', error);
+      throw error;
     }
-
-    setSchedules(newSchedules);
-    localStorage.setItem('schedules', JSON.stringify(newSchedules));
   }
 
-  // Modell foglalás hozzáadása
-  function addModelBooking(booking) {
-    const newBooking = {
-      ...booking,
-      id: Date.now()
-    };
-    const updatedBookings = [...modelBookings, newBooking];
-    setModelBookings(updatedBookings);
-    localStorage.setItem('modelBookings', JSON.stringify(updatedBookings));
-    return newBooking;
+  // Add model booking
+  async function addModelBooking(booking) {
+    try {
+      const { booking: newBooking } = await api.createBooking(booking);
+      const updatedBookings = [...modelBookings, newBooking];
+      setModelBookings(updatedBookings);
+      return newBooking;
+    } catch (error) {
+      console.error('Failed to add booking:', error);
+      throw error;
+    }
   }
 
-  // Modell foglalás módosítása
-  function updateModelBooking(bookingId, updatedData) {
-    const updatedBookings = modelBookings.map(b =>
-      b.id === bookingId ? { ...b, ...updatedData } : b
-    );
-    setModelBookings(updatedBookings);
-    localStorage.setItem('modelBookings', JSON.stringify(updatedBookings));
+  // Update model booking
+  async function updateModelBooking(bookingId, updatedData) {
+    try {
+      await api.updateBooking(bookingId, updatedData);
+      const updatedBookings = modelBookings.map(b =>
+        b.id === bookingId ? { ...b, ...updatedData } : b
+      );
+      setModelBookings(updatedBookings);
+    } catch (error) {
+      console.error('Failed to update booking:', error);
+      throw error;
+    }
   }
 
-  // Modell foglalás törlése
-  function deleteModelBooking(bookingId) {
-    const updatedBookings = modelBookings.filter(b => b.id !== bookingId);
-    setModelBookings(updatedBookings);
-    localStorage.setItem('modelBookings', JSON.stringify(updatedBookings));
+  // Delete model booking
+  async function deleteModelBooking(bookingId) {
+    try {
+      await api.deleteBooking(bookingId);
+      const updatedBookings = modelBookings.filter(b => b.id !== bookingId);
+      setModelBookings(updatedBookings);
+    } catch (error) {
+      console.error('Failed to delete booking:', error);
+      throw error;
+    }
   }
 
   // Google Calendar URL mentése
@@ -141,7 +172,8 @@ export function CalendarProvider({ children }) {
     settings,
     students: database.users.filter(u => u.type === 'student'),
     allUsers: database.users,
-    serviceTypes: database.serviceTypes,
+    serviceTypes,
+    loading,
     saveSchedule,
     addModelBooking,
     updateModelBooking,
