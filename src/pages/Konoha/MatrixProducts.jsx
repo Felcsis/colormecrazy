@@ -25,8 +25,26 @@ function MatrixProducts() {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   useEffect(() => {
-    // Load only Matrix products
-    const matrixProducts = databaseData.inventory.products.filter(p => p.brand.includes('Matrix'));
+    // Load only Matrix products and merge with localStorage data
+    const matrixProducts = databaseData.inventory.products
+      .filter(p => p.brand.includes('Matrix'))
+      .map(product => {
+        // Load shades from localStorage if available
+        if (product.hasShades) {
+          const savedShades = localStorage.getItem(`product-${product.id}-shades`);
+          if (savedShades) {
+            try {
+              const shades = JSON.parse(savedShades);
+              // Calculate total quantity from shades
+              const totalQuantity = shades.reduce((sum, shade) => sum + (shade.quantity || 0), 0);
+              return { ...product, quantity: totalQuantity, shades };
+            } catch (e) {
+              // If localStorage parse fails, use original data
+            }
+          }
+        }
+        return product;
+      });
     setProducts(matrixProducts);
   }, []);
 

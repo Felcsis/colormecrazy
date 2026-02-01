@@ -34,10 +34,27 @@ function InventoryBrands() {
 
   // Calculate statistics for Matrix products - memoized
   const { matrixProducts, totalProducts, lowStockProducts, totalValue } = useMemo(() => {
-    const products = databaseData.inventory.products.filter(p => p.brand.includes('Matrix'));
+    const products = databaseData.inventory.products.filter(p => p.brand.includes('Matrix')).map(product => {
+      // Load shades from localStorage if available
+      if (product.hasShades) {
+        const savedShades = localStorage.getItem(`product-${product.id}-shades`);
+        if (savedShades) {
+          try {
+            const shades = JSON.parse(savedShades);
+            // Calculate total quantity from shades
+            const totalQuantity = shades.reduce((sum, shade) => sum + (shade.quantity || 0), 0);
+            return { ...product, quantity: totalQuantity, shades };
+          } catch (e) {
+            // If localStorage parse fails, use original data
+          }
+        }
+      }
+      return product;
+    });
+
     const total = products.reduce((sum, p) => sum + p.quantity, 0);
     const lowStock = products.filter(p => p.quantity <= p.minStock);
-    const value = products.reduce((sum, p) => sum + (p.quantity * p.pricePerUnit), 0);
+    const value = products.reduce((sum, p) => sum + (p.quantity * (p.pricePerUnit || 0)), 0);
     return {
       matrixProducts: products,
       totalProducts: total,
