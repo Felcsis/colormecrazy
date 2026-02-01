@@ -11,8 +11,10 @@ import {
   faChevronRight
 } from '@fortawesome/free-solid-svg-icons';
 import { useAuth } from '../../context/AuthContext';
-import { api } from '../../services/api';
 import './ProductDetails.css';
+
+// Import database
+import databaseData from '../../data/database.json';
 
 // Memoized table row component
 const ShadeRow = memo(({
@@ -115,20 +117,31 @@ function ProductDetails() {
   }, [searchTerm]);
 
   useEffect(() => {
-    // Load product details from API
-    async function loadProduct() {
-      try {
-        const { product: productData } = await api.getProduct(parseInt(productId));
-        if (productData && productData.hasShades) {
-          setProduct(productData);
-          setShades(productData.shades || []);
+    // Load product details
+    const productData = databaseData.inventory.products.find(p => p.id === parseInt(productId));
+    if (productData && productData.hasShades) {
+      setProduct(productData);
+
+      // Load shades from localStorage or database - use requestIdleCallback for better performance
+      const loadShades = () => {
+        const savedShades = localStorage.getItem(`product-${productId}-shades`);
+        if (savedShades) {
+          try {
+            setShades(JSON.parse(savedShades));
+          } catch (e) {
+            setShades(productData.shades);
+          }
+        } else {
+          setShades(productData.shades);
         }
-      } catch (error) {
-        console.error('Failed to load product:', error);
+      };
+
+      if (window.requestIdleCallback) {
+        window.requestIdleCallback(loadShades);
+      } else {
+        setTimeout(loadShades, 0);
       }
     }
-
-    loadProduct();
 
     // Cleanup timer on unmount
     return () => {
@@ -155,7 +168,7 @@ function ProductDetails() {
     setEditMinStock('');
   }, []);
 
-  const saveQuantity = useCallback(async (shadeCode) => {
+  const saveQuantity = useCallback((shadeCode) => {
     const newQuantity = parseInt(editValue);
     const newMinStock = parseInt(editMinStock);
 
@@ -169,30 +182,32 @@ function ProductDetails() {
       return;
     }
 
-    try {
-      // Find the shade to update
-      const shade = shades.find(s => s.code === shadeCode);
-      if (!shade) return;
-
-      // Update via API
-      await api.updateShadeQuantity(shade.id, newQuantity);
-
-      // Update local state
-      setShades(prevShades =>
-        prevShades.map(s =>
-          s.code === shadeCode
-            ? { ...s, quantity: newQuantity, minStock: newMinStock }
-            : s
-        )
+    setShades(prevShades => {
+      const updatedShades = prevShades.map(shade =>
+        shade.code === shadeCode
+          ? { ...shade, quantity: newQuantity, minStock: newMinStock }
+          : shade
       );
 
-      setEditingShade(null);
-      setEditValue('');
-      setEditMinStock('');
-    } catch (error) {
-      alert('Hiba a mentés során: ' + error.message);
-    }
-  }, [editValue, editMinStock, shades]);
+      // Throttle localStorage save
+      if (saveTimerRef.current) {
+        clearTimeout(saveTimerRef.current);
+      }
+      saveTimerRef.current = setTimeout(() => {
+        try {
+          localStorage.setItem(`product-${productId}-shades`, JSON.stringify(updatedShades));
+        } catch (e) {
+          console.error('Failed to save to localStorage:', e);
+        }
+      }, 500);
+
+      return updatedShades;
+    });
+
+    setEditingShade(null);
+    setEditValue('');
+    setEditMinStock('');
+  }, [editValue, editMinStock, productId]);
 
   const handleKeyPress = useCallback((e, shadeCode) => {
     if (e.key === 'Enter') {
