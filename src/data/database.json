@@ -921,25 +921,7 @@
         "hasShades": true,
         "shades": [
           {
-            "code": "1A",
-            "name": "Natural",
-            "quantity": 0,
-            "minStock": 0
-          },
-          {
-            "code": "2N",
-            "name": "Natural",
-            "quantity": 0,
-            "minStock": 0
-          },
-          {
             "code": "3N",
-            "name": "Natural",
-            "quantity": 0,
-            "minStock": 0
-          },
-          {
-            "code": "4N",
             "name": "Natural",
             "quantity": 0,
             "minStock": 0
@@ -957,19 +939,7 @@
             "minStock": 0
           },
           {
-            "code": "7N",
-            "name": "Natural",
-            "quantity": 0,
-            "minStock": 0
-          },
-          {
             "code": "8N",
-            "name": "Natural",
-            "quantity": 0,
-            "minStock": 0
-          },
-          {
-            "code": "9N",
             "name": "Natural",
             "quantity": 0,
             "minStock": 0
@@ -987,61 +957,55 @@
             "minStock": 0
           },
           {
-            "code": "4NW",
-            "name": "Natural Warm",
+            "code": "3NN",
+            "name": "Natural Natural",
             "quantity": 0,
             "minStock": 0
           },
           {
-            "code": "6NW",
-            "name": "Natural Warm",
+            "code": "5NN",
+            "name": "Natural Natural",
             "quantity": 0,
             "minStock": 0
           },
           {
-            "code": "8NW",
-            "name": "Natural Warm",
+            "code": "6NN",
+            "name": "Natural Natural",
             "quantity": 0,
             "minStock": 0
           },
           {
-            "code": "10NW",
-            "name": "Natural Warm",
+            "code": "8NN",
+            "name": "Natural Natural",
             "quantity": 0,
             "minStock": 0
           },
           {
-            "code": "6NA",
-            "name": "Natural Ash",
-            "quantity": 0,
-            "minStock": 0
-          },
-          {
-            "code": "8NA",
-            "name": "Natural Ash",
-            "quantity": 0,
-            "minStock": 0
-          },
-          {
-            "code": "6NV",
-            "name": "Natural Violet",
-            "quantity": 0,
-            "minStock": 0
-          },
-          {
-            "code": "5A",
+            "code": "1A",
             "name": "Ash",
             "quantity": 0,
             "minStock": 0
           },
           {
-            "code": "7A",
+            "code": "4A",
             "name": "Ash",
             "quantity": 0,
             "minStock": 0
           },
           {
-            "code": "9A",
+            "code": "6A",
+            "name": "Ash",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "8A",
+            "name": "Ash",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "10A",
             "name": "Ash",
             "quantity": 0,
             "minStock": 0
@@ -1053,14 +1017,272 @@
             "minStock": 0
           },
           {
-            "code": "4AA",
+            "code": "5AA",
             "name": "Ash Ash",
             "quantity": 0,
             "minStock": 0
           },
           {
-            "code": "6AA",
+            "code": "7AA",
             "name": "Ash Ash",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "7AM",
+            "name": "Ash Mocha",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "5VA",
+            "name": "Violet Ash",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "7VA",
+            "name": "Violet Ash",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "5VV",
+            "name": "Violet Violet",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "8V",
+            "name": "Violet",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "7NA",
+            "name": "Natural Ash",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "9NA",
+            "name": "Natural Ash",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "7NV",
+            "name": "Natural Violet",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "10NV",
+            "name": "Natural Violet",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "4P",
+            "name": "Pearl",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "6P",
+            "name": "Pearl",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "8P",
+            "name": "Pearl",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "10P",
+            "name": "Pearl",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "11P",
+            "name": "Pearl",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "4T",
+            "name": "Tonal",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "6T",
+            "name": "Tonal",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "5WN",
+            "name": "Warm Natural",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "6WN",
+            "name": "Warm Natural",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "8WN",
+            "name": "Warm Natural",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "5M",
+            "name": "Mocha",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "6M",
+            "name": "Mocha",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "7M",
+            "name": "Mocha",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "8M",
+            "name": "Mocha",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "10M",
+            "name": "Mocha",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "5MM",
+            "name": "Mocha Mocha",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "7MM",
+            "name": "Mocha Mocha",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "9MM",
+            "name": "Mocha Mocha",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "10MM",
+            "name": "Mocha Mocha",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "5MV",
+            "name": "Mocha Violet",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "7MV",
+            "name": "Mocha Violet",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "7MC",
+            "name": "Mocha Cool",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "7MR",
+            "name": "Mocha Red",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "7VM",
+            "name": "Violet Mocha",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "6BC",
+            "name": "Brown Copper",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "8BC",
+            "name": "Brown Copper",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "6BR",
+            "name": "Brown Red",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "6G",
+            "name": "Gold",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "8G",
+            "name": "Gold",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "10G",
+            "name": "Gold",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "5CG",
+            "name": "Cool Gold",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "7CC+",
+            "name": "Cool Copper Plus",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "9GV",
+            "name": "Gold Violet",
+            "quantity": 0,
+            "minStock": 0
+          },
+          {
+            "code": "CCG",
+            "name": "Cool Cool Gold",
             "quantity": 0,
             "minStock": 0
           },
