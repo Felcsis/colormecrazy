@@ -127,7 +127,16 @@ function ProductDetails() {
         const savedShades = localStorage.getItem(`product-${productId}-shades`);
         if (savedShades) {
           try {
-            setShades(JSON.parse(savedShades));
+            const shades = JSON.parse(savedShades);
+            // Merge with database.json to get updated minStock values (now 0)
+            const updatedShades = shades.map(shade => {
+              const dbShade = productData.shades.find(s => s.code === shade.code);
+              return {
+                ...shade,
+                minStock: dbShade ? dbShade.minStock : 0
+              };
+            });
+            setShades(updatedShades);
           } catch (e) {
             setShades(productData.shades);
           }
