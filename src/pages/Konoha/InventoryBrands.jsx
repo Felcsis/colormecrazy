@@ -94,16 +94,6 @@ function InventoryBrands() {
             </div>
           </div>
 
-          <div className="stat-card alert">
-            <div className="stat-icon" style={{ color: '#ee5a6f' }}>
-              <FontAwesomeIcon icon={faExclamationTriangle} />
-            </div>
-            <div className="stat-info">
-              <div className="stat-value">{lowStockProducts.length}</div>
-              <div className="stat-label">Alacsony készlet</div>
-            </div>
-          </div>
-
           <div className="stat-card">
             <div className="stat-icon" style={{ color: '#C098E8' }}>
               <FontAwesomeIcon icon={faMoneyBillWave} />

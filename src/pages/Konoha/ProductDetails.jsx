@@ -289,10 +289,6 @@ function ProductDetails() {
             <div className="stat-value">{shades.length}</div>
             <div className="stat-label">Árnyalatok száma</div>
           </div>
-          <div className="product-stat-card alert">
-            <div className="stat-value">{lowStockShades.length}</div>
-            <div className="stat-label">Alacsony készlet</div>
-          </div>
           <div className="product-stat-card">
             <div className="stat-value">{product.pricePerUnit.toLocaleString()} Ft</div>
             <div className="stat-label">Ár / darab</div>
