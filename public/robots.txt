@@ -3,8 +3,8 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://colormecrazyszeged.hu/sitemap.xml
+Sitemap: https://colormecrazy.hu/sitemap.xml
 
-# Disallow admin or private folders if any
-Disallow: /admin/
-Disallow: /private/
+# Privát admin felület — ne indexelje a Google
+Disallow: /konoha/
+Disallow: /login
