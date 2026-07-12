@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    { "source": "/csapat/**", "destination": "/index.html" },
+    { "source": "/konoha", "destination": "/index.html" },
+    { "source": "/konoha/**", "destination": "/index.html" },
+    { "source": "/login", "destination": "/index.html" }
+  ]
+}

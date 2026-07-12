@@ -5,13 +5,15 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "bun run generate-image-list.js && vite build",
+    "build": "bun run generate-image-list.js && vite build && node prerender.js",
     "preview": "vite preview",
     "generate-images": "bun run generate-image-list.js"
   },
   "devDependencies": {
     "@types/bun": "latest",
     "@vitejs/plugin-react": "^5.1.2",
+    "puppeteer-core": "^25.3.0",
+    "serve": "^14.2.5",
     "sharp": "^0.34.5",
     "vite": "^7.3.1"
   },
