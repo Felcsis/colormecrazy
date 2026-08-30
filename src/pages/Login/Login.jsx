@@ -73,7 +73,7 @@ function Login() {
         </form>
 
         <div className="login-hint">
-          <p><strong>Adminok:</strong> felcsi, gitta, lili</p>
+          <p><strong>Adminok:</strong> felcsi, gitta</p>
           <p><strong>Tanulók:</strong> fanni, jazmin, mira, dorina, bence</p>
           <p>Jelszó formátum: <strong>név123</strong> (pl. felcsi123, fanni123)</p>
         </div>

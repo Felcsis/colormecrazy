@@ -1,6 +1,6 @@
 {
   "title": "Our Team",
-  "subtitle": "Felicia, our master hairdresser, leads the team, alongside Gitta and Lili who work as hairdressers for women, men, and children. Our beautician Bogi ensures that not only your hair but also your skin gets refreshed.",
+  "subtitle": "Felicia, our master hairdresser, leads the team, alongside Gitta who works as a hairdresser for women, men, and children. Our beautician Bogi ensures that not only your hair but also your skin gets refreshed.",
   "members": {
     "felicia": {
       "name": "Felicia",
@@ -13,12 +13,6 @@
       "role": "Hairdresser",
       "arcana": "The Sun",
       "description": "I've been working as a hairdresser at Color Me Crazy salon since 2025. I've always considered self-expression, color harmony, displaying individuality, and loving what we see in the mirror important. When I sat in Felicia's chair years ago, I immediately knew that these things are just as important to her as they are to me, so I decided I wanted to be part of this team. Creating a hairstyle for me means capitalizing on my creativity, which is why this profession is not my job but my calling. I especially love being around people, talking, chatting—I find common ground with most people. It's important for me to create a friendly atmosphere around myself, as I also choose service providers based on this. I'm a maximalist, so I don't let my clients leave my hands without being satisfied with the result myself, because I've set myself no less a goal than for everyone to leave with a smile from ear to ear, refreshed, and of course satisfied. This is as important to me as it is to you! One of my main credos is proper communication. I like it when clients are aware of what processes we go through to reach the desired goal. I always welcome questions, because the more we talk about things, the clearer picture we get of the final result. I love all transformations: whether it's a subtle highlight, balayage, vibrant colors, soft cotton candy shades, princess fairy hairstyles, haircuts according to current trends, or just a root touch-up that gives new lights to the hair."
-    },
-    "lili": {
-      "name": "Lili",
-      "role": "Fablehair Stylist",
-      "arcana": "The Star",
-      "description": "Hi! I'm Lili, one of the hairdressers at Color Me Crazy salon. I started working in this profession in June 2025, which I chose because I've always been drawn to hair, especially coloring. I had already done many of my friends' hair before, and I quickly felt that I could happily do this for the rest of my life. I love hairdressing because it offers continuous development opportunities—there's always something to learn, so it never becomes boring. What I'm most drawn to is hair coloring, especially balayage techniques and bleaching, as these can achieve truly beautiful results, whether natural or colorful shades. In the future, I want to develop as much as possible, attend numerous training courses, and continuously expand my services. These goals motivate me every day to become better and better in my profession. When I'm not working at the salon, I like to spend my free time in nature, I love hiking, and relaxing with friends."
     },
     "bogi": {
       "name": "Bogi",

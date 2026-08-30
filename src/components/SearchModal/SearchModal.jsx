@@ -36,14 +36,12 @@ const SearchModal = ({ isOpen, onClose }) => {
     { title: 'Munkatársak', keywords: ['munkatársak', 'munkatarsak', 'team', 'csapat'], path: '/', section: 'csapat', icon: faUsers },
     { title: 'Felicia - Mester Fodrász', keywords: ['felicia', 'felcsi', 'mester fodrász', 'mester fodrasz', 'tulajdonos'], path: '/csapat/felcsi', icon: faUsers },
     { title: 'Gitta - Fodrász', keywords: ['gitta', 'fodrász', 'fodrasz'], path: '/csapat/gitta', icon: faUsers },
-    { title: 'Lili - Fodrász', keywords: ['lili', 'fodrász', 'fodrasz'], path: '/csapat/lili', icon: faUsers },
     { title: 'Bogi - Kozmetikus', keywords: ['bogi', 'kozmetikus', 'kozmetika'], path: '/csapat/bogi', icon: faUsers },
 
     // Galéria
     { title: 'Galéria', keywords: ['galéria', 'galeria', 'gallery', 'képek', 'kepek', 'fotók', 'fotok'], path: '/galeria', icon: faImages },
     { title: 'Felicia munkái', keywords: ['felicia galéria', 'felcsi munkái', 'felcsi munkai'], path: '/galeria/felcsi', icon: faImages },
     { title: 'Gitta munkái', keywords: ['gitta galéria', 'gitta munkái', 'gitta munkai'], path: '/galeria/gitta', icon: faImages },
-    { title: 'Lili munkái', keywords: ['lili galéria', 'lili munkái', 'lili munkai'], path: '/galeria/lili', icon: faImages },
     { title: 'Bogi munkái', keywords: ['bogi galéria', 'bogi munkái', 'bogi munkai'], path: '/galeria/bogi', icon: faImages },
 
     // Értékelések

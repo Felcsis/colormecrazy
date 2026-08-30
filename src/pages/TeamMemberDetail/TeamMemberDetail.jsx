@@ -3,7 +3,6 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHatWizard,
-  faWandMagicSparkles,
   faSun,
   faGem,
   faCut,
@@ -34,18 +33,6 @@ const teamMembersConfig = {
       instagramUrl: 'https://www.instagram.com/haircraftbygitta/',
       facebook: 'Gitta HairCraft by Color Me Crazy',
       facebookUrl: 'https://www.facebook.com/profile.php?id=61577343102077'
-    }
-  },
-  lili: {
-    image: '/images/Lili.webp',
-    portfolio: 'lili',
-    mysticIcon: faWandMagicSparkles,
-    contact: {
-      phone: '+36 20 594 2014',
-      instagram: 'lilofablehair_by_colormecrazy',
-      instagramUrl: 'https://www.instagram.com/lilofablehair_by_colormecrazy/',
-      facebook: 'lilo fablehair by color me crazy',
-      facebookUrl: 'https://www.facebook.com/profile.php?id=61577565787905'
     }
   },
   bogi: {
