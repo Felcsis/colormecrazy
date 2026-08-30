@@ -5,15 +5,17 @@ import {
   faCalendarCheck
 } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from '../../hooks/useTranslation';
+import { useSeasonContext } from '../../context/SeasonContext';
 
 const Hero = () => {
   const { t } = useTranslation();
+  const { logo } = useSeasonContext();
 
   return (
     <section className="hero" id="hero">
       <div className="hero-content">
         <div className="hero-logo">
-          <img src="/images/logo-transparent.webp" alt="Color Me Crazy" />
+          <img src={logo} alt="Color Me Crazy" />
         </div>
         <p className="hero-subtitle">{t('hero.subtitle')}</p>
         <p className="hero-description">{t('hero.description')}</p>

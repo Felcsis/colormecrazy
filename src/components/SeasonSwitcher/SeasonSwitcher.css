@@ -1,0 +1,115 @@
+/* Évszak (színvilág) kapcsoló – a navbar akciógombjai közé illeszkedik */
+
+.season-switcher {
+  position: relative;
+  display: flex;
+}
+
+.season-btn.active,
+.season-btn[aria-expanded='true'] {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: rgba(var(--primary-rgb), 0.1);
+}
+
+.season-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  z-index: 1200;
+  min-width: 190px;
+  padding: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5),
+              0 0 0 1px rgba(var(--primary-rgb), 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  animation: seasonMenuIn 0.2s ease;
+}
+
+@keyframes seasonMenuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.season-menu-title {
+  font-size: 0.65rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 4px 10px 8px;
+}
+
+.season-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 10px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 0.85rem;
+  text-align: left;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.season-menu-item:hover {
+  background: rgba(var(--primary-rgb), 0.12);
+  color: var(--text);
+}
+
+.season-menu-item.active {
+  color: var(--primary);
+  background: rgba(var(--primary-rgb), 0.16);
+}
+
+.season-menu-icon {
+  width: 14px;
+  font-size: 0.85rem;
+}
+
+/* A minta-pötty a paletta fő színét mutatja – ezek szándékosan fix
+   értékek, hogy a lista minden elemén a saját évszak színe látszódjon. */
+.season-swatch {
+  margin-left: auto;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.season-swatch-tavasz {
+  background: linear-gradient(135deg, #BE9AA3, #9FADC6);
+}
+
+.season-swatch-nyar {
+  background: linear-gradient(135deg, #6FA3A5, #9AA684);
+}
+
+.season-swatch-osz {
+  background: linear-gradient(135deg, #B7A686, #B58F7E);
+}
+
+.season-swatch-tel {
+  background: linear-gradient(135deg, #8B7EB8, #7BA3C4);
+}
+
+
+@media (max-width: 768px) {
+  .season-menu {
+    min-width: 170px;
+  }
+}

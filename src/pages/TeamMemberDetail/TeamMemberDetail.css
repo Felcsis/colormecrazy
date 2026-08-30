@@ -2,7 +2,7 @@
 .team-detail {
   min-height: 100vh;
   background: var(--bg-dark);
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-image: radial-gradient(circle, var(--dot-grid) 1px, transparent 1px);
   background-size: 24px 24px;
   padding-top: 80px;
 }
@@ -45,7 +45,7 @@
 
 .team-detail-profile-card:hover {
   border-color: var(--primary);
-  box-shadow: 0 16px 48px rgba(139, 126, 184, 0.3);
+  box-shadow: 0 16px 48px rgba(var(--primary-rgb), 0.3);
 }
 
 /* Decorative corner stars */
@@ -138,13 +138,13 @@
   transition: all 0.4s ease;
   margin: 0 auto;
   display: block;
-  box-shadow: 0 8px 24px rgba(139, 126, 184, 0.2);
+  box-shadow: 0 8px 24px rgba(var(--primary-rgb), 0.2);
 }
 
 .team-detail-profile-card:hover .team-detail-image {
   filter: grayscale(0%);
   transform: scale(1.05);
-  box-shadow: 0 12px 32px rgba(139, 126, 184, 0.4);
+  box-shadow: 0 12px 32px rgba(var(--primary-rgb), 0.4);
 }
 
 /* Profile Info */
@@ -211,15 +211,15 @@
   font-size: 1.2rem;
   text-decoration: none;
   transition: all 0.3s ease;
-  background: rgba(139, 126, 184, 0.05);
+  background: rgba(var(--primary-rgb), 0.05);
 }
 
 .social-icon:hover {
   border-color: var(--primary);
   color: var(--primary);
-  background: rgba(139, 126, 184, 0.15);
+  background: rgba(var(--primary-rgb), 0.15);
   transform: translateY(-4px);
-  box-shadow: 0 4px 16px rgba(139, 126, 184, 0.3);
+  box-shadow: 0 4px 16px rgba(var(--primary-rgb), 0.3);
 }
 
 .social-icon.phone:hover {
@@ -235,9 +235,9 @@
 }
 
 .social-icon.facebook:hover {
-  border-color: #6B5E98;
-  color: #6B5E98;
-  box-shadow: 0 4px 16px rgba(107, 94, 152, 0.3);
+  border-color: var(--primary-deep);
+  color: var(--primary-deep);
+  box-shadow: 0 4px 16px rgba(var(--primary-deep-rgb), 0.3);
 }
 
 .decorative-line {
@@ -245,7 +245,7 @@
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--primary), transparent);
   margin: 0 0 40px 0;
-  box-shadow: 0 0 8px rgba(139, 126, 184, 0.3);
+  box-shadow: 0 0 8px rgba(var(--primary-rgb), 0.3);
 }
 
 .team-detail-description {
@@ -327,12 +327,12 @@
 /* Alternating subtle rotations and shadow variations for variety */
 .portfolio-item:nth-child(3n+1) {
   transform: rotate(-0.5deg);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 0 2px rgba(139, 126, 184, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 0 2px rgba(var(--primary-rgb), 0.1);
 }
 
 .portfolio-item:nth-child(3n+2) {
   transform: rotate(0.3deg);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 0 2px rgba(123, 163, 196, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 0 2px rgba(var(--secondary-rgb), 0.1);
 }
 
 .portfolio-item:nth-child(3n+3) {
@@ -368,7 +368,7 @@
 .portfolio-item:hover {
   transform: translateY(-12px) rotate(0deg) scale(1.02);
   border-color: var(--primary);
-  box-shadow: 0 16px 48px rgba(139, 126, 184, 0.5);
+  box-shadow: 0 16px 48px rgba(var(--primary-rgb), 0.5);
   z-index: 10;
 }
 
@@ -431,7 +431,7 @@
 
 .portfolio-item:hover img {
   filter: grayscale(0%) brightness(1);
-  box-shadow: 0 0 24px rgba(139, 126, 184, 0.4);
+  box-shadow: 0 0 24px rgba(var(--primary-rgb), 0.4);
 }
 
 /* Error Page */
@@ -632,7 +632,7 @@
   background: var(--bg-card);
   border: 3px solid var(--primary);
   padding: 20px;
-  box-shadow: 0 0 60px rgba(139, 126, 184, 0.6), 0 0 100px rgba(139, 126, 184, 0.3);
+  box-shadow: 0 0 60px rgba(var(--primary-rgb), 0.6), 0 0 100px rgba(var(--primary-rgb), 0.3);
   max-width: 100%;
   max-height: 100%;
   animation: cardGlow 3s ease-in-out infinite;
@@ -640,10 +640,10 @@
 
 @keyframes cardGlow {
   0%, 100% {
-    box-shadow: 0 0 60px rgba(139, 126, 184, 0.6), 0 0 100px rgba(139, 126, 184, 0.3);
+    box-shadow: 0 0 60px rgba(var(--primary-rgb), 0.6), 0 0 100px rgba(var(--primary-rgb), 0.3);
   }
   50% {
-    box-shadow: 0 0 80px rgba(139, 126, 184, 0.8), 0 0 120px rgba(139, 126, 184, 0.5);
+    box-shadow: 0 0 80px rgba(var(--primary-rgb), 0.8), 0 0 120px rgba(var(--primary-rgb), 0.5);
   }
 }
 
@@ -743,7 +743,7 @@
   border-color: var(--primary);
   color: var(--primary);
   transform: rotate(90deg);
-  box-shadow: 0 0 20px rgba(139, 126, 184, 0.5);
+  box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.5);
 }
 
 /* Navigation buttons */
@@ -778,8 +778,8 @@
 .lightbox-nav:hover {
   border-color: var(--primary);
   color: var(--primary);
-  background: rgba(139, 126, 184, 0.2);
-  box-shadow: 0 0 20px rgba(139, 126, 184, 0.5);
+  background: rgba(var(--primary-rgb), 0.2);
+  box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.5);
   transform: translateY(-50%) scale(1.1);
 }
 

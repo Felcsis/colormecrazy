@@ -69,6 +69,29 @@
     </script>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Évszak szerinti színvilág beállítása még az első festés előtt,
+         hogy ne villanjon fel a rossz paletta. Logika: src/hooks/useSeason.js -->
+    <script>
+      (function () {
+        var SEASONS = ['tavasz', 'nyar', 'osz', 'tel'];
+        var season;
+        try {
+          var fromUrl = new URLSearchParams(window.location.search).get('evszak');
+          if (fromUrl && SEASONS.indexOf(fromUrl) !== -1) {
+            season = fromUrl;
+          } else {
+            var stored = window.localStorage.getItem('cmc-season');
+            if (stored && SEASONS.indexOf(stored) !== -1) season = stored;
+          }
+        } catch (e) {}
+        if (!season) {
+          var m = new Date().getMonth() + 1;
+          season = m >= 3 && m <= 5 ? 'tavasz' : m >= 6 && m <= 8 ? 'nyar' : m >= 9 && m <= 11 ? 'osz' : 'tel';
+        }
+        document.documentElement.setAttribute('data-season', season);
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

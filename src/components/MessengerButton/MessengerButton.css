@@ -4,14 +4,14 @@
   right: 24px;
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, #8b7eb8 0%, #a495d1 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, #a495d1 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   font-size: 28px;
-  box-shadow: 0 4px 12px rgba(139, 126, 184, 0.4);
+  box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.4);
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 9999;
@@ -20,7 +20,7 @@
 
 .messenger-button:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(139, 126, 184, 0.6);
+  box-shadow: 0 6px 20px rgba(var(--primary-rgb), 0.6);
 }
 
 .messenger-button:active {
@@ -30,13 +30,13 @@
 /* Pulse animáció */
 @keyframes pulse {
   0% {
-    box-shadow: 0 4px 12px rgba(139, 126, 184, 0.4);
+    box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.4);
   }
   50% {
-    box-shadow: 0 4px 20px rgba(139, 126, 184, 0.7);
+    box-shadow: 0 4px 20px rgba(var(--primary-rgb), 0.7);
   }
   100% {
-    box-shadow: 0 4px 12px rgba(139, 126, 184, 0.4);
+    box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.4);
   }
 }
 

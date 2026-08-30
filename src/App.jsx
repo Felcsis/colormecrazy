@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageContext';
+import { SeasonProvider } from './context/SeasonContext';
 import { AuthProvider } from './context/AuthContext';
 import { CalendarProvider } from './context/CalendarContext';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
@@ -176,9 +177,11 @@ function App() {
     <AuthProvider>
       <CalendarProvider>
         <LanguageProvider>
-          <Router>
-            <AppContent />
-          </Router>
+          <SeasonProvider>
+            <Router>
+              <AppContent />
+            </Router>
+          </SeasonProvider>
         </LanguageProvider>
       </CalendarProvider>
     </AuthProvider>

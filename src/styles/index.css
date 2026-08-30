@@ -1,4 +1,4 @@
-/* Color Me Crazy - Sötét, minimalista dizájn */
+/* Color Me Crazy - minimalista dizájn, évszakonként váltakozó színvilággal */
 
 * {
     margin: 0;
@@ -6,16 +6,121 @@
     box-sizing: border-box;
 }
 
+/* ==========================================================================
+   Színrendszer
+   Az elrendezés és a tipográfia minden évszakban azonos; a színek a Color Me
+   Crazy logó évszakonkénti változataiból származnak. Tavasz, ősz és tél sötét
+   hátterű, a nyár viszont világos (krém), ahogy a nyári logó.
+   Az aktív palettát a <html data-season="..."> attribútum választja ki
+   (lásd src/hooks/useSeason.js).
+   ========================================================================== */
+
 :root {
+    /* Alapértelmezés = tél: az oldal eredeti sötét, lila-kék dizájnja */
     --bg-dark: #0a0a0a;
+    --bg-dark-rgb: 10, 10, 10;
     --bg-card: #141414;
     --bg-card-hover: #1a1a1a;
-    --primary: #8B7EB8;
-    --secondary: #7BA3C4;
-    --accent: #9CA3AF;
     --text: #ffffff;
+    --text-rgb: 255, 255, 255;
     --text-muted: #9CA3AF;
+    --accent: #9CA3AF;
     --border: #2a2a2a;
+    --dot-grid: rgba(255, 255, 255, 0.05);
+
+    --primary: #8B7EB8;
+    --primary-rgb: 139, 126, 184;
+    --primary-deep: #6B5E98;
+    --primary-deep-rgb: 107, 94, 152;
+    --primary-light: #C098E8;
+    --primary-light-rgb: 192, 152, 232;
+    --secondary: #7BA3C4;
+    --secondary-rgb: 123, 163, 196;
+    --secondary-light: #A8C8E8;
+    --secondary-light-rgb: 168, 200, 232;
+}
+
+/* Tavasz – a tavaszi logó pasztell rózsa / búzavirágkék / arany hármasa */
+[data-season="tavasz"] {
+    --primary: #BE9AA3;
+    --primary-rgb: 190, 154, 163;
+    --primary-deep: #96757E;
+    --primary-deep-rgb: 150, 117, 126;
+    --primary-light: #DCC0C6;
+    --primary-light-rgb: 220, 192, 198;
+    --secondary: #9FADC6;
+    --secondary-rgb: 159, 173, 198;
+    --secondary-light: #C2A27C;
+    --secondary-light-rgb: 194, 162, 124;
+}
+
+/* Nyár – VILÁGOS oldal, a nyári logó krém alapja és petrol / zsálya / málna
+   színei. Csak ez az egy évszak fordítja meg a hátteret. */
+[data-season="nyar"] {
+    --bg-dark: #EDE7DB;
+    --bg-dark-rgb: 237, 231, 219;
+    --bg-card: #F6F2E8;
+    --bg-card-hover: #FBF8F1;
+    --text: #26332F;
+    --text-rgb: 38, 51, 47;
+    --text-muted: #6A6357;
+    --accent: #6A6357;
+    --border: #D8CEBB;
+    --dot-grid: rgba(66, 100, 101, 0.10);
+
+    --primary: #3F6263;
+    --primary-rgb: 63, 98, 99;
+    --primary-deep: #2C4748;
+    --primary-deep-rgb: 44, 71, 72;
+    --primary-light: #6FA3A5;
+    --primary-light-rgb: 111, 163, 165;
+    --secondary: #6E7A5C;
+    --secondary-rgb: 110, 122, 92;
+    --secondary-light: #9C5568;
+    --secondary-light-rgb: 156, 85, 104;
+}
+
+/* Ősz – az őszi logó homok / olíva / blush árnyalatai */
+[data-season="osz"] {
+    --primary: #B7A686;
+    --primary-rgb: 183, 166, 134;
+    --primary-deep: #8C7C5C;
+    --primary-deep-rgb: 140, 124, 92;
+    --primary-light: #D9C8C0;
+    --primary-light-rgb: 217, 200, 192;
+    --secondary: #B58F7E;
+    --secondary-rgb: 181, 143, 126;
+    --secondary-light: #E0D2C4;
+    --secondary-light-rgb: 224, 210, 196;
+}
+
+/* Tél – az oldal eredeti lila-kék dizájnja (megegyezik az alapértelmezéssel) */
+[data-season="tel"] {
+    --primary: #8B7EB8;
+    --primary-rgb: 139, 126, 184;
+    --primary-deep: #6B5E98;
+    --primary-deep-rgb: 107, 94, 152;
+    --primary-light: #C098E8;
+    --primary-light-rgb: 192, 152, 232;
+    --secondary: #7BA3C4;
+    --secondary-rgb: 123, 163, 196;
+    --secondary-light: #A8C8E8;
+    --secondary-light-rgb: 168, 200, 232;
+}
+
+/* Kézi évszakváltáskor a színek lágyan ússzanak át. Az osztályt a kapcsoló
+   teszi fel egy fél másodpercre, hogy ne legyen állandó átmenet-teher. */
+.season-switching body *,
+.season-switching body {
+    transition: background-color 0.45s ease, border-color 0.45s ease,
+                color 0.45s ease, box-shadow 0.45s ease !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .season-switching body *,
+    .season-switching body {
+        transition: none !important;
+    }
 }
 
 html {
@@ -25,7 +130,7 @@ html {
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-dark);
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-image: radial-gradient(circle, var(--dot-grid) 1px, transparent 1px);
     background-size: 24px 24px;
     color: var(--text);
     line-height: 1.6;
@@ -50,6 +155,7 @@ body {
 
 .hero-content {
     text-align: center;
+    width: 100%;
     max-width: 600px;
 }
 
@@ -83,10 +189,13 @@ body {
     display: flex;
     gap: 20px;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 /* Gombok - Minimalista */
 .btn {
+    display: inline-block;
     padding: 14px 32px;
     text-decoration: none;
     font-weight: 500;
@@ -95,6 +204,13 @@ body {
     text-transform: uppercase;
     transition: all 0.3s ease;
     border: 1px solid var(--border);
+}
+
+.btn .svg-inline--fa {
+    width: 1em;
+    height: 1em;
+    margin-right: 8px;
+    vertical-align: -0.05em;
 }
 
 .btn-primary {
@@ -116,6 +232,15 @@ body {
 .btn-secondary:hover {
     background: var(--text);
     color: var(--bg-dark);
+}
+
+/* A nyitóképernyő két gombja: mindkettő a saját feliratához igazodjon, és
+   a szöveg ne törjön két sorba – különben eltérő magasságúak lesznek és a
+   feliratok elcsúsznak egymáshoz képest. */
+.hero-buttons .btn {
+    width: max-content;
+    max-width: 100%;
+    white-space: nowrap;
 }
 
 /* Szekciók */
@@ -167,7 +292,7 @@ body {
     font-size: 2.5rem;
     color: var(--primary);
     margin-bottom: 16px;
-    filter: drop-shadow(0 4px 12px rgba(139, 126, 184, 0.3));
+    filter: drop-shadow(0 4px 12px rgba(var(--primary-rgb), 0.3));
 }
 
 .story-title {
@@ -221,7 +346,7 @@ body {
     font-size: 2.5rem;
     color: var(--secondary);
     margin-bottom: 16px;
-    filter: drop-shadow(0 4px 12px rgba(123, 163, 196, 0.3));
+    filter: drop-shadow(0 4px 12px rgba(var(--secondary-rgb), 0.3));
 }
 
 .services-title {
@@ -251,7 +376,7 @@ body {
 .service-highlight:hover {
     border-color: var(--primary);
     transform: translateY(-8px);
-    box-shadow: 0 16px 48px rgba(139, 126, 184, 0.3);
+    box-shadow: 0 16px 48px rgba(var(--primary-rgb), 0.3);
 }
 
 .service-icon-wrapper {
@@ -270,7 +395,7 @@ body {
 
 .service-highlight:hover .service-icon-wrapper {
     border-color: var(--primary);
-    background: rgba(139, 126, 184, 0.1);
+    background: rgba(var(--primary-rgb), 0.1);
     transform: scale(1.1);
 }
 
@@ -318,7 +443,7 @@ body {
 /* Reviews Section */
 .reviews {
     background: var(--bg-dark);
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-image: radial-gradient(circle, var(--dot-grid) 1px, transparent 1px);
     background-size: 24px 24px;
 }
 
@@ -363,7 +488,7 @@ body {
 
 .rating-display:hover {
     border-color: var(--primary);
-    box-shadow: 0 8px 32px rgba(139, 126, 184, 0.2);
+    box-shadow: 0 8px 32px rgba(var(--primary-rgb), 0.2);
 }
 
 .rating-number {
@@ -426,7 +551,7 @@ body {
 .review-card:hover {
     border-color: var(--primary);
     transform: translateY(-8px);
-    box-shadow: 0 16px 48px rgba(139, 126, 184, 0.3);
+    box-shadow: 0 16px 48px rgba(var(--primary-rgb), 0.3);
 }
 
 .review-stars {
@@ -534,7 +659,7 @@ body {
 /* Csapat szekció */
 .csapat {
     background: var(--bg-dark);
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-image: radial-gradient(circle, var(--dot-grid) 1px, transparent 1px);
     background-size: 24px 24px;
 }
 
@@ -574,11 +699,11 @@ body {
 @keyframes cardGlow {
     0%, 100% {
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4),
-                    inset 0 0 40px rgba(139, 126, 184, 0.1);
+                    inset 0 0 40px rgba(var(--primary-rgb), 0.1);
     }
     50% {
-        box-shadow: 0 8px 32px rgba(139, 126, 184, 0.2),
-                    inset 0 0 60px rgba(139, 126, 184, 0.15);
+        box-shadow: 0 8px 32px rgba(var(--primary-rgb), 0.2),
+                    inset 0 0 60px rgba(var(--primary-rgb), 0.15);
     }
 }
 
@@ -586,33 +711,33 @@ body {
 @keyframes glowFelicia {
     0%, 100% {
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4),
-                    inset 0 0 40px rgba(107, 94, 152, 0.15);
+                    inset 0 0 40px rgba(var(--primary-deep-rgb), 0.15);
     }
     50% {
-        box-shadow: 0 8px 32px rgba(107, 94, 152, 0.3),
-                    inset 0 0 60px rgba(107, 94, 152, 0.2);
+        box-shadow: 0 8px 32px rgba(var(--primary-deep-rgb), 0.3),
+                    inset 0 0 60px rgba(var(--primary-deep-rgb), 0.2);
     }
 }
 
 @keyframes glowGitta {
     0%, 100% {
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4),
-                    inset 0 0 40px rgba(192, 152, 232, 0.15);
+                    inset 0 0 40px rgba(var(--primary-light-rgb), 0.15);
     }
     50% {
-        box-shadow: 0 8px 32px rgba(192, 152, 232, 0.3),
-                    inset 0 0 60px rgba(192, 152, 232, 0.2);
+        box-shadow: 0 8px 32px rgba(var(--primary-light-rgb), 0.3),
+                    inset 0 0 60px rgba(var(--primary-light-rgb), 0.2);
     }
 }
 
 @keyframes glowBogi {
     0%, 100% {
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4),
-                    inset 0 0 40px rgba(168, 200, 232, 0.15);
+                    inset 0 0 40px rgba(var(--secondary-light-rgb), 0.15);
     }
     50% {
-        box-shadow: 0 8px 32px rgba(168, 200, 232, 0.3),
-                    inset 0 0 60px rgba(168, 200, 232, 0.2);
+        box-shadow: 0 8px 32px rgba(var(--secondary-light-rgb), 0.3),
+                    inset 0 0 60px rgba(var(--secondary-light-rgb), 0.2);
     }
 }
 
@@ -644,15 +769,15 @@ body {
 
 /* Individual member mystic icon colors */
 .team-card[data-member="felicia"]:hover .arcana-number {
-    color: #6B5E98;
+    color: var(--primary-deep);
 }
 
 .team-card[data-member="gitta"]:hover .arcana-number {
-    color: #C098E8;
+    color: var(--primary-light);
 }
 
 .team-card[data-member="bogi"]:hover .arcana-number {
-    color: #A8C8E8;
+    color: var(--secondary-light);
 }
 
 .team-card.kozmetikus:hover .arcana-number {
@@ -686,44 +811,44 @@ body {
 
 .team-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 16px 48px rgba(139, 126, 184, 0.3),
-                inset 0 0 80px rgba(139, 126, 184, 0.2);
+    box-shadow: 0 16px 48px rgba(var(--primary-rgb), 0.3),
+                inset 0 0 80px rgba(var(--primary-rgb), 0.2);
     border-color: var(--primary);
     filter: brightness(1.1);
     background: linear-gradient(135deg,
                 var(--bg-card) 0%,
-                rgba(139, 126, 184, 0.05) 50%,
+                rgba(var(--primary-rgb), 0.05) 50%,
                 var(--bg-card) 100%);
 }
 
 /* Individual member hover colors */
 .team-card[data-member="felicia"]:hover {
-    box-shadow: 0 16px 48px rgba(107, 94, 152, 0.5),
-                inset 0 0 80px rgba(107, 94, 152, 0.25);
-    border-color: #6B5E98;
+    box-shadow: 0 16px 48px rgba(var(--primary-deep-rgb), 0.5),
+                inset 0 0 80px rgba(var(--primary-deep-rgb), 0.25);
+    border-color: var(--primary-deep);
     background: linear-gradient(135deg,
                 var(--bg-card) 0%,
-                rgba(107, 94, 152, 0.12) 50%,
+                rgba(var(--primary-deep-rgb), 0.12) 50%,
                 var(--bg-card) 100%);
 }
 
 .team-card[data-member="gitta"]:hover {
-    box-shadow: 0 16px 48px rgba(192, 152, 232, 0.5),
-                inset 0 0 80px rgba(192, 152, 232, 0.25);
-    border-color: #C098E8;
+    box-shadow: 0 16px 48px rgba(var(--primary-light-rgb), 0.5),
+                inset 0 0 80px rgba(var(--primary-light-rgb), 0.25);
+    border-color: var(--primary-light);
     background: linear-gradient(135deg,
                 var(--bg-card) 0%,
-                rgba(192, 152, 232, 0.12) 50%,
+                rgba(var(--primary-light-rgb), 0.12) 50%,
                 var(--bg-card) 100%);
 }
 
 .team-card[data-member="bogi"]:hover {
-    box-shadow: 0 16px 48px rgba(168, 200, 232, 0.5),
-                inset 0 0 80px rgba(168, 200, 232, 0.25);
-    border-color: #A8C8E8;
+    box-shadow: 0 16px 48px rgba(var(--secondary-light-rgb), 0.5),
+                inset 0 0 80px rgba(var(--secondary-light-rgb), 0.25);
+    border-color: var(--secondary-light);
     background: linear-gradient(135deg,
                 var(--bg-card) 0%,
-                rgba(168, 200, 232, 0.12) 50%,
+                rgba(var(--secondary-light-rgb), 0.12) 50%,
                 var(--bg-card) 100%);
 }
 
@@ -737,38 +862,38 @@ body {
 /* Individual member star colors */
 .team-card[data-member="felicia"]:hover::before,
 .team-card[data-member="felicia"]:hover::after {
-    color: #6B5E98;
+    color: var(--primary-deep);
 }
 
 .team-card[data-member="gitta"]:hover::before,
 .team-card[data-member="gitta"]:hover::after {
-    color: #C098E8;
+    color: var(--primary-light);
 }
 
 .team-card[data-member="bogi"]:hover::before,
 .team-card[data-member="bogi"]:hover::after {
-    color: #A8C8E8;
+    color: var(--secondary-light);
 }
 
 /* Individual member base glow animations */
 .team-card[data-member="felicia"] {
     animation: glowFelicia 4s ease-in-out infinite;
-    border-color: #6B5E98;
+    border-color: var(--primary-deep);
 }
 
 .team-card[data-member="gitta"] {
     animation: glowGitta 4s ease-in-out infinite;
-    border-color: #C098E8;
+    border-color: var(--primary-light);
 }
 
 .team-card[data-member="bogi"] {
     animation: glowBogi 4s ease-in-out infinite;
-    border-color: #A8C8E8;
+    border-color: var(--secondary-light);
 }
 
 .team-card.featured {
     border-color: var(--primary);
-    box-shadow: 0 8px 32px rgba(139, 126, 184, 0.2);
+    box-shadow: 0 8px 32px rgba(var(--primary-rgb), 0.2);
 }
 
 .team-card.featured::before,
@@ -788,7 +913,7 @@ body {
 }
 
 .team-card.kozmetikus:hover {
-    box-shadow: 0 16px 48px rgba(123, 163, 196, 0.3);
+    box-shadow: 0 16px 48px rgba(var(--secondary-rgb), 0.3);
 }
 
 .team-card.kozmetikus:hover::before,
@@ -823,18 +948,18 @@ body {
 
 /* Individual member decorative line colors */
 .team-card[data-member="felicia"]:hover .team-image::before {
-    background: linear-gradient(90deg, transparent, #6B5E98, transparent);
-    box-shadow: 0 0 8px #6B5E98;
+    background: linear-gradient(90deg, transparent, var(--primary-deep), transparent);
+    box-shadow: 0 0 8px var(--primary-deep);
 }
 
 .team-card[data-member="gitta"]:hover .team-image::before {
-    background: linear-gradient(90deg, transparent, #C098E8, transparent);
-    box-shadow: 0 0 8px #C098E8;
+    background: linear-gradient(90deg, transparent, var(--primary-light), transparent);
+    box-shadow: 0 0 8px var(--primary-light);
 }
 
 .team-card[data-member="bogi"]:hover .team-image::before {
-    background: linear-gradient(90deg, transparent, #A8C8E8, transparent);
-    box-shadow: 0 0 8px #A8C8E8;
+    background: linear-gradient(90deg, transparent, var(--secondary-light), transparent);
+    box-shadow: 0 0 8px var(--secondary-light);
 }
 
 .team-card.kozmetikus:hover .team-image::before {
@@ -844,8 +969,8 @@ body {
 
 
 .team-image img {
-    width: 110px;
-    height: 110px;
+    width: 175px;
+    height: 175px;
     clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
     object-fit: cover;
     filter: grayscale(30%) brightness(0.9);
@@ -861,15 +986,15 @@ body {
 
 /* Individual member image border colors */
 .team-card[data-member="felicia"]:hover .team-image img {
-    border-color: #6B5E98;
+    border-color: var(--primary-deep);
 }
 
 .team-card[data-member="gitta"]:hover .team-image img {
-    border-color: #C098E8;
+    border-color: var(--primary-light);
 }
 
 .team-card[data-member="bogi"]:hover .team-image img {
-    border-color: #A8C8E8;
+    border-color: var(--secondary-light);
 }
 
 .team-card.kozmetikus:hover .team-image img {
@@ -894,18 +1019,18 @@ body {
 
 /* Individual member bottom decorative line colors */
 .team-card[data-member="felicia"]:hover .team-image::after {
-    background: linear-gradient(90deg, transparent, #6B5E98, transparent);
-    box-shadow: 0 0 8px #6B5E98;
+    background: linear-gradient(90deg, transparent, var(--primary-deep), transparent);
+    box-shadow: 0 0 8px var(--primary-deep);
 }
 
 .team-card[data-member="gitta"]:hover .team-image::after {
-    background: linear-gradient(90deg, transparent, #C098E8, transparent);
-    box-shadow: 0 0 8px #C098E8;
+    background: linear-gradient(90deg, transparent, var(--primary-light), transparent);
+    box-shadow: 0 0 8px var(--primary-light);
 }
 
 .team-card[data-member="bogi"]:hover .team-image::after {
-    background: linear-gradient(90deg, transparent, #A8C8E8, transparent);
-    box-shadow: 0 0 8px #A8C8E8;
+    background: linear-gradient(90deg, transparent, var(--secondary-light), transparent);
+    box-shadow: 0 0 8px var(--secondary-light);
 }
 
 .team-card.kozmetikus:hover .team-image::after {
@@ -989,15 +1114,15 @@ body {
 
 /* Individual member arcana name colors */
 .team-card[data-member="felicia"]:hover .arcana-name {
-    color: #6B5E98;
+    color: var(--primary-deep);
 }
 
 .team-card[data-member="gitta"]:hover .arcana-name {
-    color: #C098E8;
+    color: var(--primary-light);
 }
 
 .team-card[data-member="bogi"]:hover .arcana-name {
-    color: #A8C8E8;
+    color: var(--secondary-light);
 }
 
 .team-card.kozmetikus:hover .arcana-name {
@@ -1006,7 +1131,7 @@ body {
 
 /* Szolgáltatások - Original Design Style */
 .szolgaltatasok {
-    background: #0a0a0a;
+    background: var(--bg-dark);
     background-image: none;
 }
 
@@ -1022,7 +1147,7 @@ body {
     font-weight: 700;
     letter-spacing: 8px;
     text-transform: uppercase;
-    background: linear-gradient(135deg, #8B7EB8 0%, #7BA3C4 50%, #9CA3AF 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, #9CA3AF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1121,7 +1246,7 @@ body {
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #ffffff;
+    color: var(--text);
     margin-bottom: 24px;
     display: flex;
     flex-direction: column;
@@ -1152,7 +1277,7 @@ body {
 
 .service-name-simple {
     font-size: 0.95rem;
-    color: #8B7EB8;
+    color: var(--primary);
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -1161,7 +1286,7 @@ body {
 
 .service-price-simple {
     font-size: 0.95rem;
-    color: #7BA3C4;
+    color: var(--secondary);
     font-weight: 500;
     white-space: nowrap;
     text-align: right;
@@ -1196,7 +1321,7 @@ body {
 .service-card:hover {
     transform: translateY(-8px);
     border-color: var(--primary);
-    box-shadow: 0 20px 60px rgba(139, 126, 184, 0.3);
+    box-shadow: 0 20px 60px rgba(var(--primary-rgb), 0.3);
 }
 
 .service-card-image {
@@ -1223,7 +1348,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.3), rgba(10, 10, 10, 0.7));
+    background: linear-gradient(to bottom, rgba(var(--bg-dark-rgb), 0.3), rgba(var(--bg-dark-rgb), 0.7));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1231,13 +1356,13 @@ body {
 }
 
 .service-card:hover .service-card-overlay {
-    background: linear-gradient(to bottom, rgba(139, 126, 184, 0.4), rgba(10, 10, 10, 0.8));
+    background: linear-gradient(to bottom, rgba(var(--primary-rgb), 0.4), rgba(var(--bg-dark-rgb), 0.8));
 }
 
 .service-card-icon {
     font-size: 3.5rem;
     color: var(--text);
-    filter: drop-shadow(0 4px 16px rgba(255, 255, 255, 0.3));
+    filter: drop-shadow(0 4px 16px rgba(var(--text-rgb), 0.3));
     transition: all 0.4s ease;
 }
 
@@ -1257,7 +1382,7 @@ body {
     text-transform: uppercase;
     color: var(--text);
     margin-bottom: 8px;
-    background: linear-gradient(135deg, #8B7EB8 0%, #7BA3C4 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1336,7 +1461,7 @@ body {
 /* Galéria */
 .galeria {
     background: var(--bg-dark);
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-image: radial-gradient(circle, var(--dot-grid) 1px, transparent 1px);
     background-size: 24px 24px;
 }
 
@@ -1517,7 +1642,7 @@ body {
 /* Footer */
 .footer {
     background: var(--bg-dark);
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-image: radial-gradient(circle, var(--dot-grid) 1px, transparent 1px);
     background-size: 24px 24px;
     border-top: 1px solid var(--border);
     text-align: center;
@@ -1604,8 +1729,8 @@ body {
     }
 
     .team-image img {
-        width: 120px;
-        height: 120px;
+        width: 165px;
+        height: 165px;
     }
 
     .team-info h3 {
@@ -1714,8 +1839,8 @@ body {
     }
 
     .team-image img {
-        width: 110px;
-        height: 110px;
+        width: 150px;
+        height: 150px;
     }
 
     .team-info h3 {
@@ -1850,11 +1975,11 @@ body {
 @keyframes tarotGlow {
     0%, 100% {
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4),
-                    inset 0 0 40px rgba(139, 126, 184, 0.1);
+                    inset 0 0 40px rgba(var(--primary-rgb), 0.1);
     }
     50% {
-        box-shadow: 0 8px 32px rgba(139, 126, 184, 0.2),
-                    inset 0 0 60px rgba(139, 126, 184, 0.15);
+        box-shadow: 0 8px 32px rgba(var(--primary-rgb), 0.2),
+                    inset 0 0 60px rgba(var(--primary-rgb), 0.15);
     }
 }
 
@@ -1865,11 +1990,11 @@ body {
 .service-tarot-card:hover {
     transform: translateY(-12px) scale(1.02);
     border-color: var(--primary);
-    box-shadow: 0 20px 60px rgba(139, 126, 184, 0.4),
-                inset 0 0 80px rgba(139, 126, 184, 0.25);
+    box-shadow: 0 20px 60px rgba(var(--primary-rgb), 0.4),
+                inset 0 0 80px rgba(var(--primary-rgb), 0.25);
     background: linear-gradient(135deg,
                 var(--bg-card) 0%,
-                rgba(139, 126, 184, 0.08) 50%,
+                rgba(var(--primary-rgb), 0.08) 50%,
                 var(--bg-card) 100%);
 }
 
@@ -1970,7 +2095,7 @@ body {
 
 .service-tarot-card:hover .tarot-image-placeholder {
     border-color: var(--primary);
-    background: rgba(139, 126, 184, 0.1);
+    background: rgba(var(--primary-rgb), 0.1);
     transform: scale(1.05) rotate(5deg);
 }
 
@@ -1989,7 +2114,7 @@ body {
     border-color: var(--primary);
     transform: scale(1.05) rotate(5deg);
     filter: brightness(1) contrast(1.15);
-    box-shadow: 0 8px 24px rgba(139, 126, 184, 0.4);
+    box-shadow: 0 8px 24px rgba(var(--primary-rgb), 0.4);
 }
 
 .tarot-icon {
@@ -1997,13 +2122,13 @@ body {
     color: var(--primary);
     opacity: 0.7;
     transition: all 0.4s ease;
-    filter: drop-shadow(0 4px 12px rgba(139, 126, 184, 0.3));
+    filter: drop-shadow(0 4px 12px rgba(var(--primary-rgb), 0.3));
 }
 
 .service-tarot-card:hover .tarot-icon {
     opacity: 1;
     transform: scale(1.1);
-    filter: drop-shadow(0 6px 20px rgba(139, 126, 184, 0.5));
+    filter: drop-shadow(0 6px 20px rgba(var(--primary-rgb), 0.5));
 }
 
 /* Card content */
@@ -2056,20 +2181,20 @@ body {
     letter-spacing: 1px;
     margin-top: auto;
     padding-top: 12px;
-    border-top: 1px solid rgba(139, 126, 184, 0.2);
+    border-top: 1px solid rgba(var(--primary-rgb), 0.2);
 }
 
 /* Individual service card colors */
 .service-tarot-card[data-service="allover"]:hover {
-    border-color: #8B7EB8;
+    border-color: var(--primary);
 }
 
 .service-tarot-card[data-service="balayage"]:hover {
-    border-color: #C098E8;
+    border-color: var(--primary-light);
 }
 
 .service-tarot-card[data-service="bleaching"]:hover {
-    border-color: #7BA3C4;
+    border-color: var(--secondary);
 }
 
 .service-tarot-card[data-service="correction"]:hover {
@@ -2081,7 +2206,7 @@ body {
 }
 
 .service-tarot-card[data-service="vivid"]:hover {
-    border-color: #A8C8E8;
+    border-color: var(--secondary-light);
 }
 
 .service-tarot-card[data-service="fullfoil"]:hover {

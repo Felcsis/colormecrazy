@@ -21,6 +21,8 @@ import {
   faSignOutAlt
 } from '@fortawesome/free-solid-svg-icons';
 import SearchModal from '../SearchModal/SearchModal';
+import SeasonSwitcher from '../SeasonSwitcher/SeasonSwitcher';
+import { useSeasonContext } from '../../context/SeasonContext';
 import { useTranslation } from '../../hooks/useTranslation';
 import { useAuth } from '../../context/AuthContext';
 
@@ -35,6 +37,7 @@ const Navbar = () => {
   const location = useLocation();
   const { t, language, setLanguage } = useTranslation();
   const { currentUser, logout } = useAuth();
+  const { logo } = useSeasonContext();
 
   // Ne jelenjen meg navbar a Konoha oldalon
   if (location.pathname.startsWith('/konoha')) {
@@ -115,7 +118,7 @@ const Navbar = () => {
 
           {/* Center Logo */}
           <Link to="/" className="navbar-sidebar-logo" onClick={handleLogoClick}>
-            <img src="/images/logo-transparent.webp" alt="Color Me Crazy" />
+            <img src={logo} alt="Color Me Crazy" />
           </Link>
 
           {/* Right Actions */}
@@ -123,6 +126,7 @@ const Navbar = () => {
             <button className="navbar-action-btn" onClick={openSearch} aria-label="Search">
               <FontAwesomeIcon icon={faSearch} />
             </button>
+            <SeasonSwitcher />
             <button
               className="navbar-action-btn language-btn"
               onClick={toggleLanguage}
@@ -157,7 +161,7 @@ const Navbar = () => {
             <FontAwesomeIcon icon={faTimes} />
           </button>
           <Link to="/" className="sidebar-logo" onClick={handleLogoClick}>
-            <img src="/images/logo-transparent.webp" alt="Color Me Crazy" />
+            <img src={logo} alt="Color Me Crazy" />
           </Link>
         </div>
 

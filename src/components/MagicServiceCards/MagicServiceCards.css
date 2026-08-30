@@ -673,7 +673,7 @@
 
 .card-back .card-title {
   font-size: 1.1rem;
-  color: #ffffff;
+  color: var(--text);
   text-shadow: 0 0 10px rgba(200, 150, 255, 0.5), 0 2px 6px rgba(0, 0, 0, 0.4);
   margin-bottom: 2px;
   font-weight: 700;

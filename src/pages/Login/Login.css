@@ -5,8 +5,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #0a0a0a;
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-color: var(--bg-dark);
+  background-image: radial-gradient(circle, var(--dot-grid) 1px, transparent 1px);
   background-size: 24px 24px;
   padding: 8rem 2rem 2rem 2rem;
   font-family: 'Poppins', sans-serif;
@@ -24,7 +24,7 @@
 
 .login-box h1 {
   font-size: 2rem;
-  color: #ffffff;
+  color: var(--text);
   margin-bottom: 2rem;
   text-align: center;
   font-weight: 500;
@@ -49,8 +49,8 @@
   width: 100%;
   padding: 12px 14px;
   border: 1px solid #2a2a2a;
-  background: #0a0a0a;
-  color: #ffffff;
+  background: var(--bg-dark);
+  color: var(--text);
   border-radius: 4px;
   font-size: 1rem;
   transition: all 0.3s ease;
@@ -60,7 +60,7 @@
 
 .form-group input:focus {
   outline: none;
-  border-color: #8B7EB8;
+  border-color: var(--primary);
   background: #141414;
 }
 
@@ -79,9 +79,9 @@
 .login-btn {
   width: 100%;
   padding: 12px 24px;
-  background: #ffffff;
-  color: #0a0a0a;
-  border: 1px solid #ffffff;
+  background: var(--text);
+  color: var(--bg-dark);
+  border: 1px solid var(--text);
   border-radius: 4px;
   font-size: 0.9rem;
   font-weight: 500;
@@ -94,7 +94,7 @@
 
 .login-btn:hover:not(:disabled) {
   background: transparent;
-  color: #ffffff;
+  color: var(--text);
 }
 
 .login-btn:disabled {
@@ -105,7 +105,7 @@
 .login-hint {
   margin-top: 2rem;
   padding: 1rem;
-  background: #0a0a0a;
+  background: var(--bg-dark);
   border: 1px solid #2a2a2a;
   border-radius: 4px;
   text-align: center;
@@ -119,6 +119,6 @@
 }
 
 .login-hint strong {
-  color: #8B7EB8;
+  color: var(--primary);
   font-weight: 500;
 }

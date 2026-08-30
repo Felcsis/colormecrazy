@@ -2,7 +2,7 @@
 .education-page {
   min-height: 100vh;
   background: var(--bg-dark);
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-image: radial-gradient(circle, var(--dot-grid) 1px, transparent 1px);
   background-size: 24px 24px;
   padding-top: 104px;
 }
@@ -19,7 +19,7 @@
   font-size: 4rem;
   color: var(--primary);
   margin-bottom: 24px;
-  filter: drop-shadow(0 4px 20px rgba(139, 126, 184, 0.4));
+  filter: drop-shadow(0 4px 20px rgba(var(--primary-rgb), 0.4));
 }
 
 .education-hero-title {
@@ -86,7 +86,7 @@
 .benefit-item:hover {
   border-color: var(--primary);
   transform: translateX(8px);
-  box-shadow: 0 8px 24px rgba(139, 126, 184, 0.2);
+  box-shadow: 0 8px 24px rgba(var(--primary-rgb), 0.2);
 }
 
 .benefit-icon {
@@ -207,7 +207,7 @@
   background: transparent;
   color: var(--primary);
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(139, 126, 184, 0.3);
+  box-shadow: 0 8px 24px rgba(var(--primary-rgb), 0.3);
 }
 
 /* CTA Section */
@@ -257,7 +257,7 @@
   background: var(--primary);
   color: var(--bg-dark);
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(139, 126, 184, 0.3);
+  box-shadow: 0 8px 24px rgba(var(--primary-rgb), 0.3);
 }
 
 /* Responsive */
