@@ -9,5 +9,8 @@
   "openingWeekdays": "Monday - Friday: 9:00 AM - 6:00 PM",
   "openingWeekend": "Saturday - Sunday: Closed",
   "facebook": "Facebook",
-  "instagram": "Instagram"
+  "instagram": "Instagram",
+  "onlineBookingTitle": "Online booking",
+  "onlineBookingText": "You can book beauty treatments with Bogi online. For hairdressing appointments, please call or message us.",
+  "onlineBookingButton": "Book with Bogi"
 }

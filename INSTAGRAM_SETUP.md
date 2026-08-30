@@ -1,129 +1,107 @@
-# Instagram Feed Beállítási Útmutató
+# Instagram feed beállítása
 
-## Hogyan ágyazd be a saját Instagram posztjaidat?
+Az oldal Instagram szekciója egy saját mozaikfal, ami az oldal színeit használja.
+A képeket a `public/instagram-feed.json` fájlból veszi, amit a **build előtt**
+futó `fetch-instagram.js` tölt le az Instagram Graph API-tól.
 
-### 1. lépés: Instagram poszt linkek megszerzése
+**Kulcs nélkül is működik:** ilyenkor a galéria (portfólió) képei jelennek meg.
+Ha beállítod a kulcsot, magától átvált az élő posztokra és a valós követőszámra.
 
-1. Nyisd meg az Instagram alkalmazást vagy weboldalt
-2. Válaszd ki azt a 3 posztot, amit meg szeretnél jeleníteni a weboldalon
-3. Minden poszthoz:
-   - Kattints a poszt jobb felső sarkában található három pontra (⋯)
-   - Válaszd a "Link másolása" opciót
-   - A link így fog kinézni: `https://www.instagram.com/p/ABC123xyz/`
+---
 
-### 2. lépés: Linkek beillesztése a kódba
+## Mit kell beállítani (kb. 20 perc, egyszer)
 
-1. Nyisd meg a következő fájlt: `src/components/InstagramFeed/InstagramFeed.jsx`
+### Előfeltétel
 
-2. Keresd meg ezeket a sorokat (kb. 37-55. sor környékén):
+- Az Instagram fióknak **üzleti (Business) vagy alkotói (Creator)** fióknak kell
+  lennie – nem privát, nem sima személyes.
+- Az Instagram fiók legyen **összekapcsolva a Facebook oldallal**
+  (Instagram app → Beállítások → Fiókok összekapcsolása).
 
-```jsx
-<blockquote
-  className="instagram-media"
-  data-instgrm-captioned
-  data-instgrm-permalink="https://www.instagram.com/p/PLACEHOLDER1/"
-  data-instgrm-version="14"
-></blockquote>
+### 1. Facebook fejlesztői alkalmazás
+
+1. Nyisd meg: https://developers.facebook.com/apps → **Alkalmazás létrehozása**
+2. Típus: **Egyéb** → **Vállalkozás**
+3. Add hozzá a terméket: **Instagram Graph API**
+
+### 2. Hozzáférési kulcs (token)
+
+1. Nyisd meg a **Graph API Explorer**-t:
+   https://developers.facebook.com/tools/explorer/
+2. Fent válaszd ki a most létrehozott alkalmazást
+3. **Add a Permission** – ezeket kapcsold be:
+   - `instagram_basic`
+   - `pages_show_list`
+   - `pages_read_engagement`
+   - `business_management`
+4. **Generate Access Token** → jelentkezz be, engedélyezd az oldalt és az
+   Instagram fiókot
+5. Másold ki a kapott kulcsot
+
+### 3. A kulcs hosszú élettartamúvá tétele
+
+A fenti kulcs csak 1 órán át él. Alakítsd át 60 naposra – nyisd meg ezt a címet
+a böngészőben (a három helyőrzőt cseréld ki):
+
+```
+https://graph.facebook.com/v21.0/oauth/access_token
+  ?grant_type=fb_exchange_token
+  &client_id=ALKALMAZAS_AZONOSITO
+  &client_secret=ALKALMAZAS_TITKOS_KULCS
+  &fb_exchange_token=A_RÖVID_KULCS
 ```
 
-3. Cseréld ki a `PLACEHOLDER1`, `PLACEHOLDER2`, `PLACEHOLDER3` szövegeket a saját poszt azonosítóidra.
+Az alkalmazás azonosítója és titkos kulcsa: Facebook fejlesztői felület →
+**Beállítások → Alapbeállítások**.
 
-**Példa:**
-Ha a poszt linked: `https://www.instagram.com/p/C1AB2CD3EF4/`
-Akkor a beállítás:
-```jsx
-<blockquote
-  className="instagram-media"
-  data-instgrm-captioned
-  data-instgrm-permalink="https://www.instagram.com/p/C1AB2CD3EF4/"
-  data-instgrm-version="14"
-></blockquote>
+A válaszban kapott `access_token` a **60 napos kulcs**.
+
+### 4. Beállítás a Railway-en
+
+Railway → a `colormecrazy` szolgáltatás → **Variables**:
+
+| Változó | Érték |
+|---|---|
+| `IG_ACCESS_TOKEN` | a 60 napos kulcs |
+| `IG_USER_ID` | *(nem kötelező)* az Instagram üzleti fiók azonosítója |
+
+Az `IG_USER_ID` elhagyható – a script magától kikeresi a kulcshoz tartozó
+oldalból. Ha mégis meg akarod adni, itt látod:
+`https://graph.facebook.com/v21.0/me/accounts?fields=instagram_business_account&access_token=A_KULCS`
+
+Mentés után indíts egy új deployt (elég egy üres commit vagy a Railway
+**Redeploy** gombja).
+
+---
+
+## Helyi kipróbálás
+
+```bash
+IG_ACCESS_TOKEN="a_kulcs" node fetch-instagram.js
 ```
 
-### 3. lépés: További posztok hozzáadása
+Sikeres futás után létrejön a `public/instagram-feed.json`, és a `npm run dev`
+alatt már az élő posztok látszanak.
 
-Ha 3-nál több posztot szeretnél megjeleníteni, egyszerűen másold le a blockquote blokkot:
+---
 
-```jsx
-<blockquote
-  className="instagram-media"
-  data-instgrm-captioned
-  data-instgrm-permalink="https://www.instagram.com/p/ÚJ_POSZT_ID/"
-  data-instgrm-version="14"
-></blockquote>
-```
+## Fontos tudnivalók
 
-### 4. lépés: Instagram profil linkek frissítése
+- **A kulcs 60 naponta lejár.** Ilyenkor ismételd meg a 2–3. lépést, és
+  frissítsd a Railway változót. A weboldal addig sem törik el: az utolsó
+  letöltött posztokat mutatja, végső esetben a galéria képeit.
+- **A feed a deploykor frissül**, nem folyamatosan. Ha friss posztokat akarsz
+  kirakni, indíts egy új deployt (vagy állíts be ütemezett újraépítést).
+- A hozzáférési kulcs **soha nem kerül ki a böngészőbe** – csak a build gépén
+  fut, a látogató egy kész JSON fájlt lát.
+- A `public/instagram-feed.json` szándékosan nincs verziókövetve
+  (lásd `.gitignore`), mert build közben jön létre.
 
-Ha az Instagram felhasználóneved más, mint `@colorme_c_hair`, akkor frissítsd:
+## Kapcsolódó fájlok
 
-1. A `src/components/InstagramFeed/InstagramFeed.jsx` fájlban keresd meg:
-   - `https://www.instagram.com/colorme_c_hair/`
-   - `@colorme_c_hair`
-
-2. Cseréld ki őket a saját Instagram felhasználónevedre.
-
-3. Ugyanezt tedd meg az `index.html` fájlban is (65-66. sor):
-```html
-"sameAs": [
-  "https://www.facebook.com/colormecrazyszeged",
-  "https://www.instagram.com/colorme_c_hair"
-]
-```
-
-### 5. lépés: Mentés és tesztelés
-
-1. Mentsd el a módosításokat
-2. Futtasd a dev szervert: `bun run dev`
-3. Nyisd meg a böngészőben: `http://localhost:5173`
-4. Görgess le az Instagram Feed szekcióig
-
-## Tippek
-
-- Az Instagram posztok automatikusan betöltődnek
-- A posztok reszponzívak lesznek (mobil, tablet, desktop)
-- Ha egy poszt nem jelenik meg, ellenőrizd, hogy:
-  - A poszt nyilvános-e (nem privát fiók)
-  - A poszt ID helyes-e
-  - Van-e internetkapcsolat
-
-## Gyakori problémák
-
-**Probléma:** A posztok nem töltődnek be
-**Megoldás:** Frissítsd az oldalt (F5) vagy töröld a böngésző cache-t
-
-**Probléma:** "Poszt nem található" hiba
-**Megoldás:** Ellenőrizd, hogy a poszt ID és a link helyes-e
-
-**Probléma:** Poszt privát fiókból
-**Megoldás:** Az Instagram csak nyilvános posztokat enged beágyazni
-
-## Példa konfiguráció
-
-```jsx
-// 3 legfrissebb poszt megjelenítése
-<div className="instagram-grid" ref={feedRef}>
-  <blockquote
-    className="instagram-media"
-    data-instgrm-captioned
-    data-instgrm-permalink="https://www.instagram.com/p/C9XyZ123456/"
-    data-instgrm-version="14"
-  ></blockquote>
-
-  <blockquote
-    className="instagram-media"
-    data-instgrm-captioned
-    data-instgrm-permalink="https://www.instagram.com/p/C8WxY098765/"
-    data-instgrm-version="14"
-  ></blockquote>
-
-  <blockquote
-    className="instagram-media"
-    data-instgrm-captioned
-    data-instgrm-permalink="https://www.instagram.com/p/C7VwX987654/"
-    data-instgrm-version="14"
-  ></blockquote>
-</div>
-```
-
-Kész! Az Instagram feed most már a saját posztjaidat jeleníti meg! 🎉
+| Fájl | Szerep |
+|---|---|
+| `fetch-instagram.js` | letölti a posztokat build előtt (nem-fatális) |
+| `src/components/InstagramFeed/InstagramFeed.jsx` | a mozaikfal |
+| `src/components/InstagramFeed/InstagramFeed.css` | a szekció stílusa |
+| `public/instagram-feed.json` | a letöltött adat (generált) |

@@ -2339,3 +2339,62 @@ body {
         margin: 12px auto;
     }
 }
+
+/* ==========================================================================
+   Online időpontfoglalás – kiemelt doboz a Kapcsolat szekcióban.
+   Egyelőre csak a kozmetikushoz (Bogi) van foglalólink, lásd src/data/booking.js
+   ========================================================================== */
+
+.booking-box {
+    margin: 28px 0 32px;
+    padding: 24px;
+    border: 1px solid var(--primary);
+    background: linear-gradient(135deg,
+                rgba(var(--primary-rgb), 0.14),
+                rgba(var(--secondary-rgb), 0.10));
+}
+
+.booking-box-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.booking-box-text {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.booking-box-btn {
+    background: var(--primary);
+    color: var(--bg-dark);
+    border-color: var(--primary);
+}
+
+.booking-box-btn:hover {
+    background: transparent;
+    color: var(--primary);
+}
+
+.booking-box-btn .svg-inline--fa {
+    margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+    .booking-box {
+        padding: 20px;
+    }
+
+    .booking-box-btn {
+        display: block;
+        text-align: center;
+    }
+}

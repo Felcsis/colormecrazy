@@ -2,5 +2,10 @@
   "title": "Kövess Minket Instagramon",
   "subtitle": "Nézd meg legújabb munkáinkat és inspirálódj!",
   "followButton": "Követés",
-  "viewMore": "További munkáink megtekintéséhez látogass el Instagram oldalunkra!"
+  "followers": "követő",
+  "posts": "poszt",
+  "viewOnInstagram": "Megnyitás Instagramon",
+  "viewMore": "További munkáink megtekintéséhez látogass el Instagram oldalunkra!",
+  "openImage": "Kép megnyitása",
+  "close": "Bezárás"
 }

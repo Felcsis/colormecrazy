@@ -1,304 +1,432 @@
+/* Instagram szekció – saját mozaikfal, az oldal évszakos színeivel.
+   Az adatokat a public/instagram-feed.json adja (lásd fetch-instagram.js);
+   ha az nincs, a galéria képei kerülnek be. */
+
 .instagram-feed {
-  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
-  padding: 4rem 1.5rem;
+  background: var(--bg-card);
   position: relative;
   overflow: hidden;
-}
-
-.instagram-feed .container {
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 100%;
 }
 
 .instagram-feed::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #e1306c, #fd1d1d, #f56040, #fcaf45, transparent);
-  box-shadow: 0 0 20px rgba(225, 48, 108, 0.5);
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(var(--primary-rgb), 0.10), transparent 45%),
+    radial-gradient(circle at 85% 100%, rgba(var(--secondary-rgb), 0.10), transparent 45%);
+  pointer-events: none;
 }
 
-.instagram-feed::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #fcaf45, #f56040, #fd1d1d, #e1306c, transparent);
-  box-shadow: 0 0 20px rgba(225, 48, 108, 0.5);
+.instagram-feed .container {
+  position: relative;
 }
 
 .instagram-header {
   text-align: center;
-  margin-bottom: 3rem;
+}
+
+.instagram-header .section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
 }
 
 .instagram-icon {
-  margin-right: 0.5rem;
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: pulse 2s ease-in-out infinite;
+  font-size: 1.4rem;
+  color: var(--primary);
 }
 
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
+.instagram-header .section-subtitle {
+  margin: 0 auto 56px;
 }
 
-.instagram-feed .section-title {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+/* Mozaikfal */
+.instagram-mosaic {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.ig-tile {
+  position: relative;
+  display: block;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-dark);
+  text-decoration: none;
+}
+
+.ig-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(25%) brightness(0.92);
+  transition: transform 0.6s ease, filter 0.4s ease;
+}
+
+.ig-tile:hover img {
+  transform: scale(1.06);
+  filter: grayscale(0%) brightness(1);
+}
+
+.ig-tile:hover {
+  border-color: var(--primary);
+  box-shadow: 0 12px 32px rgba(var(--primary-rgb), 0.28);
+}
+
+/* Videó / album jelölés a csempe sarkában */
+.ig-tile-badge {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  z-index: 2;
+  font-size: 0.8rem;
   color: #fff;
-  text-shadow: 0 0 30px rgba(225, 48, 108, 0.3);
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.6));
 }
 
-.instagram-feed .section-subtitle {
-  font-size: 1.1rem;
-  color: #ccc;
-  margin-bottom: 2rem;
-}
-
-.btn-instagram {
-  display: inline-flex;
+/* Rámutatásra előjövő réteg */
+.ig-tile-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 0.8rem 1.5rem;
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  color: white;
-  text-decoration: none;
-  border-radius: 25px;
-  font-weight: 600;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 15px rgba(225, 48, 108, 0.3);
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  user-select: none;
+  gap: 10px;
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--bg-dark-rgb), 0.35),
+    rgba(var(--bg-dark-rgb), 0.85)
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
 }
 
-.btn-instagram:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(225, 48, 108, 0.4);
+.ig-tile:hover .ig-tile-overlay,
+.ig-tile:focus-visible .ig-tile-overlay {
+  opacity: 1;
 }
 
-.btn-instagram:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 10px rgba(225, 48, 108, 0.3);
+.ig-tile-stats {
+  display: flex;
+  gap: 18px;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
-.instagram-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin: 3rem auto;
-  max-width: 1200px;
-  padding: 0;
+.ig-tile-stats svg {
+  margin-right: 6px;
+  color: var(--primary);
 }
 
-/* Instagram beágyazott poszt stílusok */
-.instagram-media {
-  background: #1a1a1a;
-  border: 1px solid #333;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  margin: 0 !important;
-  min-width: 280px;
-  max-width: 100%;
-  width: 100%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-  will-change: transform;
-  -webkit-overflow-scrolling: touch;
+.ig-tile-mark {
+  font-size: 1.8rem;
+  color: var(--primary);
 }
 
-.instagram-media:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(225, 48, 108, 0.4), 0 0 40px rgba(225, 48, 108, 0.2);
-  border: 1px solid rgba(225, 48, 108, 0.5);
+.ig-tile-handle {
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  text-transform: lowercase;
+  color: var(--text-muted);
 }
 
-/* Touch devices - egyszerűsített hover */
-@media (hover: none) {
-  .instagram-media:hover {
-    transform: none;
-  }
-
-  .instagram-media:active {
-    transform: scale(0.98);
-    transition: transform 0.1s ease;
-  }
-}
-
-.instagram-cta {
+/* Követő kártya – ugyanakkora csempe, csak tartalom helyett hívás */
+.ig-follow-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
   text-align: center;
-  margin-top: 3rem;
+  background:
+    linear-gradient(135deg,
+      rgba(var(--primary-rgb), 0.18),
+      rgba(var(--secondary-rgb), 0.14));
+  border-color: var(--primary);
 }
 
-.instagram-cta p {
-  font-size: 1.1rem;
-  color: #ccc;
-  margin-bottom: 1rem;
+.ig-follow-card:hover {
+  background:
+    linear-gradient(135deg,
+      rgba(var(--primary-rgb), 0.28),
+      rgba(var(--secondary-rgb), 0.22));
 }
 
-.instagram-link {
-  font-size: 1.3rem;
+.ig-follow-icon {
+  font-size: 2.4rem;
+  color: var(--primary);
+  transition: transform 0.4s ease;
+}
+
+.ig-follow-card:hover .ig-follow-icon {
+  transform: scale(1.12) rotate(-6deg);
+}
+
+.ig-follow-handle {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.ig-follow-count {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+.ig-follow-count strong {
+  color: var(--text);
+  font-size: 1.05rem;
   font-weight: 600;
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-decoration: none;
-  position: relative;
+}
+
+.ig-follow-btn {
+  margin-top: 6px;
+  padding: 10px 24px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--bg-dark);
+  background: var(--primary);
+  border: 1px solid var(--primary);
   transition: all 0.3s ease;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
 }
 
-.instagram-link:hover {
-  transform: scale(1.05);
+.ig-follow-card:hover .ig-follow-btn {
+  background: transparent;
+  color: var(--primary);
 }
 
-.instagram-link:active {
-  transform: scale(0.98);
+/* Négy oszlop nagyobb képernyőn, hogy a fal szélesebb legyen.
+   A megjelenített csempék száma úgy van beállítva, hogy a rács minden
+   töréspontnál teli sorokkal záruljon – ne lógjon ki magányos csempe. */
+@media (min-width: 992px) {
+  .instagram-mosaic {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
-.instagram-link::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
+@media (max-width: 991px) {
+  /* 3 oszlop: 5 csempe + követő kártya = 2 teli sor */
+  .instagram-mosaic .ig-tile:nth-of-type(6),
+  .instagram-mosaic .ig-tile:nth-of-type(7) {
+    display: none;
+  }
 }
 
-.instagram-link:hover::after {
-  transform: scaleX(1);
-}
-
-/* Responsive design */
 @media (max-width: 768px) {
-  .instagram-feed {
-    padding: 3rem 1rem;
+  .instagram-mosaic {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 
-  .instagram-header {
-    margin-bottom: 2rem;
-    padding: 0 1rem;
+  .instagram-header .section-subtitle {
+    margin-bottom: 40px;
   }
 
-  .instagram-feed .section-title {
+  .ig-follow-icon {
     font-size: 1.8rem;
-    line-height: 1.2;
   }
 
-  .instagram-feed .section-subtitle {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-    padding: 0 0.5rem;
+  .ig-follow-count,
+  .ig-follow-handle {
+    font-size: 0.7rem;
   }
 
-  .btn-instagram {
-    padding: 0.7rem 1.2rem;
-    font-size: 0.95rem;
-    width: auto;
-    min-height: 44px; /* Touch-friendly */
-  }
-
-  .instagram-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin: 2rem 0;
-    padding: 0 0.5rem;
-  }
-
-  .instagram-media {
-    min-width: 100%;
-    max-width: 100%;
-    border-radius: 10px;
-  }
-
-  .instagram-cta {
-    margin-top: 2rem;
-    padding: 0 1rem;
-  }
-
-  .instagram-cta p {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-
-  .instagram-link {
-    font-size: 1.2rem;
-    display: inline-block;
-    padding: 0.5rem;
-    min-height: 44px; /* Touch-friendly */
-  }
-
-  .instagram-icon {
-    font-size: 1.5rem;
+  .ig-follow-btn {
+    padding: 8px 16px;
+    font-size: 0.65rem;
   }
 }
 
-/* Small phones */
-@media (max-width: 480px) {
-  .instagram-feed {
-    padding: 2.5rem 0.5rem;
+/* ==========================================================================
+   Nagy kép (lightbox)
+   A csempe gomb, nem link – kattintásra itt nyílik meg a kép. A képen kívülre
+   kattintva bezárul, és a görgetés pontosan oda áll vissza, ahonnan indult
+   (a body-t rögzítjük, majd visszaállítjuk – lásd InstagramFeed.jsx).
+   ========================================================================== */
+
+.ig-tile {
+  /* gombként is ugyanúgy nézzen ki, mint eddig a link */
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  appearance: none;
+}
+
+.ig-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(6px);
+  animation: igLightboxIn 0.25s ease;
+  cursor: zoom-out;
+}
+
+@keyframes igLightboxIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.ig-lightbox-figure {
+  position: relative;
+  max-width: min(920px, 92vw);
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6),
+              0 0 0 1px rgba(var(--primary-rgb), 0.25);
+  cursor: default;
+  animation: igFigureIn 0.3s ease;
+}
+
+@keyframes igFigureIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.ig-lightbox-image {
+  display: block;
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  background: var(--bg-dark);
+}
+
+.ig-lightbox-caption {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.ig-lightbox-text {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.ig-lightbox-meta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.ig-lightbox-meta svg {
+  margin-right: 6px;
+  color: var(--primary);
+}
+
+.ig-lightbox-counter {
+  margin-left: auto;
+  letter-spacing: 1px;
+}
+
+.ig-lightbox-link {
+  align-self: flex-start;
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.ig-lightbox-link:hover {
+  color: var(--text);
+}
+
+.ig-lightbox-link svg {
+  margin-right: 8px;
+}
+
+/* Bezárás és léptetés */
+.ig-lightbox-close,
+.ig-lightbox-nav {
+  position: absolute;
+  z-index: 2;
+  background: rgba(var(--bg-dark-rgb), 0.6);
+  border: 1px solid var(--border);
+  color: var(--text);
+  cursor: pointer;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.ig-lightbox-close {
+  top: 24px;
+  right: 28px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+}
+
+.ig-lightbox-nav {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  font-size: 2rem;
+  padding-bottom: 6px;
+}
+
+.ig-lightbox-prev { left: 28px; }
+.ig-lightbox-next { right: 28px; }
+
+.ig-lightbox-close:hover,
+.ig-lightbox-nav:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: rgba(var(--primary-rgb), 0.15);
+}
+
+@media (max-width: 768px) {
+  .ig-lightbox {
+    padding: 16px;
   }
 
-  .instagram-feed .section-title {
+  .ig-lightbox-close {
+    top: 12px;
+    right: 14px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .ig-lightbox-nav {
+    width: 42px;
+    height: 42px;
     font-size: 1.6rem;
   }
 
-  .instagram-feed .section-subtitle {
-    font-size: 0.95rem;
-  }
+  .ig-lightbox-prev { left: 10px; }
+  .ig-lightbox-next { right: 10px; }
 
-  .btn-instagram {
-    font-size: 0.9rem;
-    padding: 0.6rem 1rem;
-  }
-
-  .instagram-grid {
-    gap: 1.2rem;
-    padding: 0 0.25rem;
-  }
-
-  .instagram-link {
-    font-size: 1.1rem;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .instagram-feed {
-    padding: 3.5rem 2rem;
-  }
-
-  .instagram-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.8rem;
-  }
-
-  .instagram-feed .section-title {
-    font-size: 2.2rem;
-  }
-}
-
-@media (min-width: 1025px) {
-  .instagram-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .ig-lightbox-image {
+    max-height: 62vh;
   }
 }

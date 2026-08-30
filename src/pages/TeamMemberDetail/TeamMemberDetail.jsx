@@ -7,7 +7,8 @@ import {
   faGem,
   faCut,
   faPhone,
-  faEnvelope
+  faEnvelope,
+  faCalendarCheck
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faInstagram,
@@ -15,6 +16,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import './TeamMemberDetail.css';
 import { useTranslation } from '../../hooks/useTranslation';
+import { getBookingUrl } from '../../data/booking';
 
 // Team members metadata (images, icons, contact info) - language-independent data
 const teamMembersConfig = {
@@ -47,6 +49,8 @@ const TeamMemberDetail = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const memberConfig = teamMembersConfig[memberId];
+  // online foglalás egyelőre csak a kozmetikushoz
+  const bookingUrl = getBookingUrl(memberId);
   const [portfolioImages, setPortfolioImages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -170,6 +174,21 @@ const TeamMemberDetail = () => {
             <h1 className="member-name">{member.name}</h1>
             <span className="team-detail-role">{member.role}</span>
             <div className="arcana-title">{member.arcana}</div>
+
+            {bookingUrl && (
+              <a
+                href={bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="member-booking-btn"
+              >
+                <FontAwesomeIcon icon={faCalendarCheck} />
+                <span>
+                  {t('teamMemberDetail.bookOnline')}
+                  <small>{t('teamMemberDetail.bookOnlineNote')}</small>
+                </span>
+              </a>
+            )}
 
             {member.contact && (
               <div className="social-media-links">

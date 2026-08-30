@@ -4,16 +4,21 @@ import {
   faEnvelope,
   faPhone,
   faLocationDot,
-  faClock
+  faClock,
+  faCalendarCheck
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faFacebook,
   faInstagram
 } from '@fortawesome/free-brands-svg-icons';
 import { useTranslation } from '../../hooks/useTranslation';
+import { getBookingUrl } from '../../data/booking';
 
 const Contact = () => {
   const { t } = useTranslation();
+  // Online foglalás egyelőre csak a kozmetikushoz; ha nincs beállítva
+  // foglalólink, a doboz meg sem jelenik
+  const bookingUrl = getBookingUrl('bogi');
 
   return (
     <section className="section kapcsolat" id="kapcsolat">
@@ -45,6 +50,24 @@ const Contact = () => {
                 </div>
               </div>
             </div>
+
+            {bookingUrl && (
+              <div className="booking-box">
+                <h4 className="booking-box-title">
+                  <FontAwesomeIcon icon={faCalendarCheck} /> {t('contact.onlineBookingTitle')}
+                </h4>
+                <p className="booking-box-text">{t('contact.onlineBookingText')}</p>
+                <a
+                  href={bookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary booking-box-btn"
+                >
+                  <FontAwesomeIcon icon={faCalendarCheck} /> {t('contact.onlineBookingButton')}
+                </a>
+              </div>
+            )}
+
             <div className="social-links">
               <a href="https://www.facebook.com/colormecrzy" target="_blank" rel="noopener noreferrer" className="social-link">
                 <FontAwesomeIcon icon={faFacebook} /> {t('contact.facebook')}

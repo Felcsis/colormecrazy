@@ -10,7 +10,7 @@ const outputFile = path.join(__dirname, 'public/portfolio-images.json');
 
 const result = {};
 
-const members = ['anti', 'felcsi', 'gitta', 'lili', 'bogi'];
+const members = ['felcsi', 'gitta', 'bogi'];
 
 members.forEach(member => {
   const memberDir = path.join(portfolioDir, member);

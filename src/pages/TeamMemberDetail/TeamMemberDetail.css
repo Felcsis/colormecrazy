@@ -847,3 +847,55 @@
     font-size: 1.2rem;
   }
 }
+
+/* Online időpontfoglalás gomb a dolgozó adatlapján (jelenleg csak Boginál) */
+.member-booking-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0 4px;
+  padding: 14px 26px;
+  text-decoration: none;
+  background: var(--primary);
+  color: var(--bg-dark);
+  border: 1px solid var(--primary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.member-booking-btn:hover {
+  background: transparent;
+  color: var(--primary);
+  box-shadow: 0 8px 24px rgba(var(--primary-rgb), 0.3);
+}
+
+.member-booking-btn .svg-inline--fa {
+  font-size: 1.1rem;
+}
+
+.member-booking-btn span {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  line-height: 1.2;
+}
+
+.member-booking-btn small {
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: none;
+  opacity: 0.75;
+}
+
+@media (max-width: 768px) {
+  .member-booking-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 18px;
+  }
+}

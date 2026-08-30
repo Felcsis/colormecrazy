@@ -10,6 +10,7 @@ build/
 .env
 .env.local
 .env.production
+server/.env
 
 # IDE
 .vscode/
@@ -31,3 +32,6 @@ yarn-error.log*
 # Temporary files
 *.tmp
 .cache/
+
+# Build közben generált Instagram feed
+public/instagram-feed.json

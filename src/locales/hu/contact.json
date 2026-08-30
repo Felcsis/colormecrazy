@@ -9,5 +9,8 @@
   "openingWeekdays": "Hétfő - Péntek: 9:00 - 18:00",
   "openingWeekend": "Szombat - Vasárnap: Zárva",
   "facebook": "Facebook",
-  "instagram": "Instagram"
+  "instagram": "Instagram",
+  "onlineBookingTitle": "Online időpontfoglalás",
+  "onlineBookingText": "Kozmetikai kezelésre Boginál online is tudsz időpontot foglalni. Fodrász időpontot telefonon vagy Messengeren kérj.",
+  "onlineBookingButton": "Időpontfoglalás Bogihoz"
 }

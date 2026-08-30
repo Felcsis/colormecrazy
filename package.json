@@ -5,9 +5,10 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "bun run generate-image-list.js && vite build && node prerender.js",
+    "build": "bun run generate-image-list.js && node fetch-instagram.js && vite build && node prerender.js",
     "preview": "vite preview",
-    "generate-images": "bun run generate-image-list.js"
+    "generate-images": "bun run generate-image-list.js",
+    "fetch-instagram": "node fetch-instagram.js"
   },
   "devDependencies": {
     "@types/bun": "latest",
