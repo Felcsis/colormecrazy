@@ -11,7 +11,6 @@ import {
   faCheck,
   faGem
 } from '@fortawesome/free-solid-svg-icons';
-import fodraszatData from '../../data/fodraszat.json';
 import mesterFodraszData from '../../data/mester-fodrasz.json';
 import kozmetikaData from '../../data/kozmetika.json';
 import { useTranslation } from '../../hooks/useTranslation';
@@ -122,7 +121,6 @@ const enhanceData = (data) => {
 };
 
 const priceListData = {
-  standard: enhanceData(fodraszatData),
   master: enhanceData(mesterFodraszData),
   kozmetika: enhanceData(kozmetikaData)
 };
@@ -144,12 +142,6 @@ const Services = () => {
           <button
             className={`toggle-btn ${priceList === 'master' ? 'active' : ''}`}
             onClick={() => setPriceList('master')}
-          >
-            {t('services.masterHairdresser')} <span className="master-badge">{t('services.masterBadge')}</span>
-          </button>
-          <button
-            className={`toggle-btn ${priceList === 'standard' ? 'active' : ''}`}
-            onClick={() => setPriceList('standard')}
           >
             {t('services.hairdresser')} <span className="master-badge">{t('services.hairdresserBadge')}</span>
           </button>

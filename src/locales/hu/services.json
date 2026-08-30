@@ -1,10 +1,8 @@
 {
   "title": "ÁRLISTA",
   "subtitle": "Válogass szolgáltatásaink közül",
-  "masterHairdresser": "Mester Fodrász",
-  "masterBadge": "(Felicia)",
-  "hairdresser": "Fodrász",
-  "hairdresserBadge": "(Gitta)",
+  "hairdresser": "Fodrászat",
+  "hairdresserBadge": "(Felicia, Gitta)",
   "cosmetics": "Kozmetika",
   "cosmeticsBadge": "(Bogi)"
 }

@@ -1,10 +1,8 @@
 {
   "title": "PRICE LIST",
   "subtitle": "Choose from our services",
-  "masterHairdresser": "Master Hairdresser",
-  "masterBadge": "(Felicia)",
-  "hairdresser": "Hairdresser",
-  "hairdresserBadge": "(Gitta)",
+  "hairdresser": "Hairdressing",
+  "hairdresserBadge": "(Felicia, Gitta)",
   "cosmetics": "Beauty Services",
   "cosmeticsBadge": "(Bogi)"
 }
