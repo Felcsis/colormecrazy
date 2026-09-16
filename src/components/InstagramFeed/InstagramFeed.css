@@ -3,18 +3,40 @@
    ha az nincs, a galéria képei kerülnek be. */
 
 .instagram-feed {
-  background: var(--bg-card);
+  background: linear-gradient(
+    to bottom,
+    transparent 0,
+    rgba(var(--bg-card-rgb), 0.82) 240px,
+    rgba(var(--bg-card-rgb), 0.82) calc(100% - 240px),
+    transparent 100%
+  );
   position: relative;
   overflow: hidden;
 }
 
+/* A színes derengés a szekció szélein elhalványodik, különben a szekció
+   teteje éles vonalként vágódna el a felette lévő tartalomtól. */
 .instagram-feed::before {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 15% 0%, rgba(var(--primary-rgb), 0.10), transparent 45%),
-    radial-gradient(circle at 85% 100%, rgba(var(--secondary-rgb), 0.10), transparent 45%);
+    radial-gradient(circle at 15% 10%, rgba(var(--primary-rgb), 0.12), transparent 45%),
+    radial-gradient(circle at 85% 92%, rgba(var(--secondary-rgb), 0.12), transparent 45%);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    #000 200px,
+    #000 calc(100% - 200px),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    #000 200px,
+    #000 calc(100% - 200px),
+    transparent 100%
+  );
   pointer-events: none;
 }
 
@@ -56,8 +78,9 @@
   display: block;
   aspect-ratio: 1;
   overflow: hidden;
-  border: 1px solid var(--border);
-  background: var(--bg-dark);
+  border: 1px solid rgba(var(--text-rgb), 0.08);
+  border-radius: 20px;
+  background: rgba(var(--bg-dark-rgb), 0.5);
   text-decoration: none;
 }
 
@@ -76,8 +99,8 @@
 }
 
 .ig-tile:hover {
-  border-color: var(--primary);
-  box-shadow: 0 12px 32px rgba(var(--primary-rgb), 0.28);
+  border-color: rgba(var(--primary-rgb), 0.55);
+  box-shadow: 0 14px 40px rgba(var(--primary-rgb), 0.3);
 }
 
 /* Videó / album jelölés a csempe sarkában */
@@ -95,6 +118,7 @@
 .ig-tile-overlay {
   position: absolute;
   inset: 0;
+  border-radius: inherit;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -142,6 +166,7 @@
 /* Követő kártya – ugyanakkora csempe, csak tartalom helyett hívás */
 .ig-follow-card {
   display: flex;
+  border-radius: 20px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -152,7 +177,7 @@
     linear-gradient(135deg,
       rgba(var(--primary-rgb), 0.18),
       rgba(var(--secondary-rgb), 0.14));
-  border-color: var(--primary);
+  border-color: rgba(var(--primary-rgb), 0.5);
 }
 
 .ig-follow-card:hover {
@@ -194,6 +219,7 @@
 .ig-follow-btn {
   margin-top: 6px;
   padding: 10px 24px;
+  border-radius: 100px;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 1.5px;
@@ -288,6 +314,8 @@
 
 .ig-lightbox-figure {
   position: relative;
+  border-radius: 24px;
+  overflow: hidden;
   max-width: min(920px, 92vw);
   max-height: 88vh;
   display: flex;

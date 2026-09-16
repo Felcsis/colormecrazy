@@ -28,6 +28,7 @@ import Finance from './pages/Konoha/Finance';
 import MessengerButton from './components/MessengerButton/MessengerButton';
 import InstagramFeed from './components/InstagramFeed/InstagramFeed';
 import { useSeo } from './hooks/useSeo';
+import './styles/sky.css';
 
 // Route-onkénti SEO (helyi, Szeged-fókuszú kulcsszavakkal)
 const SEO_BY_PATH = {
@@ -107,6 +108,16 @@ function AppContent() {
 
   return (
     <div className="App">
+      {/* csillagos univerzum a tartalom mögött */}
+      {!isKonoha && (
+        <>
+          <div className="sky-far" aria-hidden="true" />
+          <div className="sky-near" aria-hidden="true" />
+          <div className="shooting-star s1" aria-hidden="true" />
+          <div className="shooting-star s2" aria-hidden="true" />
+          <div className="shooting-star s3" aria-hidden="true" />
+        </>
+      )}
       <ScrollToHash />
       <Navbar />
       <Routes>

@@ -6,11 +6,29 @@
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(var(--bg-dark-rgb), 0.98);
-  backdrop-filter: blur(20px);
+  background: transparent;
   z-index: 1000;
-  border-bottom: 1px solid var(--border);
   padding: 12px 0;
+}
+
+/* A fejléc háttere külön rétegen van, a tartalom mögött: így az alja lágyan
+   elhalványodik éles vonal helyett, de a logót és a gombokat nem érinti. */
+.navbar-sidebar::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 -30px 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--bg-dark-rgb), 0.55) 0%,
+    rgba(var(--bg-dark-rgb), 0.38) 55%,
+    rgba(var(--bg-dark-rgb), 0) 100%
+  );
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
 }
 
 .navbar-sidebar-container {
@@ -24,18 +42,18 @@
 
 /* Hamburger Button */
 .sidebar-hamburger {
-  background: transparent;
-  border: 1px solid var(--border);
+  background: rgba(var(--text-rgb), 0.04);
+  border: 1px solid rgba(var(--text-rgb), 0.12);
   color: var(--text);
-  width: 48px;
-  height: 48px;
-  border-radius: 4px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.05rem;
 }
 
 .sidebar-hamburger:hover {
@@ -44,12 +62,25 @@
   background: rgba(var(--primary-rgb), 0.1);
 }
 
-/* Center Logo */
+/* Center Logo — a főoldal tetején rejtve, görgetéskor úszik be */
 .navbar-sidebar-logo {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
   flex-shrink: 0;
+  opacity: 0;
+  transform: translateX(-50%) translateY(-8px);
+  pointer-events: none;
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.navbar-sidebar-logo.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar-sidebar-logo { transition: opacity 0.2s ease; }
 }
 
 .navbar-sidebar-logo img {
@@ -58,9 +89,16 @@
   transition: all 0.3s ease;
 }
 
-.navbar-sidebar-logo:hover img {
+.navbar-sidebar-logo.visible:hover img {
   transform: scale(1.05);
   filter: drop-shadow(0 4px 16px rgba(var(--primary-rgb), 0.4));
+}
+
+/* A menü ikon vonalai is lágyabbak: vékonyabb, kerekített végű vonalak */
+.sidebar-hamburger .svg-inline--fa {
+  width: 1em;
+  height: 1em;
+  opacity: 0.9;
 }
 
 /* Right Actions */
@@ -71,8 +109,8 @@
 }
 
 .navbar-action-btn {
-  background: transparent;
-  border: 1px solid var(--border);
+  background: rgba(var(--text-rgb), 0.04);
+  border: 1px solid rgba(var(--text-rgb), 0.12);
   color: var(--text-muted);
   width: 40px;
   height: 40px;
@@ -117,8 +155,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   z-index: 1100;
   animation: fadeIn 0.3s ease;
 }
@@ -139,13 +178,18 @@
   left: 0;
   bottom: 0;
   width: 320px;
-  background: var(--bg-dark);
-  border-right: 2px solid var(--border);
+  background: rgba(var(--bg-dark-rgb), 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: none;
+  border-radius: 0 28px 28px 0;
   z-index: 1200;
   transform: translateX(-100%);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow-y: auto;
-  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.5);
+  box-shadow:
+    18px 0 60px rgba(0, 0, 0, 0.55),
+    1px 0 0 rgba(var(--text-rgb), 0.06);
 }
 
 .sidebar-open {
@@ -155,23 +199,26 @@
 /* Sidebar Header */
 .sidebar-header {
   padding: 24px 20px;
-  border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: sticky;
   top: 0;
-  background: var(--bg-dark);
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--bg-dark-rgb), 0.98) 60%,
+    rgba(var(--bg-dark-rgb), 0) 100%
+  );
   z-index: 10;
 }
 
 .sidebar-close {
-  background: transparent;
-  border: 1px solid var(--border);
+  background: rgba(var(--text-rgb), 0.04);
+  border: 1px solid rgba(var(--text-rgb), 0.12);
   color: var(--text-muted);
-  width: 36px;
-  height: 36px;
-  border-radius: 4px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
@@ -205,16 +252,36 @@
 }
 
 .sidebar-section {
-  border-bottom: 1px solid rgba(42, 42, 42, 0.5);
+  position: relative;
+}
+
+/* A menüpontokat nem éles vonal választja el, hanem egy a széleken
+   elhalványodó csík — ugyanaz az elv, mint a szekcióhatároknál. */
+.sidebar-section + .sidebar-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(var(--text-rgb), 0.12) 22%,
+    rgba(var(--text-rgb), 0.12) 78%,
+    transparent
+  );
 }
 
 /* Section Header (expandable) */
 .sidebar-section-header {
-  width: 100%;
+  width: calc(100% - 20px);
+  margin: 2px 10px;
   background: transparent;
   border: none;
+  border-radius: 14px;
   color: var(--text);
-  padding: 16px 24px;
+  padding: 15px 16px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -228,17 +295,19 @@
 }
 
 .sidebar-section-header:hover {
-  background: rgba(var(--primary-rgb), 0.08);
+  background: rgba(var(--primary-rgb), 0.1);
   color: var(--primary);
 }
 
 /* Simple Link (non-expandable) */
 .sidebar-link {
-  width: 100%;
+  width: calc(100% - 20px);
+  margin: 2px 10px;
   background: transparent;
   border: none;
+  border-radius: 14px;
   color: var(--text);
-  padding: 16px 24px;
+  padding: 15px 16px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -252,7 +321,7 @@
 }
 
 .sidebar-link:hover {
-  background: rgba(var(--primary-rgb), 0.08);
+  background: rgba(var(--primary-rgb), 0.1);
   color: var(--primary);
 }
 
@@ -288,7 +357,10 @@
 
 /* Submenu */
 .sidebar-submenu {
-  background: rgba(0, 0, 0, 0.3);
+  margin: 2px 10px 6px;
+  padding: 4px 0;
+  border-radius: 16px;
+  background: rgba(var(--text-rgb), 0.035);
   animation: fadeIn 0.15s ease;
 }
 
@@ -302,7 +374,9 @@
 }
 
 .sidebar-sublink {
-  padding: 12px 24px 12px 56px;
+  width: calc(100% - 12px);
+  margin: 1px 6px;
+  padding: 11px 16px 11px 42px;
   font-size: 0.85rem;
   font-weight: 400;
   text-transform: none;

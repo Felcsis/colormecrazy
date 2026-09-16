@@ -1,9 +1,7 @@
 /* Blog Page */
 .blog-page {
   min-height: 100vh;
-  background: var(--bg-dark);
-  background-image: radial-gradient(circle, var(--dot-grid) 1px, transparent 1px);
-  background-size: 24px 24px;
+  background: transparent;
   padding-top: 104px;
 }
 

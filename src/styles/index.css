@@ -20,6 +20,7 @@
     --bg-dark: #0a0a0a;
     --bg-dark-rgb: 10, 10, 10;
     --bg-card: #141414;
+    --bg-card-rgb: 20, 20, 20;
     --bg-card-hover: #1a1a1a;
     --text: #ffffff;
     --text-rgb: 255, 255, 255;
@@ -27,6 +28,16 @@
     --accent: #9CA3AF;
     --border: #2a2a2a;
     --dot-grid: rgba(255, 255, 255, 0.05);
+    --star-color: rgba(255, 255, 255, 0.92);
+    /* Univerzum-színek a ködfelhőkhöz: mélykék, ibolya, magenta, türkiz */
+    --cosmos-deep: 46, 28, 92;
+    --cosmos-violet: 124, 58, 190;
+    --cosmos-magenta: 196, 62, 142;
+    --cosmos-teal: 38, 150, 170;
+    --cosmos-gold: 214, 168, 92;
+    --cosmos-strength: 1;
+    /* az évszak saját színeiből készülő derengés erőssége */
+    --nebula-own: 1;
 
     --primary: #8B7EB8;
     --primary-rgb: 139, 126, 184;
@@ -60,6 +71,7 @@
     --bg-dark: #EDE7DB;
     --bg-dark-rgb: 237, 231, 219;
     --bg-card: #F6F2E8;
+    --bg-card-rgb: 246, 242, 232;
     --bg-card-hover: #FBF8F1;
     --text: #26332F;
     --text-rgb: 38, 51, 47;
@@ -67,6 +79,19 @@
     --accent: #6A6357;
     --border: #D8CEBB;
     --dot-grid: rgba(66, 100, 101, 0.10);
+    /* Nyáron arany csillagok — a világos, krémes égbolton ez ragyog,
+       nem a sötét petrol. Erősebb telítettséggel, hogy a halvány
+       pasztell köd mellett is jól látszódjanak. */
+    --star-color: rgba(176, 128, 22, 0.95);
+    /* Pasztell univerzum: levendula, orgona, rózsa, menta és vajszín —
+       a krémes égbolton ezek lágyan derengenek, nem nyomják el a tartalmat. */
+    --cosmos-deep: 150, 172, 226;
+    --cosmos-violet: 188, 146, 224;
+    --cosmos-magenta: 240, 150, 186;
+    --cosmos-teal: 124, 212, 196;
+    --cosmos-gold: 244, 200, 112;
+    --cosmos-strength: 0.7;
+    --nebula-own: 0.35;
 
     --primary: #3F6263;
     --primary-rgb: 63, 98, 99;
@@ -80,8 +105,17 @@
     --secondary-light-rgb: 156, 85, 104;
 }
 
-/* Ősz – az őszi logó homok / olíva / blush árnyalatai */
+/* Ősz – az őszi logó homok / olíva / blush árnyalatai.
+   A ködfelhő itt halványabb és melegebb: rozsda, bordó, olíva és arany
+   a hideg ibolya-türkiz helyett. */
 [data-season="osz"] {
+    --cosmos-deep: 58, 42, 30;
+    --cosmos-violet: 168, 96, 48;
+    --cosmos-magenta: 140, 62, 48;
+    --cosmos-teal: 112, 118, 66;
+    --cosmos-gold: 206, 158, 78;
+    --cosmos-strength: 0.55;
+
     --primary: #B7A686;
     --primary-rgb: 183, 166, 134;
     --primary-deep: #8C7C5C;
@@ -94,8 +128,25 @@
     --secondary-light-rgb: 224, 210, 196;
 }
 
-/* Tél – az oldal eredeti lila-kék dizájnja (megegyezik az alapértelmezéssel) */
+/* Tél – az oldal eredeti lila-kék dizájnja.
+   Itt szándékosan nincs univerzum: a színes ködfelhők kikapcsolnak, csak a
+   hideg, fehér csillagok maradnak — így marad rideg és tiszta. */
 [data-season="tel"] {
+    --cosmos-strength: 0;
+    --nebula-own: 0.12;
+
+    /* hidegebb, kékes-fekete alap a semleges fekete helyett */
+    --bg-dark: #070A0F;
+    --bg-dark-rgb: 7, 10, 15;
+    --bg-card: #0D1218;
+    --bg-card-rgb: 13, 18, 24;
+    --bg-card-hover: #131A22;
+    --border: #1E2732;
+    --text-muted: #8D97A4;
+    --accent: #8D97A4;
+    --dot-grid: rgba(220, 235, 255, 0.05);
+    --star-color: rgba(226, 240, 255, 0.9);
+
     --primary: #8B7EB8;
     --primary-rgb: 139, 126, 184;
     --primary-deep: #6B5E98;
@@ -127,11 +178,42 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Ködfelhők: a csillagmező mögött lassan gomolygó, színes derengés az évszak
+   színeivel. Az elmosódás a színátmenetbe van építve (nincs blur szűrő),
+   és csak a réteg eltolása animált — így a videokártya végzi. */
+body::before {
+    content: '';
+    position: fixed;
+    inset: -30%;
+    z-index: -2;
+    pointer-events: none;
+    /* Az évszak saját színei mellé kozmikus árnyalatok keverednek — így
+       univerzum-hangulatot kap, de megmarad a szalon arculata. */
+    background:
+        radial-gradient(34% 28% at 14% 18%, rgba(var(--cosmos-violet), calc(0.30 * var(--cosmos-strength))), transparent 68%),
+        radial-gradient(28% 24% at 86% 32%, rgba(var(--cosmos-teal), calc(0.26 * var(--cosmos-strength))), transparent 68%),
+        radial-gradient(26% 22% at 66% 66%, rgba(var(--cosmos-magenta), calc(0.24 * var(--cosmos-strength))), transparent 70%),
+        radial-gradient(20% 18% at 24% 84%, rgba(var(--cosmos-gold), calc(0.16 * var(--cosmos-strength))), transparent 72%),
+        radial-gradient(44% 38% at 50% 46%, rgba(var(--cosmos-deep), calc(0.34 * var(--cosmos-strength))), transparent 76%),
+        radial-gradient(30% 26% at 30% 40%, rgba(var(--primary-rgb), calc(0.26 * var(--nebula-own))), transparent 70%),
+        radial-gradient(24% 20% at 78% 78%, rgba(var(--secondary-rgb), calc(0.22 * var(--nebula-own))), transparent 70%);
+    animation: nebulaDrift 60s ease-in-out infinite alternate;
+    will-change: transform;
+}
+
+@keyframes nebulaDrift {
+    0%   { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); }
+    50%  { transform: translate3d(2.5%, -2%, 0) scale(1.1) rotate(2deg); }
+    100% { transform: translate3d(-2%, 1.5%, 0) scale(1.05) rotate(-1.5deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body::before { animation: none; }
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-dark);
-    background-image: radial-gradient(circle, var(--dot-grid) 1px, transparent 1px);
-    background-size: 24px 24px;
     color: var(--text);
     line-height: 1.6;
 }
@@ -149,7 +231,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--bg-dark);
+    background: transparent;
     padding: 120px 24px 80px;
 }
 
@@ -243,10 +325,11 @@ body {
     white-space: nowrap;
 }
 
-/* Szekciók */
+/* Szekciók.
+   A hátterek félig áttetszők, a szélükön pedig elhalványodnak — így az aura
+   átdereng mögöttük, és a szekciók határa lágy átmenet, nem éles vonal. */
 .section {
-    padding: 100px 0;
-    border-top: 1px solid var(--border);
+    padding: 120px 0;
     scroll-margin-top: 120px;
 }
 
@@ -272,7 +355,13 @@ body {
 
 /* About / Bemutatkozás */
 .about {
-    background: var(--bg-card);
+    background: linear-gradient(
+        to bottom,
+        transparent 0,
+        rgba(var(--bg-card-rgb), 0.9) 180px,
+        rgba(var(--bg-card-rgb), 0.9) calc(100% - 180px),
+        transparent 100%
+    );
 }
 
 /* Story Section */
@@ -442,9 +531,13 @@ body {
 
 /* Reviews Section */
 .reviews {
-    background: var(--bg-dark);
-    background-image: radial-gradient(circle, var(--dot-grid) 1px, transparent 1px);
-    background-size: 24px 24px;
+    background: linear-gradient(
+        to bottom,
+        transparent 0,
+        rgba(var(--bg-dark-rgb), 0.72) 220px,
+        rgba(var(--bg-dark-rgb), 0.72) calc(100% - 220px),
+        transparent 100%
+    );
 }
 
 /* Google Reviews Section */
@@ -658,9 +751,15 @@ body {
 
 /* Csapat szekció */
 .csapat {
-    background: var(--bg-dark);
-    background-image: radial-gradient(circle, var(--dot-grid) 1px, transparent 1px);
-    background-size: 24px 24px;
+    background-color: transparent;
+    background-image:
+        linear-gradient(
+            to bottom,
+            transparent 0,
+            rgba(var(--bg-dark-rgb), 0.72) 180px,
+            rgba(var(--bg-dark-rgb), 0.72) calc(100% - 180px),
+            transparent 100%
+        );
 }
 
 .team-grid {
@@ -1131,8 +1230,13 @@ body {
 
 /* Szolgáltatások - Original Design Style */
 .szolgaltatasok {
-    background: var(--bg-dark);
-    background-image: none;
+    background: linear-gradient(
+        to bottom,
+        transparent 0,
+        rgba(var(--bg-dark-rgb), 0.72) 180px,
+        rgba(var(--bg-dark-rgb), 0.72) calc(100% - 180px),
+        transparent 100%
+    );
 }
 
 /* ÁRLISTA Header with stars */
@@ -1460,9 +1564,13 @@ body {
 
 /* Galéria */
 .galeria {
-    background: var(--bg-dark);
-    background-image: radial-gradient(circle, var(--dot-grid) 1px, transparent 1px);
-    background-size: 24px 24px;
+    background: linear-gradient(
+        to bottom,
+        transparent 0,
+        rgba(var(--bg-dark-rgb), 0.72) 220px,
+        rgba(var(--bg-dark-rgb), 0.72) calc(100% - 220px),
+        transparent 100%
+    );
 }
 
 .gallery-grid {
@@ -1495,7 +1603,12 @@ body {
 
 /* Kapcsolat */
 .kapcsolat {
-    background: var(--bg-card);
+    background: linear-gradient(
+        to bottom,
+        transparent 0,
+        rgba(var(--bg-card-rgb), 0.9) 180px,
+        rgba(var(--bg-card-rgb), 0.9) 100%
+    );
 }
 
 .contact-content {
@@ -1641,10 +1754,12 @@ body {
 
 /* Footer */
 .footer {
-    background: var(--bg-dark);
-    background-image: radial-gradient(circle, var(--dot-grid) 1px, transparent 1px);
-    background-size: 24px 24px;
-    border-top: 1px solid var(--border);
+    background: linear-gradient(
+        to bottom,
+        transparent 0,
+        rgba(var(--bg-dark-rgb), 0.72) 120px,
+        rgba(var(--bg-dark-rgb), 0.8) 100%
+    );
     text-align: center;
     padding: 40px 24px;
 }

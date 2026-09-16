@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Navbar.css';
@@ -38,6 +38,22 @@ const Navbar = () => {
   const { t, language, setLanguage } = useTranslation();
   const { currentUser, logout } = useAuth();
   const { logo } = useSeasonContext();
+
+  // A főoldal nyitóképén a nagy logó látszik, ezért a fejlécben lévő kicsit
+  // elrejtjük — csak akkor úszik be (és válik kattinthatóvá), ha lejjebb
+  // görgetünk. Más oldalakon nincs nyitókép, ott mindig látszik.
+  const [scrolled, setScrolled] = useState(false);
+  const isHome = location.pathname === '/';
+
+  useEffect(() => {
+    if (!isHome) return undefined;
+    const onScroll = () => setScrolled(window.scrollY > 140);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [isHome]);
+
+  const showLogo = !isHome || scrolled;
 
   // Ne jelenjen meg navbar a Konoha oldalon
   if (location.pathname.startsWith('/konoha')) {
@@ -117,7 +133,13 @@ const Navbar = () => {
           </button>
 
           {/* Center Logo */}
-          <Link to="/" className="navbar-sidebar-logo" onClick={handleLogoClick}>
+          <Link
+            to="/"
+            className={`navbar-sidebar-logo ${showLogo ? 'visible' : ''}`}
+            onClick={handleLogoClick}
+            aria-hidden={!showLogo}
+            tabIndex={showLogo ? 0 : -1}
+          >
             <img src={logo} alt="Color Me Crazy" />
           </Link>
 
